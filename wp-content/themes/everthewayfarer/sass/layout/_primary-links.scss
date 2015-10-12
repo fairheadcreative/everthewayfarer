@@ -1,0 +1,186 @@
+.button {
+  @extend %button;
+  font-family: $franklin-gothic;
+  text-transform: uppercase;
+  font-size: 16px;
+
+  &.secondary {
+    border: 1px solid $base-button-color;
+    color: $base-button-color;
+    background: transparent;
+
+    &:hover {
+      background: $base-accent-color;
+      color: white;
+    }
+  }
+}
+
+// Page header
+#page-header {
+  border-bottom: $base-border;
+}
+
+
+// Page header links
+#primary-links {
+  padding: .5em 0 0;
+  font-family: $franklin-gothic;
+  font-weight: 400;
+
+  @include media($large-screen) {
+    padding: .5em 0;
+  }
+
+  li {
+    font-size: em(16);
+    display: inline-block;
+    text-transform: uppercase;
+  }
+
+  a:not(.button) {
+    color: $base-font-color;
+
+    &.active,
+    &:hover {
+      color: $secondary-link-color;
+    }
+  }
+
+
+  li .nav-primary-2 {
+    color: $medium-gray;
+  }
+
+  li .nav-primary-twitter {
+    position: relative;
+    top: 4px;
+    background: url('../images/icons.svg') 0 0 no-repeat;
+    background-size: auto 50px;
+    width: 18px;
+    height: 17px;
+    text-indent: -999em;
+    display: inline-block;
+
+    &:hover {
+      background-position: -20px 0;
+    }
+  }
+
+  li .nav-primary-facebook {
+    position: relative;
+    top: 4px;
+    background: url('../images/icons.svg') 0 -34px no-repeat;
+    background-size: auto 50px;
+    width: 18px;
+    height: 17px;
+    text-indent: -999em;
+    display: inline-block;
+
+    &:hover {
+      background-position: -20px -34px;
+    }
+  }
+
+  li .nav-primary-instagram {
+    position: relative;
+    top: 4.5px;
+    background: url('../images/icons.svg') 0 -17px no-repeat;
+    background-size: auto 50px;
+    width: 18px;
+    height: 17px;
+    text-indent: -999em;
+    display: inline-block;
+
+    &:hover {
+      background-position: -20px -17px;
+    }
+  }
+
+  // Header logo
+  .logo {
+    font-family: $chaparral-pro;
+    font-size: em(20);
+    display: block;
+    float: left;
+    width: 65%;
+    height: 47px;
+    font-weight: 700; 
+    letter-spacing: -.05em;
+    white-space: nowrap;
+    padding: .3em 0 0;
+
+    @include media(400px) {
+      height: 50px;
+      font-size: em(25);
+      padding: .3em 0 0;
+    }
+
+    @include media(450px) {
+      font-size: em(30);
+      padding: .1em 0 0;
+    }
+  }
+
+  // Subscribe button
+  .nav-primary-3 {
+    display: block;
+    float: right;
+    text-align: right;
+    width: 35%;
+    height: 47px;
+    overflow: hidden;
+
+    @include media($medium-screen) { 
+      height: 50px;
+      padding-top: .2em;
+    }
+
+    a {
+      max-width: 100%;
+    }
+  }
+
+ 
+  // List item that contains main nav elements
+  // On small screens, use a horizontal scroll
+  .nav-primary {
+    @include media(max-width $large-screen) {
+      background: $light-gray;
+      display: block !important;
+      margin: 0 -1em;
+      padding: .5em 1em;
+      clear: both;
+      border-top: $base-border !important;
+      border-bottom: $base-border;
+
+      a {
+        margin-right: .75em;
+      }
+
+      @include media(max-width $medium-screen) {
+        overflow-x: scroll;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  // Switch from thin link style to wide link style
+  @include media($medium-screen) { 
+    li a {
+      margin-right: .75em;
+    }
+
+    .logo,
+    .nav-primary-3 {
+      float: none;
+      width: auto;
+      height: auto;
+      display: inline-block;
+    }
+    
+    .nav-primary-3 {
+      float: right;
+    }
+  }
+}

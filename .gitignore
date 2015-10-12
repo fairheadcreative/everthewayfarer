@@ -1,0 +1,37 @@
+# Always ignore files with these extensions
+*.ai
+*.zip
+*.psd
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# Always ignore OS or Editor folders
+.DS_Store
+Thumbs.db
+.idea
+.master
+
+# Ignore everything in the root except ...
+/*
+!.gitignore
+!wp-content/
+!Gemfile
+!README.md
+!humans.txt
+
+# Ignore everything in the "wp-content" directory, except ...
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+ 
+# Ignore everything in the "plugins" directory, except ...
+wp-content/plugins/*
+!wp-content/plugins/fc-simplify-admin/

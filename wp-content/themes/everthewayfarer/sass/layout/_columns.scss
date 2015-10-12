@@ -1,0 +1,130 @@
+// General structure & columns
+
+// Make sure the sidebar is always full-page height
+html,
+body,
+#main .container,
+.sidebar {
+  @include full-height;
+}
+
+
+// Page container / limiter
+.container {
+  @include outer-container;
+  padding: 0 1em;
+  position: relative;
+}
+
+
+// Page grouping padding
+.group {
+  padding-top: $base-padding;
+  padding-bottom: $base-padding;
+}
+
+
+// Main page section
+#main {
+  background-size: 100% 100%;
+  max-width: $max-bleed-width;
+  margin: 0 auto;
+  
+  // Continue sidebar coloring beyond the container width
+  @include media($large-screen) {
+    @include linear-gradient(90deg, white 0%, white 75%, $light-gray 76%, $light-gray 100%);
+  }
+}
+
+
+// Article list sections
+.articles {
+  min-height: 650px;
+
+  // Make space for sidebar on large displays
+  @include media($large-screen) {
+    margin-right: em(320);
+  }
+
+  p,
+  li {
+    font-size: $article-font-size;
+  }
+
+  &.articles-mixed p {
+    max-width: 30em;
+  }
+
+  &.articles-mixed h2 {
+    max-width: 23.25em;
+  }
+
+  a h2,
+  a p {
+    color: $base-font-color;
+  }
+
+  a:hover article h2 {
+    color: $base-accent-color;
+  }
+
+  article {
+    padding-bottom: $base-padding / 2;
+    margin-bottom: $base-padding;
+    border-bottom: $base-border;
+    min-height: 180px;
+  }
+  
+  // Article list image position & size  
+  .attachment-feature-preview {
+    width: 120px;
+    height: 120px;
+    float: right;
+    margin: 0 0 $base-padding / 2 $base-padding / 2;
+
+    @include media($large-screen) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+
+// Page sidebar
+.sidebar {
+  background: $light-gray;
+  margin: 0;
+  padding: $base-padding $base-padding / 2;
+  width: 100%;
+
+  // Move to side on large displays
+  @include media($large-screen) {
+    @include full-height;
+    max-width: em(300);
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left: $base-border; 
+    padding: 0 $base-padding 0 0;
+
+    #sidebar,
+    .stock {
+      padding: $base-padding 0 0 $base-padding;
+    }
+  }
+
+  // Hide the 'About' widget on the 'About' page
+  .page-id-8 & #text-2 {
+    display: none;
+  }
+
+  #text-2 .textwidget::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 0 .5em 1em;
+    @include retina-image('../images/siv-portrait', 100px 100px, jpg);
+    float: right;
+  }
+}
