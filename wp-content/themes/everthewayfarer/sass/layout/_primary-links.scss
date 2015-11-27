@@ -98,12 +98,13 @@
   }
 
   // Header logo
-  .logo {
-    font-family: $chaparral-pro;
-    font-size: em(20);
+  .logo a {
+    background: url('../images/logomark.svg') no-repeat;
+    background-size: contain;
     display: block;
+    text-indent: -999em;
     float: left;
-    width: 65%;
+    width: 180px;
     height: 47px;
     font-weight: 700; 
     letter-spacing: -.05em;
@@ -111,9 +112,12 @@
     padding: .3em 0 0;
 
     @include media(400px) {
+      width: 210px;
       height: 50px;
       font-size: em(25);
       padding: .3em 0 0;
+      margin-bottom: -10px;
+      margin-right: .2em;
     }
 
     @include media(450px) {
@@ -145,6 +149,11 @@
   // List item that contains main nav elements
   // On small screens, use a horizontal scroll
   .nav-primary {
+    @include media($large-screen) {
+      position: relative;
+      top: -10px;
+    }
+
     @include media(max-width $large-screen) {
       background: $light-gray;
       display: block !important;

@@ -21,7 +21,8 @@
           <li class="logo"><a href="<?php echo site_url(); ?>">Ever the Wayfarer</a></li>
           <?php if (!is_page('subscribe')) {?><li class="nav-primary-3"><a class="button" href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li><?php } ?>
           <li class="nav-primary">
-            <a class="nav-primary-1 <?php if (!is_home() && is_category('Journey') || !is_home() && has_category('Journey')){ echo 'active'; };?>" href="<?php echo site_url(); ?>/category/journey/">Journeys</a> 
+            <!--<a class="nav-primary-1 <?php if (!is_home() && is_category('Journey') || !is_home() && has_category('Journey')){ echo 'active'; };?>" href="<?php echo site_url(); ?>/category/journey/">Journeys</a> -->
+            <a class="nav-primary-1 <?php if (!is_home() && is_category('Postcard') || !is_home() && has_category('Postcard')){ echo 'active'; };?>" href="<?php echo site_url(); ?>/category/postcard/">Postcards</a> 
             <a class="nav-primary-1 <?php if (!is_home() && is_category('News') || !is_home() && has_category('News')){ echo 'active'; };?>" href="<?php echo site_url(); ?>/category/news/">News</a>
             <a class="nav-primary-1 <?php if (!is_home() && is_category('Gear') || !is_home() && has_category('Gear')) { echo 'active'; };?>" href="<?php echo site_url(); ?>/category/gear/">Gear &amp; Reviews</a>
             <a class="nav-primary-1" href="http://www.suntrailimages.com">Photography</a>

@@ -121,19 +121,22 @@ if ( is_home() ) { ?>
 
   <div class="postcard-popout-bg"></div>
 
-<?php # Create postcard popout elements
-  if (have_posts()) : ?>
-<?php while (have_posts()) : the_post(); ?>
-
+  <?php # Create postcard popout elements
+    if (have_posts()) : ?>
+  <?php while (have_posts()) : the_post(); ?>
 
   <div class="postcard-item--popout" id="id-<?php the_ID(); ?>-popout">
     <a href="javascript:void(0);" class="postcard-item-close"></a>
     <div class="inner">
-      <div class="popout-content">
-        <h3><?php the_title(); ?></h3>
-        <?php the_content(); ?>
-        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), ('feature-postcard')); ?>
-        <?php the_post_thumbnail('feature-postcard'); ?>
+      <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'large', true); ?>
+      <div class="postcard-item--image" style="background-image: url('<?php echo $image_url[0]; ?>');">
+      </div>
+      <div class="postcard-item--content">
+        <div class="postcard-item--content--message">
+          <?php the_content(); ?>
+        </div>
+        <div class="postcard-item--content--signature">
+        </div>
         <a class="button button-pc facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>"><span>Share this photo</span></a>
       </div>
     </div>

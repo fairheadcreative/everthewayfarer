@@ -6,27 +6,24 @@
 <?php while (have_posts()) : the_post(); ?>
 
 <?php if ( in_category('Postcard')) { ?>
-
-  <article class="single is-postcard">
-    <div class="container group">
-      <div class="postcard-image">
-        <?php the_post_thumbnail('feature-full'); ?>
+<div class="single-postcard-bg">
+  <div class="postcard-item--popout is-open" id="id-<?php the_ID(); ?>-popout">
+    <div class="inner">
+      <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'large', true); ?>
+      <div class="postcard-item--image" style="background-image: url('<?php echo $image_url[0]; ?>');">
       </div>
-
-      <div class="postcard-message">
-        <h1><?php the_title(); ?></h1>
-        <?php the_content(); ?>
-
-        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), ('feature-full')); ?>
-        <a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $image[0]; ?>&description=something great here" class="button pinterest">Pin this photo</a>
-
-        <a class="button secondary" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>">Share on Facebook</a>
-        <a class="button secondary" target="_blank" href="https://twitter.com/intent/tweet?original_referer=<?php the_permalink() ?>&source=tweetbutton&text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=wayfaringsiv">Share on Twitter</a>
-
+      <div class="postcard-item--content">
+        <div class="postcard-item--content--message">
+          <?php the_content(); ?>
+        </div>
+        <div class="postcard-item--content--signature">
+        </div>
+        <a class="button button-pc facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>"><span>Share this photo</span></a>
       </div>
     </div>
-  </article>
-
+  </div>
+  <div class="more"><h3>Want more postcards?</h3> <a href="#" class="button">See more</a></div>
+</div>
 <?php } else { ?>
 
 <article class="single <?php if ( in_category( 'Gear' ) ) { echo 'is-gear'; } ?><?php if ( in_category( 'Gear' ) || in_category( 'Journey' )) { echo 'has-feature'; } ?>">

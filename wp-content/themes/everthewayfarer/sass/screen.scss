@@ -122,25 +122,6 @@ form.wpcf7-form {
   }
 }
 
-.single.is-postcard {
-  background: $base-font-color;
-  color: white;
-}
-
-.postcard-image {
-  @include span-columns(8);
-  overflow: hidden;
-
-  img {
-    height: auto;
-  }
-}
-
-.postcard-message {
-  @include span-columns(4);
-}
-
-
 
 
 // Postcards
@@ -413,6 +394,7 @@ form.wpcf7-form {
     line-height: 1;
     margin: 0;
     padding-right: 10px;
+    letter-spacing: 0;
 
     font-size: 3em;
     @include media(em(500)) { font-size: 5em; }
@@ -520,37 +502,14 @@ form.wpcf7-form {
 }*/
 
 
-.postcard-popout-bg {
-  @include transition(all 0.25s ease-in-out);
-  
-  .postcard-is-open & {
-    z-index: 4;
-    opacity: 1;
-  }
-
-  z-index: -1;
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,.6);
-}
-
 #page-header,
 #main,
 .page-closing {
   @include transition(all 0.25s ease-in-out);
 }
 
-.postcard-is-open {
-  #page-header,
-  #main,
-  .page-closing {
-  }
+.page-closing {
+  display: none;
 }
 
 .postcard-item-close {
@@ -558,10 +517,10 @@ form.wpcf7-form {
 
   @include media(max-width $medium-screen) {
     &:after {
-      background: url("../images/mobile-back.svg") 1em 1.05em no-repeat;
+      background: url("../images/mobile-back.svg") 1em .65em no-repeat;
       background-size: 12px auto;
       content: 'Back to postcards';
-      padding: 1em 0 0 2em;
+      padding: .55em 0 .25em 2em;
       display: block
     }
   }
@@ -633,120 +592,185 @@ form.wpcf7-form {
   }
 }
 
+.single-postcard-bg {
+  background: #484848 url('../images/pc-bg.jpg') center repeat-y;
+  background-size: 80%;
+  height: 100%;
+
+  @include media($medium-screen) {
+    background-size: 70%;
+  }
+
+  @include media($x-large-screen) {
+    background-size: 969px 826px;
+  }
+
+  .more {
+    margin: 0 auto ;
+    max-width: 40em;
+    text-align: center;
+    position: relative;
+    top: 4em;
+
+    h3 {
+      display: inline-block;
+      color: white;
+      margin-right: .25em;
+      font-size: 1.6em;
+      position: relative;
+      top: 3px;
+    }
+  }
+}
+
+.postcard-is-open #main {
+  -webkit-filter: blur(5px);
+}
+
+.postcard-popout-bg {
+  @include transition(all 0.25s ease-in-out);
+  
+  .postcard-is-open & {
+    z-index: 4;
+    opacity: 1;
+  }
+
+  z-index: -1;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.7);
+}
+
 .postcard-item--popout {
+  // Set shape and size of postcard, and hide it
   @include transition(opacity 0.25s ease-in-out); 
   background: white;
   z-index: -1;
   position: fixed;
-  left: 1%;
-  right: 0;
-  width: 98%;
+  left: 2%;
+  right: 2%;
+  width: 96%;
   opacity: 0;
 
-  &:before {
-    z-index: 0;
-    content: '';    
-    background: url('../images/postcard-stamp.jpg') top right no-repeat;
-    background-size: contain;
-    width: 160px;
-    height: 128px;
-    position: absolute;
-    top: 1.5em;
-    right: 1.25em;
-    opacity: .25;
-
-    @include media($medium-screen) {
-      opacity: 1;
-    }
-  }
-
-  &:after {
-    @include media($medium-screen) {
-      content: '';    
-      background: url('../images/postcard-sig.jpg') bottom right no-repeat;
-      background-size: contain;
-      width: 220px;
-      height: 145px;
-      position: absolute;
-      bottom: 2em;
-      right: 1.5em;
-    }
-
-    @include media(em(900)) {
-      height: 155px;
-    }
-  }
-
-  @include media($medium-screen) {
-    width: 600px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-  }
-
-  @include media(em(900)) {
-    width: 650px;
-  }
-
+  // Reveal the postcard
   &.is-open {
     position: absolute;
     opacity: 1;
     z-index: 99; 
-    top: 2em;
+    top: 10px;
   }
 
-  // Text, image, button
-  .popout-content {
-    min-height: 145px;
+  .single &.is-open {
+    top: 1em;
     position: relative;
-    z-index: 1;
 
     @include media($medium-screen) {
-      border-right: 3px solid #eee;
-      padding-right: 25px;
-    }
-
-    @include media(em(900)) { min-height: 340px; }
-  }
-
-  // Content structure for postcard
-  .inner {
-    background: white;
-    padding: 1em;
-    box-shadow: 0 120px 40px rgba(0,0,0,.0);
-
-    @include media($medium-screen) {
-      padding: 2em 260px 2em 2em;
-    }
-
-    @include media(em(900)) {
-      padding: 2em 270px 2em 2em;
-      //background: white url('../images/postcard-bg.jpg') right 20px no-repeat;
-      //background-size: 275px;
-    }
-
-    @include media($x-large-screen) { padding: 2em 270px 2em 2em; }
-  }
-
-  h3 {
-    font-family: $franklin-gothic;
-    font-size: $h1-font-size;
-    font-weight: 700;
-    line-height: .9;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    margin: .5em 0 .5em;
-    text-align: center;
-
-    @include media($medium-screen) {
-      color: #bbb;
+      top: 2em;
+      left: 0;
     }
   }
 
-  img {
+  // Give the postcard fixed shape
+  @include media($medium-screen) {
+    width: 600px;
+    margin: 0 auto;
+
+    &.is-open { top: 2em; }
+  }
+
+  // Make the postcard larger
+  @include media($large-screen) { width: 750px; }
+  @include media($x-large-screen) { width: 960px; }
+
+  // The postcard's image
+  .postcard-item--image {
+    height: 350px;
+    overflow: hidden;
+    background: #222;
     width: 100%;
-    height: auto;
-    border-radius: 4px;
+    background-size: cover;
+    background-position: center;
+
+    // Put it to the side
+    @include media($medium-screen) {
+      width: 55%;
+      float: left;
+    }
+
+    // Increase the size
+    @include media($large-screen) {
+      width: 60%;
+      height: 400px;
+    }
+
+    @include media($x-large-screen) {
+      width: 70%;
+      height: 450px;
+    }
+  }
+
+  // Postcar message/content
+  .postcard-item--content {
+    padding: 1em;
+    background: white;
+    
+    @include media($medium-screen) {
+      padding: 7em 1em 0em;
+      width: 45%;
+      float: right;
+      height: 350px;
+    }
+
+    @include media($large-screen) {
+      padding: 7em 1.5em 0em;
+      width: 40%;
+      height: 400px;
+    }
+
+    @include media($x-large-screen) {
+      width: 30%;
+      height: 450px;
+    }
+  }
+
+  .postcard-item--content--message {
+    @include media($medium-screen) {
+      max-height:90px;
+      overflow: scroll;
+      overflow-x: hidden;
+      padding-left: 1em;
+      padding-right: 1em;
+      margin: 0 -1em;
+    }
+
+    @include media($large-screen) {
+      max-height: 130px;
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+      margin: 0 -1.5em;
+    }
+
+    @include media($x-large-screen) {
+      max-height: 180px;
+    }
+  }
+
+  .postcard-item--content--signature {
+    background: url('../images/postcard-sig.jpg') 0 15px no-repeat;
+    background-size: 200px auto;
+    width: 100%;
+    height: 85px;
+    margin-bottom: .6em;
+
+    @include media($medium-screen) {
+      border-top: $base-border;
+    }
   }
 
   .button.facebook {
@@ -766,6 +790,21 @@ form.wpcf7-form {
       padding-left: 22px;
       height: 18px;
       display: inline-block;
+    }
+  }
+
+  // Stamp
+  &:before {
+    @include media($medium-screen) {
+      z-index: 0;
+      content: '';    
+      background: url('../images/postcard-stamp.jpg') top right no-repeat;
+      background-size: contain;
+      width: 110px;
+      height: 128px;
+      position: absolute;
+      top: 1em;
+      right: 1.25em;
     }
   }
 }
