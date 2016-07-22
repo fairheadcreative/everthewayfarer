@@ -4,7 +4,7 @@ add_theme_support( 'post-thumbnails' );
 add_image_size( 'feature-preview', 300, 300, true );
 add_image_size( 'feature-full', 3000, 1000, true );
 add_image_size( 'feature-thin', 800, 800, true );
-add_image_size( 'feature-postcard', 500, 250, true );
+add_image_size( 'feature-postcard', 500, 375, true );
 
 function everthewayfarer_widgets_init() {
     register_sidebar( array(

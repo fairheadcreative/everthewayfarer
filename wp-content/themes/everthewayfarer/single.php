@@ -5,12 +5,13 @@
 <?php if (have_posts()) : ?>
 <?php while (have_posts()) : the_post(); ?>
 
-<?php if ( in_category('Postcard')) { ?>
+<?php if ( in_category('Postcards')) { ?>
 <div class="single-postcard-bg">
   <div class="postcard-item--popout is-open" id="id-<?php the_ID(); ?>-popout">
     <div class="inner">
       <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'large', true); ?>
       <div class="postcard-item--image" style="background-image: url('<?php echo $image_url[0]; ?>');">
+        <img src="<?php echo $image_url[0]; ?>" alt="<?php the_title(); ?>" />
       </div>
       <div class="postcard-item--content">
         <div class="postcard-item--content--message">
@@ -22,7 +23,7 @@
       </div>
     </div>
   </div>
-  <div class="more"><h3>Want more postcards?</h3> <a href="#" class="button">See more</a></div>
+  <div class="more"><h3>Want more postcards?</h3> <a href="/postcards/" class="button">See more</a></div>
 </div>
 <?php } else { ?>
 

@@ -113,19 +113,6 @@ if ( is_home() ) { ?>
         </article>
         <?php } ?>
 
-      <?php # If it's a journey post on the National Park Crawl page (refactor this)
-        } elseif ( is_category( 'nationalparks' ) && !is_home() ) { ?>
-        <?php if ( !in_category( 'Postcards' ) ) { ?>
-        <!-- Journey in Postcard Style -->
-        <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'feature-postcard', true); ?>
-        <a class="postcard-item type-journey" id="id-<?php the_ID(); ?>" href="<?php the_permalink() ?>" title="<?php the_title(); ?>" <?php if ( has_post_thumbnail() ) {?>style="background: url(<?php echo $image_url[0]; ?>);"<?php } ?>>
-          <div class="postcard-item-journey-inner">
-            <h2><?php the_title(); ?></h2>
-            <?php the_excerpt(); ?>
-          </div>
-        </a>
-        <?php } ?>
-
       <?php } else {
           get_template_part( 'includes/index-loop' );
         };
@@ -137,11 +124,7 @@ if ( is_home() ) { ?>
     </div>
 
     <?php # If it's not the postcard category:
-    if ( is_home() ) { ?>
-      <div class="sidebar">
-        <?php get_template_part( 'includes/sidebar' ); ?>
-      </div>
-    <?php } elseif ( !in_category( 'Postcards' ) ) { ?>
+      if ( !in_category( 'Postcards' ) ) { ?>
       <div class="sidebar">
         <?php get_template_part( 'includes/sidebar' ); ?>
       </div>
@@ -158,8 +141,6 @@ if ( is_home() ) { ?>
   <?php # Create postcard popout elements
     if (have_posts()) : ?>
   <?php while (have_posts()) : the_post(); ?>
-
-  <?php if (!in_category( 'journey' ) ) { ?>
 
   <div class="postcard-item--popout" id="id-<?php the_ID(); ?>-popout">
     <a href="javascript:void(0);" class="postcard-item-close"></a>
@@ -178,8 +159,6 @@ if ( is_home() ) { ?>
       </div>
     </div>
   </div>
-
-  <?php } ?>
 
 <?php endwhile; ?>
 <?php endif; ?>
