@@ -11,6 +11,7 @@
 @import 'layout/article';
 @import 'layout/primary-links';
 @import 'layout/wordpress';
+@import 'layout/animations';
 
 .resources-open {
   position: absolute;
@@ -33,14 +34,14 @@
 .single.is-subscribe {
   max-width: 90em;
   margin: 0 auto;
-  background: url('../images/subscribe-bg.jpg') center top;
-  background-size: cover;
+  //background: url('../images/subscribe-bg.jpg') center top;
+  //background-size: cover;
   min-height: 35em;
 
   @include media($medium-screen) {
-    @include retina-image('../images/subscribe-bg', cover, jpg, '../images/subscribe-bg@2x');
-    background-size: cover;
-    background-position: center top;
+    //@include retina-image('../images/subscribe-bg', cover, jpg, '../images/subscribe-bg@2x');
+    //background-size: cover;
+    //background-position: center top;
     min-height: 45em;
   }
 

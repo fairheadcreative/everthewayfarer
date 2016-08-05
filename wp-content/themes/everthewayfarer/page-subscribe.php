@@ -29,4 +29,25 @@
   </section>
 </article>
 
+<ul class="slideshow-splash">
+	<li>
+		<span>Ernst Tinaja</span>
+	</li>
+	<li>
+		<span>Cotton in the Big Bend</span>
+	</li>
+	<li>
+		<span>National Park Crawl</span>
+	</li>
+	<li>
+		<span>Northern Nights, Northern Lights</span>
+	</li>
+	<li>
+		<span>Ice Cave</span>
+	</li>
+	<li>
+		<span>Iceland Horses</span>
+	</li>
+</ul>
+
 <?php get_footer(); ?>
