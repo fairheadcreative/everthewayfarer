@@ -1,6 +1,6 @@
 //generic fade-in
 .fade-in {
-  @include fadeIn(.6s, .6s);
+  @include fadeIn(1s, .5s);
 }
 
 //subscribe page and splash slideshow

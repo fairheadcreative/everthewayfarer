@@ -1218,8 +1218,8 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
 
 .fade-in {
   opacity: 1 !important;
-  transition: opacity 0.6s;
-  transition-delay: 0.6s; }
+  transition: opacity 1s;
+  transition-delay: 0.5s; }
 
 .slideshow-splash {
   position: fixed;
@@ -1991,6 +1991,9 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   @media screen and (min-width: 40em) {
     .single.is-subscribe {
       max-width: 70%; } }
+  @media screen and (max-height: 22.5em) {
+    .single.is-subscribe {
+      margin-top: 15px; } }
   .splash-overlay .single.is-subscribe.is-off {
     opacity: 0 !important;
     transition: opacity 0.6s;
@@ -2031,11 +2034,39 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     margin: 0 auto;
     padding: 1.75em 0 .5em;
     font-size: 2em; }
+    @media screen and (max-width: 40em) {
+      .single.is-subscribe h1, .single.is-subscribe .the-content .h1, .the-content .single.is-subscribe .h1, .single.is-subscribe .h1-sub {
+        padding: .5em 0;
+        font-size: 1.5em; } }
+    @media screen and (max-height: 30em) {
+      .single.is-subscribe h1, .single.is-subscribe .the-content .h1, .the-content .single.is-subscribe .h1, .single.is-subscribe .h1-sub {
+        padding: .5em 0;
+        font-size: 1.5em; } }
+    @media screen and (max-height: 22.5em) {
+      .single.is-subscribe h1, .single.is-subscribe .the-content .h1, .the-content .single.is-subscribe .h1, .single.is-subscribe .h1-sub {
+        line-height: .8; } }
   .single.is-subscribe p {
     font-size: 1.15em; }
+    @media screen and (max-width: 40em) {
+      .single.is-subscribe p {
+        font-size: 1em; } }
+    @media screen and (max-height: 30em) {
+      .single.is-subscribe p {
+        font-size: 1em; } }
+    @media screen and (max-height: 22.5em) {
+      .single.is-subscribe p {
+        margin-bottom: .75em; } }
   .single.is-subscribe #mc_embed_signup {
     max-width: 25em;
     margin: 0 auto 3em; }
+    @media screen and (max-width: 40em) {
+      .single.is-subscribe #mc_embed_signup {
+        margin: 0 auto 1.5em;
+        font-size: .8em; } }
+    @media screen and (max-height: 30em) {
+      .single.is-subscribe #mc_embed_signup {
+        margin: 0 auto 1.5em;
+        font-size: .8em; } }
   .single.is-subscribe .email-address {
     display: inline-block;
     width: 70%; }

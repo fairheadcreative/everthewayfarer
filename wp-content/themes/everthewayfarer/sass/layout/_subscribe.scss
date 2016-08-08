@@ -38,6 +38,10 @@
     max-width: 70%;
   }
   
+  @include media(max-height $tiny-screen) {
+    margin-top: 15px;
+  }
+  
   .splash-overlay & {
     &.is-off {
       @include fadeOut(.6s, 0);
@@ -90,13 +94,51 @@
     margin: 0 auto;
     padding: 1.75em 0 .5em;
     font-size: 2em;
+  
+    @include media(max-width $medium-screen) {
+      padding: .5em 0;
+      font-size: 1.5em;
+    }
+    
+    @include media(max-height $small-screen) {
+      padding: .5em 0;
+      font-size: 1.5em;
+    }
+    
+    @include media(max-height $tiny-screen) {
+      line-height: .8;
+    }
   }
   
-  p { font-size: 1.15em; }
+  p { 
+    font-size: 1.15em; 
+  
+    @include media(max-width $medium-screen) {
+      font-size: 1em;
+    }
+    
+    @include media(max-height $small-screen) {
+      font-size: 1em;
+    }
+    
+    @include media(max-height $tiny-screen) {
+      margin-bottom: .75em;
+    }
+  }
 
   #mc_embed_signup {
     max-width: 25em;
     margin: 0 auto 3em;
+  
+    @include media(max-width $medium-screen) {
+      margin: 0 auto 1.5em;
+      font-size: .8em;
+    }
+    
+    @include media(max-height $small-screen) {
+      margin: 0 auto 1.5em;
+      font-size: .8em;
+    }
   }
 
   .email-address {
