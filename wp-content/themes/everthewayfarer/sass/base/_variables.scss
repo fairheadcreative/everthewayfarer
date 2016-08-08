@@ -1,6 +1,7 @@
 // Typography
 $chaparral-pro: "chaparral-pro", serif; // 300 normal, 300 italic, 400 normal, 700 normal
 $franklin-gothic: "franklin-gothic-urw-comp", sans-serif; // 400 normal, 700 normal
+$franklin-gothic-reg: "franklin-gothic", sans-serif; // 400 normal, 700 normal
 
 $sans-serif: $helvetica;
 $serif: $georgia;
@@ -39,9 +40,10 @@ $light-gray-alt: #f1f1f1;
 $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
+$white: #fff;
 
 // Background Color
-$base-background-color: white;
+$base-background-color: $white;
 
 // Font Colors
 $base-font-color: $dark-gray;

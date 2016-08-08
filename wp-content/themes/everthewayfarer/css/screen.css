@@ -383,7 +383,7 @@ input[type="submit"], .button, form.wpcf7-form input[type="submit"] {
 
 body {
   -webkit-font-smoothing: antialiased;
-  background-color: white;
+  background-color: #fff;
   color: #252424;
   font-family: "chaparral-pro", serif;
   font-size: 1em;
@@ -515,7 +515,6 @@ input,
 label,
 select {
   display: block;
-  font-family: "chaparral-pro", serif;
   font-size: 1em; }
 
 label {
@@ -1268,84 +1267,6 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     opacity: 0; }
   100% {
     opacity: 0; } }
-.resources-open {
-  position: absolute;
-  top: 1.25em;
-  right: 2em; }
-
-.resources {
-  background: #eee;
-  padding: 1.85em 2em;
-  position: relative;
-  margin: 2em 0; }
-
-.resources.hide {
-  height: 80px;
-  overflow: hidden; }
-
-.single.is-subscribe {
-  max-width: 90em;
-  margin: 0 auto;
-  min-height: 35em; }
-  @media screen and (min-width: 40em) {
-    .single.is-subscribe {
-      min-height: 45em; } }
-  .single.is-subscribe h1, .single.is-subscribe .the-content .h1, .the-content .single.is-subscribe .h1, .single.is-subscribe .h1-sub {
-    font-family: "chaparral-pro", serif;
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: -0.03em;
-    line-height: 1.13;
-    text-align: center;
-    max-width: 16.5em;
-    margin: 0 auto;
-    padding: 1em 0 .5em;
-    color: white; }
-    @media screen and (min-width: 40em) {
-      .single.is-subscribe h1, .single.is-subscribe .the-content .h1, .the-content .single.is-subscribe .h1, .single.is-subscribe .h1-sub {
-        padding: 2em 0 1.5em; } }
-  .single.is-subscribe #mc_embed_signup {
-    max-width: 25em;
-    margin: 0 auto 1em; }
-  .single.is-subscribe .email-address {
-    float: left;
-    width: 70%; }
-    .single.is-subscribe .email-address input {
-      border-radius: 100px 0 0 100px;
-      text-indent: 10px;
-      height: 40px; }
-  .single.is-subscribe input[type="submit"] {
-    float: right;
-    width: 30%;
-    border-radius: 0 100px 100px 0; }
-  .single.is-subscribe .subscribe-devices {
-    display: none; }
-    @media screen and (min-width: 40em) {
-      .single.is-subscribe .subscribe-devices {
-        background-image: url("../images/subscribe-devices.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        max-width: 400px;
-        clear: both;
-        display: block;
-        width: 400px;
-        height: 230px;
-        margin: 6em auto 1em; } }
-  @media only screen and (min-width: 40em) and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-width: 40em) and (min--moz-device-pixel-ratio: 1.3), only screen and (min-width: 40em) and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-width: 40em) and (min-resolution: 125dpi), only screen and (min-width: 40em) and (min-resolution: 1.3dppx) {
-    .single.is-subscribe .subscribe-devices {
-      background-image: url("../images/subscribe-devices@2x.png");
-      background-size: 400px auto; } }
-
-@media screen and (max-width: 40em) {
-  .gallery .gallery-item {
-    width: 100% !important; } }
-
-form.wpcf7-form {
-  font-size: .8em; }
-  form.wpcf7-form input,
-  form.wpcf7-form textarea {
-    border-radius: 3px; }
-
 /*.postcard-item--preview {
   @include transition(all 0.25s ease-in-out);
   background: white;
@@ -2021,5 +1942,94 @@ form.wpcf7-form {
       position: absolute;
       top: 1em;
       right: 1.25em; } }
+
+.single.is-subscribe {
+  width: 37em;
+  max-width: 90%;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, calc(-50% + 31px));
+  background: #fff;
+  text-align: center;
+  border-radius: 3px; }
+  @media screen and (min-width: 40em) {
+    .single.is-subscribe {
+      max-width: 70%; } }
+  .single.is-subscribe .logo {
+    position: absolute;
+    top: -60px;
+    width: 220px;
+    left: 50%;
+    transform: translateX(-50%); }
+    .single.is-subscribe .logo svg path {
+      fill: white; }
+  .single.is-subscribe h1, .single.is-subscribe .the-content .h1, .the-content .single.is-subscribe .h1, .single.is-subscribe .h1-sub {
+    text-transform: none;
+    line-height: 1;
+    text-align: center;
+    max-width: 16.5em;
+    margin: 0 auto;
+    padding: 1.75em 0 .5em;
+    font-size: 2em; }
+  .single.is-subscribe p {
+    font-size: 1.15em; }
+  .single.is-subscribe #mc_embed_signup {
+    max-width: 25em;
+    margin: 0 auto 3em; }
+  .single.is-subscribe .email-address {
+    display: inline-block;
+    width: 70%; }
+    .single.is-subscribe .email-address input {
+      border-radius: 0;
+      text-indent: 10px;
+      height: 40px;
+      font-family: "franklin-gothic", sans-serif; }
+  .single.is-subscribe input[type="submit"] {
+    border-radius: 0;
+    text-transform: none;
+    width: 70%;
+    font-family: "franklin-gothic", sans-serif; }
+  .single.is-subscribe .modal-sublinks {
+    position: absolute;
+    bottom: -56px;
+    text-align: center;
+    width: 100%;
+    font-family: "franklin-gothic", sans-serif;
+    font-size: .8em; }
+    .single.is-subscribe .modal-sublinks a {
+      color: #fff;
+      margin-right: 2em; }
+      .single.is-subscribe .modal-sublinks a:hover {
+        text-decoration: underline; }
+
+.resources-open {
+  position: absolute;
+  top: 1.25em;
+  right: 2em; }
+
+.resources {
+  background: #eee;
+  padding: 1.85em 2em;
+  position: relative;
+  margin: 2em 0; }
+
+.resources.hide {
+  height: 80px;
+  overflow: hidden; }
+
+@media screen and (max-width: 40em) {
+  .gallery .gallery-item {
+    width: 100% !important; } }
+
+form.wpcf7-form {
+  font-size: .8em; }
+  form.wpcf7-form input,
+  form.wpcf7-form textarea {
+    border-radius: 3px; }
+
+#navigation {
+  background: #fff; }
 
 /*# sourceMappingURL=screen.css.map */
