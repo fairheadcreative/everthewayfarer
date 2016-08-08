@@ -1,7 +1,7 @@
 // Typography
 $chaparral-pro: "chaparral-pro", serif; // 300 normal, 300 italic, 400 normal, 700 normal
 $franklin-gothic: "franklin-gothic-urw-comp", sans-serif; // 400 normal, 700 normal
-$franklin-gothic-reg: "franklin-gothic", sans-serif; // 400 normal, 700 normal
+$helvetica-franklin: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; // 400 normal, 700 normal
 
 $sans-serif: $helvetica;
 $serif: $georgia;
@@ -17,7 +17,6 @@ $h4-font-size: $base-font-size * 1.5;
 $h5-font-size: $base-font-size * 1.2;
 $h6-font-size: $base-font-size * 1.2;
 $article-font-size: 1.2em;
-
 
 // Line height
 $base-line-height: 1.5;
@@ -68,6 +67,9 @@ $success-color: $light-green;
 // Border color
 $base-border-color: $light-gray-alt;
 $base-border: 1px solid $base-border-color;
+
+//animtion
+$base-duration: .3s;
 
 // Forms
 $form-border-color: $base-border-color;

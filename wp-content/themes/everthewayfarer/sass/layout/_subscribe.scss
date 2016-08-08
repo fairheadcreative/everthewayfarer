@@ -1,5 +1,25 @@
 //subscribe modal
 
+.splash-overlay { 
+  z-index: 1001; 
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  transition: opacity .3s;
+  
+  &.is-off {
+    @include fadeOut(.6s, 0);
+    pointer-events: none;
+  }
+  
+  &.is-under {
+    z-index: -1;
+  }
+}
+
 .single.is-subscribe {
   width: 37em;
   max-width: 90%;
@@ -11,22 +31,56 @@
   background: $white;
   text-align: center;
   border-radius: 3px;
+  z-index: 1010;
+  opacity: 0;
   
   @include media($medium-screen){
     max-width: 70%;
   }
+  
+  .splash-overlay & {
+    &.is-off {
+      @include fadeOut(.6s, 0);
+      pointer-events: none;
+    }
 
-  .logo {
-    position: absolute;
-    top: -60px;
-    width: 220px;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    svg path {
-      fill: white;
+    &.is-under {
+      z-index: -1;
+    }
+
+    .logo {
+      position: absolute;
+      top: -60px;
+      width: 220px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+
+      svg path {
+        fill: white;
+      }
+    }
+
+    .modal-sublinks {
+      position: absolute;
+      bottom: -56px;
+      text-align: center;
+      width: 100%;
+      font-family: $helvetica-franklin;
+      font-size: .8em;
+      display: block;
+
+      a {
+        color: $white;
+
+        &:first-child { margin-right: 2em; }
+
+        &:hover { text-decoration: underline; }
+      }
     }
   }
+  
+  .logo { display: none; }
 
   h1 {
     text-transform: none;
@@ -53,7 +107,7 @@
       border-radius: 0;
       text-indent: 10px;
       height: 40px;
-      font-family: $franklin-gothic-reg;
+      font-family: $helvetica-franklin;
     }
   }
 
@@ -61,24 +115,10 @@
     border-radius: 0;
     text-transform: none;
     width: 70%;
-    font-family: $franklin-gothic-reg;
+    font-family: $helvetica-franklin;
   }
 
   .modal-sublinks {
-    position: absolute;
-    bottom: -56px;
-    text-align: center;
-    width: 100%;
-    font-family: $franklin-gothic-reg;
-    font-size: .8em;
-    
-    a {
-      color: $white;
-      margin-right: 2em;
-      
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+    display: none;
   }
 }

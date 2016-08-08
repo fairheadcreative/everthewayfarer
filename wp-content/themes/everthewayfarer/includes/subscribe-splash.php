@@ -1,4 +1,4 @@
-<article class="single is-subscribe">
+<article class="single is-subscribe is-under" data-fadein="true" data-visual="overlay">
   <section id="main group">
    <div class="logo">
      <?php get_template_part( 'includes/logotype' ); ?>
@@ -30,11 +30,11 @@
     </div>
   </section>
   <p class="modal-sublinks">
-    <a href="#">No thanks</a> <a href="#">I'm already on the list</a>
+    <a href="#" data-hide-visual="overlay">No thanks</a> <a href="#" data-hide-visual="overlay">I'm already on the list</a>
   </p>
 </article>
 
-<ul class="slideshow-splash">
+<ul class="slideshow-splash is-under" data-visual="overlay">
 	<li>
 		<span>Ernst Tinaja</span>
 	</li>

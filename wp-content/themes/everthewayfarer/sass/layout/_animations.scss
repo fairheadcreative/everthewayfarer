@@ -1,3 +1,8 @@
+//generic fade-in
+.fade-in {
+  @include fadeIn(.6s, .6s);
+}
+
 //subscribe page and splash slideshow
 .slideshow-splash {
   position: fixed;
@@ -5,7 +10,24 @@
   height: 100%;
   top: 0px;
   left: 0px;
-  z-index: -1; 
+  z-index: 1009; 
+  background: $white;
+  
+  .subscribe-page & {
+    z-index: -1;
+  }
+  
+  .splash-overlay & {
+    &.is-off {
+      @include fadeOut(.6s, 0);
+      pointer-events: none;
+    }
+
+    &.is-under {
+      z-index: -1;
+    }
+  }
+
   
   li span { 
     width: 100%;

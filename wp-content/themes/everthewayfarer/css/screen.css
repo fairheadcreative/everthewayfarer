@@ -1216,13 +1216,28 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
 #wpadminbar {
   position: fixed !important; }
 
+.fade-in {
+  opacity: 1 !important;
+  transition: opacity 0.6s;
+  transition-delay: 0.6s; }
+
 .slideshow-splash {
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0px;
   left: 0px;
-  z-index: -1; }
+  z-index: 1009;
+  background: #fff; }
+  .subscribe-page .slideshow-splash {
+    z-index: -1; }
+  .splash-overlay .slideshow-splash.is-off {
+    opacity: 0 !important;
+    transition: opacity 0.6s;
+    transition-delay: 0;
+    pointer-events: none; }
+  .splash-overlay .slideshow-splash.is-under {
+    z-index: -1; }
   .slideshow-splash li span {
     width: 100%;
     height: 100%;
@@ -1943,6 +1958,23 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       top: 1em;
       right: 1.25em; } }
 
+.splash-overlay {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  transition: opacity .3s; }
+  .splash-overlay.is-off {
+    opacity: 0 !important;
+    transition: opacity 0.6s;
+    transition-delay: 0;
+    pointer-events: none; }
+  .splash-overlay.is-under {
+    z-index: -1; }
+
 .single.is-subscribe {
   width: 37em;
   max-width: 90%;
@@ -1953,18 +1985,44 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   transform: translate(-50%, calc(-50% + 31px));
   background: #fff;
   text-align: center;
-  border-radius: 3px; }
+  border-radius: 3px;
+  z-index: 1010;
+  opacity: 0; }
   @media screen and (min-width: 40em) {
     .single.is-subscribe {
       max-width: 70%; } }
-  .single.is-subscribe .logo {
+  .splash-overlay .single.is-subscribe.is-off {
+    opacity: 0 !important;
+    transition: opacity 0.6s;
+    transition-delay: 0;
+    pointer-events: none; }
+  .splash-overlay .single.is-subscribe.is-under {
+    z-index: -1; }
+  .splash-overlay .single.is-subscribe .logo {
     position: absolute;
     top: -60px;
     width: 220px;
     left: 50%;
-    transform: translateX(-50%); }
-    .single.is-subscribe .logo svg path {
+    transform: translateX(-50%);
+    display: block; }
+    .splash-overlay .single.is-subscribe .logo svg path {
       fill: white; }
+  .splash-overlay .single.is-subscribe .modal-sublinks {
+    position: absolute;
+    bottom: -56px;
+    text-align: center;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
+    font-size: .8em;
+    display: block; }
+    .splash-overlay .single.is-subscribe .modal-sublinks a {
+      color: #fff; }
+      .splash-overlay .single.is-subscribe .modal-sublinks a:first-child {
+        margin-right: 2em; }
+      .splash-overlay .single.is-subscribe .modal-sublinks a:hover {
+        text-decoration: underline; }
+  .single.is-subscribe .logo {
+    display: none; }
   .single.is-subscribe h1, .single.is-subscribe .the-content .h1, .the-content .single.is-subscribe .h1, .single.is-subscribe .h1-sub {
     text-transform: none;
     line-height: 1;
@@ -1985,24 +2043,14 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       border-radius: 0;
       text-indent: 10px;
       height: 40px;
-      font-family: "franklin-gothic", sans-serif; }
+      font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; }
   .single.is-subscribe input[type="submit"] {
     border-radius: 0;
     text-transform: none;
     width: 70%;
-    font-family: "franklin-gothic", sans-serif; }
+    font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; }
   .single.is-subscribe .modal-sublinks {
-    position: absolute;
-    bottom: -56px;
-    text-align: center;
-    width: 100%;
-    font-family: "franklin-gothic", sans-serif;
-    font-size: .8em; }
-    .single.is-subscribe .modal-sublinks a {
-      color: #fff;
-      margin-right: 2em; }
-      .single.is-subscribe .modal-sublinks a:hover {
-        text-decoration: underline; }
+    display: none; }
 
 .resources-open {
   position: absolute;

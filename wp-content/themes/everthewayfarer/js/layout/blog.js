@@ -80,5 +80,28 @@ jQuery(function($) {
     e.stopPropagation();
   });
 
+  $(document).ready(function(){
+    
+    //fadeout overlays
+    $('[data-hide-visual]').on('click', function(){
+      var getTarget = $(this).attr('data-hide-visual');
+      $('[data-visual="'+getTarget+'"]').addClass('is-off');
+    });
+    
+    //remove overlay if on subscribe page
+    if($('.subscribe-page').length > 0) {
+      $('.splash-overlay').remove();
+    }
+    
+    //fade in the subscribe page
+    $('.subscribe-page [data-fadein="true"]').addClass('fade-in').removeClass('is-under');
+    
+    //check for popState cookie in local storage and check if overlay's already been shown. If not, show it and set it as shown
+    if(localStorage.getItem('popState') != 'seen'){ 
+      $('.splash-overlay[data-fadein="true"], .splash-overlay [data-fadein="true"]').addClass('fade-in').removeClass('is-under');
+      localStorage.setItem('popState','seen');
+    }
+  
+  });
 
 });

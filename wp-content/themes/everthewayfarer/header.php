@@ -37,3 +37,6 @@
       </div>
     </nav>
   </header>
+  <div class="splash-overlay is-under" data-visual="overlay" data-fadein="true">
+    <?php get_template_part( 'includes/subscribe-splash' ); ?>
+  </div>
