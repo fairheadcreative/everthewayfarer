@@ -22,6 +22,11 @@
 }
 
 
+#navigation {
+  background: $white;
+  text-align: center;
+}
+
 // Page header links
 #primary-links {
   padding: .5em 0 0;
@@ -99,17 +104,16 @@
 
   // Header logo
   .logo a {
-    background: url('../images/logomark.svg') no-repeat;
-    background-size: contain;
-    display: block;
-    text-indent: -999em;
-    float: left;
+    display: inline-block;
+    //float: left;
     width: 180px;
     height: 47px;
-    font-weight: 700; 
-    letter-spacing: -.05em;
     white-space: nowrap;
     padding: .3em 0 0;
+    
+    svg path {
+      fill: $pink; 
+    }
 
     @include media(400px) {
       width: 210px;
@@ -134,6 +138,7 @@
     width: 35%;
     height: 47px;
     overflow: hidden;
+    margin-top: .35em;
 
     @include media($medium-screen) { 
       height: 50px;
@@ -149,9 +154,65 @@
   // List item that contains main nav elements
   // On small screens, use a horizontal scroll
   .nav-primary {
-    @include media($large-screen) {
-      position: relative;
-      top: -10px;
+    position: relative;
+    float: left;
+    padding: .5em 1.5em;
+    margin-top: .5em;
+    background: $light-gray;
+    border: 1px solid darken($light-gray, 10);
+    border-radius: 3px;
+    cursor: pointer;
+    min-width: 180px;
+    text-align: right;
+    
+    .page-active {
+      display: block;
+      float: left;
+    }
+    
+    .rotate-90 {
+      margin-left: .5em;
+      font-size: .7em;
+      font-family: sans-serif;
+      line-height: 0;
+      transform: rotate(90deg) scaleY(2);
+      color: darken($light-gray, 10);
+    }
+
+    ul {
+      display: none;
+      position: absolute;
+      z-index: 10;
+      left: -1px;
+      border: 1px solid darken($light-gray, 10);
+      border-top: 1px solid darken($light-gray, 10);
+      top: 38px;
+      text-align: left;
+      width: calc(100% + 2px);
+      border-radius: 0 0 3px 3px;
+
+      li {
+        float: left;
+        display: block;
+        width: 100%;
+        background: darken($light-gray, 3);
+        border-bottom: 1px solid darken($light-gray, 10);
+        padding: .35em 1.5em;
+        transition: background .3s;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+      
+        &:hover {
+          background: darken($light-gray, 5);
+        }
+      }
+    }
+
+    &:hover {
+      border-radius: 3px 3px 0 0;
+      ul { display: block; }
     }
 
     @include media(max-width $large-screen) {

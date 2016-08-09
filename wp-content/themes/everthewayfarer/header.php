@@ -18,21 +18,23 @@
     <nav id="navigation"> 
       <div class="container">
         <ul id="primary-links">
-          <li class="logo"><a href="<?php echo site_url(); ?>">Ever the Wayfarer</a></li>
-          <?php if (!is_page('subscribe')) {?><li class="nav-primary-3"><a class="button" href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li><?php } ?>
           <li class="nav-primary">
-            <a class="nav-primary-1 <?php if (!is_home() && is_category('Postcard') || !is_home() && has_category('Postcards')){ echo 'active'; };?>" href="<?php echo site_url(); ?>/postcards/">Postcards</a> 
-            <a class="nav-primary-1 <?php if (!is_home() && is_category('Journey') || !is_home() && has_category('Journey')){ echo 'active'; };?>" href="<?php echo site_url(); ?>/journey/">Journeys</a>
-            <a class="nav-primary-1 <?php if (!is_home() && is_category('News') || !is_home() && has_category('News')){ echo 'active'; };?>" href="<?php echo site_url(); ?>/news/">News</a>
-            <a class="nav-primary-1 <?php if (!is_home() && is_category('Gear') || !is_home() && has_category('Gear')) { echo 'active'; };?>" href="<?php echo site_url(); ?>/gear/">Gear &amp; Reviews</a>
-            <a class="nav-primary-1" href="http://www.suntrailimages.com">Photography</a>
-            <a class="nav-primary-2 <?php if (!is_home() && is_page('about')){ echo 'active'; };?>" href="<?php echo site_url(); ?>/about/">About</a>
-            <a class="nav-primary-2 <?php if (!is_home() && is_page('resources')){ echo 'active'; };?>" href="<?php echo site_url(); ?>/resources/">Resources</a>
-
-            <a class="nav-primary-twitter " href="https://twitter.com/WayfaringSiv" target="_blank">Twitter</a>
-            <a class="nav-primary-facebook " href="https://www.facebook.com/pages/Ever-The-Wayfarer/480037682086654" target="_blank">Facebook</a>
-            <a class="nav-primary-instagram " href="https://instagram.com/wayfaringsiv/" target="_blank">Instagram</a>
+           <span class="page-active">&nbsp;</span><span class="rotate-90">&gt;</span>
+            <ul>
+              <li class="nav-primary-1 <?php if (!is_home() && is_category('Postcard') || !is_home() && has_category('Postcards')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/postcards/">Latest Postcards</a></li>
+              <li class="nav-primary-1 <?php if (!is_home() && is_category('Journey') || !is_home() && has_category('Journey')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/journey/">Journeys</a></li>
+              <li class="nav-primary-1 <?php if (!is_home() && is_category('News') || !is_home() && has_category('News')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/news/">News</a></li>
+              <li class="nav-primary-1 <?php if (!is_home() && is_category('Gear') || !is_home() && has_category('Gear')) { echo 'active'; };?>"><a href="<?php echo site_url(); ?>/gear/">Gear &amp; Reviews</a></li>
+              <li class="nav-primary-1"><a href="http://www.suntrailimages.com">Photography</a></li>
+              <li class="nav-primary-2 <?php if (!is_home() && is_page('about')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/about/">About</a></li>
+              <li class="nav-primary-2 <?php if (!is_home() && is_page('resources')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/resources/">Resources</a></li>
+              <li><a class="nav-primary-twitter " href="https://twitter.com/WayfaringSiv" target="_blank">Twitter</a></li>
+              <li><a class="nav-primary-facebook " href="https://www.facebook.com/pages/Ever-The-Wayfarer/480037682086654" target="_blank">Facebook</a></li>
+              <li><a class="nav-primary-instagram " href="https://instagram.com/wayfaringsiv/" target="_blank">Instagram</a></li>
+            </ul>  
           </li>
+          <li class="logo"><a href="<?php echo site_url(); ?>"><?php get_template_part( 'includes/logotype' ); ?></a></li>
+          <?php if (!is_page('subscribe')) {?><li class="nav-primary-3"><a class="button" href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li><?php } ?>
         </ul>
       </div>
     </nav>
@@ -40,3 +42,9 @@
   <div class="splash-overlay is-under" data-visual="overlay" data-fadein="true">
     <?php get_template_part( 'includes/subscribe-splash' ); ?>
   </div>
+  <script>
+  var activeElement = jQuery('.nav-primary-1.active'),
+      activeContent = activeElement.html();
+    jQuery('.page-active').html(activeContent);
+    activeElement.remove();
+  </script>

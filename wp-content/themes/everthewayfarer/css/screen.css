@@ -638,6 +638,10 @@ input[type="submit"] {
   vertical-align: middle;
   white-space: nowrap; }
 
+.rotate-90 {
+  transform: rotate(90deg);
+  display: inline-block; }
+
 /* Neat 1.7.0
  * http://neat.bourbon.io
  * Copyright 2012-2014 thoughtbot, inc.
@@ -1094,6 +1098,10 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
 #page-header {
   border-bottom: 1px solid #f1f1f1; }
 
+#navigation {
+  background: #fff;
+  text-align: center; }
+
 #primary-links {
   padding: .5em 0 0;
   font-family: "franklin-gothic-urw-comp", sans-serif;
@@ -1145,17 +1153,13 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     #primary-links li .nav-primary-instagram:hover {
       background-position: -20px -17px; }
   #primary-links .logo a {
-    background: url("../images/logomark.svg") no-repeat;
-    background-size: contain;
-    display: block;
-    text-indent: -999em;
-    float: left;
+    display: inline-block;
     width: 180px;
     height: 47px;
-    font-weight: 700;
-    letter-spacing: -.05em;
     white-space: nowrap;
     padding: .3em 0 0; }
+    #primary-links .logo a svg path {
+      fill: #d58097; }
     @media screen and (min-width: 400px) {
       #primary-links .logo a {
         width: 210px;
@@ -1174,28 +1178,73 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     text-align: right;
     width: 35%;
     height: 47px;
-    overflow: hidden; }
+    overflow: hidden;
+    margin-top: .35em; }
     @media screen and (min-width: 40em) {
       #primary-links .nav-primary-3 {
         height: 50px;
         padding-top: .2em; } }
     #primary-links .nav-primary-3 a {
       max-width: 100%; }
-  @media screen and (min-width: 53.75em) {
-    #primary-links .nav-primary {
-      position: relative;
-      top: -10px; } }
-  @media screen and (max-width: 53.75em) {
-    #primary-links .nav-primary {
-      background: #fafafa;
-      display: block !important;
-      margin: 0 -1em;
-      padding: .5em 1em;
-      clear: both;
-      border-top: 1px solid #f1f1f1 !important;
-      border-bottom: 1px solid #f1f1f1; }
-      #primary-links .nav-primary a {
-        margin-right: .75em; } }
+  #primary-links .nav-primary {
+    position: relative;
+    float: left;
+    padding: .5em 1.5em;
+    margin-top: .5em;
+    background: #fafafa;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    cursor: pointer;
+    min-width: 180px;
+    text-align: right; }
+    #primary-links .nav-primary .page-active {
+      display: block;
+      float: left; }
+    #primary-links .nav-primary .rotate-90 {
+      margin-left: .5em;
+      font-size: .7em;
+      font-family: sans-serif;
+      line-height: 0;
+      transform: rotate(90deg) scaleY(2);
+      color: #e1e1e1; }
+    #primary-links .nav-primary ul {
+      display: none;
+      position: absolute;
+      z-index: 10;
+      left: -1px;
+      border: 1px solid #e1e1e1;
+      border-top: 1px solid #e1e1e1;
+      top: 38px;
+      text-align: left;
+      width: calc(100% + 2px);
+      border-radius: 0 0 3px 3px; }
+      #primary-links .nav-primary ul li {
+        float: left;
+        display: block;
+        width: 100%;
+        background: #f2f2f2;
+        border-bottom: 1px solid #e1e1e1;
+        padding: .35em 1.5em;
+        transition: background .3s; }
+        #primary-links .nav-primary ul li:last-child {
+          border-bottom: none; }
+        #primary-links .nav-primary ul li:hover {
+          background: #ededed; }
+    #primary-links .nav-primary:hover {
+      border-radius: 3px 3px 0 0; }
+      #primary-links .nav-primary:hover ul {
+        display: block; }
+    @media screen and (max-width: 53.75em) {
+      #primary-links .nav-primary {
+        background: #fafafa;
+        display: block !important;
+        margin: 0 -1em;
+        padding: .5em 1em;
+        clear: both;
+        border-top: 1px solid #f1f1f1 !important;
+        border-bottom: 1px solid #f1f1f1; }
+        #primary-links .nav-primary a {
+          margin-right: .75em; } }
   @media screen and (max-width: 53.75em) and (max-width: 40em) {
     #primary-links .nav-primary {
       overflow-x: scroll;
@@ -1345,6 +1394,7 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       width: 920px; } }
 
 .articles .postcard-item {
+  overflow: hidden;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
@@ -2107,8 +2157,5 @@ form.wpcf7-form {
   form.wpcf7-form input,
   form.wpcf7-form textarea {
     border-radius: 3px; }
-
-#navigation {
-  background: #fff; }
 
 /*# sourceMappingURL=screen.css.map */
