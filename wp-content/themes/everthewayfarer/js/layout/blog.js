@@ -101,6 +101,13 @@ jQuery(function($) {
       $('.splash-overlay[data-fadein="true"], .splash-overlay [data-fadein="true"]').addClass('fade-in').removeClass('is-under');
       localStorage.setItem('popState','seen');
     }
+    
+    //place active element on top of the navigation dropdown   
+    var activeElement = $('.nav-primary-1.active'),
+        activeContent = activeElement.html();
+    
+        $('.page-active').html(activeContent);
+        activeElement.remove();
   
   });
 

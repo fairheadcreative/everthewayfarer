@@ -25,7 +25,7 @@ if ( is_home() ) { ?>
   <div class="container group">
     <?php if ( is_home() ) { ?>
       <div class="articles" style="min-height: 0;">
-        <a href="/nationalparks/">
+        <a href="<?php echo site_url(); ?>/nationalparks/"> 
         <div class="article-subscribe is-homenp">
           <div class="inner">
             <h2 class="h1">Park Crawl 2016</h2>
