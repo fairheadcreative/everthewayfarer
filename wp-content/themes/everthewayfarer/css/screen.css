@@ -1083,6 +1083,44 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
         .article-writer .button:last-child, .article-writer form.wpcf7-form input[type="submit"]:last-child, form.wpcf7-form .article-writer input[type="submit"]:last-child {
           margin-right: 0; } }
 
+.splash-article-previous a, .splash-article-next a {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  opacity: .6;
+  transition: opacity .3s; }
+  .splash-article-previous a:hover, .splash-article-next a:hover {
+    opacity: 1; }
+  .splash-article-previous a span, .splash-article-next a span {
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 100%; }
+    .splash-article-previous a span .line-thin, .splash-article-next a span .line-thin {
+      display: inline-block;
+      height: 3px;
+      width: 25px;
+      background: white;
+      position: absolute; }
+      .splash-article-previous a span .line-thin:first-child, .splash-article-next a span .line-thin:first-child {
+        -webkit-transform: rotate(45deg) translate(1px, -8px);
+        transform: rotate(45deg) translate(1px, -8px); }
+      .splash-article-previous a span .line-thin:last-child, .splash-article-next a span .line-thin:last-child {
+        -webkit-transform: rotate(-45deg) translate(20px, -10px);
+        transform: rotate(-45deg) translate(20px, -10px); }
+
+.splash-article-previous a {
+  left: 0; }
+  .splash-article-previous a span {
+    transform: translate(0, -50%); }
+
+.splash-article-next a {
+  right: 0; }
+  .splash-article-next a span {
+    -webkit-transform: translate(-100%, calc(-50% - 25px)) rotate(180deg);
+    transform: translate(-100%, calc(-50% - 25px)) rotate(180deg); }
+
 .button, form.wpcf7-form input[type="submit"] {
   font-family: "franklin-gothic-urw-comp", sans-serif;
   text-transform: uppercase;
@@ -1838,9 +1876,11 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     .minisiv-postcard-message.is-hidden {
       opacity: 0; } }
 .single-postcard-bg {
-  background: #484848 url("../images/pc-bg.jpg") center repeat-y;
-  background-size: 80%;
-  height: 100%; }
+  position: absolute;
+  top: 74px;
+  bottom: 0;
+  left: 0;
+  right: 0; }
   @media screen and (min-width: 40em) {
     .single-postcard-bg {
       background-size: 70%; } }
@@ -1852,7 +1892,8 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     max-width: 40em;
     text-align: center;
     position: relative;
-    top: 4em; }
+    top: 4em;
+    clear: both; }
     .single-postcard-bg .more h3 {
       display: inline-block;
       color: white;
@@ -1886,6 +1927,9 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   -webkit-transition: opacity 0.25s ease-in-out;
   -moz-transition: opacity 0.25s ease-in-out;
   transition: opacity 0.25s ease-in-out;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
   background: white;
   z-index: -1;
   position: fixed;
@@ -1893,30 +1937,24 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   right: 2%;
   width: 96%;
   opacity: 0; }
+  .postcard-item--popout:after {
+    content: "";
+    display: table;
+    clear: both; }
   .postcard-item--popout.is-open {
     position: absolute;
     opacity: 1;
     z-index: 99;
-    top: 10px; }
-  .single .postcard-item--popout.is-open {
-    top: 1em;
-    position: relative; }
-    @media screen and (min-width: 40em) {
-      .single .postcard-item--popout.is-open {
-        top: 2em;
-        left: 0; } }
+    top: 50%;
+    -webkit-transform: translateY(-55%);
+    transform: translateY(-55%); }
+  @media screen and (min-width: 40em) {
+    .single .postcard-item--popout.is-open {
+      left: 0; } }
   @media screen and (min-width: 40em) {
     .postcard-item--popout {
-      width: 600px;
-      margin: 0 auto; }
-      .postcard-item--popout.is-open {
-        top: 2em; } }
-  @media screen and (min-width: 53.75em) {
-    .postcard-item--popout {
-      width: 750px; } }
-  @media screen and (min-width: 68.75em) {
-    .postcard-item--popout {
-      width: 960px; } }
+      width: 750px;
+      margin: 0 auto; } }
   .postcard-item--popout .postcard-item--image {
     height: 350px;
     overflow: hidden;
@@ -1930,56 +1968,58 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
         float: left; } }
     @media screen and (min-width: 53.75em) {
       .postcard-item--popout .postcard-item--image {
-        width: 60%;
-        height: 400px; } }
+        width: 60%; } }
     @media screen and (min-width: 68.75em) {
       .postcard-item--popout .postcard-item--image {
-        width: 70%;
-        height: 450px; } }
+        width: 70%; } }
   .postcard-item--popout .postcard-item--content {
     padding: 1em;
-    background: white; }
+    background: white;
+    width: 100%; }
     @media screen and (min-width: 40em) {
       .postcard-item--popout .postcard-item--content {
-        padding: 7em 1em 0em;
-        width: 45%;
-        float: right;
-        height: 350px; } }
+        padding: 1em;
+        float: right; } }
     @media screen and (min-width: 53.75em) {
       .postcard-item--popout .postcard-item--content {
-        padding: 7em 1.5em 0em;
-        width: 40%;
-        height: 400px; } }
-    @media screen and (min-width: 68.75em) {
-      .postcard-item--popout .postcard-item--content {
-        width: 30%;
-        height: 450px; } }
+        padding: 1em 1.5em; } }
   @media screen and (min-width: 40em) {
     .postcard-item--popout .postcard-item--content--message {
-      max-height: 90px;
-      overflow: scroll;
-      overflow-x: hidden;
       padding-left: 1em;
       padding-right: 1em;
-      margin: 0 -1em; } }
+      margin: 0 -1em;
+      border-right: 3px solid #fafafa;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 74.41059%; }
+      .postcard-item--popout .postcard-item--content--message:last-child {
+        margin-right: 0; } }
   @media screen and (min-width: 53.75em) {
     .postcard-item--popout .postcard-item--content--message {
-      max-height: 130px;
       padding-left: 1.5em;
       padding-right: 1.5em;
       margin: 0 -1.5em; } }
-  @media screen and (min-width: 68.75em) {
-    .postcard-item--popout .postcard-item--content--message {
-      max-height: 180px; } }
+  .postcard-item--popout .postcard-item--content--message h1, .postcard-item--popout .postcard-item--content--message .the-content .h1, .the-content .postcard-item--popout .postcard-item--content--message .h1, .postcard-item--popout .postcard-item--content--message .h1-sub {
+    text-align: center;
+    color: #999;
+    margin: 1em 0; }
+  .postcard-item--popout .postcard-item--content--message .postcard-close {
+    position: absolute;
+    font-family: sans-serif;
+    font-size: .9em;
+    transform: scaleX(1.2); }
+    .postcard-item--popout .postcard-item--content--message .postcard-close a {
+      color: #252424; }
   .postcard-item--popout .postcard-item--content--signature {
     background: url("../images/postcard-sig.jpg") 0 15px no-repeat;
     background-size: 200px auto;
-    width: 100%;
+    width: 200px;
     height: 85px;
-    margin-bottom: .6em; }
-    @media screen and (min-width: 40em) {
-      .postcard-item--popout .postcard-item--content--signature {
-        border-top: 1px solid #f1f1f1; } }
+    margin-bottom: .6em;
+    position: absolute;
+    bottom: 1em;
+    right: 1em; }
   .postcard-item--popout .button.facebook, .postcard-item--popout form.wpcf7-form input.facebook[type="submit"], form.wpcf7-form .postcard-item--popout input.facebook[type="submit"] {
     background-color: #4e68bb;
     background-image: -webkit-linear-gradient(#4e68bb, #3d52a0);

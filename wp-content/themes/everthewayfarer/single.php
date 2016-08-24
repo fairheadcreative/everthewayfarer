@@ -6,24 +6,31 @@
 <?php while (have_posts()) : the_post(); ?>
 
 <?php if ( in_category('Postcards')) { ?>
-<div class="single-postcard-bg">
+<?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'large', true); ?>
+<div class="single-postcard-bg" style="background: url(<?php echo $image_url[0]; ?>) no-repeat center center / cover">
   <div class="postcard-item--popout is-open" id="id-<?php the_ID(); ?>-popout">
     <div class="inner">
-      <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'large', true); ?>
-      <div class="postcard-item--image" style="background-image: url('<?php echo $image_url[0]; ?>');">
+      
+      <!--<div class="postcard-item--image" style="background-image: url('<?php echo $image_url[0]; ?>');">
         <img src="<?php echo $image_url[0]; ?>" alt="<?php the_title(); ?>" />
-      </div>
+      </div>-->
       <div class="postcard-item--content">
         <div class="postcard-item--content--message">
+        <div class="postcard-close">
+          <a href="<?php echo site_url(); ?>/postcards/" data-url-animation="fadeout">X</a>
+        </div>
+         <h1><?php the_title(); ?></h1>
           <?php the_content(); ?>
+        <a class="button button-pc facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>"><span>Share this photo</span></a>
         </div>
         <div class="postcard-item--content--signature">
         </div>
-        <a class="button button-pc facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>"><span>Share this photo</span></a>
       </div>
     </div>
+  <!--<div class="more"><h3>Want more postcards?</h3> <a href="/postcards/" class="button">See more</a></div>-->
   </div>
-  <div class="more"><h3>Want more postcards?</h3> <a href="/postcards/" class="button">See more</a></div>
+  <div class="splash-article-previous"><?php previous_post_link('%link', '<span><span class="line-thin"></span><span class="line-thin"></span></span>', TRUE); ?></div>
+  <div class="splash-article-next"><?php next_post_link('%link', '<span><span class="line-thin"></span><span class="line-thin"></span></span>', TRUE); ?></div>          
 </div>
 <?php } else { ?>
 

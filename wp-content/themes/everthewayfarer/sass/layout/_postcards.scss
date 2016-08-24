@@ -471,9 +471,11 @@
 }
 
 .single-postcard-bg {
-  background: #484848 url('../images/pc-bg.jpg') center repeat-y;
-  background-size: 80%;
-  height: 100%;
+    position: absolute;
+    top: 74px;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
   @include media($medium-screen) {
     background-size: 70%;
@@ -489,6 +491,7 @@
     text-align: center;
     position: relative;
     top: 4em;
+    clear: both;
 
     h3 {
       display: inline-block;
@@ -528,6 +531,7 @@
 .postcard-item--popout {
   // Set shape and size of postcard, and hide it
   @include transition(opacity 0.25s ease-in-out); 
+  @include outer-container();
   background: white;
   z-index: -1;
   position: fixed;
@@ -541,30 +545,32 @@
     position: absolute;
     opacity: 1;
     z-index: 99; 
-    top: 10px;
+    top: 50%;
+    -webkit-transform: translateY(-55%);
+    transform: translateY(-55%);
   }
 
   .single &.is-open {
-    top: 1em;
-    position: relative;
+    //top: 1em;
+    //position: relative;
 
     @include media($medium-screen) {
-      top: 2em;
+      //top: 2em;
       left: 0;
     }
   }
 
   // Give the postcard fixed shape
   @include media($medium-screen) {
-    width: 600px;
+    width: 750px;
     margin: 0 auto;
 
-    &.is-open { top: 2em; }
+    //&.is-open { top: 2em; }
   }
 
   // Make the postcard larger
-  @include media($large-screen) { width: 750px; }
-  @include media($x-large-screen) { width: 960px; }
+  //@include media($large-screen) { width: 750px; }
+  //@include media($x-large-screen) { width: 960px; }
 
   // The postcard's image
   .postcard-item--image {
@@ -584,71 +590,80 @@
     // Increase the size
     @include media($large-screen) {
       width: 60%;
-      height: 400px;
+      //height: 400px;
     }
 
     @include media($x-large-screen) {
       width: 70%;
-      height: 450px;
+      //height: 450px;
     }
   }
 
-  // Postcar message/content
+  // Postcard message/content
   .postcard-item--content {
     padding: 1em;
     background: white;
+    @include fill-parent();
     
     @include media($medium-screen) {
-      padding: 7em 1em 0em;
-      width: 45%;
+      padding: 1em;
+      //width: 45%;
       float: right;
-      height: 350px;
+      //height: 350px;
     }
 
     @include media($large-screen) {
-      padding: 7em 1.5em 0em;
-      width: 40%;
-      height: 400px;
+      padding: 1em 1.5em;
+      //width: 40%;
+      //height: 400px;
     }
 
     @include media($x-large-screen) {
-      width: 30%;
-      height: 450px;
+      //width: 30%;
+      //height: 450px;
     }
   }
 
   .postcard-item--content--message {
     @include media($medium-screen) {
-      max-height:90px;
-      overflow: scroll;
-      overflow-x: hidden;
       padding-left: 1em;
       padding-right: 1em;
       margin: 0 -1em;
+      border-right: 3px solid $light-gray;
+      @include span-columns(9);
     }
 
     @include media($large-screen) {
-      max-height: 130px;
+      //max-height: 130px;
       padding-left: 1.5em;
       padding-right: 1.5em;
       margin: 0 -1.5em;
     }
 
-    @include media($x-large-screen) {
-      max-height: 180px;
+    h1 { 
+      text-align: center; 
+      color: $medium-gray;
+      margin: 1em 0;
+    }
+    .postcard-close {
+      position: absolute;
+      font-family: sans-serif;
+      font-size: .9em;
+      transform: scaleX(1.2);
+      
+      a { color: $dark-gray; }
     }
   }
 
   .postcard-item--content--signature {
     background: url('../images/postcard-sig.jpg') 0 15px no-repeat;
     background-size: 200px auto;
-    width: 100%;
+    width: 200px;
     height: 85px;
     margin-bottom: .6em;
-
-    @include media($medium-screen) {
-      border-top: $base-border;
-    }
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
   }
 
   .button.facebook {

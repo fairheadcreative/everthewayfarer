@@ -100,7 +100,7 @@ jQuery(function($) {
     if(localStorage.getItem('popState') != 'seen'){ 
       $('.splash-overlay[data-fadein="true"], .splash-overlay [data-fadein="true"]').addClass('fade-in').removeClass('is-under');
       localStorage.setItem('popState','seen');
-    }
+    }else{$('.splash-overlay').remove();}
     
     //place active element on top of the navigation dropdown   
     var activeElement = $('[class^="nav-primary-"].active'),

@@ -343,3 +343,57 @@ a article .meta {
     }
   }
 }
+
+//previous next arrows - splash article navigation (like postcards)
+.splash-article-previous a, .splash-article-next a {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  opacity: .6;
+  transition: opacity .3s;
+  
+  &:hover { opacity: 1; }
+  
+  span { 
+    position: absolute; 
+    top: 50%;
+    width: 60px;
+    height: 100%;
+    
+    .line-thin {
+      display: inline-block;
+      height: 3px;
+      width: 25px;
+      background: white;
+      position: absolute;
+      
+      &:first-child {
+        -webkit-transform: rotate(45deg) translate(1px, -8px);
+        transform: rotate(45deg) translate(1px, -8px);
+      }
+      
+      &:last-child {
+        -webkit-transform: rotate(-45deg) translate(20px, -10px);
+        transform: rotate(-45deg) translate(20px, -10px);
+      }
+    }
+  }
+}
+
+.splash-article-previous a {
+    left: 0;
+  
+  span { 
+    transform: translate(0, -50%);
+  }
+}
+
+.splash-article-next a {
+    right: 0;
+  
+  span { 
+    -webkit-transform: translate(-100%, calc(-50% - 25px)) rotate(180deg);
+    transform: translate(-100%, calc(-50% - 25px)) rotate(180deg);
+  }
+}
