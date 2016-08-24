@@ -103,7 +103,7 @@ jQuery(function($) {
     }
     
     //place active element on top of the navigation dropdown   
-    var activeElement = $('.nav-primary-1.active'),
+    var activeElement = $('[class^="nav-primary-"].active'),
         activeContent = activeElement.html();
     
         $('.page-active').html(activeContent);

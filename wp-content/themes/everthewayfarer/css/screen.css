@@ -1245,22 +1245,24 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
         border-bottom: 1px solid #f1f1f1; }
         #primary-links .nav-primary a {
           margin-right: .75em; } }
-  @media screen and (max-width: 53.75em) and (max-width: 40em) {
-    #primary-links .nav-primary {
-      overflow-x: scroll;
-      white-space: nowrap; } }
-
+    @media screen and (max-width: 53.75em) {
+      #primary-links .nav-primary {
+        margin: .25em -1em 0 0; } }
+    @media screen and (max-width: 40em) {
+      #primary-links .nav-primary {
+        white-space: nowrap; } }
   @media screen and (min-width: 40em) {
     #primary-links li a {
-      margin-right: .75em; }
-    #primary-links .logo,
-    #primary-links .nav-primary-3 {
-      float: none;
-      width: auto;
-      height: auto;
-      display: inline-block; }
-    #primary-links .nav-primary-3 {
-      float: right; } }
+      margin-right: .75em; } }
+  #primary-links .logo,
+  #primary-links .nav-primary-3 {
+    width: auto;
+    height: auto;
+    display: inline-block; }
+  #primary-links .nav-primary-3 {
+    float: right; }
+  #primary-links .logo {
+    float: none; }
 
 #wpadminbar {
   position: fixed !important; }

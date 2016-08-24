@@ -227,11 +227,12 @@
       a {
         margin-right: .75em;
       }
+    }
+    
+    @include media(max-width em(860)){ margin: .25em -1em 0 0; }
 
-      @include media(max-width $medium-screen) {
-        overflow-x: scroll;
-        white-space: nowrap;
-      }
+    @include media(max-width $medium-screen) {
+      white-space: nowrap;
     }
   }
 
@@ -240,17 +241,20 @@
     li a {
       margin-right: .75em;
     }
+  }
 
-    .logo,
-    .nav-primary-3 {
-      float: none;
-      width: auto;
-      height: auto;
-      display: inline-block;
-    }
-    
-    .nav-primary-3 {
-      float: right;
-    }
+  .logo,
+  .nav-primary-3 {
+    width: auto;
+    height: auto;
+    display: inline-block;
+  }
+
+  .nav-primary-3 {
+    float: right;
+  }
+
+  .logo {
+    float: none;
   }
 }
