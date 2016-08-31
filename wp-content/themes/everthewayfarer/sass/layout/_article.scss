@@ -25,7 +25,11 @@ a article .meta {
 
   .the-content {
     p, h2, h3, h4, h5, h6 {
-      max-width: em(550);
+      max-width: 100%;
+      
+      @include media($large-screen){
+        max-width: calc(100% - 18.75em);
+      }
     }
 
     .wp-caption {
@@ -158,6 +162,7 @@ a article .meta {
     top: 0;
     right: 0;
     opacity: .1;
+    pointer-events: none;
   }
 
   #map-wrapper:after {
@@ -294,7 +299,7 @@ a article .meta {
 
   .sidebar-follower.fixed {
     position: fixed;
-    top: 40px;
+    top: 110px;
     max-width: (em(300) - $base-padding);
     width: 100%;
   }
@@ -344,56 +349,54 @@ a article .meta {
   }
 }
 
-//previous next arrows - splash article navigation (like postcards)
-.splash-article-previous a, .splash-article-next a {
-  position: absolute;
-  display: block;
-  top: 0;
-  bottom: 0;
-  opacity: .6;
-  transition: opacity .3s;
+//subscribe big image
+.article-subscribe.is-homenp {
+  margin-top: 0;
+  height: 260px;
+  background: url("../images/nationalparks-read-thin@2x.jpg") no-repeat center right;
+  background-size: cover;
+  position: relative;
+  padding: 2em 12em 2em 2em;
+  margin: 2em 0;
+  font-size: 1em;
+  max-width: 893px;
   
-  &:hover { opacity: 1; }
-  
-  span { 
-    position: absolute; 
-    top: 50%;
-    width: 60px;
-    height: 100%;
-    
-    .line-thin {
-      display: inline-block;
-      height: 3px;
-      width: 25px;
-      background: white;
-      position: absolute;
-      
-      &:first-child {
-        -webkit-transform: rotate(45deg) translate(1px, -8px);
-        transform: rotate(45deg) translate(1px, -8px);
-      }
-      
-      &:last-child {
-        -webkit-transform: rotate(-45deg) translate(20px, -10px);
-        transform: rotate(-45deg) translate(20px, -10px);
-      }
-    }
-  }
-}
-
-.splash-article-previous a {
+  .inner {
+    position: absolute;
     left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1em 1em 1.5em;
+    background: -webkit-linear-gradient(transparent, rgba(0,0,0,0.75));
+    background: -o-linear-gradient(transparent, rgba(0,0,0,0.75));
+    background: -moz-linear-gradient(transparent, rgba(0,0,0,0.75));
+    background: linear-gradient(transparent, rgba(0,0,0,0.75));
+  }
   
-  span { 
-    transform: translate(0, -50%);
+  h2 {
+    display: block;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    font-size: 2em;
+  }
+  
+  p {
+    display: inline;
+    color: white;
+    margin-left: 10px;
+  }
+  
+  .button {
+    background: white;
+    position: absolute;
+    right: 1.1em;
+    color: black;
+    bottom: .55em;
   }
 }
 
-.splash-article-next a {
-    right: 0;
-  
-  span { 
-    -webkit-transform: translate(-100%, calc(-50% - 25px)) rotate(180deg);
-    transform: translate(-100%, calc(-50% - 25px)) rotate(180deg);
-  }
+.page-id-8 .keep-reading a:last-child article {
+  border-bottom: none;
 }

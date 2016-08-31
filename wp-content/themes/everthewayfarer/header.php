@@ -20,9 +20,15 @@
         <ul id="primary-links">
           <li class="nav-primary">
            <span class="page-active">&nbsp;</span><span class="rotate-90">&gt;</span>
+           <span class="menu-toggler">
+             <span class="hamby">&nbsp;</span>
+             <span class="hamby">&nbsp;</span>
+             <span class="hamby">&nbsp;</span>
+           </span>
             <ul>
               <li class="nav-primary-1 <?php if (!is_home() && is_category('Postcard') || !is_home() && has_category('Postcards')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/postcards/">Latest Postcards</a></li>
               <li class="nav-primary-1 <?php if (!is_home() && is_category('Journey') || !is_home() && has_category('Journey')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/journey/">Journeys</a></li>
+              <!--<li class="nav-primary-1 <?php if (!is_home() && is_category('National Parks') || !is_home() && has_category('National Parks')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/nationalparks/">Park Crawl</a></li>-->
               <li class="nav-primary-1 <?php if (!is_home() && is_category('News') || !is_home() && has_category('News')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/news/">News</a></li>
               <li class="nav-primary-1 <?php if (!is_home() && is_category('Gear') || !is_home() && has_category('Gear')) { echo 'active'; };?>"><a href="<?php echo site_url(); ?>/gear/">Gear &amp; Reviews</a></li>
               <li class="nav-primary-1"><a href="http://www.suntrailimages.com">Photography</a></li>
@@ -30,9 +36,7 @@
               <li class="nav-primary-2 <?php if (!is_home() && is_page('resources')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/resources/">Resources</a></li>
               <li class="nav-primary-1 <?php if (is_home()){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>">Homepage</a></li>
               <li class="nav-primary-1 <?php if (!is_home() && is_page('subscribe')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li>
-              <li><a class="nav-primary-twitter " href="https://twitter.com/WayfaringSiv" target="_blank">Twitter</a></li>
-              <li><a class="nav-primary-facebook " href="https://www.facebook.com/pages/Ever-The-Wayfarer/480037682086654" target="_blank">Facebook</a></li>
-              <li><a class="nav-primary-instagram " href="https://instagram.com/wayfaringsiv/" target="_blank">Instagram</a></li>
+              <li><a class="nav-primary-twitter " href="https://twitter.com/WayfaringSiv" target="_blank">Twitter</a> <a class="nav-primary-facebook " href="https://www.facebook.com/pages/Ever-The-Wayfarer/480037682086654" target="_blank">Facebook</a> <a class="nav-primary-instagram " href="https://instagram.com/wayfaringsiv/" target="_blank">Instagram</a></li>
             </ul>  
           </li>
           <li class="logo"><a href="<?php echo site_url(); ?>"><?php get_template_part( 'includes/logotype' ); ?></a></li>

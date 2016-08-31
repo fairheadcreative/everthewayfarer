@@ -1,9 +1,38 @@
 // Add 'visible()' jQuery functionality
-;(function(e){e.fn.visible=function(t,n,r){var i=e(this).eq(0),s=i.get(0),o=e(window),u=o.scrollTop(),a=u+o.height(),f=o.scrollLeft(),l=f+o.width(),c=i.offset().top,h=c+i.height(),p=i.offset().left,d=p+i.width(),v=t===true?h:c,m=t===true?c:h,g=t===true?d:p,y=t===true?p:d,b=n===true?s.offsetWidth*s.offsetHeight:true,r=r?r:"both";if(r==="both")return!!b&&m<=a&&v>=u&&y<=l&&g>=f;else if(r==="vertical")return!!b&&m<=a&&v>=u;else if(r==="horizontal")return!!b&&y<=l&&g>=f}})(jQuery);
+/*
+(function (e) {
+  e.fn.visible = function (t, n, r) {
+    var i = e(this).eq(0),
+      s = i.get(0),
+      o = e(window),
+      u = o.scrollTop(),
+      a = u + o.height(),
+      f = o.scrollLeft(),
+      l = f + o.width(),
+      c = i.offset().top,
+      h = c + i.height(),
+      p = i.offset().left,
+      d = p + i.width(),
+      v = t === true ? h : c,
+      m = t === true ? c : h,
+      g = t === true ? d : p,
+      y = t === true ? p : d,
+      b = n === true ? s.offsetWidth * s.offsetHeight : true,
+      r = r ? r : "both";
+    if (r === "both") return !!b && m <= a && v >= u && y <= l && g >= f;
+    else if (r === "vertical") return !!b && m <= a && v >= u;
+    else if (r === "horizontal") return !!b && y <= l && g >= f
+  }
+})(jQuery);
+*/
 
 jQuery(function($) {
+  
+  var winWidth = $(window).width(),
+      winHeight = $(window).innerHeight(),
+      activeElement = $('[class^="nav-primary-"].active');
   // If wide display…
-  if ($(window).width() > 767) {
+  if (winWidth > 767) {
     // Use full-size featured image when screen is big enough
     $("[data-full]").each(function() {
       var image_large = $(this).attr('data-full');
@@ -15,7 +44,7 @@ jQuery(function($) {
   // If scroll…
   $(window).scroll(function() {
     // Fix Follower sidebar section to the side when scrolling down
-    if ($('#sidebar').visible(true) || $('header').visible(true) || $('.sidebar .stock').visible(true)) {
+   /* if ($('#sidebar').visible(true) || $('header').visible(true) || $('.sidebar .stock').visible(true)) {
       $('.sidebar-follower').removeClass('fixed');
     } else {
       $('.sidebar-follower').addClass('fixed');
@@ -26,6 +55,15 @@ jQuery(function($) {
       $('.sidebar-subscribe').fadeOut();
     } else {
       $('.sidebar-subscribe').fadeIn();
+    }
+    */
+    
+    //attach class to top menu if scrolled
+    var navigation = $('#navigation');
+    if($('#navigation').offset().top > 1){
+      navigation.addClass('is-scrolled');
+    }else{
+      navigation.removeClass('is-scrolled');
     }
   });
 
@@ -38,7 +76,7 @@ jQuery(function($) {
       $('.resources-open').fadeOut();
     });
   }
-
+/*
   $(document).on('click', '.postcard-item', function() {
     if ($(this).hasClass('is-open')) {
     } else {
@@ -51,7 +89,7 @@ jQuery(function($) {
       console.log(val + '-popout');
       $('#' + val + '-popout').addClass('is-open').css("margin-top", $(window).scrollTop());
 
-
+ */
       // Create MiniSiv
       /*$('<div class="minisiv-postcard is-pre is-hidden"></div><div class="minisiv-postcard-message is-hidden"></div>').prependTo('.postcard-item--popout.is-open');
       
@@ -67,19 +105,21 @@ jQuery(function($) {
       setTimeout(function() {
         $('.minisiv-postcard-message.is-hidden').removeClass('is-hidden');
       }, 2500);*/
-    }
+/*    }
   });
+  */
+/*
   $(document).on('click', '.postcard-item-close', function(e) {
     $('body').removeClass('postcard-is-open');
     $('.postcard-item.is-open, .postcard-item--popout.is-open').removeClass('is-open');
-
+*/
     /*setTimeout(function() {
       $('.minisiv-postcard, .minisiv-postcard-message').remove();
     }, 500);*/
-
+/*
     e.stopPropagation();
   });
-
+*/
   $(document).ready(function(){
     
     //fadeout overlays
@@ -101,14 +141,48 @@ jQuery(function($) {
       $('.splash-overlay[data-fadein="true"], .splash-overlay [data-fadein="true"]').addClass('fade-in').removeClass('is-under');
       localStorage.setItem('popState','seen');
     }else{$('.splash-overlay').remove();}
-    
-    //place active element on top of the navigation dropdown   
-    var activeElement = $('[class^="nav-primary-"].active'),
-        activeContent = activeElement.html();
-    
+
+    //place active element on top of the navigation dropdown 
+    var activeContent = activeElement.html();
         $('.page-active').html(activeContent);
-        activeElement.remove();
+    setNav();
+    
+    //hide/show mobile navigation
+    $('.menu-toggler').on('click', function(){
+      $('.nav-primary').toggleClass('nav-opened');
+      $('.hamby').toggleClass('nav-animate');
+    });
+    
+    $('.category-postcards #map-wrapper, .home #map-wrapper, .category-nationalparks #map-wrapper').height(winHeight-75);
+    $('.category-postcards #map, .home #map, .category-nationalparks #map').height(winHeight);
+    
+    mapsize();
+  });
   
+  $(window).on('resize', function(){
+    mapsize();
+    setNav();
   });
 
+  //calculate side map width 
+  function mapsize(){
+    var mapWidth = ($(window).width() - $('#main > .container.group').width())/2-32;
+        $('.category-postcards #map-wrapper, .home #map-wrapper, .category-nationalparks #map-wrapper').css({
+          'width': mapWidth,
+          'opacity': 1
+        });
+    map.invalidateSize();
+  }; 
+  
+  //show/hide active nav element depending on screen width
+  function setNav(){
+    if (winWidth >= 860) {
+        activeElement.hide();
+      $('.nav-primary').removeClass('toggler-active');
+    }else{ 
+        activeElement.show();
+      $('.nav-primary').addClass('toggler-active');
+    };       
+  }
+  
 });

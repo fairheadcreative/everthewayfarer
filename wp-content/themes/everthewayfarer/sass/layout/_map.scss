@@ -30,6 +30,25 @@
       top: 360px;
     }
   }
+  
+  
+  &.map-side {
+    display: none;
+    
+    @include media(em(1440)) {
+      display: block;
+      position: fixed;
+      right: 0;
+      top: 66px;
+      bottom: 0;
+      opacity: 0; 
+      transition: opacity .6s;
+    }
+  }
+  
+  .admin-bar & { 
+    &.map-side { top: 98px; }
+  }
 }
 
 

@@ -8,12 +8,33 @@ body,
   @include full-height;
 }
 
+body {
+  background: $light-gray;
+    
+    &.single-post,
+    &.category-news,
+    &.category-gear {
+      background: $white;
+    }   
+}
+
 
 // Page container / limiter
 .container {
   @include outer-container;
   padding: 0 1em;
   position: relative;
+}
+
+//grid elements
+.span-6 { 
+  @include span-columns(12); 
+  
+  @include media($medium-screen) {
+    @include span-columns(6); 
+    @include omega(2n); 
+  }
+
 }
 
 
@@ -32,18 +53,27 @@ body,
   
   // Continue sidebar coloring beyond the container width
   @include media($large-screen) {
-    @include linear-gradient(90deg, white 0%, white 75%, $light-gray 76%, $light-gray 100%);
+    
+    body.single-post &,
+    body.category-news &,
+    body.category-gear & {
+      @include linear-gradient(90deg, white 0%, white 75%, $light-gray 76%, $light-gray 100%);
+    }    
   }
 }
 
 
 // Article list sections
 .articles {
-  min-height: 650px;
-
-  // Make space for sidebar on large displays
-  @include media($large-screen) {
-    margin-right: em(320);
+  @include outer-container();
+  
+  .category-news &,
+  .category-gear & ,
+  .category-journey &,
+  .single-post & { 
+    @include media(em(860)){
+      margin-right: 20em;
+    }
   }
 
   p,
@@ -52,11 +82,11 @@ body,
   }
 
   &.articles-mixed p {
-    max-width: 30em;
+    //max-width: 30em;
   }
 
   &.articles-mixed h2 {
-    max-width: 23.25em;
+    //max-width: 23.25em;
   }
 
   a h2,
@@ -88,7 +118,6 @@ body,
     }
   }
 }
-
 
 // Page sidebar
 .sidebar {

@@ -2,3 +2,19 @@
 #wpadminbar {
   position: fixed !important;
 }
+
+body {
+  padding-top: 44px;
+
+  @include media($small-screen) {
+    padding-top: 66px;
+  } 
+  
+  &.admin-bar {
+    padding-top: 42px;
+
+    @include media($small-screen) {
+      padding-top: 66px;
+    } 
+  }
+}
