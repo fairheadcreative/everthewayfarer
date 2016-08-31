@@ -9,21 +9,22 @@
 <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'large', true); ?>
 <div class="single-postcard-bg" style="background: url(<?php echo $image_url[0]; ?>) no-repeat center center / cover">
   <div class="postcard-item--popout is-open" id="id-<?php the_ID(); ?>-popout">
-    <div class="inner">
-      <div class="postcard-item--content">
-        <div class="postcard-item--content--message">
-        <div class="postcard-close">
-          <a href="<?php echo site_url(); ?>/postcards/" data-url-animation="fadeout">X</a>
-        </div>
-         <h1><?php the_title(); ?></h1>      
-        <div class="postcard-item--image">
-          <img src="<?php echo $image_url[0]; ?>" alt="<?php the_title(); ?>" />
-        </div>
-          <?php the_content(); ?>
-        <a class="button button-pc facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>"><span>Share this photo</span></a>
-        </div>
-        <div class="postcard-item--content--signature">
-        </div>
+    <div class="postcard-item--content">
+      <div class="postcard-item--content--message">
+      <div class="postcard-close">
+        <a href="<?php echo site_url(); ?>/postcards/" data-url-animation="fadeout">X</a>
+      </div>
+       <h1><?php the_title(); ?></h1>      
+      <div class="postcard-item--image">
+        <img src="<?php echo $image_url[0]; ?>" alt="<?php the_title(); ?>" />
+      </div>
+      <div class="postcard-item--content--text">
+        <?php the_content(); ?>
+      </div>
+
+      <a class="button button-pc facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>"><span>Share this photo</span></a>
+      </div>
+      <div class="postcard-item--content--signature">
       </div>
     </div>
   <!--<div class="more"><h3>Want more postcards?</h3> <a href="/postcards/" class="button">See more</a></div>-->

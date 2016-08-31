@@ -1,36 +1,9 @@
-// Add 'visible()' jQuery functionality
-/*
-(function (e) {
-  e.fn.visible = function (t, n, r) {
-    var i = e(this).eq(0),
-      s = i.get(0),
-      o = e(window),
-      u = o.scrollTop(),
-      a = u + o.height(),
-      f = o.scrollLeft(),
-      l = f + o.width(),
-      c = i.offset().top,
-      h = c + i.height(),
-      p = i.offset().left,
-      d = p + i.width(),
-      v = t === true ? h : c,
-      m = t === true ? c : h,
-      g = t === true ? d : p,
-      y = t === true ? p : d,
-      b = n === true ? s.offsetWidth * s.offsetHeight : true,
-      r = r ? r : "both";
-    if (r === "both") return !!b && m <= a && v >= u && y <= l && g >= f;
-    else if (r === "vertical") return !!b && m <= a && v >= u;
-    else if (r === "horizontal") return !!b && y <= l && g >= f
-  }
-})(jQuery);
-*/
-
 jQuery(function($) {
   
   var winWidth = $(window).width(),
       winHeight = $(window).innerHeight(),
       activeElement = $('[class^="nav-primary-"].active');
+  
   // If wide display…
   if (winWidth > 767) {
     // Use full-size featured image when screen is big enough
@@ -43,20 +16,6 @@ jQuery(function($) {
 
   // If scroll…
   $(window).scroll(function() {
-    // Fix Follower sidebar section to the side when scrolling down
-   /* if ($('#sidebar').visible(true) || $('header').visible(true) || $('.sidebar .stock').visible(true)) {
-      $('.sidebar-follower').removeClass('fixed');
-    } else {
-      $('.sidebar-follower').addClass('fixed');
-    }
-
-    // Hide Subscribe from the side while big subscribe section is visible
-    if ($('.article-subscribe').visible(true)) {
-      $('.sidebar-subscribe').fadeOut();
-    } else {
-      $('.sidebar-subscribe').fadeIn();
-    }
-    */
     
     //attach class to top menu if scrolled
     var navigation = $('#navigation');
@@ -76,50 +35,7 @@ jQuery(function($) {
       $('.resources-open').fadeOut();
     });
   }
-/*
-  $(document).on('click', '.postcard-item', function() {
-    if ($(this).hasClass('is-open')) {
-    } else {
-      // Set the classes
-      $('body').addClass('postcard-is-open');
-      $(this).addClass('is-open');
-      
-      // Open up the popout
-      var val = $(this).attr('id');
-      console.log(val + '-popout');
-      $('#' + val + '-popout').addClass('is-open').css("margin-top", $(window).scrollTop());
 
- */
-      // Create MiniSiv
-      /*$('<div class="minisiv-postcard is-pre is-hidden"></div><div class="minisiv-postcard-message is-hidden"></div>').prependTo('.postcard-item--popout.is-open');
-      
-      setTimeout(function() {
-        $('.minisiv-postcard.is-hidden').removeClass('is-hidden');
-
-        setTimeout(function() {
-          $('.minisiv-postcard.is-pre').removeClass('is-pre');
-        }, 1000);
-
-      }, 2000);
-
-      setTimeout(function() {
-        $('.minisiv-postcard-message.is-hidden').removeClass('is-hidden');
-      }, 2500);*/
-/*    }
-  });
-  */
-/*
-  $(document).on('click', '.postcard-item-close', function(e) {
-    $('body').removeClass('postcard-is-open');
-    $('.postcard-item.is-open, .postcard-item--popout.is-open').removeClass('is-open');
-*/
-    /*setTimeout(function() {
-      $('.minisiv-postcard, .minisiv-postcard-message').remove();
-    }, 500);*/
-/*
-    e.stopPropagation();
-  });
-*/
   $(document).ready(function(){
     
     //fadeout overlays
@@ -145,7 +61,6 @@ jQuery(function($) {
     //place active element on top of the navigation dropdown 
     var activeContent = activeElement.html();
         $('.page-active').html(activeContent);
-    setNav();
     
     //hide/show mobile navigation
     $('.menu-toggler').on('click', function(){
@@ -157,21 +72,28 @@ jQuery(function($) {
     $('.category-postcards #map, .home #map, .category-nationalparks #map').height(winHeight);
     
     mapsize();
+    setPostcard();
+    setNav();
   });
   
   $(window).on('resize', function(){
+    winWidth = $(window).width();
     mapsize();
     setNav();
+    setPostcard();
   });
 
   //calculate side map width 
   function mapsize(){
-    var mapWidth = ($(window).width() - $('#main > .container.group').width())/2-32;
-        $('.category-postcards #map-wrapper, .home #map-wrapper, .category-nationalparks #map-wrapper').css({
-          'width': mapWidth,
-          'opacity': 1
-        });
-    map.invalidateSize();
+    if($('#map-wrapper').length > 0){
+       var mapWidth = ($(window).width() - $('#main > .container.group').width())/2-32;
+          $('.category-postcards #map-wrapper, .home #map-wrapper, .category-nationalparks #map-wrapper').css({
+            'width': mapWidth,
+            'opacity': 1
+          });
+      map.invalidateSize();     
+    }
+
   }; 
   
   //show/hide active nav element depending on screen width
@@ -183,6 +105,41 @@ jQuery(function($) {
         activeElement.show();
       $('.nav-primary').addClass('toggler-active');
     };       
-  }
+  };
+  
+  //set postcard dimensions
+  function setPostcard(){
+    var titleHeightMobile = $('.postcard-item--popout h1').height()/2,
+        navHeight = $('#navigation').outerHeight(),
+        postcardHeight = $('.postcard-item--popout').height(),
+        titleHeightDesktop = $('.postcard-item--popout h1').height()+125,
+        faceBtn = $('.postcard-item--popout .button-pc.facebook').outerHeight(),
+        singleButtons = $('.splash-article-previous a, .splash-article-next a'),
+        postcardText = $('.postcard-item--content--text'),
+        textHeight = postcardHeight - titleHeightDesktop - faceBtn;
+    
+    if(winWidth < 640){
+      
+      console.log(' postcardHeight = ' + postcardHeight +' titleHeightDesktop = ' + titleHeightDesktop +' faceBtn = ' + faceBtn +' textHeight = ' + textHeight);
+      
+      navPos = titleHeightMobile+navHeight-32;
+      singleButtons.css({'top': navPos});
+      postcardText.css({'height': 'auto'});
+      
+    }else if(winWidth > 640){
+      
+      console.log(' postcardHeight = ' + postcardHeight +' titleHeightDesktop = ' + titleHeightDesktop +' faceBtn = ' + faceBtn +' textHeight = ' + textHeight);
+      
+      postcardText.height(textHeight);
+      singleButtons.css({'top': 0});
+    }else{
+      
+      console.log(' postcardHeight = ' + postcardHeight +' titleHeightDesktop = ' + titleHeightDesktop +' faceBtn = ' + faceBtn +' textHeight = ' + textHeight);
+      
+      navPos = titleHeightMobile+navHeight;
+      singleButtons.css({'top': navPos});
+      postcardText.css({'height': 'auto'});
+    }
+  };
   
 });
