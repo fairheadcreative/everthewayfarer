@@ -10,7 +10,7 @@ if ( is_home() ) { ?>
     </div>
   </div>
 <?php } elseif ( is_category( 'Journey' ) ) { ?>
-  <div id="map-wrapper">
+  <div id="map-wrapper" class="map-side">
     <div class="container">
       <h1>Journeys</h1>
     </div>
@@ -72,78 +72,93 @@ if ( is_home() ) { ?>
       <div>
       <?php while (have_posts()) : the_post(); ?>
 
-      <?php # If it's the postcard category:
-        if ( in_category( 'Postcards' ) && is_home() || in_category( 'Postcards' ) ) { ?>
-        <?php if (in_category('postcard-a')) { ?>
-        <!-- Postcard Type A -->
-        <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-          <article class="postcard-item type-a" id="id-<?php the_ID(); ?>">
-            <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
-            <h2><?php the_title(); ?></h2>
-            <div class="border"></div>
-          </article>
-        </a>   
-        <?php } ?>
+        <?php # If it's the postcard category:
+          if ( in_category( 'Postcards' ) && is_home() || in_category( 'Postcards' ) ) { ?>
+          <?php if (in_category('postcard-a')) { ?>
+          <!-- Postcard Type A -->
+          <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <article class="postcard-item type-a" id="id-<?php the_ID(); ?>">
+              <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
+              <h2><?php the_title(); ?></h2>
+              <div class="border"></div>
+            </article>
+          </a>   
+          <?php } ?>
 
-        <?php if (in_category('postcard-b')) { ?>
-        <!-- Postcard Type B -->
-        <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-          <article class="postcard-item type-b" id="id-<?php the_ID(); ?>">
-            <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
-            <h2><span><?php the_title(); ?></span></h2>
-            <div class="border"></div>
-          </article>
-        </a>                     
-        <?php } ?>
+          <?php if (in_category('postcard-b')) { ?>
+          <!-- Postcard Type B -->
+          <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <article class="postcard-item type-b" id="id-<?php the_ID(); ?>">
+              <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
+              <h2><span><?php the_title(); ?></span></h2>
+              <div class="border"></div>
+            </article>
+          </a>                     
+          <?php } ?>
 
-        <?php if (in_category('postcard-c')) { ?>
-        <!-- Postcard Type C -->
-        <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-          <article class="postcard-item type-c" id="id-<?php the_ID(); ?>">
-            <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
-            <h2><?php the_title(); ?></h2>
-            <p><?php the_field('postcard_c_subheading'); ?></p>
-          </article>
-        </a>   
-        <?php } ?>
+          <?php if (in_category('postcard-c')) { ?>
+          <!-- Postcard Type C -->
+          <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <article class="postcard-item type-c" id="id-<?php the_ID(); ?>">
+              <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
+              <h2><?php the_title(); ?></h2>
+              <p><?php the_field('postcard_c_subheading'); ?></p>
+            </article>
+          </a>   
+          <?php } ?>
 
-        <?php if (in_category('postcard-d')) { ?>
-        <!-- Postcard Type C -->
-        <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-          <article class="postcard-item type-d" id="id-<?php the_ID(); ?>">
-            <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
-            <p><?php the_field('postcard_d_intro'); ?></p>
-            <h2><?php the_title(); ?></h2>
-            <div class="border"></div>
-          </article>
-        </a>   
-        <?php } ?>
+          <?php if (in_category('postcard-d')) { ?>
+          <!-- Postcard Type C -->
+          <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <article class="postcard-item type-d" id="id-<?php the_ID(); ?>">
+              <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
+              <p><?php the_field('postcard_d_intro'); ?></p>
+              <h2><?php the_title(); ?></h2>
+              <div class="border"></div>
+            </article>
+          </a>   
+          <?php } ?>
 
-        <?php if (in_category('postcard-e')) { ?>
-        <!-- Postcard Type E -->
-        <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-          <article class="postcard-item type-e" id="id-<?php the_ID(); ?>">
-            <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
-            <p><?php $post_date = mysql2date("Y", $post->post_date_gmt); echo $post_date; ?></p>
-            <h2><?php the_title(); ?></h2>
-            <div class="border"></div>
-          </article>
-        </a>   
-        <?php } ?>
+          <?php if (in_category('postcard-e')) { ?>
+          <!-- Postcard Type E -->
+          <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <article class="postcard-item type-e" id="id-<?php the_ID(); ?>">
+              <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
+              <p><?php $post_date = mysql2date("Y", $post->post_date_gmt); echo $post_date; ?></p>
+              <h2><?php the_title(); ?></h2>
+              <div class="border"></div>
+            </article>
+          </a>   
+          <?php } ?>
 
-        <?php if (in_category('postcard-f')) { ?>
-        <!-- Postcard Type F -->
-        <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-          <article class="postcard-item type-f" id="id-<?php the_ID(); ?>">
-            <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
-            <h2><span><em><?php the_title(); ?></em></span></h2>
-            <div class="border"></div>
-          </article>
-        </a>   
+          <?php if (in_category('postcard-f')) { ?>
+          <!-- Postcard Type F -->
+          <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <article class="postcard-item type-f" id="id-<?php the_ID(); ?>">
+              <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
+              <h2><span><em><?php the_title(); ?></em></span></h2>
+              <div class="border"></div>
+            </article>
+          </a>   
+          <?php } ?>
+
+          <?php # If it's a journey post on the National Park Crawl page (refactor this)
+          } elseif ( is_category( 'nationalparks' ) || is_home() ) { ?>
+          <?php if ( !in_category( 'Postcards' ) ) { ?>
+          <!-- Journey in Postcard Style -->
+          <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'feature-postcard', true); ?>
+          <a class="span-6 postcard-item-container" id="id-<?php the_ID(); ?>" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <article class="postcard-item type-journey" id="id-<?php the_ID(); ?>" <?php if ( has_post_thumbnail() ) {?>style="background: url(<?php echo $image_url[0]; ?>) no-repeat center center / cover;"<?php } ?>>
+              <div class="postcard-item-journey-inner">
+                <h2><?php the_title(); ?></h2>
+                <?php the_excerpt(); ?>
+              </div>
+            </article>
+          </a>
         <?php } ?>
 
         <?php # If it's a journey post on the National Park Crawl page (refactor this)
-        } elseif ( is_category( 'nationalparks' ) || is_home() ) { ?>
+        } elseif ( is_category( 'Journey' ) && !is_home() ) { ?>
         <?php if ( !in_category( 'Postcards' ) ) { ?>
         <!-- Journey in Postcard Style -->
         <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'feature-postcard', true); ?>
@@ -155,8 +170,8 @@ if ( is_home() ) { ?>
             </div>
           </article>
         </a>
-        <?php } ?>
-
+      <?php } ?>
+        
         <?php } else {
             get_template_part( 'includes/index-loop' );
           };
@@ -167,7 +182,7 @@ if ( is_home() ) { ?>
 
     </div>
 
-    <?php # If it's not the postcard category:
+    <?php /*# If it's not the postcard category:
     if ( !is_home() && !in_category( 'Postcards' ) ) { ?>
       <div class="sidebar">
         <?php get_template_part( 'includes/sidebar' ); ?>
@@ -176,7 +191,7 @@ if ( is_home() ) { ?>
       <div class="sidebar">
         <?php get_template_part( 'includes/sidebar' ); ?>
       </div>
-    <?php }; ?>
+    <?php }; */?>
   </div>
 </section>
 

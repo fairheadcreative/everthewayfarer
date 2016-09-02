@@ -72,7 +72,7 @@ jQuery(function($) {
     $('.category-postcards #map, .home #map, .category-nationalparks #map').height(winHeight);
     
     mapsize();
-    setPostcard();
+    setTimeout(setPostcard, 100);
     setNav();
   });
   
@@ -87,7 +87,7 @@ jQuery(function($) {
   function mapsize(){
     if($('#map-wrapper').length > 0){
        var mapWidth = ($(window).width() - $('#main > .container.group').width())/2-32;
-          $('.category-postcards #map-wrapper, .home #map-wrapper, .category-nationalparks #map-wrapper').css({
+          $('.category-postcards #map-wrapper, .home #map-wrapper, .category-nationalparks #map-wrapper, .category-journeys #map-wrapper').css({
             'width': mapWidth,
             'opacity': 1
           });
@@ -112,33 +112,28 @@ jQuery(function($) {
     var titleHeightMobile = $('.postcard-item--popout h1').height()/2,
         navHeight = $('#navigation').outerHeight(),
         postcardHeight = $('.postcard-item--popout').height(),
-        titleHeightDesktop = $('.postcard-item--popout h1').height()+125,
+        titleHeightDesktop = $('.postcard-item--popout h1').height(),
         faceBtn = $('.postcard-item--popout .button-pc.facebook').outerHeight(),
         singleButtons = $('.splash-article-previous a, .splash-article-next a'),
         postcardText = $('.postcard-item--content--text'),
-        textHeight = postcardHeight - titleHeightDesktop - faceBtn;
+        textHeight = postcardHeight - titleHeightDesktop - faceBtn - 125;
     
     if(winWidth < 640){
       
-      console.log(' postcardHeight = ' + postcardHeight +' titleHeightDesktop = ' + titleHeightDesktop +' faceBtn = ' + faceBtn +' textHeight = ' + textHeight);
+      //console.log(' postcardHeight = ' + postcardHeight +' titleHeightDesktop = ' + titleHeightDesktop +' faceBtn = ' + faceBtn +' textHeight = ' + textHeight);
+      console.log('<640');
       
       navPos = titleHeightMobile+navHeight-32;
       singleButtons.css({'top': navPos});
       postcardText.css({'height': 'auto'});
       
-    }else if(winWidth > 640){
-      
-      console.log(' postcardHeight = ' + postcardHeight +' titleHeightDesktop = ' + titleHeightDesktop +' faceBtn = ' + faceBtn +' textHeight = ' + textHeight);
-      
-      postcardText.height(textHeight);
-      singleButtons.css({'top': 0});
     }else{
       
       console.log(' postcardHeight = ' + postcardHeight +' titleHeightDesktop = ' + titleHeightDesktop +' faceBtn = ' + faceBtn +' textHeight = ' + textHeight);
+      console.log('>640');
       
-      navPos = titleHeightMobile+navHeight;
-      singleButtons.css({'top': navPos});
-      postcardText.css({'height': 'auto'});
+      postcardText.height(textHeight);
+      singleButtons.css({'top': 0});
     }
   };
   

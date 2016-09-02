@@ -29,6 +29,7 @@ body {
 //grid elements
 .span-6 { 
   @include span-columns(12); 
+  position: relative;
   
   @include media($medium-screen) {
     @include span-columns(6); 
@@ -50,23 +51,13 @@ body {
   background-size: 100% 100%;
   max-width: $max-bleed-width;
   margin: 0 auto;
-  
-  // Continue sidebar coloring beyond the container width
-  @include media($large-screen) {
-    
-    body.single-post &,
-    body.category-news &,
-    body.category-gear & {
-      @include linear-gradient(90deg, white 0%, white 75%, $light-gray 76%, $light-gray 100%);
-    }    
-  }
 }
 
 
 // Article list sections
 .articles {
   @include outer-container();
-  
+/*  
   .category-news &,
   .category-gear & ,
   .category-journey &,
@@ -74,8 +65,9 @@ body {
     @include media(em(860)){
       margin-right: 20em;
     }
+  
   }
-
+*/
   p,
   li {
     font-size: $article-font-size;
