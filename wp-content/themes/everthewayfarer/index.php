@@ -4,7 +4,7 @@
 if ( is_home() ) { ?>
   <div id="map-wrapper" class="map-side">
     <div class="container">
-      <h1>Wayfaring journeys from around the world</h1>
+      <!--<h1>Wayfaring journeys from around the world</h1>-->
     </div>
     <div id="map">
     </div>
@@ -12,7 +12,7 @@ if ( is_home() ) { ?>
 <?php } elseif ( is_category( 'Journey' ) ) { ?>
   <div id="map-wrapper" class="map-side">
     <div class="container">
-      <h1>Journeys</h1>
+      <!--<h1>Journeys</h1>>-->
     </div>
     <div id="map">
     </div>
@@ -20,7 +20,7 @@ if ( is_home() ) { ?>
 <?php } elseif ( is_category( 'Postcards' ) ) { ?>
   <div id="map-wrapper" class="map-side">
     <div class="container">
-      <h1>Latest Postcards</h1>
+      <!--<h1>Latest Postcards</h1>>-->
     </div>
     <div id="map">
     </div>
@@ -28,7 +28,7 @@ if ( is_home() ) { ?>
 <?php } elseif ( is_category( 'National Parks' ) ) { ?>
   <div id="map-wrapper" class="map-side">
     <div class="container">
-      <h1>National Parks</h1>
+      <!--<h1>National Parks</h1>>-->
     </div>
     <div id="map">
     </div>
@@ -56,13 +56,13 @@ if ( is_home() ) { ?>
 
     <div class="articles<?php if ( is_home() ) {?> articles-mixed<?php } ?>">
       <?php # If it's the news category, add a title
-        if ( in_category( 'News' ) && !is_home() ) { echo '<h1>Latest News</h1>'; };
+        /*if ( in_category( 'News' ) && !is_home() ) { echo '<h1>Latest News</h1>'; };
       ?>
       <?php # If it's the gear category, add a title
         if ( in_category( 'Gear' ) && !is_home() ) { echo '<h1>Latest Gear & Reviews</h1>'; };
       ?>
       <?php # If it's the postcard category, add a title
-       /* if ( is_category( 'Postcards' ) && !is_home() ) { echo '<h1>Latest Postcards</h1>'; };
+        if ( is_category( 'Postcards' ) && !is_home() ) { echo '<h1>Latest Postcards</h1>'; };
       ?>
       <?php # If it's the postcard category, add a title
         if ( is_category( 'nationalparks' ) && !is_home() ) { echo '<h1>Latest Park Crawl Postcards</h1>'; };

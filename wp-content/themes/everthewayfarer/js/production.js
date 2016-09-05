@@ -68,9 +68,6 @@ jQuery(function($) {
       $('.hamby').toggleClass('nav-animate');
     });
     
-    $('.category-postcards #map-wrapper, .home #map-wrapper, .category-nationalparks #map-wrapper').height(winHeight-75);
-    $('.category-postcards #map, .home #map, .category-nationalparks #map').height(winHeight);
-    
     mapsize();
     setTimeout(setPostcard, 100);
     setNav();
@@ -78,23 +75,27 @@ jQuery(function($) {
   
   $(window).on('resize', function(){
     winWidth = $(window).width();
+    winHeight = $(window).height();
     mapsize();
     setNav();
     setPostcard();
   });
 
-  //calculate side map width 
+  //calculate side map size   
   function mapsize(){
     if($('#map-wrapper').length > 0){
-       var mapWidth = ($(window).width() - $('#main > .container.group').width())/2-32;
-          $('.category-postcards #map-wrapper, .home #map-wrapper, .category-nationalparks #map-wrapper, .category-journeys #map-wrapper').css({
-            'width': mapWidth,
-            'opacity': 1
-          });
+       //var mapWidth = ($(window).width() - $('#main > .container.group').width())/2-32;
+          //$('.category-postcards #map-wrapper, .home #map-wrapper, .category-nationalparks #map-wrapper, .category-journeys #map-wrapper').css({
+            //'width': mapWidth,
+            //'opacity': 1
+          //});
+    
+      $('#map-wrapper.map-side').height(winHeight-60);
+      $('.map-side #map').height(winHeight);
       map.invalidateSize();     
     }
 
-  }; 
+  };
   
   //show/hide active nav element depending on screen width
   function setNav(){

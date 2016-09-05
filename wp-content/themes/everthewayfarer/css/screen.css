@@ -676,16 +676,18 @@ html {
       #map-wrapper h1, #map-wrapper .the-content .h1, .the-content #map-wrapper .h1, #map-wrapper .h1-sub {
         top: 360px; } }
   #map-wrapper.map-side {
-    display: none; }
-    @media screen and (min-width: 90em) {
+    display: none;
+    opacity: 0; }
+    @media screen and (min-width: 80em) {
       #map-wrapper.map-side {
         display: block;
         position: fixed;
         right: 0;
         top: 66px;
         bottom: 0;
-        opacity: 0;
-        transition: opacity .6s; } }
+        opacity: 1;
+        transition: opacity .6s;
+        width: calc(40% - 3em); } }
   .admin-bar #map-wrapper.map-side {
     top: 98px; }
 
@@ -742,7 +744,7 @@ body,
   height: 100%; }
 
 body {
-  background: #fafafa; }
+  background: #f1f1f1; }
   body.single-post, body.category-news, body.category-gear {
     background: #fff; }
 
@@ -756,6 +758,22 @@ body {
     content: "";
     display: table;
     clear: both; }
+  @media screen and (min-width: 80em) {
+    .home #navigation .container, .category #navigation .container {
+      max-width: 100%;
+      padding: 0 1.5em; }
+    .home #main .container, .category #main .container {
+      max-width: 100%;
+      padding-top: 3em; } }
+  @media screen and (min-width: 117.5em) {
+    .home #navigation .container, .category #navigation .container {
+      padding: 0 2em; } }
+  @media screen and (min-width: 53.75em) {
+    .single .container, .page .container {
+      max-width: 53.75em; } }
+  @media screen and (min-width: 90em) {
+    .single #navigation .container, .page #navigation .container {
+      padding: 0 .5em; } }
 
 .span-6 {
   float: left;
@@ -776,7 +794,9 @@ body {
       .span-6:nth-child(2n) {
         margin-right: 0; }
       .span-6:nth-child(2n+1) {
-        clear: left; } }
+        clear: left; }
+      .category-nationalparks .span-6:nth-child(2n) {
+        top: 180px; } }
 
 .group {
   padding-top: 2em;
@@ -786,26 +806,30 @@ body {
   background-size: 100% 100%;
   max-width: 93.75em;
   margin: 0 auto; }
+  @media screen and (min-width: 80em) {
+    .category:not(.category-news) #main, .home #main {
+      margin: 0 1.5em;
+      width: 60%; } }
+  @media screen and (min-width: 80em) {
+    .category-news #main, .home #main {
+      margin: 0 auto;
+      width: 60%; } }
 
 .articles {
   max-width: 68em;
   margin-left: auto;
-  margin-right: auto;
-  /*  
-    .category-news &,
-    .category-gear & ,
-    .category-journey &,
-    .single-post & { 
-      @include media(em(860)){
-        margin-right: 20em;
-      }
-    
-    }
-  */ }
+  margin-right: auto; }
   .articles:after {
     content: "";
     display: table;
     clear: both; }
+  @media screen and (min-width: 53.75em) {
+    .single .articles {
+      max-width: 53.75em; } }
+  .articles.the-content div[id^="attachment_"] {
+    width: 100% !important; }
+    .articles.the-content div[id^="attachment_"] img {
+      width: 100%; }
   .articles p,
   .articles li {
     font-size: 1.2em; }
@@ -878,7 +902,7 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   max-width: 100%; }
   @media screen and (min-width: 53.75em) {
     .single .the-content p, .single .the-content h2, .single .the-content h3, .single .the-content h4, .single .the-content h5, .single .the-content h6 {
-      max-width: calc(100% - 18.75em); } }
+      max-width: 53.75em; } }
 .single .the-content .wp-caption {
   max-width: 100%;
   background: #fbfbfb; }
@@ -954,9 +978,6 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     bottom: 0;
     color: white;
     padding-right: .75em; }
-    @media screen and (min-width: 40em) {
-      .single.has-feature header h1, .single.has-feature header .the-content .h1, .the-content .single.has-feature header .h1, .single.has-feature header .h1-sub {
-        max-width: 71%; } }
 
 @media screen and (min-width: 40em) {
   .single.is-gear header:after,
@@ -1214,6 +1235,10 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   @media screen and (min-width: 30em) {
     #primary-links {
       font-size: 1.1em; } }
+  @media screen and (min-width: 80em) {
+    #primary-links {
+      max-width: 100%;
+      padding: .5em; } }
   #primary-links li {
     font-size: 1em;
     display: inline-block; }
@@ -1231,39 +1256,6 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
         padding: .85em 1.5em; } }
   #primary-links li .nav-primary-2 {
     color: #999; }
-  #primary-links li .nav-primary-twitter {
-    position: relative;
-    top: 4px;
-    background: url("../images/icons.svg") 0 0 no-repeat;
-    background-size: auto 50px;
-    width: 18px;
-    height: 17px;
-    text-indent: -999em;
-    display: inline-block; }
-    #primary-links li .nav-primary-twitter:hover {
-      background-position: -20px 0; }
-  #primary-links li .nav-primary-facebook {
-    position: relative;
-    top: 4px;
-    background: url("../images/icons.svg") 0 -34px no-repeat;
-    background-size: auto 50px;
-    width: 18px;
-    height: 17px;
-    text-indent: -999em;
-    display: inline-block; }
-    #primary-links li .nav-primary-facebook:hover {
-      background-position: -20px -34px; }
-  #primary-links li .nav-primary-instagram {
-    position: relative;
-    top: 4.5px;
-    background: url("../images/icons.svg") 0 -17px no-repeat;
-    background-size: auto 50px;
-    width: 18px;
-    height: 17px;
-    text-indent: -999em;
-    display: inline-block; }
-    #primary-links li .nav-primary-instagram:hover {
-      background-position: -20px -17px; }
   #primary-links .logo a {
     display: inline-block;
     width: 150px;
@@ -1301,7 +1293,8 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     height: 47px;
     overflow: hidden; }
     #primary-links .nav-primary-3 a {
-      max-width: 100%; }
+      max-width: 100%;
+      margin-right: 0; }
   #primary-links .nav-primary {
     position: relative;
     float: left;
@@ -1398,8 +1391,7 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       @media screen and (min-width: 53.75em) {
         #primary-links .nav-primary ul {
           min-width: auto;
-          top: 42px;
-          width: calc(100% + 2px); } }
+          top: 42px; } }
       #primary-links .nav-primary ul li {
         float: left;
         display: block;
@@ -1408,11 +1400,55 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
         border-bottom: 1px solid #e1e1e1;
         padding: .35em 1.5em;
         transition: background .3s;
-        min-width: 210px; }
+        min-width: 208px; }
         #primary-links .nav-primary ul li:last-child {
           border-bottom: none; }
         #primary-links .nav-primary ul li:hover {
           background: #ededed; }
+      #primary-links .nav-primary ul li.nav-icons {
+        background: #fafafa;
+        padding: 0; }
+        #primary-links .nav-primary ul li.nav-icons .icons-tag {
+          display: inline-block;
+          text-indent: -999em; }
+        #primary-links .nav-primary ul li.nav-icons a {
+          transition: background .3s;
+          width: 33.3333%;
+          display: inline-block;
+          position: relative;
+          float: left;
+          height: 40px;
+          margin: 0; }
+          #primary-links .nav-primary ul li.nav-icons a:hover {
+            background: #8BB678; }
+          #primary-links .nav-primary ul li.nav-icons a .icon-block {
+            display: block;
+            height: 22px;
+            width: 25px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden; }
+            #primary-links .nav-primary ul li.nav-icons a .icon-block svg {
+              position: absolute;
+              width: 72px;
+              height: 72px;
+              right: 0; }
+        #primary-links .nav-primary ul li.nav-icons .nav-primary-twitter {
+          background: #4BD0EF;
+          border-radius: 0 0 0 3px; }
+          #primary-links .nav-primary ul li.nav-icons .nav-primary-twitter svg {
+            top: -3px; }
+        #primary-links .nav-primary ul li.nav-icons .nav-primary-facebook {
+          background: #4B71B8; }
+          #primary-links .nav-primary ul li.nav-icons .nav-primary-facebook svg {
+            top: -47px; }
+        #primary-links .nav-primary ul li.nav-icons .nav-primary-instagram {
+          background: #517FA4;
+          border-radius: 0 0 3px 0; }
+          #primary-links .nav-primary ul li.nav-icons .nav-primary-instagram svg {
+            top: -25px; }
     #primary-links .nav-primary:hover, #primary-links .nav-primary.nav-opened {
       border-radius: 3px 3px 0 0; }
     @media screen and (min-width: 53.75em) {
@@ -1627,22 +1663,38 @@ body {
   margin-bottom: 2em; }
   @media screen and (min-width: 30em) {
     .articles .postcard-item {
-      min-height: 300px; } }
+      min-height: 300px; }
+      .articles .postcard-item:before {
+        padding-top: 80px; } }
   @media screen and (min-width: 40em) {
     .articles .postcard-item {
       height: auto;
-      min-height: 35vw; } }
+      min-height: 34vw; }
+      .articles .postcard-item:before {
+        padding-top: 11vw; } }
   @media screen and (min-width: 53.125em) {
     .articles .postcard-item {
       min-height: 35vw; } }
   @media screen and (min-width: 61.25em) {
     .articles .postcard-item {
-      min-height: 350px; } }
+      min-height: 350px; }
+      .articles .postcard-item:before {
+        padding-top: 115px; } }
+  @media screen and (min-width: 80em) {
+    .articles .postcard-item {
+      min-height: 21vw; }
+      .articles .postcard-item:before {
+        padding-top: 5.5vw; } }
+  @media screen and (min-width: 100em) {
+    .articles .postcard-item {
+      min-height: 350px; }
+      .articles .postcard-item:before {
+        padding-top: 115px; } }
   @media screen and (min-width: 50em) {
     .articles .postcard-item:before {
-      -webkit-transition: all 0.1s ease-in-out;
-      -moz-transition: all 0.1s ease-in-out;
-      transition: all 0.1s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
       content: '+';
       background: rgba(0, 0, 0, 0.3);
       position: absolute;
@@ -1655,12 +1707,10 @@ body {
       opacity: 0;
       color: white;
       font-size: 5em;
-      text-align: center;
-      padding-top: 8%;
-      line-height: 11vw; } }
-  @media screen and (min-width: 60em) {
-    .articles .postcard-item:before {
-      padding-top: 12.2%; } }
+      text-align: center; } }
+  .articles .postcard-item.type-postit:before, .articles .postcard-item.type-journey:before {
+    transform: rotate(3deg);
+    top: 1px; }
   .articles .postcard-item:hover:before {
     opacity: 1; }
   .articles .postcard-item:not(.type-e):not(.type-journey):not(.type-postit):after {
@@ -1681,6 +1731,11 @@ body {
     width: 100%;
     height: auto;
     border: 2px solid white; }
+
+.postcard-item-container:hover .postcard-item h2 {
+  color: white; }
+.postcard-item-container:hover .postcard-item.type-journey h2, .postcard-item-container:hover .postcard-item.type-postit h2 {
+  color: black; }
 
 .postcard-item-container:nth-child(4n-3) .postcard-item {
   -webkit-transform: rotate(1deg);
@@ -1751,7 +1806,8 @@ body {
   font-weight: bold;
   font-family: Helvetica, Arial, sans-serif;
   letter-spacing: 1px;
-  font-size: 1em; }
+  font-size: 1em;
+  margin: 0 1.25em; }
   @media screen and (min-width: 31.25em) {
     .postcard-item.type-b h2 {
       font-size: 1.3em; } }
@@ -1760,8 +1816,11 @@ body {
       font-size: 1em; } }
   @media screen and (min-width: 50em) {
     .postcard-item.type-b h2 {
-      font-size: 1.2em; } }
-  @media screen and (min-width: 60em) {
+      font-size: 1.5em; } }
+  @media screen and (min-width: 80em) {
+    .postcard-item.type-b h2 {
+      font-size: 1.15em; } }
+  @media screen and (min-width: 90em) {
     .postcard-item.type-b h2 {
       font-size: 1.5em; } }
   .postcard-item.type-b h2 span {
@@ -1792,6 +1851,12 @@ body {
     .postcard-item.type-c h2 {
       font-size: 4em; } }
   @media screen and (min-width: 60em) {
+    .postcard-item.type-c h2 {
+      font-size: 4em; } }
+  @media screen and (min-width: 80em) {
+    .postcard-item.type-c h2 {
+      font-size: 3em; } }
+  @media screen and (min-width: 90em) {
     .postcard-item.type-c h2 {
       font-size: 4em; } }
 .postcard-item.type-c p {
@@ -1860,6 +1925,16 @@ body {
       font-size: 1em;
       letter-spacing: 7px;
       bottom: 85px; } }
+  @media screen and (min-width: 80em) {
+    .postcard-item.type-d p {
+      font-size: .8em;
+      letter-spacing: 5px;
+      bottom: 64px; } }
+  @media screen and (min-width: 90em) {
+    .postcard-item.type-d p {
+      font-size: 1em;
+      letter-spacing: 7px;
+      bottom: 85px; } }
 .postcard-item.type-d h2 {
   font-family: "learning-curve";
   color: white;
@@ -1883,6 +1958,12 @@ body {
   @media screen and (min-width: 60em) {
     .postcard-item.type-d h2 {
       font-size: 6em; } }
+  @media screen and (min-width: 80em) {
+    .postcard-item.type-d h2 {
+      font-size: 4em; } }
+  @media screen and (min-width: 90em) {
+    .postcard-item.type-d h2 {
+      font-size: 5em; } }
 
 .postcard-item.type-e .border {
   position: absolute;
@@ -1960,19 +2041,19 @@ body {
   padding: 20px;
   text-align: center;
   color: white;
-  font-size: 3em; }
-  @media screen and (min-width: 31.25em) {
-    .postcard-item.type-f h2 {
-      font-size: 5em; } }
+  font-size: 12vw; }
   @media screen and (min-width: 40em) {
     .postcard-item.type-f h2 {
-      font-size: 3em; } }
-  @media screen and (min-width: 50em) {
-    .postcard-item.type-f h2 {
-      font-size: 4em; } }
+      font-size: 7.8vw; } }
   @media screen and (min-width: 60em) {
     .postcard-item.type-f h2 {
-      font-size: 5em; } }
+      font-size: 8vw; } }
+  @media screen and (min-width: 64em) {
+    .postcard-item.type-f h2 {
+      font-size: 5.2em; } }
+  @media screen and (min-width: 80em) {
+    .postcard-item.type-f h2 {
+      font-size: 4vw; } }
   .postcard-item.type-f h2 span {
     display: table;
     height: 100%;
@@ -2038,11 +2119,11 @@ body {
     height: 4px;
     background: white; }
   .postcard-item-container:nth-child(2n) .postcard-item.type-postit {
-    transform: rotate(1deg); }
+    transform: rotate(-4deg); }
   .postcard-item-container:nth-child(4n) .postcard-item.type-postit {
     transform: rotate(-2deg); }
   .postcard-item-container:nth-child(3n) .postcard-item.type-postit {
-    transform: rotate(2deg); }
+    transform: rotate(-3deg); }
   .postcard-item.type-postit .postcard-item-postit-inner {
     transform: rotate(3deg);
     background: #FFF6BF;

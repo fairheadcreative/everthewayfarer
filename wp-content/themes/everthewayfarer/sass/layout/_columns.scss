@@ -9,7 +9,7 @@ body,
 }
 
 body {
-  background: $light-gray;
+  background: $light-gray-alt;
     
     &.single-post,
     &.category-news,
@@ -24,6 +24,40 @@ body {
   @include outer-container;
   padding: 0 1em;
   position: relative;
+  
+  @include media(em(1280)) { 
+    .home #navigation &,
+    .category #navigation & {
+      max-width: 100%;
+      padding: 0 1.5em;
+    }
+    .home #main &,
+    .category #main & {
+      max-width: 100%;
+      padding-top: 3em;
+    }     
+  }
+  
+  @include media(em(1880)) { 
+    .home #navigation &,
+    .category #navigation & {
+      padding: 0 2em;
+    }   
+  }
+  
+  .single &,
+  .page & {
+    @include media($large-screen){
+      max-width: $large-screen;
+    }
+  }
+  
+  .single #navigation &,
+  .page #navigation & {
+    @include media(em(1440)){
+      padding: 0 .5em;
+    }
+  }
 }
 
 //grid elements
@@ -33,9 +67,14 @@ body {
   
   @include media($medium-screen) {
     @include span-columns(6); 
-    @include omega(2n); 
+    @include omega(2n);
+    
+    .category-nationalparks & {
+      &:nth-child(2n){
+        top: 180px;
+      }
+    }      
   }
-
 }
 
 
@@ -51,23 +90,45 @@ body {
   background-size: 100% 100%;
   max-width: $max-bleed-width;
   margin: 0 auto;
+  
+  .category:not(.category-news) &,
+  .home & {
+    @include media(em(1280)) {
+      margin: 0 1.5em;
+      width: 60%;
+    }
+  }
+  
+  .category-news &,
+  .home & {
+    @include media(em(1280)) {
+      margin: 0 auto;
+      width: 60%;
+    }
+  }
 }
 
 
 // Article list sections
 .articles {
   @include outer-container();
-/*  
-  .category-news &,
-  .category-gear & ,
-  .category-journey &,
-  .single-post & { 
-    @include media(em(860)){
-      margin-right: 20em;
+
+  .single & {
+    @include media($large-screen){
+      max-width: $large-screen;
     }
-  
   }
-*/
+  
+  
+  &.the-content { 
+    div[id^="attachment_"]{
+      width: 100% !important;
+      
+      img {
+        width: 100%;
+      }
+    }
+  }
   p,
   li {
     font-size: $article-font-size;

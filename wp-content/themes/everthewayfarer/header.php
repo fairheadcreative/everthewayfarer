@@ -36,7 +36,20 @@
               <li class="nav-primary-2 <?php if (!is_home() && is_page('resources')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/resources/">Resources</a></li>
               <li class="nav-primary-1 <?php if (is_home()){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>">Homepage</a></li>
               <li class="nav-primary-1 <?php if (!is_home() && is_page('subscribe')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li>
-              <li><a class="nav-primary-twitter " href="https://twitter.com/WayfaringSiv" target="_blank">Twitter</a> <a class="nav-primary-facebook " href="https://www.facebook.com/pages/Ever-The-Wayfarer/480037682086654" target="_blank">Facebook</a> <a class="nav-primary-instagram " href="https://instagram.com/wayfaringsiv/" target="_blank">Instagram</a></li>
+              <li class="nav-icons">
+                <a class="nav-primary-twitter" href="https://twitter.com/WayfaringSiv" target="_blank">
+                  <span class="icon-block">
+                    <?php get_template_part( 'includes/icons' ); ?><span class="icons-tag">Twitter</span>
+                  </span></a> 
+                <a class="nav-primary-facebook" href="https://www.facebook.com/pages/Ever-The-Wayfarer/480037682086654" target="_blank">
+                  <span class="icon-block">
+                    <?php get_template_part( 'includes/icons' ); ?><span class="icons-tag">Facebook</span>
+                  </span></a> 
+                <a class="nav-primary-instagram" href="https://instagram.com/wayfaringsiv/" target="_blank">
+                  <span class="icon-block">
+                    <?php get_template_part( 'includes/icons' ); ?><span class="icons-tag">Instagram</span>
+                  </span></a>
+              </li>
             </ul>  
           </li>
           <li class="logo"><a href="<?php echo site_url(); ?>"><?php get_template_part( 'includes/logotype' ); ?></a></li>

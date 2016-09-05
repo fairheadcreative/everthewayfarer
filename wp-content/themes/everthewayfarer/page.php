@@ -48,7 +48,7 @@
         <?php get_template_part( 'includes/keep-reading' ); ?>
       </div>
 
-      <?php get_template_part( 'includes/sidebar' ); ?>
+      <?php /*get_template_part( 'includes/sidebar' ); */?>
 
     </div>
   </section>

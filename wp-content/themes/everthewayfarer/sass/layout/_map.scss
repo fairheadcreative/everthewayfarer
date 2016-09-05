@@ -34,15 +34,17 @@
   
   &.map-side {
     display: none;
+    opacity: 0; 
     
-    @include media(em(1440)) {
+    @include media(em(1280)) {
       display: block;
       position: fixed;
       right: 0;
       top: 66px;
       bottom: 0;
-      opacity: 0; 
+      opacity: 1; 
       transition: opacity .6s;
+      width: calc(40% - 3em);
     }
   }
   
