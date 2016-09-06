@@ -119,19 +119,19 @@ jQuery(function($) {
         postcardText = $('.postcard-item--content--text'),
         textHeight = postcardHeight - titleHeightDesktop - faceBtn - 125;
     
-    if(winWidth < 640){
+    if(winWidth < 640 && winWidth > 479){
       
-      //console.log(' postcardHeight = ' + postcardHeight +' titleHeightDesktop = ' + titleHeightDesktop +' faceBtn = ' + faceBtn +' textHeight = ' + textHeight);
-      console.log('<640');
+      navPos = titleHeightMobile+navHeight-48;
+      singleButtons.css({'top': navPos});
+      postcardText.css({'height': 'auto'});
+      
+    }else if(winWidth < 480){
       
       navPos = titleHeightMobile+navHeight-32;
       singleButtons.css({'top': navPos});
       postcardText.css({'height': 'auto'});
       
     }else{
-      
-      console.log(' postcardHeight = ' + postcardHeight +' titleHeightDesktop = ' + titleHeightDesktop +' faceBtn = ' + faceBtn +' textHeight = ' + textHeight);
-      console.log('>640');
       
       postcardText.height(textHeight);
       singleButtons.css({'top': 0});

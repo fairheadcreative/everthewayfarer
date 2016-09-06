@@ -14,7 +14,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <header id="page-header"> 
+  <header id="page-header" class="post<?php the_category_unlinked(' '); ?>"> 
     <nav id="navigation"> 
       <div class="container">
         <ul id="primary-links">

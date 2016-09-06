@@ -42,4 +42,18 @@ function enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
+
+//add category-specific class to a page heder
+function the_category_unlinked($separator = ' ') {
+    $categories = (array) get_the_category();
+    
+    $thelist = '';
+    foreach($categories as $category) {    // concate
+        $thelist .= $separator . $category->category_nicename;
+    }
+    
+    echo $thelist;
+}
+
+
 ?>
