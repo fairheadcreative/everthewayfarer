@@ -28,7 +28,7 @@ a article .meta {
       max-width: 100%;
       
       @include media($large-screen){
-        max-width: calc(100% - 18.75em);
+        max-width: $large-screen;
       }
     }
 
@@ -138,10 +138,6 @@ a article .meta {
       bottom: 0;
       color: white;
       padding-right: .75em;
-
-      @include media($medium-screen) {
-        max-width: 71%;
-      }
     }  
   }
 }

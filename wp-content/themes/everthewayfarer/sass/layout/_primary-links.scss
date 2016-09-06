@@ -53,6 +53,8 @@
   @include media($small-screen){
     font-size: 1.1em;
   }
+  
+  @include media(em(1280)) { max-width: 100%; padding: .5em; }
 
   li {
     font-size: em(16);
@@ -81,52 +83,7 @@
 
   li .nav-primary-2 {
     color: $medium-gray;
-  }
-
-  li .nav-primary-twitter {
-    position: relative;
-    top: 4px;
-    background: url('../images/icons.svg') 0 0 no-repeat;
-    background-size: auto 50px;
-    width: 18px;
-    height: 17px;
-    text-indent: -999em;
-    display: inline-block;
-
-    &:hover {
-      background-position: -20px 0;
-    }
-  }
-
-  li .nav-primary-facebook {
-    position: relative;
-    top: 4px;
-    background: url('../images/icons.svg') 0 -34px no-repeat;
-    background-size: auto 50px;
-    width: 18px;
-    height: 17px;
-    text-indent: -999em;
-    display: inline-block;
-
-    &:hover {
-      background-position: -20px -34px;
-    }
-  }
-
-  li .nav-primary-instagram {
-    position: relative;
-    top: 4.5px;
-    background: url('../images/icons.svg') 0 -17px no-repeat;
-    background-size: auto 50px;
-    width: 18px;
-    height: 17px;
-    text-indent: -999em;
-    display: inline-block;
-
-    &:hover {
-      background-position: -20px -17px;
-    }
-  }
+  }  
 
   // Header logo
   .logo a {
@@ -177,6 +134,7 @@
 
     a {
       max-width: 100%;
+      margin-right: 0;
     }
   }
 
@@ -313,7 +271,7 @@
       @include media($large-screen) {
         min-width: auto;
         top: 42px;
-        width: calc(100% + 2px);
+        //width: calc(100% + 2px);
       }
 
       li {
@@ -324,7 +282,7 @@
         border-bottom: 1px solid darken($light-gray, 10);
         padding: .35em 1.5em;
         transition: background .3s;
-        min-width: 210px;
+        min-width: 208px;
         
         &:last-child {
           border-bottom: none;
@@ -332,6 +290,74 @@
       
         &:hover {
           background: darken($light-gray, 5);
+        }
+      }
+
+      li.nav-icons {
+        background: $light-gray;
+        padding: 0;
+
+        .icons-tag { 
+          display: inline-block;
+          text-indent: -999em; 
+        }
+
+        a { 
+          transition: background .3s; 
+          width: 33.3333%;
+          display: inline-block;
+          position: relative;
+          float: left;
+          height: 40px;
+          margin: 0;
+
+          &:hover {
+            background: #8BB678;
+          }
+
+          .icon-block {
+            display: block;
+            height: 22px;
+            width: 25px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            
+            svg { 
+              position: absolute;
+              width: 72px;
+              height: 72px;
+              right: 0;
+            }
+          }            
+        }
+
+        .nav-primary-twitter { 
+          background: #4BD0EF;
+          border-radius: 0 0 0 3px;
+
+          svg { 
+            top: -3px;
+          }
+        }
+
+        .nav-primary-facebook {
+          background: #4B71B8;
+
+          svg { 
+            top: -47px;
+          }
+        }
+
+        .nav-primary-instagram {
+          background: #517FA4;
+          border-radius: 0 0 3px 0;
+
+          svg { 
+            top: -25px;
+          }
         }
       }
     }

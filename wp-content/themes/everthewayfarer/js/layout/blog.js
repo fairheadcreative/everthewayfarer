@@ -68,9 +68,6 @@ jQuery(function($) {
       $('.hamby').toggleClass('nav-animate');
     });
     
-    $('.category-postcards #map-wrapper, .home #map-wrapper, .category-nationalparks #map-wrapper').height(winHeight-75);
-    $('.category-postcards #map, .home #map, .category-nationalparks #map').height(winHeight);
-    
     mapsize();
     setTimeout(setPostcard, 100);
     setNav();
@@ -78,23 +75,27 @@ jQuery(function($) {
   
   $(window).on('resize', function(){
     winWidth = $(window).width();
+    winHeight = $(window).height();
     mapsize();
     setNav();
     setPostcard();
   });
 
-  //calculate side map width 
+  //calculate side map size   
   function mapsize(){
     if($('#map-wrapper').length > 0){
-       var mapWidth = ($(window).width() - $('#main > .container.group').width())/2-32;
-          $('.category-postcards #map-wrapper, .home #map-wrapper, .category-nationalparks #map-wrapper, .category-journeys #map-wrapper').css({
-            'width': mapWidth,
-            'opacity': 1
-          });
+       //var mapWidth = ($(window).width() - $('#main > .container.group').width())/2-32;
+          //$('.category-postcards #map-wrapper, .home #map-wrapper, .category-nationalparks #map-wrapper, .category-journeys #map-wrapper').css({
+            //'width': mapWidth,
+            //'opacity': 1
+          //});
+    
+      $('#map-wrapper.map-side').height(winHeight-60);
+      $('.map-side #map').height(winHeight);
       map.invalidateSize();     
     }
 
-  }; 
+  };
   
   //show/hide active nav element depending on screen width
   function setNav(){
@@ -118,19 +119,19 @@ jQuery(function($) {
         postcardText = $('.postcard-item--content--text'),
         textHeight = postcardHeight - titleHeightDesktop - faceBtn - 125;
     
-    if(winWidth < 640){
+    if(winWidth < 640 && winWidth > 479){
       
-      //console.log(' postcardHeight = ' + postcardHeight +' titleHeightDesktop = ' + titleHeightDesktop +' faceBtn = ' + faceBtn +' textHeight = ' + textHeight);
-      console.log('<640');
+      navPos = titleHeightMobile+navHeight-48;
+      singleButtons.css({'top': navPos});
+      postcardText.css({'height': 'auto'});
+      
+    }else if(winWidth < 480){
       
       navPos = titleHeightMobile+navHeight-32;
       singleButtons.css({'top': navPos});
       postcardText.css({'height': 'auto'});
       
     }else{
-      
-      console.log(' postcardHeight = ' + postcardHeight +' titleHeightDesktop = ' + titleHeightDesktop +' faceBtn = ' + faceBtn +' textHeight = ' + textHeight);
-      console.log('>640');
       
       postcardText.height(textHeight);
       singleButtons.css({'top': 0});
