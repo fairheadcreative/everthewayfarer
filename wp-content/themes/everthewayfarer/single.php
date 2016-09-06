@@ -29,8 +29,8 @@
     </div>
   <!--<div class="more"><h3>Want more postcards?</h3> <a href="/postcards/" class="button">See more</a></div>-->
   </div>
-  <div class="splash-article-previous"><?php previous_post_link('%link', '<span><span class="line-thin"></span><span class="line-thin"></span></span>', TRUE); ?></div>
-  <div class="splash-article-next"><?php next_post_link('%link', '<span><span class="line-thin"></span><span class="line-thin"></span></span>', TRUE); ?></div>          
+  <div class="splash-article-previous"><?php previous_post_link('%link', '<span><span class="line-thin"></span><span class="line-thin"></span></span>', TRUE, '2' ); ?></div>
+  <div class="splash-article-next"><?php next_post_link('%link', '<span><span class="line-thin"></span><span class="line-thin"></span></span>', TRUE, '2' ); ?></div>  
 </div>
 <?php } else { ?>
 
