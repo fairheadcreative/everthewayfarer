@@ -53,12 +53,16 @@ if ( is_home() ) { ?>
         </a>
       </div>
     <?php };*/ ?>
-              <?php if (in_category('nationalparks')) { ?>
-<h1>National Park Crawl</h1>
-<h3>Description goes here, about why I went on this crawl, and what<br>
-it represents for the world of ethical travel.</h3>
-<a class="button" href="">Share on Facebook</a><a class="button" href="">Share on Twitter</a>
-          <?php } ?>
+
+    <!-- Header for National Parks -->
+    <?php if (strpos($_SERVER['REQUEST_URI'], "nationalparks") !== false){ ?>
+    <div class="postcard-item">
+      <h1>National Park Crawl</h1>
+      <h3>Description goes here, about why I went on this crawl, and what<br>
+      it represents for the world of ethical travel.</h3>
+      <a class="button" href="">Share on Facebook</a><a class="button" href="">Share on Twitter</a>
+      </div>
+    <?php } ?>
 
     <div class="articles<?php if ( is_home() ) {?> articles-mixed<?php } ?>">
       <?php # If it's the news category, add a title
