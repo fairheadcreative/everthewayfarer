@@ -11,6 +11,7 @@
     for($x = 0; $x < $locationLength; $x++) {
       echo '<p>Title: ' . $locationArray[$x][0] . '<br />';
       echo 'Location: ' . $locationArray[$x][1] . '<br />';
+      echo "console.log('Location: ' . $locationArray[$x][1] .;";
       echo 'Permalink: ' . $locationArray[$x][2] . '</p>';
     }
   ?>
@@ -26,11 +27,11 @@
         $revNormal = explode(', ', $normal);
         $revNormal = array_reverse($revNormal);
         $revNormalString = implode(', ', $revNormal);
-
+        
         echo "var map = L.mapbox.map('map', 'everthewayfarer.la7ag2f4').setView([" . $revNormalString . "], 4);";
         } else {
-
-        echo "var map = L.mapbox.map('map', 'everthewayfarer.la7ag2f4').setView([38.823, -21.885], 2);";
+          
+        echo "var map = L.mapbox.map('map', 'everthewayfarer.la7ag2f4').setView([38.823, 21.885], 1);";
       }
     ?>
 
