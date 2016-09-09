@@ -27,10 +27,12 @@
              <span class="hamby">&nbsp;</span>
            </span>
             <ul>
-              <li class="nav-primary-1 <?php if (!is_home() && is_category('postcards') ){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/postcards/">Latest Postcards</a></li>
-              <li class="nav-primary-1 <?php if (!is_home() && is_category('nationalparks') ){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/nationalparks/">Park Crawl</a></li> 
-              <!--<li class="nav-primary-1 <?php if (!is_home() && is_category('Postcard') || !is_home() && has_category('Postcards')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/postcards/">Latest Postcards</a></li>
-              <li class="nav-primary-1 <?php if (!is_home() && is_category('National Parks') || !is_home() && has_category('National Parks')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/nationalparks/">Park Crawl</a></li>-->
+              <!-- <li class="nav-primary-1 <?php if (!is_home() && is_category('Postcards') || is_single() && is_category('Postcards') ){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/postcards/">Latest Postcards</a></li>
+              <li class="nav-primary-1 <?php if (!is_home() && is_category('nationalparks') ){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/nationalparks/">Park Crawl</a></li> -->
+
+              <li class="nav-primary-1 <?php if (strpos($_SERVER['REQUEST_URI'], "postcards") !== false || has_category( 'postcards') && !is_category( nationalparks )){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/postcards/">Latest Postcards</a></li>
+              <li class="nav-primary-1 <?php if (strpos($_SERVER['REQUEST_URI'], "nationalparks") !== false){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/nationalparks/">Park Crawl</a></li>
+
               <li class="nav-primary-1 <?php if (!is_home() && is_category('News') || !is_home() && has_category('News')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/news/">News</a></li>
               <li class="nav-primary-1 <?php if (!is_home() && is_category('Gear') || !is_home() && has_category('Gear')) { echo 'active'; };?>"><a href="<?php echo site_url(); ?>/gear/">Travel Gear</a></li>
               <li class="nav-primary-1 <?php if (!is_home() && is_category('Journey') || !is_home() && has_category('Journey')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/journey/">Journeys</a></li>
