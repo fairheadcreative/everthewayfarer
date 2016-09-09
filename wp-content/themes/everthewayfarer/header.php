@@ -6,6 +6,7 @@
   <title><?php wp_title(); ?></title>
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
   <script src="//use.typekit.net/zif1rom.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>

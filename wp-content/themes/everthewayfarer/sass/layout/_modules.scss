@@ -1,0 +1,18 @@
+// WordPress admin bar fixed position
+.heading-section {
+  text-align: center;
+  
+  h1 {
+    font-size: 3em;
+    text-transform: none;
+    font-family: $helvetica-franklin;
+    margin-bottom: .25em;
+  }
+  
+  p {
+    font-family: $helvetica-franklin;
+    font-size: 1.05em;
+  }
+  
+  .fb-share-button { top: -8px; }
+}

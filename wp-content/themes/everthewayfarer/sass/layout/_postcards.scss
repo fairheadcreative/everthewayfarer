@@ -128,12 +128,8 @@
       opacity: 0;
       color: white;
       font-size: 5em;
-      text-align: center;
-      //padding-top: 8%;
-      //line-height: 11vw;     
+      text-align: center;    
     }
-
-    //@include media(em(960)) { padding-top: 12.2%; }
   }
       
   &.type-postit,
@@ -173,6 +169,24 @@
     height: auto;
     border: 2px solid white;
   }
+}
+
+
+    
+.container-postit:nth-child(5n-3) .type-postit:before { 
+  border-bottom-right-radius: 30px 5px;
+}
+
+.container-postit:nth-child(5n-2) .type-postit:before { 
+  border-bottom-right-radius: 40px 6px;
+}
+
+.container-postit:nth-child(5n-1) .type-postit:before { 
+  border-bottom-right-radius: 30px 2px;
+}
+
+.container-postit:nth-child(5n) .type-postit:before { 
+  border-bottom-right-radius: 30px 8px;
 }
 
 .postcard-item-container:hover {
@@ -513,13 +527,13 @@
   
     &:after {
       transform: rotate(3deg);
-      background: $light-yellow !important;
-      left: -9px;
-      bottom: -2px;      
+      background: $light-yellow;
+      left: -6px;
+      bottom: -1px;      
       content: "";
       position: absolute;
       display: block;
-      width: 100%;
+      width: 92%;
       height: 4px;
       background: white;
     }
@@ -536,24 +550,49 @@
   
   .postcard-item-postit-inner {
     transform: rotate(3deg);
-    background: $light-yellow;
+    //background: $light-yellow;
+    @include background(linear-gradient(to bottom, lighten($light-yellow, 3%) 10%, $light-yellow 10.5%));
     left: 0;
     right: 21px;
     width: 100%;
     height: 100%;
     margin-top: -23px;
     overflow: hidden;
-    padding: 1.5em;
+    padding: 2em 1.5em 1.5em;
     box-shadow: 0 3px 2px rgba(0,0,0,0.1);
     position: absolute;
+    
+    .container-postit:nth-child(5n-3) & { 
+      //background: #a9def9; 
+      @include background(linear-gradient(to bottom, lighten(#a9def9, 2%) 10%, #a9def9 10.5%));
+      border-bottom-right-radius: 30px 5px;
+    }
+    
+    .container-postit:nth-child(5n-2) & { 
+      //background: #D1EFB5; 
+      @include background(linear-gradient(to bottom, lighten(#D1EFB5, 3%) 10%, #D1EFB5 10.5%));
+      border-bottom-right-radius: 40px 6px;
+    }
+    
+    .container-postit:nth-child(5n-1) & { 
+      //background: #F1E3F3; 
+      @include background(linear-gradient(to bottom, lighten(#F1E3F3, 2%) 10%, #F1E3F3 10.5%));
+      border-bottom-right-radius: 30px 2px;
+    }
+    
+    .container-postit:nth-child(5n) & { 
+      //background: #F4C3C2; 
+      @include background(linear-gradient(to bottom, lighten(#F4C3C2, 3%) 10%, #F4C3C2 10.5%));
+      border-bottom-right-radius: 30px 8px;
+    }
   }
   
   h2 {
     text-align: center;
-    font-family: "learning-curve";
+    font-family: 'Indie Flower', cursive;
     font-size: 2.2em;
     padding: .5em 0 .4em;
-    line-height: .9;
+    line-height: 1;
     letter-spacing: 0;
   }
   
@@ -570,9 +609,71 @@
       height: 100px;
       @include background(linear-gradient(to bottom, rgba(255,246,191,0) 30%, $light-yellow 90%));
       z-index: 1;
+      
+      .container-postit:nth-child(5n-3) & {
+        @include background(linear-gradient(to bottom, rgba(255,246,191,0) 30%, #a9def9 90%));
+      }
+      
+      .container-postit:nth-child(5n-2) & {
+        @include background(linear-gradient(to bottom, rgba(255,246,191,0) 30%, #D1EFB5 90%));
+      }
+      
+      .container-postit:nth-child(5n-1) & {
+        @include background(linear-gradient(to bottom, rgba(255,246,191,0) 30%, #F1E3F3 90%));
+      }
+      
+      .container-postit:nth-child(5n) & {
+        @include background(linear-gradient(to bottom, rgba(255,246,191,0) 30%, #F4C3C2 90%));
+      }
     }
   }
 }
+    
+.container-postit:nth-child(5n-4) .postcard-item.type-postit:after {
+  //background: #a9def9 !important;
+  @include background(linear-gradient(to left, rgba(255,246,191,0) 0%, $light-yellow 5%));
+}
+    
+.container-postit:nth-child(5n-3) .postcard-item.type-postit:after {
+  //background: #a9def9 !important;
+  @include background(linear-gradient(to left, rgba(255,246,191,0) 0%, #a9def9 5%));
+}
+    
+.container-postit:nth-child(5n-2) .postcard-item.type-postit:after {
+  //background: #D1EFB5 !important;
+  @include background(linear-gradient(to left, rgba(255,246,191,0) 0%, #D1EFB5 5%));
+}
+    
+.container-postit:nth-child(5n-1) .postcard-item.type-postit:after {
+  //background: #F1E3F3 !important;
+  @include background(linear-gradient(to left, rgba(255,246,191,0) 0%, #F1E3F3 5%));
+}
+    
+.container-postit:nth-child(5n) .postcard-item.type-postit:after {
+  //background: #F4C3C2 !important;
+  @include background(linear-gradient(to left, rgba(255,246,191,0) 0%, #F4C3C2 5%));
+}
+
+.container-postit:after {
+    content: "";
+    background: transparent;
+    position: absolute;
+    width: 190px;
+    height: 100px;
+    bottom: 60px;
+    box-shadow: -8px 8px 14px rgba(0,0,0,0.2);
+    right: 10px;
+    transform: rotate(5deg);
+    z-index: -1;
+}
+  
+.container-postit:nth-child(5n-3):after { right: -6px; }
+  
+.container-postit:nth-child(5n-2):after { right: -4px; }
+  
+.container-postit:nth-child(5n):after { right: 0; transform: rotate(1deg);  }
+  
+.container-postit:nth-child(10n-3):after { right: -2px; }
 
 //Park Crawl category
 
@@ -580,7 +681,7 @@
   .category-nationalparks {
 
     .articles {
-      margin-top: 3em;
+      margin-top: 8em;
     }
 
     .span-6:first-child {

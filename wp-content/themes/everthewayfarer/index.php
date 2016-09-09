@@ -1,5 +1,30 @@
 <?php get_header(); ?>
-<!--<div style="position: absolute; top:0; left: 50%;transform: translatex(-50%);bottom:0;opacity:.2;pointer-events:none;z-index:1000000;"><img src="<?php echo get_bloginfo('template_directory');?>/images/test.jpg" alt="" style="width: 1058px !important; max-width: 1058px !important;"></div>-->
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7&appId=53341778028";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+
 <?php
 if ( is_home() ) { ?>
   <div id="map-wrapper" class="map-side">
@@ -56,10 +81,14 @@ if ( is_home() ) { ?>
 
     <!-- Header for National Parks -->
     <?php if (strpos($_SERVER['REQUEST_URI'], "nationalparks") !== false){ ?>
-      <h1>National Park Crawl</h1>
-      <h3>Description goes here, about why I went on this crawl, and what<br>
-      it represents for the world of ethical travel.</h3>
-      <a class="button" href="">Share on Facebook</a><a class="button" href="">Share on Twitter</a>
+      <div class="heading-section">
+        <h1>National Park Crawl</h1>
+        <p>Description goes here, about why I went on this crawl, and what<br class="break-tablet">
+        it represents for the world of ethical travel.</p>
+        <div class="fb-share-button" data-href="http://www.everthewayfarer.com/nationalparks/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.everthewayfarer.com%2Fnationalparks%2F&amp;src=sdkpreparse">Share</a></div>
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large">Tweet</a>
+      </div>
+      
     <?php } ?>
 
     <div class="articles<?php if ( is_home() ) {?> articles-mixed<?php } ?>">
