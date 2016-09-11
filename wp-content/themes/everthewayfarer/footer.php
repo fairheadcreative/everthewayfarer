@@ -12,8 +12,7 @@
       echo '<p>Title: ' . $locationArray[$x][0] . '<br />';
       echo 'Location: ' . $locationArray[$x][1] . '<br />';
       echo 'Permalink: ' . $locationArray[$x][2] . '</p>';
-            // print_r(array_values($GLOBALS[locationArray]));
-
+      // print_r(array_values($GLOBALS[locationArray]));
     }
   ?>
 
@@ -21,23 +20,37 @@
     L.mapbox.accessToken = 'pk.eyJ1IjoiZXZlcnRoZXdheWZhcmVyIiwiYSI6IjNOYmsxd0UifQ.iRKOvhAJ3Omo2w9FVGJKUQ';
     <?php 
       $locationLength = count($GLOBALS[locationArray]);
-            echo "console.log($locationLength);";
-
 
       if ( is_single() && in_category( 'Journey' ) ) { 
         $normal = $GLOBALS[locationArray][$x][1];
-
         $revNormal = explode(', ', $normal);
         $revNormal = array_reverse($revNormal);
         $revNormalString = implode(', ', $revNormal);
         
         echo "var map = L.mapbox.map('map', 'everthewayfarer.la7ag2f4').setView([" . $revNormalString . "], 4);";
-        } else {
-                      echo "console.log($locationLength);";
-        $bounds = ($GLOBALS[locationArray]);
-                              echo "console.log($locationLength);";
+        
+      } else {
+ 
+        // Iterate between locations 
+        $locationItems = array();
+        $locationLengthBounds = count($GLOBALS[locationArray]);
+          for($x = 0; $x < $locationLengthBounds; $x++) {
 
-        echo "var map = L.mapbox.map('map', 'everthewayfarer.la7ag2f4').setView([38.823, 21.885], 1);";
+            $normal = $GLOBALS[locationArray][$x][1];
+            $revNormal = explode(', ', $normal);
+            $revNormal = array_reverse($revNormal);
+            $revNormalString = implode(',', $revNormal);
+            $revNormalFormat = explode(",", $revNormalString);
+            $locationItems[] = $revNormalFormat; 
+          }
+        
+        // Render the map with a default fixed position
+        echo "var map = L.mapbox.map('map', 'everthewayfarer.la7ag2f4').setView([38.823, 21.885], 2);";
+        // convert the locations array to JSON
+        $json = json_encode([$locationItems]);
+        // zoom the map to fit the bounds
+        echo "map.fitBounds([" .  $json  . "]);";
+
       }
     ?>
 
