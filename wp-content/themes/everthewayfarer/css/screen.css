@@ -2782,12 +2782,7 @@ body {
       font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
       text-transform: uppercase; }
     .pagination-home div.pagination-home-prev {
-      margin-right: 1.5em;
-      -webkit-transform: rotate(1deg);
-      transform: rotate(1deg); }
-    .pagination-home div.pagination-home-next {
-      -webkit-transform: rotate(-2deg);
-      transform: rotate(-2deg); }
+      margin-right: 1.5em; }
     .pagination-home div:hover {
       background: #34a6ac; }
 

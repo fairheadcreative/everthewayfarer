@@ -37,13 +37,6 @@
     
     &.pagination-home-prev {
       margin-right: 1.5em;
-      -webkit-transform: rotate(1deg);
-      transform: rotate(1deg);
-    }
-    
-    &.pagination-home-next {
-      -webkit-transform: rotate(-2deg);
-      transform: rotate(-2deg);
     }
     
     &:hover { background: darken(#4bc2c8, 10); }
