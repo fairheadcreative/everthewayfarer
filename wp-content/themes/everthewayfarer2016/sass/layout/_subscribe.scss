@@ -1,0 +1,167 @@
+//subscribe modal
+
+.splash-overlay { 
+  z-index: 1001; 
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  transition: opacity .3s;
+  
+  &.is-off {
+    @include fadeOut(.6s, 0);
+    pointer-events: none;
+  }
+  
+  &.is-under {
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+.single.is-subscribe {
+  width: 37em;
+  max-width: 90%;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, calc(-50% + 31px));
+  background: $white;
+  text-align: center;
+  border-radius: 3px;
+  z-index: 1010;
+  opacity: 0;
+  
+  @include media($medium-screen){
+    max-width: 70%;
+  }
+  
+  @include media(max-height $tiny-screen) {
+    margin-top: 15px;
+  }
+  
+  .splash-overlay & {
+    &.is-off {
+      @include fadeOut(.6s, 0);
+      pointer-events: none;
+    }
+
+    &.is-under {
+      z-index: -1;
+    }
+
+    .logo {
+      position: absolute;
+      top: -60px;
+      width: 220px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+
+      svg path {
+        fill: white;
+      }
+    }
+
+    .modal-sublinks {
+      position: absolute;
+      bottom: -56px;
+      text-align: center;
+      width: 100%;
+      font-family: $helvetica-franklin;
+      font-size: .8em;
+      display: block;
+
+      a {
+        color: $white;
+
+        &:first-child { margin-right: 2em; }
+
+        &:hover { text-decoration: underline; }
+      }
+    }
+  }
+  
+  .logo { display: none; }
+
+  h1 {
+    text-transform: none;
+    line-height: 1;
+    text-align: center;
+    max-width: 16.5em;
+    margin: 0 auto;
+    padding: 1.75em 0 .5em;
+    font-size: 2em;
+  
+    @include media(max-width $medium-screen) {
+      padding: .5em 0;
+      font-size: 1.5em;
+    }
+    
+    @include media(max-height $small-screen) {
+      padding: .5em 0;
+      font-size: 1.5em;
+    }
+    
+    @include media(max-height $tiny-screen) {
+      line-height: .8;
+    }
+  }
+  
+  p { 
+    font-size: 1.15em; 
+  
+    @include media(max-width $medium-screen) {
+      font-size: 1em;
+    }
+    
+    @include media(max-height $small-screen) {
+      font-size: 1em;
+    }
+    
+    @include media(max-height $tiny-screen) {
+      margin-bottom: .75em;
+    }
+  }
+
+  #mc_embed_signup {
+    max-width: 25em;
+    margin: 0 auto 3em;
+  
+    @include media(max-width $medium-screen) {
+      margin: 0 auto 1.5em;
+      font-size: .8em;
+    }
+    
+    @include media(max-height $small-screen) {
+      margin: 0 auto 1.5em;
+      font-size: .8em;
+    }
+  }
+
+  .email-address {
+    display: inline-block;
+    width: 70%;
+
+    input {
+      border-radius: 0;
+      text-indent: 10px;
+      height: 40px;
+      font-family: $helvetica-franklin;
+    }
+  }
+
+  input[type="submit"] {
+    border-radius: 0;
+    text-transform: none;
+    width: 70%;
+    font-family: $helvetica-franklin;
+  }
+
+  .modal-sublinks {
+    display: none;
+  }
+}

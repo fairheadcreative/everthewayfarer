@@ -1,0 +1,64 @@
+@import 'normalize';
+@import 'bourbon/bourbon';
+@import 'base/grid-settings';
+@import 'base/base';
+@import 'neat/neat';
+
+@import 'mixins/svgpng';
+@import 'mixins/full-height';
+@import 'layout/map';
+@import 'layout/columns';
+@import 'layout/article';
+@import 'layout/primary-links';
+@import 'layout/wordpress';
+@import 'layout/animations';
+@import 'layout/postcards';
+@import 'layout/subscribe';
+@import 'layout/modules';
+
+.resources-open {
+  position: absolute;
+  top: 1.25em;
+  right: 2em;
+}
+
+.resources {
+  background: #eee;
+  padding: 1.85em 2em;
+  position: relative;
+  margin: 2em 0;
+}
+
+.resources.hide {
+  height: 80px;
+  overflow: hidden;
+}
+
+.gallery {
+  @include media(max-width $medium-screen) {
+    .gallery-item {
+      width: 100% !important;
+    }
+  }
+}
+
+.break-tablet {
+  display: none;
+  
+  @include media($medium-screen) {
+    display: inline-block;
+  }
+}
+
+form.wpcf7-form {
+  font-size: .8em;
+
+  input,
+  textarea {
+    border-radius: 3px;
+  }
+
+  input[type="submit"] {
+    @extend .button;
+  }
+}

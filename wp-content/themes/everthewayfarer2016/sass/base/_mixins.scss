@@ -1,0 +1,12 @@
+@mixin fadeIn($duration: $base-duration, $delay-duration: $base-duration) { 
+  opacity: 1 !important;
+  transition: opacity $duration;
+  transition-delay: $delay-duration;
+}
+
+@mixin fadeOut($duration: $base-duration, $delay-duration: $base-duration) { 
+  opacity: 0 !important;
+  transition: opacity $duration;
+  transition-delay: $delay-duration;
+}
+  

@@ -1,0 +1,109 @@
+// The map
+
+// The main wrapper around the map
+// This helps keep the map sizing under control
+#map-wrapper {
+  display: none;
+
+  // Include base map from medium screens upwards
+  @include media($medium-screen) {
+    display: block;
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+    margin-top: -1px;
+
+    // Title for the homepage on the map
+    h1 {
+      position: absolute;
+      top: 160px;
+      z-index: 10;
+      max-width: em(200);
+    }
+  }
+
+  // Make things a little larger on larger screens
+  @include media($large-screen) {
+    height: 470px;
+
+    h1 {
+      top: 360px;
+    }
+  }
+  
+  
+  &.map-side {
+    display: none;
+    opacity: 0; 
+    
+    @include media(em(1280)) {
+      display: block;
+      position: fixed;
+      right: 0;
+      top: 66px;
+      bottom: 0;
+      opacity: 1; 
+      transition: opacity .6s;
+      width: calc(40% - 3em);
+    }
+  }
+  
+  .admin-bar & { 
+    &.map-side { top: 98px; }
+  }
+}
+
+
+// The Mapbox map itself
+#map {
+  display: none;
+
+  @include media($medium-screen) {
+    // Ensure the map has visual height + a fallback color
+    display: block;
+    height: 300px;
+    background: #8edbe2;
+  }
+
+  // Increase map height on large displays
+  @include media($large-screen) {
+    height: 500px;
+  }
+}
+
+
+// Align the map for Journey article pages
+#map-wrapper-align {
+  display: none;
+
+  @include media(1000px) {
+    display: block;
+    position: absolute;
+    height: 600px;
+    width: 600px;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+  }
+}
+
+
+// Include corner map for Journey article pages
+@include media(1000px) {
+  #map-wrapper.is-journey {
+    height: 600px;
+    width: 600px;
+    @include transform(rotate(-45deg));
+    right: -370px;
+    top: -300px;
+
+    #map {
+      position: absolute;
+      height: 500px;
+      width: 500px;
+      top: 0;
+      right: 250px;
+      @include transform(rotate(45deg));
+    }
+  }
+}

@@ -1,0 +1,61 @@
+// WordPress admin bar fixed position
+.heading-section {
+  text-align: center;
+  
+  h1 {
+    font-size: 3em;
+    text-transform: none;
+    font-family: $helvetica-franklin;
+    margin-bottom: .25em;
+  }
+  
+  p {
+    font-family: $helvetica-franklin;
+    font-size: 1.05em;
+  }
+  
+  .fb-share-button { top: -8px; }
+}
+
+.pagination-home {
+  text-align: center;
+  margin-bottom: 3em;
+  padding: 0 .75em;
+      
+  @include media($small-screen) {
+    padding: 0;
+  }
+  
+  div {
+    display: inline-block;
+    background: #4bc2c8;
+    transition: background .3s;
+    border-radius: $base-border-radius;
+    
+    a { 
+      color: $white;
+      padding: 1em 1.5em;
+      display: inline-block;
+      font-family: $helvetica-franklin;
+      text-transform: uppercase;
+      font-size: .6em;
+      
+      @include media($tiny-screen) {
+        font-size: .7em;
+      }
+      
+      @include media($small-screen) {
+        font-size: 1em;
+      }
+    }
+    
+    &.pagination-home-prev:not(:empty) + .pagination-home-next {
+      margin-left: 1.5em;
+    }
+    
+    &.pagination-home-next {  
+    }
+    
+    &:hover { background: darken(#4bc2c8, 10); }
+  }
+}

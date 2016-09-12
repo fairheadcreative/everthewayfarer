@@ -1,0 +1,443 @@
+.button {
+  @extend %button;
+  font-family: $franklin-gothic;
+  text-transform: uppercase;
+
+  &.secondary {
+    border: 1px solid $base-button-color;
+    color: $base-button-color;
+    background: transparent;
+
+    &:hover {
+      background: $base-accent-color;
+      color: white;
+    }
+  }
+}
+
+// Page header
+
+#navigation {
+  background: $white;
+  transition: background .3s;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  border-bottom: $base-border;
+  
+  //adjust positioning for wordpress admin bar
+  .admin-bar & { 
+    top: 45px;  
+    
+    @include media(em(783)) {
+      top: 32px;
+    } 
+  }
+  
+  &.is-scrolled {
+    //background: rgba(255,255,255,.95);
+  }
+}
+
+// Page header links
+#primary-links {
+  @include outer-container();
+  padding: .5em 0;
+  font-family: $helvetica-franklin;
+  font-weight: 600;
+  font-size: .75em;
+    
+  @include media($small-screen){
+    font-size: 1.1em;
+  }
+  
+  @include media(em(1280)) { max-width: 100%; padding: .5em; }
+
+  li {
+    font-size: em(16);
+    display: inline-block;
+  }
+
+  a:not(.button) {
+    color: $base-font-color;
+
+    &.active,
+    &:hover {
+      color: $secondary-link-color;
+    }
+  }
+  
+  a.button {
+    text-transform: none;
+    font-family: $helvetica-franklin;
+    font-weight: 600;
+    padding: .85em 1em;
+    
+    @include media($small-screen){
+      padding: .85em 1.5em;
+    }
+  }
+
+  li .nav-primary-2 {
+    color: $medium-gray;
+  }  
+
+  // Header logo
+  .logo a {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    white-space: nowrap;
+    padding: .3em 0 0;
+    
+    svg path {
+      fill: $pink; 
+    }
+
+    @include media($tiny-screen) {
+      width: 160px;
+      margin-left: 1em;
+    }
+
+    @include media($small-screen) {
+      width: 180px;
+      height: 47px;
+    }
+
+    @include media($small-screen) {
+      width: 210px;
+      height: 50px;
+      font-size: em(25);
+      padding: .3em 0 0;
+      margin-bottom: -10px;
+      margin-right: .2em;
+      margin-left: 0;
+    }
+
+    @include media(450px) {
+      font-size: em(30);
+      padding: .1em 0 0;
+    }
+  }
+
+  // Subscribe button
+  .nav-primary-3 {
+    display: block;
+    float: right;
+    text-align: right;
+    width: 35%;
+    height: 47px;
+    overflow: hidden;
+
+    a {
+      max-width: 100%;
+      margin-right: 0;
+    }
+  }
+
+ 
+  // List item that contains main nav elements
+  .nav-primary {
+    position: relative;
+    float: left;
+    padding: .5em 1.5em;
+    background: $light-gray;
+    border: 1px solid darken($light-gray, 10);
+    border-radius: 3px;
+    cursor: pointer;
+    
+    text-align: right;
+      
+    @include media($large-screen) {
+      min-width: 210px;
+    }
+    
+    .menu-toggler {
+      display: block;
+      position: relative;
+      height: 15px;
+      width: 15px;
+      
+      @include media($small-screen) {
+        height: 22px;
+        width: 22px;
+        top: 2px;
+      }
+      
+      @include media($large-screen) {
+        display: none;
+      }
+      
+      .hamby {
+        width: 15px;
+        height: 3px;
+        display: block;
+        position: absolute;
+        left: 0;
+        background: $dark-gray;
+        transition: all .3s;
+      
+        @include media($small-screen) {
+          width: 22px;
+        }
+        
+        &:first-child { 
+          top: 0;
+          
+          &.nav-animate {
+            transform:  translateY(6px) rotate(45deg);
+          }
+      
+          @include media($small-screen) {
+            &.nav-animate {
+              transform:  translateY(8px) rotate(45deg);
+            }
+          }
+        }
+        &:nth-child(2) { 
+          top: 6px;
+          
+          &.nav-animate {
+            transform:  scale(.1);
+            opacity: 0;
+          }
+      
+          @include media($small-screen) {
+            top: 8px;
+          }
+        }
+        &:last-child { 
+          top: 12px;
+          
+          &.nav-animate {
+            transform:  translateY(-6px) rotate(-45deg);            
+          }
+      
+          @include media($small-screen) {
+            top: 16px;
+            
+            &.nav-animate {
+              transform:  translateY(-8px) rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+    
+    .page-active {
+      display: none;
+      float: left;
+      
+      @include media(em(860)) {
+        display: block;
+      }
+    }
+    
+    .rotate-90 {
+      display: none;
+      margin-left: .5em;
+      font-size: .7em;
+      font-family: sans-serif;
+      line-height: 0;
+      transform: rotate(90deg) scaleY(2);
+      color: darken($light-gray, 10);
+      
+      @include media(em(860)) {
+        display: inline-block;
+      }
+    }
+
+    ul {
+      display: none;
+      position: absolute;
+      z-index: 10000;
+      left: -1px;
+      border: 1px solid darken($light-gray, 10);
+      border-top: 1px solid darken($light-gray, 10);
+      top: 27px;
+      text-align: left;
+      border-radius: 0 0 3px 3px;
+      min-width: 180px;
+      font-size: 1.25em;
+      
+      @include media($small-screen) {
+        font-size: 1em;
+        top: 38px;
+      }
+      
+      @include media($large-screen) {
+        min-width: auto;
+        top: 42px;
+        //width: calc(100% + 2px);
+      }
+
+      li {
+        float: left;
+        display: block;
+        width: 100%;
+        background: darken($light-gray, 3);
+        border-bottom: 1px solid darken($light-gray, 10);
+        padding: .35em 1.5em;
+        transition: background .3s;
+        min-width: 208px;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+      
+        &:hover {
+          background: darken($light-gray, 5);
+        }
+      }
+
+      li.nav-icons {
+        background: $light-gray;
+        padding: 0;
+
+        .icons-tag { 
+          display: inline-block;
+          text-indent: -999em; 
+        }
+
+        a { 
+          transition: background .3s; 
+          width: 33.3333%;
+          display: inline-block;
+          position: relative;
+          float: left;
+          height: 40px;
+          margin: 0;
+
+          &:hover {
+            background: #8BB678;
+          }
+
+          .icon-block {
+            display: block;
+            height: 22px;
+            width: 25px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            
+            svg { 
+              position: absolute;
+              width: 72px;
+              height: 72px;
+              right: 0;
+            }
+          }            
+        }
+
+        .nav-primary-twitter { 
+          background: #4BD0EF;
+          border-radius: 0 0 0 3px;
+
+          svg { 
+            top: -3px;
+          }
+        }
+
+        .nav-primary-facebook {
+          background: #4B71B8;
+
+          svg { 
+            top: -47px;
+          }
+        }
+
+        .nav-primary-instagram {
+          background: #517FA4;
+          border-radius: 0 0 3px 0;
+
+          svg { 
+            top: -25px;
+          }
+        }
+      }
+    }
+
+    &:hover,
+    &.nav-opened {
+      border-radius: 3px 3px 0 0;
+    }
+
+    &:hover {
+      @include media(em(860)){
+        ul { display: block !important; }
+      }      
+    }
+
+    &.nav-opened {
+      ul { display: block; }
+      
+      @include media(em(860)){
+        ul { display: none; }
+      }
+    }
+
+    @include media(max-width $large-screen) {
+      background: $light-gray;
+      display: block !important;
+      margin: 0 -1em;
+      padding: .5em 1em;
+      clear: both;
+      border-top: $base-border !important;
+      border-bottom: $base-border;
+
+      a {
+        margin-right: .75em;
+      }
+    }
+    
+    @include media(max-width em(860)){ margin: .25em -1em 0 0; }
+
+    @include media(max-width $medium-screen) {
+      white-space: nowrap;
+    }
+  }
+
+  // Switch from thin link style to wide link style
+  @include media($medium-screen) { 
+    li a {
+      margin-right: .75em;
+    }
+  }
+
+  .logo,
+  .nav-primary-3 {
+    width: auto;
+    height: auto;
+    display: inline-block;
+  }
+
+  .nav-primary-3 {
+    float: right;
+  }
+
+  .logo {
+    float: none;
+    position: absolute; 
+    left: 45%;
+    transform: translateX(-50%);
+    top: 2px;
+    
+    @include media($tiny-screen) {
+      left: 43%;
+    }
+    
+    @include media($small-screen) {
+      top: 5px;
+      left: 45%;
+    }
+    
+    @include media($large-screen) {
+      left: 50%;
+    }
+  }
+}

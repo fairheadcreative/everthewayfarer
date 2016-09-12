@@ -1,0 +1,245 @@
+// General structure & columns
+
+// Make sure the sidebar is always full-page height
+html,
+body,
+#main .container,
+.sidebar {
+  @include full-height;
+}
+
+body {
+  background: $light-gray-alt;
+    
+  &.single-post,
+  &.category-news,
+  &.category-gear,
+  &.page {
+    background: $white;
+  }   
+}
+
+
+// Page container / limiter
+.container {
+  @include outer-container;
+  padding: 0 1em;
+  position: relative;
+  
+  @include media(em(1280)) { 
+    .home #navigation &,
+    .category #navigation & {
+      max-width: 100%;
+      padding: 0 1.5em;
+    }
+    
+    .home #main &,
+    .category #main & {
+      max-width: 100%;
+      padding-top: 3em;
+    }     
+  }
+  
+  @include media(em(1880)) { 
+    .home #navigation &,
+    .category #navigation & {
+      padding: 0 2em;
+    }   
+  }
+  
+  .single &,
+  .page & {
+    @include media($large-screen){
+      max-width: $large-screen;
+    }
+  }
+  
+  .single #page-header &,
+  .page #page-header & {
+    @include media($large-screen){
+      max-width: $x-large-screen;
+      //max-width: 100%;
+    }
+  }
+  
+  .single #page-header.post.postcards &,
+  .page #page-header.post.postcards & {
+    @include media($large-screen){
+      max-width: $x-large-screen;
+      //max-width: 100%;
+    }
+  }
+  
+  .single #navigation &,
+  .page #navigation & {
+    @include media(em(1440)){
+      padding: 0 .5em;
+    }
+  }
+}
+
+//grid elements
+.span-6 { 
+  @include span-columns(12); 
+  position: relative;
+  
+  @include media($medium-screen) {
+    @include span-columns(6); 
+    @include omega(2n);
+    
+    .category-nationalparks & {
+      &:nth-child(2n){
+        top: 180px;
+      }
+    }      
+  }
+}
+
+
+// Page grouping padding
+.group {
+  padding-top: $base-padding;
+  padding-bottom: $base-padding;
+  
+  .category #main &,
+  .home #main & {
+    padding-bottom: 0;
+  }
+}
+
+
+// Main page section
+#main {
+  background-size: 100% 100%;
+  max-width: $max-bleed-width;
+  margin: 0 auto;
+  
+  .category:not(.category-news):not(.category-gear) &,
+  .home & {
+    @include media(em(1280)) {
+      margin: 0 1.5em;
+      width: 60%;
+    }
+  }
+  
+  .category-news &,
+  .category-gear & {
+    max-width: 98%;
+    
+    @include media($small-screen) {
+      width: 96%;
+    }
+    
+    @include media($medium-screen) {
+      width: 98%;
+    }
+    
+    @include media(em(1280)) {
+      margin: 0 auto;
+      width: 60%;
+    }
+  }
+}
+
+
+// Article list sections
+.articles {
+  @include outer-container();
+
+  .single & {
+    @include media($large-screen){
+      max-width: $large-screen;
+    }
+  }
+  
+  
+  &.the-content { 
+    div[id^="attachment_"] {
+      width: 100%;
+      
+      img {
+        width: 100%;
+      }
+    }
+  }
+  p,
+  li {
+    font-size: $article-font-size;
+  }
+
+  &.articles-mixed p {
+    //max-width: 30em;
+  }
+
+  &.articles-mixed h2 {
+    //max-width: 23.25em;
+  }
+
+  a h2,
+  a p {
+    color: $base-font-color;
+  }
+
+  a:hover article h2 {
+    color: $base-accent-color;
+  }
+
+  article {
+    padding-bottom: $base-padding / 2;
+    margin-bottom: $base-padding;
+    border-bottom: $base-border;
+    min-height: 180px;
+  }
+  
+  // Article list image position & size  
+  .attachment-feature-preview {
+    width: 120px;
+    height: 120px;
+    float: right;
+    margin: 0 0 $base-padding / 2 $base-padding / 2;
+
+    @include media($large-screen) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+// Page sidebar
+.sidebar {
+  background: $light-gray;
+  margin: 0;
+  padding: $base-padding $base-padding / 2;
+  width: 100%;
+
+  // Move to side on large displays
+  @include media($large-screen) {
+    @include full-height;
+    max-width: em(300);
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left: $base-border; 
+    padding: 0 $base-padding 0 0;
+
+    #sidebar,
+    .stock {
+      padding: $base-padding 0 0 $base-padding;
+    }
+  }
+
+  // Hide the 'About' widget on the 'About' page
+  .page-id-8 & #text-2 {
+    display: none;
+  }
+
+  #text-2 .textwidget::before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 0 .5em 1em;
+    @include retina-image('../images/siv-portrait', 100px 100px, jpg);
+    float: right;
+  }
+}

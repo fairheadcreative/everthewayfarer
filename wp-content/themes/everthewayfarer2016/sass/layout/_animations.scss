@@ -1,0 +1,78 @@
+//generic fade-in
+.fade-in {
+  @include fadeIn(1s, .5s);
+}
+
+//subscribe page and splash slideshow
+.slideshow-splash {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1009; 
+  background: $white;
+  
+  .subscribe-page & {
+    z-index: -1;
+  }
+  
+  .splash-overlay & {
+    &.is-off {
+      @include fadeOut(.6s, 0);
+      pointer-events: none;
+    }
+
+    &.is-under {
+      z-index: -1;
+    }
+  }
+
+  
+  li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    animation: slideshowAnimation 36s linear infinite 0s; 
+  }
+  
+  li:nth-child(1) span { 
+    background-image: url(../../../uploads/2016/01/BigBendNP-0426-1024x440.jpg); 
+}  
+  li:nth-child(2) span { 
+    background-image: url(../../../uploads/2016/01/BigBendNP-0533-1024x683.jpg);
+    animation-delay: 6s; 
+  }
+  li:nth-child(3) span { 
+    background-image: url(../../../uploads/2015/12/YellowstoneNP-63-1024x683.jpg);
+    animation-delay: 12s; 
+  }
+  li:nth-child(4) span { 
+    background-image: url(../../../uploads/2015/12/Night1-7902-1024x682.jpg);
+    animation-delay: 18s; 
+  }
+  li:nth-child(5) span { 
+    background-image: url(../../../uploads/2015/12/Iceland-8645_6_7-1024x681.jpg);
+    animation-delay: 24s; 
+  }
+  li:nth-child(6) span { 
+    background-image: url(../../../uploads/2015/12/Iceland-8941-1024x682.jpg);
+    animation-delay: 30s; 
+  }
+}
+
+@keyframes slideshowAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
