@@ -231,7 +231,8 @@ if ( is_home() ) { ?>
     <?php }; */?>
   </div>
 </section>
-
+<div class="nav-prev"><?php next_posts_link( 'See older posts' ); ?></div>
+<div class="nav-next"><?php previous_posts_link( 'See newer posts' ); ?></div>
 
 <?php # If it's the postcard category:
   /*if ( in_category( 'Postcards' ) && !is_home() ) {  ?>
@@ -271,7 +272,7 @@ if ( is_home() ) { ?>
 
 <div class="test">
   <?php global $query_string;
-  query_posts( $query_string . '&posts_per_page=-1' );
+  query_posts( $query_string . '&posts_per_page=6' );
   if ( have_posts() ) : while ( have_posts() ) : the_post();
     if(get_field('location')) {
       $title = get_the_title();
