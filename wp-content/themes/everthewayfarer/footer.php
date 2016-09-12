@@ -45,7 +45,7 @@
           }
         
         // Render the map with a default fixed position
-        echo "var map = L.mapbox.map('map', 'everthewayfarer.la7ag2f4').setView([38.823, 21.885], 2);";
+        echo "var map = L.mapbox.map('map', 'everthewayfarer.la7ag2f4', {minZoom: 2, maxZoom: 10}).setView([38.823, 21.885], 4);";
         // convert the locations array to JSON
         $json = json_encode([$locationItems]);
         // zoom the map to fit the bounds
