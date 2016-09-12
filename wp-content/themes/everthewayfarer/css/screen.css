@@ -2446,10 +2446,6 @@ body {
     .postcard-item--popout {
       width: 750px;
       height: 410px; } }
-  @media screen and (min-width: 90em) {
-    .postcard-item--popout {
-      width: 900px;
-      height: 492px; } }
   .postcard-item--popout.is-open {
     opacity: 1;
     z-index: 99; }
@@ -2527,9 +2523,9 @@ body {
       color: #252424; }
   .postcard-item--popout .postcard-item--content--signature {
     background: url("../images/postcard-sig.jpg") 0 15px no-repeat;
-    background-size: 200px auto;
+    background-size: contain;
     width: 200px;
-    height: 85px;
+    height: 150px;
     margin-bottom: .6em;
     position: absolute;
     bottom: 1em;
@@ -2538,8 +2534,8 @@ body {
     @media screen and (min-width: 40em) {
       .postcard-item--popout .postcard-item--content--signature {
         display: block;
-        width: 22vw; } }
-    @media screen and (min-width: 53.75em) {
+        width: 21vw; } }
+    @media screen and (min-width: 56.25em) {
       .postcard-item--popout .postcard-item--content--signature {
         width: 200px; } }
   .postcard-item--popout .button.facebook, .postcard-item--popout form.wpcf7-form input.facebook[type="submit"], form.wpcf7-form .postcard-item--popout input.facebook[type="submit"] {
@@ -2566,11 +2562,15 @@ body {
       content: '';
       background: url("../images/postcard-stamp.jpg") top right no-repeat;
       background-size: contain;
-      width: 110px;
-      height: 128px;
+      width: 18vw;
+      height: 18vw;
       position: absolute;
       top: 1em;
       right: 1.25em; } }
+  @media screen and (min-width: 56.25em) {
+    .postcard-item--popout:before {
+      width: 150px;
+      height: 150px; } }
 
 .splash-article-previous a, .splash-article-next a {
   position: absolute;

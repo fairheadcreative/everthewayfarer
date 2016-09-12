@@ -899,11 +899,6 @@
     height: 410px;
   }
 
-  @include media($xx-large-screen) {
-    width: 900px;
-    height: 492px;
-  }
-
   // Reveal the postcard
   &.is-open {
     opacity: 1;
@@ -1011,9 +1006,9 @@
 
   .postcard-item--content--signature {
     background: url('../images/postcard-sig.jpg') 0 15px no-repeat;
-    background-size: 200px auto;
+    background-size: contain;
     width: 200px;
-    height: 85px;
+    height: 150px;
     margin-bottom: .6em;
     position: absolute;
     bottom: 1em;
@@ -1022,10 +1017,10 @@
     
     @include media($medium-screen){
       display: block;
-      width: 22vw;
+      width: 21vw;
     }
     
-    @include media($large-screen){
+    @include media(em(900)){
       width: 200px;
     }
   }
@@ -1057,11 +1052,16 @@
       content: '';    
       background: url('../images/postcard-stamp.jpg') top right no-repeat;
       background-size: contain;
-      width: 110px;
-      height: 128px;
+      width: 18vw;
+      height: 18vw;
       position: absolute;
       top: 1em;
       right: 1.25em;
+    }
+    
+    @include media(em(900)) {
+      width: 150px;
+      height: 150px;
     }
   }
 }
