@@ -230,9 +230,12 @@ if ( is_home() ) { ?>
       </div>
     <?php }; */?>
   </div>
+<div class="pagination-home">
+  <div class="pagination-home-prev"><?php next_posts_link( 'See older posts' ); ?></div>
+  <div class="pagination-home-next"><?php previous_posts_link( 'See newer posts' ); ?></div>
+</div>
 </section>
-<div class="nav-prev"><?php next_posts_link( 'See older posts' ); ?></div>
-<div class="nav-next"><?php previous_posts_link( 'See newer posts' ); ?></div>
+
 
 <?php # If it's the postcard category:
   /*if ( in_category( 'Postcards' ) && !is_home() ) {  ?>

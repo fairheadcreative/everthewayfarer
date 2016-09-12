@@ -2767,6 +2767,30 @@ body {
   .heading-section .fb-share-button {
     top: -8px; }
 
+.pagination-home {
+  text-align: center;
+  margin-bottom: 3em; }
+  .pagination-home div {
+    display: inline-block;
+    background: #4bc2c8;
+    transition: background .3s;
+    border-radius: 3px; }
+    .pagination-home div a {
+      color: #fff;
+      padding: 1em 1.5em;
+      display: inline-block;
+      font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
+      text-transform: uppercase; }
+    .pagination-home div.pagination-home-prev {
+      margin-right: 1.5em;
+      -webkit-transform: rotate(1deg);
+      transform: rotate(1deg); }
+    .pagination-home div.pagination-home-next {
+      -webkit-transform: rotate(-2deg);
+      transform: rotate(-2deg); }
+    .pagination-home div:hover {
+      background: #34a6ac; }
+
 .resources-open {
   position: absolute;
   top: 1.25em;
