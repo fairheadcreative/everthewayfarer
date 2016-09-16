@@ -359,7 +359,7 @@ th {
 
 /* Bitters 0.10.0
  * http://bitters.bourbon.io
- * Copyright 2013ΓÇô2014 thoughtbot, inc.
+ * Copyright 2013ÔÇô2014 thoughtbot, inc.
  * MIT License */
 button,
 input[type="submit"], .button, form.wpcf7-form input[type="submit"] {
@@ -436,7 +436,7 @@ h2 {
   letter-spacing: -0.025em; }
   .the-content > h2 {
     font-size: 1.85em;
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid #fafafa;
     padding-top: 1em; }
 
 h3 {
@@ -470,9 +470,9 @@ p {
   margin: 0 0 0.75em; }
 
 a {
-  -webkit-transition: color 0.1s linear;
-  -moz-transition: color 0.1s linear;
-  transition: color 0.1s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear;
   color: #4bc2c8;
   text-decoration: none; }
   a:hover {
@@ -482,7 +482,7 @@ a {
     outline: none; }
 
 hr {
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid #fafafa;
   border-left: none;
   border-right: none;
   border-top: none;
@@ -494,7 +494,7 @@ picture {
   max-width: 100%; }
 
 blockquote {
-  border-left: 2px solid #f1f1f1;
+  border-left: 2px solid #fafafa;
   color: #4c4a4a;
   margin: 1.5em 0;
   padding-left: 0.75em; }
@@ -507,7 +507,7 @@ cite {
 
 fieldset {
   background: white;
-  border: 1px solid #f1f1f1;
+  border: 1px solid #fafafa;
   margin: 0 0 0.75em 0;
   padding: 1.5em; }
 
@@ -536,7 +536,7 @@ select[multiple=multiple] {
   transition: border-color;
   background-color: white;
   border-radius: 3px;
-  border: 1px solid #f1f1f1;
+  border: 1px solid #fafafa;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   font-family: "chaparral-pro", serif;
   font-size: 1em;
@@ -546,7 +546,7 @@ select[multiple=multiple] {
   textarea:hover,
   input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="url"]:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover,
   select[multiple=multiple]:hover {
-    border-color: #d8d8d8; }
+    border-color: #e1e1e1; }
   textarea:focus,
   input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
   select[multiple=multiple]:focus {
@@ -585,13 +585,13 @@ table {
   width: 100%; }
 
 th {
-  border-bottom: 1px solid #cbcbcb;
+  border-bottom: 1px solid #d4d4d4;
   font-weight: bold;
   padding: 0.75em 0;
   text-align: left; }
 
 td {
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid #fafafa;
   padding: 0.75em 0; }
 
 tr,
@@ -701,6 +701,9 @@ html {
   @media screen and (min-width: 53.75em) {
     #map {
       height: 500px; } }
+  #map .leaflet-bar {
+    border: none;
+    box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 0.1); }
 
 #map-wrapper-align {
   display: none; }
@@ -744,7 +747,7 @@ body,
   height: 100%; }
 
 body {
-  background: #f1f1f1; }
+  background: #fafafa; }
   body.single-post, body.category-news, body.category-gear, body.page {
     background: #fff; }
 
@@ -770,7 +773,7 @@ body {
       padding: 0 2em; } }
   @media screen and (min-width: 53.75em) {
     .single .container, .page .container {
-      max-width: 53.75em; } }
+      max-width: 43.75em; } }
   @media screen and (min-width: 53.75em) {
     .single #page-header .container, .page #page-header .container {
       max-width: 68.75em; } }
@@ -801,8 +804,46 @@ body {
         margin-right: 0; }
       .span-6:nth-child(2n+1) {
         clear: left; }
-      .category-nationalparks .span-6:nth-child(2n) {
-        top: 180px; } }
+      .category-nationalparks .span-6:nth-child(2) {
+        top: 200px; }
+      .category-nationalparks .span-6:nth-child(3) {
+        top: 300px; }
+      .category-nationalparks .span-6:nth-child(4) {
+        top: 500px; }
+      .category-nationalparks .span-6:nth-child(5) {
+        top: 600px; }
+      .category-nationalparks .span-6:nth-child(6) {
+        top: 800px; }
+      .category-nationalparks .span-6:nth-child(7) {
+        top: 900px; }
+      .category-nationalparks .span-6:nth-child(8) {
+        top: 1100px; }
+      .category-nationalparks .span-6:nth-child(9) {
+        top: 1200px; }
+      .category-nationalparks .span-6:nth-child(10) {
+        top: 1400px; }
+      .category-nationalparks .span-6:nth-child(11) {
+        top: 1500px; }
+      .category-nationalparks .span-6:nth-child(12) {
+        top: 1700px; }
+      .category-nationalparks .span-6:nth-child(13) {
+        top: 1800px; }
+      .category-nationalparks .span-6:nth-child(14) {
+        top: 2000px; }
+      .category-nationalparks .span-6:nth-child(15) {
+        top: 2100px; }
+      .category-nationalparks .span-6:nth-child(16) {
+        top: 2300px; }
+      .category-nationalparks .span-6:nth-child(17) {
+        top: 2400px; }
+      .category-nationalparks .span-6:nth-child(18) {
+        top: 2600px; }
+      .category-nationalparks .span-6:nth-child(19) {
+        top: 2700px; }
+      .category-nationalparks .span-6:nth-child(20) {
+        top: 2900px; }
+      .category-nationalparks .span-6:nth-child(21) {
+        top: 3000px; } }
 
 .group {
   padding-top: 2em;
@@ -848,7 +889,7 @@ body {
       width: 100%; }
   .articles p,
   .articles li {
-    font-size: 1.2em; }
+    font-size: 1.35em; }
   .articles a h2,
   .articles a p {
     color: #252424; }
@@ -857,7 +898,7 @@ body {
   .articles article {
     padding-bottom: 1em;
     margin-bottom: 2em;
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid #fafafa;
     min-height: 180px; }
   .articles .attachment-feature-preview {
     width: 120px;
@@ -882,7 +923,7 @@ body {
       position: absolute;
       right: 0;
       top: 0;
-      border-left: 1px solid #f1f1f1;
+      border-left: 1px solid #fafafa;
       padding: 0 2em 0 0; }
       .sidebar #sidebar,
       .sidebar .stock {
@@ -1219,6 +1260,28 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     .button.secondary:hover, form.wpcf7-form input.secondary[type="submit"]:hover {
       background: #4bc2c8;
       color: white; }
+  .nav-primary-3 .button, .nav-primary-3 form.wpcf7-form input[type="submit"], form.wpcf7-form .nav-primary-3 input[type="submit"] {
+    background-color: #39b5bb;
+    background-image: -webkit-linear-gradient(bottom, #39b5bb, #4bc2c8);
+    background-image: linear-gradient(to top,#39b5bb, #4bc2c8);
+    position: relative; }
+    .nav-primary-3 .button:after, .nav-primary-3 form.wpcf7-form input[type="submit"]:after, form.wpcf7-form .nav-primary-3 input[type="submit"]:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      border-radius: 3px;
+      opacity: 0;
+      background-color: #050f0f;
+      background-image: -webkit-linear-gradient(bottom, #050f0f, #3ab9bf);
+      background-image: linear-gradient(to top,#050f0f, #3ab9bf);
+      z-index: 0;
+      transition: all .3s; }
+    .nav-primary-3 .button:hover:after, .nav-primary-3 form.wpcf7-form input[type="submit"]:hover:after, form.wpcf7-form .nav-primary-3 input[type="submit"]:hover:after {
+      opacity: .1; }
 
 #navigation {
   background: #fff;
@@ -1229,7 +1292,7 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   top: 0;
   left: 0;
   z-index: 10000;
-  border-bottom: 1px solid #f1f1f1; }
+  border-bottom: 1px solid #fafafa; }
   .admin-bar #navigation {
     top: 45px; }
     @media screen and (min-width: 48.9375em) {
@@ -1261,7 +1324,7 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   #primary-links a:not(.button) {
     color: #252424; }
     #primary-links a:not(.button).active, #primary-links a:not(.button):hover {
-      color: #8bb678; }
+      color: #252424; }
   #primary-links a.button {
     text-transform: none;
     font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
@@ -1314,15 +1377,20 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   #primary-links .nav-primary {
     position: relative;
     float: left;
-    padding: .5em 1.5em;
-    background: #fafafa;
-    border: 1px solid #e1e1e1;
+    background: #f4f4f4;
     border-radius: 3px;
-    cursor: pointer;
-    text-align: right; }
-    @media screen and (min-width: 53.75em) {
-      #primary-links .nav-primary {
-        min-width: 210px; } }
+    cursor: pointer; }
+    #primary-links .nav-primary a {
+      padding: .5em 1.5em;
+      display: inline-block;
+      text-align: left;
+      white-space: nowrap;
+      transition: background .2s; }
+      #primary-links .nav-primary a:hover {
+        background: #e7e7e7; }
+      @media screen and (min-width: 53.75em) {
+        #primary-links .nav-primary a {
+          min-width: 210px; } }
     #primary-links .nav-primary .menu-toggler {
       display: block;
       position: relative;
@@ -1374,6 +1442,8 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     #primary-links .nav-primary .page-active {
       display: none;
       float: left; }
+      #primary-links .nav-primary .page-active a {
+        border-radius: 3px 3px 0 0; }
       @media screen and (min-width: 53.75em) {
         #primary-links .nav-primary .page-active {
           display: block; } }
@@ -1384,7 +1454,10 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       font-family: sans-serif;
       line-height: 0;
       transform: rotate(90deg) scaleY(2);
-      color: #e1e1e1; }
+      color: #cecece;
+      position: absolute;
+      right: 20px;
+      top: 22px; }
       @media screen and (min-width: 53.75em) {
         #primary-links .nav-primary .rotate-90 {
           display: inline-block; } }
@@ -1393,13 +1466,13 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       position: absolute;
       z-index: 10000;
       left: -1px;
-      border: 1px solid #e1e1e1;
-      border-top: 1px solid #e1e1e1;
+      border-top: 1px solid #e6e6e6;
       top: 27px;
       text-align: left;
       border-radius: 0 0 3px 3px;
       min-width: 180px;
-      font-size: 1.25em; }
+      font-size: 1.25em;
+      box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.2); }
       @media screen and (min-width: 30em) {
         #primary-links .nav-primary ul {
           font-size: 1em;
@@ -1412,17 +1485,19 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
         float: left;
         display: block;
         width: 100%;
-        background: #f2f2f2;
-        border-bottom: 1px solid #e1e1e1;
-        padding: .35em 1.5em;
+        background: #f4f4f4;
+        border-bottom: 1px solid #e6e6e6;
         transition: background .3s;
         min-width: 208px; }
+        #primary-links .nav-primary ul li.uncathegorized {
+          display: none; }
         #primary-links .nav-primary ul li:last-child {
-          border-bottom: none; }
+          border-bottom: none;
+          border-radius: 0 0 3px 3px; }
         #primary-links .nav-primary ul li:hover {
-          background: #ededed; }
+          background: #e7e7e7; }
       #primary-links .nav-primary ul li.nav-icons {
-        background: #fafafa;
+        background: #f4f4f4;
         padding: 0; }
         #primary-links .nav-primary ul li.nav-icons .icons-tag {
           display: inline-block;
@@ -1434,7 +1509,8 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
           position: relative;
           float: left;
           height: 40px;
-          margin: 0; }
+          margin: 0;
+          min-width: initial; }
           #primary-links .nav-primary ul li.nav-icons a:hover {
             background: #8BB678; }
           #primary-links .nav-primary ul li.nav-icons a .icon-block {
@@ -1444,6 +1520,7 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
             position: absolute;
             left: 50%;
             top: 50%;
+            -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
             overflow: hidden; }
             #primary-links .nav-primary ul li.nav-icons a .icon-block svg {
@@ -1469,7 +1546,8 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       border-radius: 3px 3px 0 0; }
     @media screen and (min-width: 53.75em) {
       #primary-links .nav-primary:hover ul {
-        display: block !important; } }
+        display: block !important;
+        margin-left: 1px; } }
     #primary-links .nav-primary.nav-opened ul {
       display: block; }
     @media screen and (min-width: 53.75em) {
@@ -1477,13 +1555,13 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
         display: none; } }
     @media screen and (max-width: 53.75em) {
       #primary-links .nav-primary {
-        background: #fafafa;
+        background: #f4f4f4;
         display: block !important;
         margin: 0 -1em;
         padding: .5em 1em;
         clear: both;
-        border-top: 1px solid #f1f1f1 !important;
-        border-bottom: 1px solid #f1f1f1; }
+        border-top: 1px solid #fafafa !important;
+        border-bottom: 1px solid #fafafa; }
         #primary-links .nav-primary a {
           margin-right: .75em; } }
     @media screen and (max-width: 53.75em) {
@@ -1492,9 +1570,6 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     @media screen and (max-width: 40em) {
       #primary-links .nav-primary {
         white-space: nowrap; } }
-  @media screen and (min-width: 40em) {
-    #primary-links li a {
-      margin-right: .75em; } }
   #primary-links .logo,
   #primary-links .nav-primary-3 {
     width: auto;
@@ -1506,6 +1581,7 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     float: none;
     position: absolute;
     left: 45%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     top: 2px; }
     @media screen and (min-width: 22.5em) {
@@ -1674,7 +1750,7 @@ body {
   padding: 0;
   background: white;
   border: none;
-  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   margin-bottom: 2em; }
   @media screen and (min-width: 30em) {
@@ -1808,58 +1884,66 @@ body {
   height: 100%;
   border: 8px solid white; }
 
-.postcard-item.type-b .border {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border: 10px solid white; }
+.postcard-item.type-b {
+  padding: 10px 10px 0; }
   @media screen and (min-width: 50em) {
-    .postcard-item.type-b .border {
-      border: 20px solid white; } }
+    .postcard-item.type-b {
+      padding: 20px 20px 0; } }
   @media screen and (min-width: 60em) {
-    .postcard-item.type-b .border {
-      border: 30px solid white; } }
-.postcard-item.type-b h2 {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: Helvetica, Arial, sans-serif;
-  letter-spacing: 1px;
-  font-size: 1em;
-  margin: 0 1.25em; }
-  @media screen and (min-width: 31.25em) {
-    .postcard-item.type-b h2 {
-      font-size: 1.3em; } }
-  @media screen and (min-width: 40em) {
-    .postcard-item.type-b h2 {
-      font-size: 1em; } }
-  @media screen and (min-width: 50em) {
-    .postcard-item.type-b h2 {
-      font-size: 1.5em; } }
-  @media screen and (min-width: 80em) {
-    .postcard-item.type-b h2 {
-      font-size: 1.15em; } }
-  @media screen and (min-width: 90em) {
-    .postcard-item.type-b h2 {
-      font-size: 1.5em; } }
-  .postcard-item.type-b h2 span {
-    border: 3px solid white;
-    padding: .25em .5em;
-    max-width: 85%;
-    overflow: hidden;
-    white-space: nowrap;
-    display: inline-block;
-    line-height: 1;
-    text-overflow: ellipsis; }
+    .postcard-item.type-b {
+      padding: 30px 30px 0; } }
+  .postcard-item.type-b .border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 10px solid white; }
+    @media screen and (min-width: 50em) {
+      .postcard-item.type-b .border {
+        border-bottom: 20px solid white; } }
+    @media screen and (min-width: 60em) {
+      .postcard-item.type-b .border {
+        border-bottom: 30px solid white; } }
+  .postcard-item.type-b h2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    font-size: 1em;
+    margin: 0 1.25em; }
+    @media screen and (min-width: 31.25em) {
+      .postcard-item.type-b h2 {
+        font-size: 1.3em; } }
+    @media screen and (min-width: 40em) {
+      .postcard-item.type-b h2 {
+        font-size: 1em; } }
+    @media screen and (min-width: 50em) {
+      .postcard-item.type-b h2 {
+        font-size: 1.5em; } }
+    @media screen and (min-width: 80em) {
+      .postcard-item.type-b h2 {
+        font-size: 1.15em; } }
+    @media screen and (min-width: 90em) {
+      .postcard-item.type-b h2 {
+        font-size: 1.5em; } }
+    .postcard-item.type-b h2 span {
+      border: 3px solid white;
+      padding: .25em .5em;
+      max-width: 85%;
+      overflow: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      line-height: 1;
+      text-overflow: ellipsis; }
 
 .postcard-item.type-c h2 {
   position: absolute;
@@ -1914,84 +1998,86 @@ body {
     .postcard-item.type-c p {
       font-size: 1em; } }
 
-.postcard-item.type-d .border {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border: 8px solid white; }
-.postcard-item.type-d p {
-  position: absolute;
-  left: 35px;
-  text-transform: uppercase;
-  color: white;
-  font-weight: bold;
-  font-family: Helvetica;
-  margin: 0;
-  font-size: .7em;
-  letter-spacing: 4px;
-  bottom: 45px; }
-  @media screen and (min-width: 31.25em) {
-    .postcard-item.type-d p {
-      font-size: .8em;
-      letter-spacing: 7px;
-      bottom: 77px; } }
-  @media screen and (min-width: 40em) {
-    .postcard-item.type-d p {
-      font-size: .6em;
-      letter-spacing: 3px;
-      bottom: 45px; } }
-  @media screen and (min-width: 50em) {
-    .postcard-item.type-d p {
-      font-size: .8em;
-      letter-spacing: 5px;
-      bottom: 64px; } }
-  @media screen and (min-width: 60em) {
-    .postcard-item.type-d p {
-      font-size: 1em;
-      letter-spacing: 7px;
-      bottom: 85px; } }
-  @media screen and (min-width: 80em) {
-    .postcard-item.type-d p {
-      font-size: .8em;
-      letter-spacing: 5px;
-      bottom: 64px; } }
-  @media screen and (min-width: 90em) {
-    .postcard-item.type-d p {
-      font-size: 1em;
-      letter-spacing: 7px;
-      bottom: 85px; } }
-.postcard-item.type-d h2 {
-  font-family: "learning-curve";
-  color: white;
-  position: absolute;
-  bottom: 1px;
-  left: 30px;
-  line-height: 1;
-  margin: 0;
-  padding-right: 10px;
-  letter-spacing: 0;
-  font-size: 3em; }
-  @media screen and (min-width: 31.25em) {
-    .postcard-item.type-d h2 {
-      font-size: 5em; } }
-  @media screen and (min-width: 40em) {
-    .postcard-item.type-d h2 {
-      font-size: 3em; } }
-  @media screen and (min-width: 50em) {
-    .postcard-item.type-d h2 {
-      font-size: 4em; } }
-  @media screen and (min-width: 60em) {
-    .postcard-item.type-d h2 {
-      font-size: 6em; } }
-  @media screen and (min-width: 80em) {
-    .postcard-item.type-d h2 {
-      font-size: 4em; } }
-  @media screen and (min-width: 90em) {
-    .postcard-item.type-d h2 {
-      font-size: 5em; } }
+.postcard-item.type-d {
+  padding: 8px 8px 0; }
+  .postcard-item.type-d .border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 8px solid white; }
+  .postcard-item.type-d p {
+    position: absolute;
+    left: 35px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-family: Helvetica;
+    margin: 0;
+    font-size: .7em;
+    letter-spacing: 4px;
+    bottom: 45px; }
+    @media screen and (min-width: 31.25em) {
+      .postcard-item.type-d p {
+        font-size: .8em;
+        letter-spacing: 7px;
+        bottom: 77px; } }
+    @media screen and (min-width: 40em) {
+      .postcard-item.type-d p {
+        font-size: .6em;
+        letter-spacing: 3px;
+        bottom: 45px; } }
+    @media screen and (min-width: 50em) {
+      .postcard-item.type-d p {
+        font-size: .8em;
+        letter-spacing: 5px;
+        bottom: 64px; } }
+    @media screen and (min-width: 60em) {
+      .postcard-item.type-d p {
+        font-size: 1em;
+        letter-spacing: 7px;
+        bottom: 85px; } }
+    @media screen and (min-width: 80em) {
+      .postcard-item.type-d p {
+        font-size: .8em;
+        letter-spacing: 5px;
+        bottom: 64px; } }
+    @media screen and (min-width: 90em) {
+      .postcard-item.type-d p {
+        font-size: 1em;
+        letter-spacing: 7px;
+        bottom: 85px; } }
+  .postcard-item.type-d h2 {
+    font-family: "learning-curve";
+    color: white;
+    position: absolute;
+    bottom: 1px;
+    left: 30px;
+    line-height: 1;
+    margin: 0;
+    padding-right: 10px;
+    letter-spacing: 0;
+    font-size: 3em; }
+    @media screen and (min-width: 31.25em) {
+      .postcard-item.type-d h2 {
+        font-size: 5em; } }
+    @media screen and (min-width: 40em) {
+      .postcard-item.type-d h2 {
+        font-size: 3em; } }
+    @media screen and (min-width: 50em) {
+      .postcard-item.type-d h2 {
+        font-size: 4em; } }
+    @media screen and (min-width: 60em) {
+      .postcard-item.type-d h2 {
+        font-size: 6em; } }
+    @media screen and (min-width: 80em) {
+      .postcard-item.type-d h2 {
+        font-size: 4em; } }
+    @media screen and (min-width: 90em) {
+      .postcard-item.type-d h2 {
+        font-size: 5em; } }
 
 .postcard-item.type-e .border {
   position: absolute;
@@ -2047,49 +2133,51 @@ body {
     .postcard-item.type-e h2 {
       font-size: 1.3em; } }
 
-.postcard-item.type-f .border {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border: 8px solid white; }
-.postcard-item.type-f h2 {
-  font-family: "flood-std";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  line-height: .8;
-  margin: 0;
-  padding: 20px;
-  text-align: center;
-  color: white;
-  font-size: 12vw; }
-  @media screen and (min-width: 40em) {
-    .postcard-item.type-f h2 {
-      font-size: 7.8vw; } }
-  @media screen and (min-width: 60em) {
-    .postcard-item.type-f h2 {
-      font-size: 8vw; } }
-  @media screen and (min-width: 64em) {
-    .postcard-item.type-f h2 {
-      font-size: 5.2em; } }
-  @media screen and (min-width: 80em) {
-    .postcard-item.type-f h2 {
-      font-size: 4vw; } }
-  .postcard-item.type-f h2 span {
-    display: table;
+.postcard-item.type-f {
+  padding: 8px 8px 0; }
+  .postcard-item.type-f .border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     height: 100%;
-    width: 100%; }
-  .postcard-item.type-f h2 em {
-    display: table-cell;
-    vertical-align: middle;
-    font-style: normal; }
+    border-bottom: 8px solid white; }
+  .postcard-item.type-f h2 {
+    font-family: "flood-std";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    line-height: .8;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 12vw; }
+    @media screen and (min-width: 40em) {
+      .postcard-item.type-f h2 {
+        font-size: 7.8vw; } }
+    @media screen and (min-width: 60em) {
+      .postcard-item.type-f h2 {
+        font-size: 8vw; } }
+    @media screen and (min-width: 64em) {
+      .postcard-item.type-f h2 {
+        font-size: 5.2em; } }
+    @media screen and (min-width: 80em) {
+      .postcard-item.type-f h2 {
+        font-size: 4vw; } }
+    .postcard-item.type-f h2 span {
+      display: table;
+      height: 100%;
+      width: 100%; }
+    .postcard-item.type-f h2 em {
+      display: table-cell;
+      vertical-align: middle;
+      font-style: normal; }
 
 .postcard-item.type-journey {
   padding: 1.5em;
@@ -2259,10 +2347,33 @@ body {
 .container-postit:nth-child(10n-3):after {
   right: -2px; }
 
+.postcard-item-container .path-crawl {
+  display: none; }
+
+.category-nationalparks .articles {
+  margin-top: 1.5em; }
+
 @media screen and (min-width: 40em) {
+  .category-nationalparks .path-quarter {
+    display: none; }
+  .category-nationalparks .postcard-item-container .path-crawl {
+    display: block;
+    position: absolute;
+    pointer-events: none; }
+  .category-nationalparks .postcard-item-container:nth-child(odd) .path-crawl {
+    top: -237px;
+    left: calc(60% + 10px);
+    transform: rotate(20deg); }
+  .category-nationalparks .postcard-item-container:nth-child(even) .path-crawl {
+    top: 20%;
+    right: 40%;
+    left: auto;
+    transform: rotate(-10deg); }
+  .category-nationalparks .postcard-item-container:last-child .path-crawl {
+    display: none; }
   .category-nationalparks .articles {
-    margin-top: 8em; }
-  .category-nationalparks .span-6:first-child:before {
+    margin-top: 10.5em; }
+  .category-nationalparks .span-6:before {
     content: "";
     display: block;
     position: absolute;
@@ -2273,19 +2384,63 @@ body {
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    z-index: 10; }
-  .category-nationalparks .span-6:first-child:after {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 189px;
-    width: 415px;
-    background: url(../images/path-crawl.png) no-repeat center bottom;
-    background-size: contain;
-    top: -64px;
-    left: calc(50% + 60px);
-    transform: rotate(5deg);
-    z-index: -1; } }
+    z-index: 10; } }
+@media screen and (min-width: 80em) {
+  .category-nationalparks .articles {
+    margin-top: 8em; }
+
+  .category-nationalparks .postcard-item-container .path-crawl .path-full {
+    display: none; }
+  .category-nationalparks .postcard-item-container .path-crawl .path-quarter {
+    display: block; }
+
+  .category-nationalparks .postcard-item-container:nth-child(odd) .path-crawl {
+    top: -187px;
+    left: calc(60% + 30px);
+    transform: rotate(28deg); }
+
+  .category-nationalparks .postcard-item-container:nth-child(even) .path-crawl {
+    top: -26%;
+    right: 15%;
+    left: auto;
+    transform: rotate(-30deg); } }
+@media screen and (min-width: 84.375em) {
+  .category-nationalparks .postcard-item-container:nth-child(odd) .path-crawl {
+    left: calc(60% + 50px); }
+
+  .category-nationalparks .postcard-item-container:nth-child(even) .path-crawl {
+    right: 20%; } }
+@media screen and (min-width: 90em) {
+  .category-nationalparks .postcard-item-container:nth-child(odd) .path-crawl {
+    left: calc(60% + 5vw); }
+
+  .category-nationalparks .postcard-item-container:nth-child(even) .path-crawl {
+    right: 8vw;
+    top: -5vw; } }
+@media screen and (min-width: 98.75em) {
+  .category-nationalparks .articles {
+    margin-top: 10em; }
+
+  .category-nationalparks .postcard-item-container .path-crawl .path-full {
+    display: block; }
+  .category-nationalparks .postcard-item-container .path-crawl .path-quarter {
+    display: none; }
+
+  .category-nationalparks .postcard-item-container:nth-child(odd) .path-crawl {
+    top: -237px;
+    left: calc(60% + 10px);
+    transform: rotate(20deg); }
+
+  .category-nationalparks .postcard-item-container:nth-child(even):before {
+    left: calc(50% + 60px); }
+  .category-nationalparks .postcard-item-container:nth-child(even) .path-crawl {
+    top: 20%;
+    right: 30%;
+    left: auto;
+    transform: rotate(-10deg); } }
+@media screen and (min-width: 100em) {
+  .category-nationalparks .postcard-item-container:nth-child(even):before {
+    left: 50%; } }
 #page-header,
 #main,
 .page-closing {
@@ -2317,7 +2472,7 @@ body {
       top: .5em;
       right: .5em; }
       .postcard-item-close:after {
-        content: '├ù'; }
+        content: '├Ś'; }
       .postcard-item-close:hover {
         color: #ddd; } }
   @media screen and (min-width: 40em) and (max-width: 53.75em) {
@@ -2441,7 +2596,8 @@ body {
       -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
       width: 750px;
-      height: 410px; } }
+      height: 410px;
+      box-shadow: 0px -5px 20px 5px rgba(0, 0, 0, 0.1); } }
   @media screen and (min-width: 53.75em) {
     .postcard-item--popout {
       width: 750px;
@@ -2611,6 +2767,7 @@ body {
   left: 0; }
   .splash-article-previous a > span {
     left: 10px;
+    -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%); }
   @media screen and (min-width: 40em) {
     .splash-article-previous a {
@@ -2629,7 +2786,7 @@ body {
       background-image: linear-gradient(to left, rgba(0, 0, 0, 0.65) 0%, transparent 35%, transparent 100%); } }
 
 .splash-overlay {
-  z-index: 1001;
+  z-index: 10001;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -2653,6 +2810,7 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, calc(-50% + 31px));
   transform: translate(-50%, calc(-50% + 31px));
   background: #fff;
   text-align: center;
@@ -2677,6 +2835,7 @@ body {
     top: -60px;
     width: 220px;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     display: block; }
     .splash-overlay .single.is-subscribe .logo svg path {
@@ -2769,11 +2928,10 @@ body {
 
 .pagination-home {
   text-align: center;
-  margin-bottom: 3em;
-  padding: 0 .75em; }
+  padding: 0 .75em 2.5em; }
   @media screen and (min-width: 30em) {
     .pagination-home {
-      padding: 0; } }
+      padding: 0 0 2.5em; } }
   .pagination-home div {
     display: inline-block;
     background: #4bc2c8;

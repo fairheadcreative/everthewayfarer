@@ -114,6 +114,7 @@ if ( is_home() ) { ?>
           <?php if (in_category('postcard-a')) { ?>
           <!-- Postcard Type A -->
           <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <?php get_template_part( 'includes/path-crawl' ); ?>
             <article class="postcard-item type-a" id="id-<?php the_ID(); ?>">
               <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
               <h2><?php the_title(); ?></h2>
@@ -125,6 +126,7 @@ if ( is_home() ) { ?>
           <?php if (in_category('postcard-b')) { ?>
           <!-- Postcard Type B -->
           <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <?php get_template_part( 'includes/path-crawl' ); ?>
             <article class="postcard-item type-b" id="id-<?php the_ID(); ?>">
               <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
               <h2><span><?php the_title(); ?></span></h2>
@@ -136,6 +138,7 @@ if ( is_home() ) { ?>
           <?php if (in_category('postcard-c')) { ?>
           <!-- Postcard Type C -->
           <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <?php get_template_part( 'includes/path-crawl' ); ?>
             <article class="postcard-item type-c" id="id-<?php the_ID(); ?>">
               <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
               <h2><?php the_title(); ?></h2>
@@ -147,6 +150,7 @@ if ( is_home() ) { ?>
           <?php if (in_category('postcard-d')) { ?>
           <!-- Postcard Type C -->
           <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <?php get_template_part( 'includes/path-crawl' ); ?>
             <article class="postcard-item type-d" id="id-<?php the_ID(); ?>">
               <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
               <p><?php the_field('postcard_d_intro'); ?></p>
@@ -159,6 +163,7 @@ if ( is_home() ) { ?>
           <?php if (in_category('postcard-e')) { ?>
           <!-- Postcard Type E -->
           <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <?php get_template_part( 'includes/path-crawl' ); ?>
             <article class="postcard-item type-e" id="id-<?php the_ID(); ?>">
               <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
               <p><?php $post_date = mysql2date("Y", $post->post_date_gmt); echo $post_date; ?></p>
@@ -171,6 +176,7 @@ if ( is_home() ) { ?>
           <?php if (in_category('postcard-f')) { ?>
           <!-- Postcard Type F -->
           <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <?php get_template_part( 'includes/path-crawl' ); ?>
             <article class="postcard-item type-f" id="id-<?php the_ID(); ?>">
               <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
               <h2><span><em><?php the_title(); ?></em></span></h2>
@@ -185,6 +191,7 @@ if ( is_home() ) { ?>
           <!-- Journey in Postcard Style -->
           <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'feature-postcard', true); ?>
           <a class="span-6 postcard-item-container" id="id-<?php the_ID(); ?>" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <?php get_template_part( 'includes/path-crawl' ); ?>
             <article class="postcard-item type-journey" id="id-<?php the_ID(); ?>" <?php if ( has_post_thumbnail() ) {?>style="background: url(<?php echo $image_url[0]; ?>) no-repeat center center / cover;"<?php } ?>>
               <div class="postcard-item-journey-inner">
                 <h2><?php the_title(); ?></h2>
@@ -200,6 +207,7 @@ if ( is_home() ) { ?>
         <!-- Journey in Postcard Style -->
         <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'feature-postcard', true); ?>
         <a class="span-6 postcard-item-container" id="id-<?php the_ID(); ?>" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+          <?php get_template_part( 'includes/path-crawl' ); ?>
           <article class="postcard-item type-journey" id="id-<?php the_ID(); ?>" <?php if ( has_post_thumbnail() ) {?>style="background: url(<?php echo $image_url[0]; ?>) no-repeat center center / cover;"<?php } ?>>
             <div class="postcard-item-journey-inner">
               <h2><?php the_title(); ?></h2>

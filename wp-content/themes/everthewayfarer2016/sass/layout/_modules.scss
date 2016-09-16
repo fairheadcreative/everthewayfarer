@@ -19,11 +19,10 @@
 
 .pagination-home {
   text-align: center;
-  margin-bottom: 3em;
-  padding: 0 .75em;
+  padding: 0 .75em 2.5em;
       
   @include media($small-screen) {
-    padding: 0;
+    padding: 0 0 2.5em;
   }
   
   div {

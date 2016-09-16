@@ -22,7 +22,7 @@
         <?php the_content(); ?>
       </div>
 
-      <a class="button button-pc facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>"><span>Share this photo</span></a>
+      <a class="button button-pc facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>', 'newwindow', 'width=670, height=656'); return false;"><span>Share this photo</span></a>
       </div>
       <div class="postcard-item--content--signature">
       </div>

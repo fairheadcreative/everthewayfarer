@@ -34,9 +34,15 @@
               <li class="nav-primary-1 <?php if (!is_home() && is_category('Gear') || !is_home() && has_category('Gear')) { echo 'active'; };?>"><a href="<?php echo site_url(); ?>/gear/">Travel Gear</a></li>
               <li class="nav-primary-1 <?php if (!is_home() && is_category('Journey') || !is_home() && has_category('Journey')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/journey/">Journeys</a></li>
               <li class="nav-primary-2 <?php if (!is_home() && is_page('about')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/about/">About Siv</a></li>
+              <!-- START UNCATHEGORIZED ITEMS -->
+              <li class="nav-primary-2 uncathegorized <?php if (!is_home() && is_page('photography-freelance-writing-speaking')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/photography-freelance-writing-speaking/">Navigation</a></li>
+              <li class="nav-primary-2 uncathegorized <?php if (!is_home() && is_page('subscriber-wallpaper-pack')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/subscriber-wallpaper-pack/">Navigation</a></li>
+              <li class="nav-primary-2 uncathegorized <?php if (!is_home() && is_page('resources')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/resources/">Navigation</a></li>
+              <li class="nav-primary-2 uncathegorized <?php if (!is_home() && is_page('thanks')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/thanks/">Navigation</a></li>
+              <!-- END UNCATHEGORIZED ITEMS -->
               <li class="nav-primary-1"><a href="http://www.suntrailimages.com" target="_blank">Photography</a></li>
-              <li class="nav-primary-1 <?php if (is_home()){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>">Homepage</a></li>
               <li class="nav-primary-1 <?php if (!is_home() && is_page('subscribe')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li>
+              <li class="nav-primary-1 <?php if (is_home()){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>">Homepage</a></li>
               <!-- <li class="nav-primary-1 <?php if (!is_home() && 'page-subscribe.php' == $template['basename']){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li> -->
               <li class="nav-icons">
                 <a class="nav-primary-twitter" href="https://twitter.com/WayfaringSiv" target="_blank">

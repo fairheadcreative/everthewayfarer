@@ -69,6 +69,11 @@
   @include media($large-screen) {
     height: 500px;
   }
+
+  .leaflet-bar {
+    border: none;
+    box-shadow: 0 0px 1px 1px rgba(0,0,0,.1);
+  }
 }
 
 
