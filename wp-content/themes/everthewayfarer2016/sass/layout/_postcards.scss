@@ -697,7 +697,7 @@
 @include media($medium-screen) {
   .category-nationalparks {
     
-    .path-quarter { display: none; }
+    .path-half { display: none; }
     
     .postcard-item-container {
       .path-crawl {
@@ -707,16 +707,26 @@
       }
 
       &:nth-child(odd) .path-crawl {
-        top: -237px;
-        left: calc(60% + 10px);
-        transform: rotate(20deg);
+        top: -262px;
+        left: calc(50% + 30px);
+        
+        svg {
+          width: 53vw;
+          max-width: 580px;
+        }
       }
 
       &:nth-child(even) .path-crawl {
-        top: 20%;
-        right: 40%;
-        left: auto;
-        transform: rotate(-10deg);
+        top: auto;
+        right: auto;
+        left: -28vw;
+        bottom: -130px;
+        width: 400px !important;
+        transform: rotate(-27deg);
+        overflow: hidden;
+        
+        .path-half { display: none; }
+        .path-full { display: block; }
       } 
 
       &:last-child .path-crawl {
@@ -747,51 +757,16 @@
   }
 }
 
-@include media(em(1280)) {
-
-  .category-nationalparks {
-    .articles {
-      margin-top: 8em;
+@include media(em(1080)) {
+  .category-nationalparks .postcard-item-container:nth-child(even) {
+    .path-crawl {
+      left: -310px;
     }
   }
   
-  .category-nationalparks .postcard-item-container .path-crawl {
-    .path-full { display: none; }
-    .path-quarter { display: block; }
-  }
-  .category-nationalparks .postcard-item-container:nth-child(odd) .path-crawl {
-    top: -187px;
-    left: calc(60% + 30px);
-    transform: rotate(28deg);
-  }
-  .category-nationalparks .postcard-item-container:nth-child(even) .path-crawl {
-    top: -26%;
-    right: 15%;
-    left: auto;
-    transform: rotate(-30deg);
-  }
 }
 
-@include media(em(1350)) {
-  .category-nationalparks .postcard-item-container:nth-child(odd) .path-crawl {
-    left: calc(60% + 50px);
-  }
-  .category-nationalparks .postcard-item-container:nth-child(even) .path-crawl {
-    right: 20%;
-  }
-}
-
-@include media(em(1440)) {
-  .category-nationalparks .postcard-item-container:nth-child(odd) .path-crawl {
-    left: calc(60% + 5vw);
-  }
-  .category-nationalparks .postcard-item-container:nth-child(even) .path-crawl {
-    right: 8vw;
-    top: -5vw;
-  }
-}
-
-@include media(em(1580)) {
+@include media(em(1280)) {
 
   .category-nationalparks {
     .articles {
@@ -800,23 +775,18 @@
   }
   
   .category-nationalparks .postcard-item-container .path-crawl {
-    .path-full { display: block; }
-    .path-quarter { display: none; }
+    .path-half { display: block; }
+    .path-full { display: none; }
   }
   .category-nationalparks .postcard-item-container:nth-child(odd) .path-crawl {
-    top: -237px;
-    left: calc(60% + 10px);
-    transform: rotate(20deg);
+    svg {
+      width: 32vw;
+      max-width: 600px;
+    }
   }
   .category-nationalparks .postcard-item-container:nth-child(even) {
-    &:before {
-      left: calc(50% + 60px);
-    }
     .path-crawl {
-      top: 20%;
-      right: 30%;
-      left: auto;
-      transform: rotate(-10deg);
+      left: -17vw;
     }
   }
 }
@@ -826,6 +796,11 @@
     &:before {
       left: 50%;
     }
+  } 
+  
+  .category-nationalparks .postcard-item-container .path-crawl {
+    .path-full { display: block; }
+    .path-half { display: none; }
   }
 }
 
