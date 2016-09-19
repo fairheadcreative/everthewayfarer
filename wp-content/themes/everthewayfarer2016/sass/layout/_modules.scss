@@ -27,12 +27,13 @@
   
   div {
     display: inline-block;
-    background: #4bc2c8;
-    transition: background .3s;
+    background: $white;
+    transition: all .3s;
     border-radius: $base-border-radius;
+    box-shadow: 0 2px 3px rgba(0,0,0,.2);
     
     a { 
-      color: $white;
+      color: #555;
       padding: 1em 1.5em;
       display: inline-block;
       font-family: $helvetica-franklin;
@@ -55,6 +56,6 @@
     &.pagination-home-next {  
     }
     
-    &:hover { background: darken(#4bc2c8, 10); }
+    &:hover { box-shadow: 0 3px 4px rgba(0,0,0,.25); }
   }
 }

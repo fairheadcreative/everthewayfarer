@@ -34,6 +34,7 @@ $green: #8bb678;
 $pink: #d58097;
 $dark-gray: #252424;
 $medium-gray: #999;
+$gray: #999;
 $menu-gray: #f4f4f4;
 $light-gray: #fafafa;
 $light-gray-alt: #fafafa;
@@ -66,7 +67,7 @@ $notice-color: lighten($base-accent-color, 40);
 $success-color: $light-green;
 
 // Border color
-$base-border-color: $light-gray-alt;
+$base-border-color: $menu-gray;
 $base-border: 1px solid $base-border-color;
 
 //animtion

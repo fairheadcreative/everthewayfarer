@@ -52,7 +52,7 @@
   top: 0;
   left: 0;
   z-index: 10000;
-  border-bottom: $base-border;
+  box-shadow: 0 1px 0 rgba(0,0,0,.075);
   
   //adjust positioning for wordpress admin bar
   .admin-bar & { 
@@ -62,10 +62,6 @@
       top: 32px;
     } 
   }
-  
-  &.is-scrolled {
-    //background: rgba(255,255,255,.95);
-  }
 }
 
 // Page header links
@@ -74,7 +70,11 @@
   padding: .5em 0;
   font-family: $helvetica-franklin;
   font-weight: 600;
-  font-size: .75em;
+  font-size: .8em;
+    
+  @include media(em(380)){
+    font-size: 1em;
+  }  
     
   @include media($small-screen){
     font-size: 1.1em;
@@ -100,7 +100,11 @@
     text-transform: none;
     font-family: $helvetica-franklin;
     font-weight: 600;
-    padding: .85em 1em;
+    padding: 1.1em 1em;
+    
+    @include media(em(380)){
+      padding: .85em 1em;
+    }  
     
     @include media($small-screen){
       padding: .85em 1.5em;
@@ -114,7 +118,7 @@
   // Header logo
   .logo a {
     display: inline-block;
-    width: 150px;
+    width: 125px;
     height: 40px;
     white-space: nowrap;
     padding: .3em 0 0;
@@ -122,11 +126,15 @@
     svg path {
       fill: $pink; 
     }
-
-    @include media($tiny-screen) {
+    
+    @include media($tiny-screen){
+      width: 140px;
+    }  
+    
+    @include media(em(380)){
       width: 160px;
       margin-left: 1em;
-    }
+    }  
 
     @include media($small-screen) {
       width: 180px;
@@ -172,6 +180,11 @@
     background: $menu-gray;
     border-radius: 3px;
     cursor: pointer;
+    min-height: 36px;
+    
+    @include media(em(380)){
+      min-height: 40px;
+    }  
     
     a { 
       padding: .5em 1.5em;
@@ -186,27 +199,26 @@
             
       @include media($large-screen) {
         min-width: 210px;
+        min-height: 47px;
       }
     }
+      
+     &.nav-opened .menu-toggler { top: 3px; }
     
     .menu-toggler {
       display: block;
       position: relative;
-      height: 15px;
-      width: 15px;
-      
-      @include media($small-screen) {
-        height: 22px;
-        width: 22px;
-        top: 2px;
-      }
+      height: 22px;
+      width: 22px;
+      top: 1px;
+      transition: top .3s;
       
       @include media($large-screen) {
         display: none;
       }
       
       .hamby {
-        width: 15px;
+        width: 22px;
         height: 3px;
         display: block;
         position: absolute;
@@ -224,38 +236,20 @@
           &.nav-animate {
             transform:  translateY(6px) rotate(45deg);
           }
-      
-          @include media($small-screen) {
-            &.nav-animate {
-              transform:  translateY(8px) rotate(45deg);
-            }
-          }
         }
         &:nth-child(2) { 
-          top: 6px;
+          top: 8px;
           
           &.nav-animate {
             transform:  scale(.1);
             opacity: 0;
           }
-      
-          @include media($small-screen) {
-            top: 8px;
-          }
         }
         &:last-child { 
-          top: 12px;
+          top: 16px;
           
           &.nav-animate {
-            transform:  translateY(-6px) rotate(-45deg);            
-          }
-      
-          @include media($small-screen) {
-            top: 16px;
-            
-            &.nav-animate {
-              transform:  translateY(-8px) rotate(-45deg);
-            }
+            transform:  translateY(-10px) rotate(-45deg);            
           }
         }
       }
@@ -294,9 +288,7 @@
       position: absolute;
       z-index: 10000;
       left: -1px;
-      //border: 1px solid darken($light-gray, 10);
-      border-top: 1px solid darken($light-gray, 8);
-      top: 27px;
+      top: 34px;
       text-align: left;
       border-radius: 0 0 3px 3px;
       min-width: 180px;
@@ -311,7 +303,7 @@
       @include media($large-screen) {
         min-width: auto;
         top: 42px;
-        //width: calc(100% + 2px);
+        border-top: 1px solid darken($light-gray, 8);
       }
 
       li {
@@ -320,7 +312,6 @@
         width: 100%;
         background: $menu-gray;
         border-bottom: 1px solid darken($light-gray, 8);
-        //padding: .35em 1.5em;
         transition: background .3s;
         min-width: 208px;
         
@@ -429,7 +420,7 @@
       }
     }
 
-    @include media(max-width $large-screen) {
+    @include media(max-width em(859)) {
       background: $menu-gray;
       display: block !important;
       margin: 0 -1em;
@@ -464,21 +455,26 @@
   .logo {
     float: none;
     position: absolute; 
-    left: 45%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    top: 2px;
+    top: 10px;
+    left: 133px;
     
     @include media($tiny-screen) {
-      left: 43%;
+      left: 140px;
+    }
+    
+    @include media(em(380)) {
+      left: 150px;
     }
     
     @include media($small-screen) {
-      top: 5px;
-      left: 45%;
+      top: 7px;
+      left: 200px;
     }
     
     @include media($large-screen) {
+      top: 5px;
       left: 50%;
     }
   }
