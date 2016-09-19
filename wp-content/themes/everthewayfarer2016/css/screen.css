@@ -2367,7 +2367,7 @@ body {
     position: absolute;
     pointer-events: none; }
   .category-nationalparks .postcard-item-container:nth-child(odd) .path-crawl {
-    top: -262px;
+    top: -242px;
     left: calc(50% + 30px); }
     .category-nationalparks .postcard-item-container:nth-child(odd) .path-crawl svg {
       width: 53vw;
@@ -2376,7 +2376,7 @@ body {
     top: auto;
     right: auto;
     left: -28vw;
-    bottom: -130px;
+    bottom: -140px;
     width: 400px !important;
     transform: rotate(-27deg);
     overflow: hidden; }
