@@ -67,7 +67,7 @@
 // Page header links
 #primary-links {
   @include outer-container();
-  padding: .5em 0;
+  padding: .75em 0;
   font-family: $helvetica-franklin;
   font-weight: 600;
   font-size: .8em;
@@ -78,6 +78,10 @@
     
   @include media($small-screen){
     font-size: 1.1em;
+  }
+    
+  @include media($medium-screen){
+    padding: .5em 0;
   }
   
   @include media(em(1280)) { max-width: 100%; padding: .5em; }
@@ -114,48 +118,6 @@
   li .nav-primary-2 {
     color: $medium-gray;
   }  
-
-  // Header logo
-  .logo a {
-    display: inline-block;
-    width: 125px;
-    height: 40px;
-    white-space: nowrap;
-    padding: .3em 0 0;
-    
-    svg path {
-      fill: $pink; 
-    }
-    
-    @include media($tiny-screen){
-      width: 140px;
-    }  
-    
-    @include media(em(380)){
-      width: 160px;
-      margin-left: 1em;
-    }  
-
-    @include media($small-screen) {
-      width: 180px;
-      height: 47px;
-    }
-
-    @include media($small-screen) {
-      width: 210px;
-      height: 50px;
-      font-size: em(25);
-      padding: .3em 0 0;
-      margin-bottom: -10px;
-      margin-right: .2em;
-      margin-left: 0;
-    }
-
-    @include media(450px) {
-      font-size: em(30);
-      padding: .1em 0 0;
-    }
-  }
 
   // Subscribe button
   .nav-primary-3 {
@@ -450,15 +412,17 @@
 
   .nav-primary-3 {
     float: right;
-  }
+  }  
+
+  // Header logo
 
   .logo {
     float: none;
     position: absolute; 
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    top: 10px;
-    left: 133px;
+    top: 13px;
+    left: 140px;
     
     @include media($tiny-screen) {
       left: 140px;
@@ -469,13 +433,57 @@
     }
     
     @include media($small-screen) {
-      top: 7px;
       left: 200px;
+    }
+    
+    @include media($medium-screen) {
+      top: 10px;
     }
     
     @include media($large-screen) {
       top: 5px;
       left: 50%;
+    }
+    
+      a {
+      display: inline-block;
+      width: 140px;
+      height: 40px;
+      white-space: nowrap;
+      padding: .3em 0 0;
+
+      svg path {
+        fill: $pink; 
+      }
+
+      @include media($tiny-screen){
+        width: 140px;
+      }  
+
+      @include media(em(380)){
+        width: 160px;
+        margin-left: 1em;
+      }  
+
+      @include media($small-screen) {
+        width: 180px;
+        height: 47px;
+      }
+
+      @include media($small-screen) {
+        width: 210px;
+        height: 50px;
+        font-size: em(25);
+        padding: .3em 0 0;
+        margin-bottom: -10px;
+        margin-right: .2em;
+        margin-left: 0;
+      }
+
+      @include media(450px) {
+        font-size: em(30);
+        padding: .1em 0 0;
+      }
     }
   }
 }
