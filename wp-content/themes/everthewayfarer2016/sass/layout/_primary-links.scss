@@ -234,6 +234,7 @@
       font-size: .7em;
       font-family: sans-serif;
       line-height: 0;
+      -webkit-transform: rotate(90deg) scaleY(2);
       transform: rotate(90deg) scaleY(2);
       color: darken($menu-gray, 15);
       position: absolute;
