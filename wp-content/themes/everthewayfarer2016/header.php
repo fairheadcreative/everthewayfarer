@@ -42,7 +42,7 @@
               <!-- END UNCATHEGORIZED ITEMS -->
               <li class="nav-primary-1"><a href="http://www.suntrailimages.com" target="_blank">Photography</a></li>
               <li class="nav-primary-1 <?php if (!is_home() && is_page('subscribe')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li>
-              <li class="nav-primary-1 <?php if (is_home()){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>">Homepage</a></li>
+              <li class="nav-primary-1 uncathegorized <?php if (is_home()){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>">Homepage</a></li>
               <!-- <li class="nav-primary-1 <?php if (!is_home() && 'page-subscribe.php' == $template['basename']){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li> -->
               <li class="nav-icons">
                 <a class="nav-primary-twitter" href="https://twitter.com/WayfaringSiv" target="_blank">

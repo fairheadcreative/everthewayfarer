@@ -494,10 +494,17 @@ picture {
   max-width: 100%; }
 
 blockquote {
-  border-left: 2px solid #f4f4f4;
   color: #4c4a4a;
   margin: 1.5em 0;
-  padding-left: 0.75em; }
+  padding-left: 1.875em;
+  overflow: auto; }
+  blockquote p {
+    float: left;
+    font-size: 1.75em !important;
+    color: #999;
+    font-style: italic;
+    margin-bottom: 0;
+    margin-right: .25em; }
 
 cite {
   color: #666363;
