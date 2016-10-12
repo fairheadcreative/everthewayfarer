@@ -1628,6 +1628,9 @@ body {
       body.admin-bar {
         padding-top: 66px; } }
 
+.hide {
+  display: none; }
+
 .fade-in {
   opacity: 1 !important;
   transition: opacity 1s;
@@ -2965,6 +2968,36 @@ body {
       margin-left: 1.5em; }
     .pagination-home div:hover {
       box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25); }
+
+._form-content {
+  position: relative;
+  font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; }
+  ._form-content input {
+    width: 70%;
+    display: inline-block;
+    font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
+    padding: .75em;
+    border-radius: 0; }
+    ._form-content input[type="text"]:focus::-webkit-input-placeholder {
+      color: transparent; }
+    ._form-content input[type="text"]:focus:-moz-placeholder {
+      color: transparent; }
+    ._form-content input[type="text"]:focus::-moz-placeholder {
+      color: transparent; }
+    ._form-content input[type="text"]:focus:-ms-input-placeholder {
+      color: transparent; }
+    ._form-content input[type="text"]._has_error:focus + ._error {
+      display: none; }
+  ._form-content ._error {
+    position: absolute;
+    top: 13px;
+    right: 17%;
+    color: #d58097;
+    font-size: .8em; }
+  ._form-content button {
+    width: 70%;
+    padding: .75em 1em;
+    border-radius: 0; }
 
 .resources-open {
   position: absolute;

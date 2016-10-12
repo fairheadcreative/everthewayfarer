@@ -67,6 +67,10 @@ jQuery(function($) {
       $('.nav-primary').toggleClass('nav-opened');
       $('.hamby').toggleClass('nav-animate');
     });
+  
+    //remove styling from external email subscrition forms and then reveal the form, handle error labels
+    $('[class^="_form_"] style').remove();
+    $('[class^="_form_"]').removeClass('hide');
     
     mapsize();
     setTimeout(setPostcard, 100);

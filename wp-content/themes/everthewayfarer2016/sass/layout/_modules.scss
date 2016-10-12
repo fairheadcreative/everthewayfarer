@@ -59,3 +59,41 @@
     &:hover { box-shadow: 0 3px 4px rgba(0,0,0,.25); }
   }
 }
+
+._form-content {
+  position: relative;
+  font-family: $helvetica-franklin;
+  
+  input {
+    width: 70%;
+    display: inline-block;
+    font-family: $helvetica-franklin;
+    padding: .75em;
+    border-radius: 0;
+
+    &[type="text"]{
+      &:focus::-webkit-input-placeholder { color:transparent; }
+      &:focus:-moz-placeholder { color:transparent; }
+      &:focus::-moz-placeholder { color:transparent; }
+      &:focus:-ms-input-placeholder { color:transparent; }
+      
+      &._has_error:focus + ._error {
+        display: none;
+      }
+    }
+  }
+  
+  ._error {
+    position: absolute;
+    top: 13px;
+    right: 17%;
+    color: $pink;
+    font-size: .8em;
+  }
+  
+  button {
+    width: 70%;
+    padding: .75em 1em;
+    border-radius: 0;
+  }
+}
