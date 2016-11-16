@@ -64,21 +64,24 @@ if ( is_home() ) { ?>
 <?php $GLOBALS[locationArray] = array(); ?>
 
 <section id="main">
-  <div class="container group">
-    <?php /*if ( is_home() ) { ?>
-      <div class="articles" style="min-height: 0;">
-        <a href="<?php echo site_url(); ?>/nationalparks/"> 
-        <div class="article-subscribe is-homenp">
-          <div class="inner">
-            <h2 class="h1">Park Crawl 2016</h2>
-            <p>45 parks. 22 states. 1 great American idea. <span>></span></p>
-            <span class="button">Check it out</span>
-          </div>
-        </div>
-        </a>
+   
+  <!--start as seen in box -->
+  <?php if ( is_home() ) { ?>
+    <div class="hero-home">
+      <div class="container">
+          <h2>Hey, Sivani here.</h2>
+          <p>I want to inspire you to explore</p>
+          <p>To be a conscious, responsible traveler.</p>
+          <p>Here are my postcards to you, sent weekly. <br>Want them in your inbox, too? <a href="<?php echo site_url(); ?>/subscribe/">Subscribe</a>.</p>
+          <ul class="stripe-logotypes">
+            <li>As Seen In</li>
+          </ul>
       </div>
-    <?php };*/ ?>
-
+    </div>
+  <?php }; ?>
+  <!--start as seen in box -->
+    
+  <div class="container group">
     <!-- Header for National Parks -->
     <?php if (strpos($_SERVER['REQUEST_URI'], "nationalparks") !== false){ ?>
       <div class="heading-section">

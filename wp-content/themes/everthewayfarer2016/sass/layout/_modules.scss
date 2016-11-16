@@ -97,3 +97,45 @@
     border-radius: 0;
   }
 }
+
+//homepage hero
+#main .hero-home {
+  background: #030303 url(../images/homewho.jpg) no-repeat right top;
+  background-size: 510px;
+  height: 26.75vw;
+  max-height: em(360);
+  color: $white;
+  font-family: $helvetica-franklin;
+  width: 100%;
+  margin-left: 0;
+  overflow: hidden;
+  
+  @include media(em(1280)){
+    width: calc(100% + 3em);
+    margin-left: -1.5em;
+  }
+    
+  .container {
+    padding: 3.5em 3.75em 0;
+  }
+  
+  p {
+    margin: 0 0 0.55em;
+    font-size: 1.05em;
+    letter-spacing: 1px;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  .stripe-logotypes {
+    position: absolute;
+    bottom: $base-spacing;
+    width: 100%;
+    
+    li {
+      text-transform: uppercase;
+    }
+  }
+}

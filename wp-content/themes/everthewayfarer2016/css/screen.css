@@ -438,6 +438,12 @@ h2 {
     font-size: 1.85em;
     border-bottom: 1px solid #f4f4f4;
     padding-top: 1em; }
+  .hero-home h2 {
+    font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: .375em;
+    letter-spacing: 0; }
 
 h3 {
   font-family: "franklin-gothic-urw-comp", sans-serif;
@@ -2998,6 +3004,35 @@ body {
     width: 70%;
     padding: .75em 1em;
     border-radius: 0; }
+
+#main .hero-home {
+  background: #030303 url(../images/homewho.jpg) no-repeat right top;
+  background-size: 510px;
+  height: 26.75vw;
+  max-height: 22.5em;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
+  width: 100%;
+  margin-left: 0;
+  overflow: hidden; }
+  @media screen and (min-width: 80em) {
+    #main .hero-home {
+      width: calc(100% + 3em);
+      margin-left: -1.5em; } }
+  #main .hero-home .container {
+    padding: 3.5em 3.75em 0; }
+  #main .hero-home p {
+    margin: 0 0 0.55em;
+    font-size: 1.05em;
+    letter-spacing: 1px; }
+  #main .hero-home a {
+    text-decoration: underline; }
+  #main .hero-home .stripe-logotypes {
+    position: absolute;
+    bottom: 1.5em;
+    width: 100%; }
+    #main .hero-home .stripe-logotypes li {
+      text-transform: uppercase; }
 
 .resources-open {
   position: absolute;
