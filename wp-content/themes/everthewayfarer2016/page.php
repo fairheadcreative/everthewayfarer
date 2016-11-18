@@ -23,9 +23,17 @@
         <?php if ( has_post_thumbnail() ) {} else { ?><h1><?php the_title(); ?></h1><?php } ?>
         <?php the_content(); ?>
 
-        <?php if ( !is_page(293) ) { ?>
+        <?php if ( !is_page(293) && !is_page(87) ) { ?>
         <a class="button secondary" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>">Share on Facebook</a>
         <a class="button secondary" target="_blank" href="https://twitter.com/intent/tweet?original_referer=<?php the_permalink() ?>&source=tweetbutton&text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=wayfaringsiv">Tweet post</a>
+        <?php } ?>
+
+        <?php if ( is_page(87) ) { ?>
+         <div class="push-bottom-1">
+           <a class="button secondary" target="_blank" href="https://www.facebook.com/pages/Ever-The-Wayfarer/480037682086654">Facebook</a>
+           <a class="button secondary" target="_blank" href="https://twitter.com/wayfaringsiv">Twitter</a>
+           <a class="button secondary" target="_blank" href="https://www.instagram.com/wayfaringsiv/">Instagram</a>
+         </div>     
         <?php } ?>
 
         <?php
@@ -35,8 +43,9 @@
             }
         ?>
 
-        <?php get_template_part( 'includes/subscribe' ); ?>
-
+        <?php if ( !is_page(87) ) { ?>
+          <?php get_template_part( 'includes/subscribe' ); ?>
+        <?php } ?>
 
         <?php if ( !is_page(293) ) { ?>
         <div class="writer article-writer">

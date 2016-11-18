@@ -655,6 +655,9 @@ input[type="submit"] {
   transform: rotate(90deg);
   display: inline-block; }
 
+.push-bottom-1 {
+  margin-bottom: 1.5em; }
+
 /* Neat 1.7.0
  * http://neat.bourbon.io
  * Copyright 2012-2014 thoughtbot, inc.

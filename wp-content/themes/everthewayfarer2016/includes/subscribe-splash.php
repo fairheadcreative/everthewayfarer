@@ -6,7 +6,7 @@
     <div class="container">
       <header>
         <h1>Get inspiring travel ideas & stunning photography delivered to your inbox each month</h1>
-        <p>Plus etical travel guides & reviews to help you travel responsibly.</p>
+        <p>Plus ethical travel guides & reviews to help you travel responsibly.</p>
       </header> 
 
       <div id="mc_embed_signup">        
