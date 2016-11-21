@@ -3021,7 +3021,13 @@ body {
       width: calc(100% + 3em);
       margin-left: -1.5em; } }
   #main .hero-home .container {
-    padding: 3.5em 2.55em 6.25em; }
+    padding: 3.5em 1.5em 6.25em; }
+    @media screen and (min-width: 26.75em) {
+      #main .hero-home .container {
+        padding: 3.5em 2.55em 8.25em; } }
+    @media screen and (min-width: 43.75em) {
+      #main .hero-home .container {
+        padding: 3.5em 2.55em 6.25em; } }
     @media screen and (min-width: 80em) {
       #main .hero-home .container {
         padding: 3.5em 3.75em 6.25em; } }
@@ -3033,11 +3039,15 @@ body {
     text-decoration: underline; }
   #main .hero-home .stripe-logotypes {
     position: absolute;
-    bottom: .85em;
+    bottom: 5.55em;
     width: calc(100% - 6em); }
+    @media screen and (min-width: 43.75em) {
+      #main .hero-home .stripe-logotypes {
+        bottom: 3.55em; } }
     #main .hero-home .stripe-logotypes li {
       margin-right: 1.25em;
-      float: left;
+      position: absolute;
+      height: 40px;
       display: block; }
       #main .hero-home .stripe-logotypes li img {
         max-height: 36px; }
@@ -3048,9 +3058,85 @@ body {
         font-size: .95em;
         white-space: nowrap;
         margin-right: 1em;
-        line-height: 2.5; }
+        line-height: 2; }
+        @media screen and (min-width: 22.5em) {
+          #main .hero-home .stripe-logotypes li:first-child {
+            line-height: 2.35; } }
       #main .hero-home .stripe-logotypes li:last-child {
         margin-right: 0; }
+      #main .hero-home .stripe-logotypes li.stripe-image {
+        background: url(../images/endorsements.png) no-repeat top left;
+        text-indent: -1000%;
+        background-size: 440px;
+        image-rendering: pixelated; }
+        @media screen and (min-width: 22.5em) {
+          #main .hero-home .stripe-logotypes li.stripe-image {
+            background-size: 540px;
+            image-rendering: auto; } }
+        #main .hero-home .stripe-logotypes li.stripe-image.stripe-bbc {
+          width: 52px;
+          left: 105px;
+          background-position: 0 0; }
+          @media screen and (min-width: 22.5em) {
+            #main .hero-home .stripe-logotypes li.stripe-image.stripe-bbc {
+              width: 65px; } }
+          @media screen and (min-width: 43.75em) {
+            #main .hero-home .stripe-logotypes li.stripe-image.stripe-bbc {
+              left: 98px; } }
+        #main .hero-home .stripe-logotypes li.stripe-image.stripe-cnn {
+          width: 33px;
+          left: 0;
+          top: 30px;
+          background-position: -69px 0; }
+          @media screen and (min-width: 22.5em) {
+            #main .hero-home .stripe-logotypes li.stripe-image.stripe-cnn {
+              width: 40px;
+              background-position: -85px 0; } }
+          @media screen and (min-width: 43.75em) {
+            #main .hero-home .stripe-logotypes li.stripe-image.stripe-cnn {
+              left: 182px;
+              top: 0; } }
+        #main .hero-home .stripe-logotypes li.stripe-image.stripe-backpacker {
+          width: 101px;
+          left: 55px;
+          top: 30px;
+          background-position: -120px 0; }
+          @media screen and (min-width: 22.5em) {
+            #main .hero-home .stripe-logotypes li.stripe-image.stripe-backpacker {
+              width: 122px;
+              left: 61px;
+              background-position: -148px 0; } }
+          @media screen and (min-width: 43.75em) {
+            #main .hero-home .stripe-logotypes li.stripe-image.stripe-backpacker {
+              left: 242px;
+              top: 0; } }
+        #main .hero-home .stripe-logotypes li.stripe-image.stripe-outdoorphotographer {
+          width: 90px;
+          left: 178px;
+          top: 30px;
+          background-position: -240px 0;
+          z-index: 10; }
+          @media screen and (min-width: 22.5em) {
+            #main .hero-home .stripe-logotypes li.stripe-image.stripe-outdoorphotographer {
+              width: 110px;
+              left: 205px;
+              background-position: -294px 0; } }
+          @media screen and (min-width: 43.75em) {
+            #main .hero-home .stripe-logotypes li.stripe-image.stripe-outdoorphotographer {
+              left: 385px;
+              top: 0; } }
+        #main .hero-home .stripe-logotypes li.stripe-image.stripe-baynature {
+          width: 96px;
+          left: 179px;
+          background-position: -346px 0; }
+          @media screen and (min-width: 22.5em) {
+            #main .hero-home .stripe-logotypes li.stripe-image.stripe-baynature {
+              width: 116px;
+              left: 192px;
+              background-position: -425px 0; } }
+          @media screen and (min-width: 43.75em) {
+            #main .hero-home .stripe-logotypes li.stripe-image.stripe-baynature {
+              left: 517px; } }
 
 .resources-open {
   position: absolute;

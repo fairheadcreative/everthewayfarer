@@ -75,11 +75,11 @@ if ( is_home() ) { ?>
           <p>Here are my postcards to you, sent weekly. <br>Want them in your inbox, too? <a href="<?php echo site_url(); ?>/subscribe/">Subscribe</a>.</p>
           <ul class="stripe-logotypes">
             <li>As Seen In</li>
-            <li class="stripe-image"><img src="<?php bloginfo('template_url'); ?>/images/endorsements-bbc.png" alt="Ever the Wayfarer endorsements bbc"></li>
-            <li class="stripe-image"><img src="<?php bloginfo('template_url'); ?>/images/endorsements-cnn.png" alt="Ever the Wayfarer endorsements cnn"></li>
-            <li class="stripe-image"><img src="<?php bloginfo('template_url'); ?>/images/endorsements-backpacker.png" alt="Ever the Wayfarer endorsements backpacker"></li>
-            <li class="stripe-image"><img src="<?php bloginfo('template_url'); ?>/images/endorsements-outdoorphotographer.png" alt="Ever the Wayfarer endorsements outdoorphotographer"></li>
-            <li class="stripe-image"><img src="<?php bloginfo('template_url'); ?>/images/endorsements-baynature.png" alt="Ever the Wayfarer endorsements baynature"></li>
+            <li class="stripe-image stripe-bbc">endorsement bbc</li>
+            <li class="stripe-image stripe-cnn">endorsement cnn</li>
+            <li class="stripe-image stripe-backpacker">endorsement backpacker</li>
+            <li class="stripe-image stripe-outdoorphotographer">endorsement outdoorphotographer</li>
+            <li class="stripe-image stripe-baynature">endorsement baynature</li>
           </ul>
       </div>
     </div>

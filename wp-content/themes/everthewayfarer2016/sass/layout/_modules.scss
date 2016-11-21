@@ -116,7 +116,15 @@
   }
     
   .container {
-    padding: 3.5em 2.55em 6.25em;
+    padding: 3.5em 1.5em 6.25em;
+    
+    @include media(em(428)){
+      padding: 3.5em 2.55em 8.25em;
+    }
+    
+    @include media(em(700)){
+      padding: 3.5em 2.55em 6.25em;
+    }
     
     @include media(em(1280)){
       padding: 3.5em 3.75em 6.25em;
@@ -135,12 +143,17 @@
   
   .stripe-logotypes {
     position: absolute;
-    bottom: .85em;
+    bottom: 5.55em;
     width: calc(100% - 6em);
+    
+    @include media(em(700)){
+      bottom: 3.55em;
+    }
     
     li {
       margin-right: 1.25em;
-      float: left;
+      position: absolute;
+      height: 40px;
       display: block;
       
       img {
@@ -154,11 +167,111 @@
         font-size: .95em;
         white-space: nowrap;
         margin-right: 1em;
-        line-height: 2.5;
+        line-height: 2;
+    
+        @include media(em(360)){
+          line-height: 2.35;
+        }
       }
       
       &:last-child {
         margin-right: 0;
+      }
+      
+      &.stripe-image {
+        background: url(../images/endorsements.png) no-repeat top left;
+        text-indent: -1000%;
+        background-size: 440px;
+        image-rendering: pixelated;
+    
+        @include media(em(360)){
+          background-size: 540px;
+          image-rendering: auto;
+        }
+        
+        &.stripe-bbc {
+          width: 52px;
+          left: 105px;
+          background-position: 0 0;
+    
+          @include media(em(360)){
+            width: 65px;
+          }
+          
+          @include media(em(700)) {
+            left: 98px;
+          }
+        }
+        
+        &.stripe-cnn {
+          width: 33px;
+          left: 0;
+          top: 30px;
+          background-position: -69px 0;
+    
+          @include media(em(360)){
+            width: 40px;
+            background-position: -85px 0;
+          }
+          
+          @include media(em(700)) {
+            left: 182px;
+            top: 0;
+          }
+        }
+        
+        &.stripe-backpacker {
+          width: 101px;
+          left: 55px;
+          top: 30px;
+          background-position: -120px 0;
+    
+          @include media(em(360)){
+            width: 122px;
+            left: 61px;
+            background-position: -148px 0;
+          }
+          
+          @include media(em(700)) {
+            left: 242px;
+            top: 0;
+          }
+        }
+        
+        &.stripe-outdoorphotographer {
+          width: 90px;
+          left: 178px;
+          top: 30px;
+          background-position: -240px 0;
+          z-index: 10;
+    
+          @include media(em(360)){
+            width: 110px;
+            left: 205px;
+            background-position: -294px 0;
+          }
+          
+          @include media(em(700)) {
+            left: 385px;
+            top: 0;
+          }
+        }
+        
+        &.stripe-baynature {
+          width: 96px;
+          left: 179px;
+          background-position: -346px 0;
+    
+          @include media(em(360)){
+            width: 116px;
+            left: 192px;
+            background-position: -425px 0;
+          }
+          
+          @include media(em(700)) {
+            left: 517px;
+          }
+        }
       }
     }
   }
