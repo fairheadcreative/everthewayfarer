@@ -906,19 +906,20 @@
 }
 
 .single-postcard-bg {
-    position: absolute;
-    top: 45px;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
     
-    @include media(max-width em(640)){
-      background: white !important;
-    }
-    
-    @include media($small-screen){
-      top: 64px;
-    }
+  @include media(max-width em(640)){
+    background: white !important;
+  }
+
+  @include media($small-screen){
+    top: 64px;
+  }
 
   .more {
     margin: 0 auto ;
@@ -990,6 +991,7 @@
     width: 750px;
     height: 410px; 
     box-shadow: 0px -5px 20px 5px rgba(0, 0, 0, 0.1);  
+    transition: all .3s;
   }
 
   @include media($large-screen) {
@@ -1001,6 +1003,10 @@
   &.is-open {
     opacity: 1;
     z-index: 99; 
+  }
+  
+  &.is-collapsed {
+    bottom: calc(-100% + 7.5em);
   }
 
   .single &.is-open {
@@ -1021,6 +1027,29 @@
     @include fill-parent();
     overflow: hidden;
     height: 100%;
+    
+    .postcard-toggle {
+      font-family: $helvetica-franklin;
+      cursor: pointer;
+      
+      .toggle-icon {
+        display: inline-block;
+        transform: rotate(90deg);
+        transition: all .3s;
+        
+        &.rotate {
+          transform: rotate(270deg);
+        }
+      }
+      
+      .toggle-text {
+        
+      }
+      
+      &:hover {
+        background: $light-gray;
+      }
+    }
     
     @include media($medium-screen) {
       padding: 1em;
@@ -1084,23 +1113,6 @@
         }          
       }
     }
-    
-    .postcard-close {
-      position: absolute;
-      font-family: sans-serif;
-      font-size: .9em;
-      -webkit-transform: scaleX(1.2);
-      transform: scaleX(1.2);
-      top: .75em;
-      display: none;
-      
-      @include media($medium-screen) {
-        display: block;
-        top: 1.25em;
-      }
-      
-      a { color: $dark-gray; }
-    }
   }
 
   .postcard-item--content--signature {
@@ -1162,6 +1174,29 @@
       width: 150px;
       height: 150px;
     }
+  }
+}
+    
+.postcard-close {
+  position: absolute;
+  font-family: sans-serif;
+  font-size: .9em;
+  -webkit-transform: scaleX(1.2);
+  transform: scaleX(1.2);
+  top: .75em;
+  display: none;
+  z-index: 110;
+
+  @include media($medium-screen) {
+    display: block;
+    top: 0;
+    left: auto;
+    right: 1.5em;
+  }
+
+  a { 
+    color: $white;
+    font-size: 3em;
   }
 }
 

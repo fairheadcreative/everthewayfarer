@@ -72,6 +72,19 @@ jQuery(function($) {
     $('[class^="_form_"] style').remove();
     $('[class^="_form_"]').removeClass('hide');
     
+    //collapse/expand postcards
+    $('.postcard-toggle').on('click', function(){
+      if( $('.postcard-item--popout').hasClass('is-collapsed') ) {
+        $('.postcard-item--popout').removeClass('is-collapsed');
+        $('.toggle-text').text('Hide');
+        $('.toggle-icon').removeClass('rotate');
+      } else {
+        $('.postcard-item--popout').addClass('is-collapsed');
+        $('.toggle-text').text('Show');
+        $('.toggle-icon').addClass('rotate');
+      }
+    });
+    
     mapsize();
     setTimeout(setPostcard, 100);
     setNav();

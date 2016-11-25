@@ -2542,7 +2542,8 @@ body {
   top: 45px;
   bottom: 0;
   left: 0;
-  right: 0; }
+  right: 0;
+  overflow: hidden; }
   @media screen and (max-width: 40em) {
     .single-postcard-bg {
       background: white !important; } }
@@ -2618,7 +2619,8 @@ body {
       transform: translateX(-50%);
       width: 750px;
       height: 410px;
-      box-shadow: 0px -5px 20px 5px rgba(0, 0, 0, 0.1); } }
+      box-shadow: 0px -5px 20px 5px rgba(0, 0, 0, 0.1);
+      transition: all .3s; } }
   @media screen and (min-width: 53.75em) {
     .postcard-item--popout {
       width: 750px;
@@ -2626,6 +2628,8 @@ body {
   .postcard-item--popout.is-open {
     opacity: 1;
     z-index: 99; }
+  .postcard-item--popout.is-collapsed {
+    bottom: calc(-100% + 7.5em); }
   @media screen and (min-width: 40em) {
     .postcard-item--popout .postcard-item--image {
       display: none; } }
@@ -2635,6 +2639,17 @@ body {
     width: 100%;
     overflow: hidden;
     height: 100%; }
+    .postcard-item--popout .postcard-item--content .postcard-toggle {
+      font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
+      cursor: pointer; }
+      .postcard-item--popout .postcard-item--content .postcard-toggle .toggle-icon {
+        display: inline-block;
+        transform: rotate(90deg);
+        transition: all .3s; }
+        .postcard-item--popout .postcard-item--content .postcard-toggle .toggle-icon.rotate {
+          transform: rotate(270deg); }
+      .postcard-item--popout .postcard-item--content .postcard-toggle:hover {
+        background: #fafafa; }
     @media screen and (min-width: 40em) {
       .postcard-item--popout .postcard-item--content {
         padding: 1em;
@@ -2685,20 +2700,6 @@ body {
           background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.01) 1%, white 95%, white 100%);
           background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.01) 1%, white 95%, white 100%);
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); } }
-  .postcard-item--popout .postcard-item--content--message .postcard-close {
-    position: absolute;
-    font-family: sans-serif;
-    font-size: .9em;
-    -webkit-transform: scaleX(1.2);
-    transform: scaleX(1.2);
-    top: .75em;
-    display: none; }
-    @media screen and (min-width: 40em) {
-      .postcard-item--popout .postcard-item--content--message .postcard-close {
-        display: block;
-        top: 1.25em; } }
-    .postcard-item--popout .postcard-item--content--message .postcard-close a {
-      color: #252424; }
   .postcard-item--popout .postcard-item--content--signature {
     background: url("../images/postcard-sig.jpg") 0 15px no-repeat;
     background-size: contain;
@@ -2749,6 +2750,25 @@ body {
     .postcard-item--popout:before {
       width: 150px;
       height: 150px; } }
+
+.postcard-close {
+  position: absolute;
+  font-family: sans-serif;
+  font-size: .9em;
+  -webkit-transform: scaleX(1.2);
+  transform: scaleX(1.2);
+  top: .75em;
+  display: none;
+  z-index: 110; }
+  @media screen and (min-width: 40em) {
+    .postcard-close {
+      display: block;
+      top: 0;
+      left: auto;
+      right: 1.5em; } }
+  .postcard-close a {
+    color: #fff;
+    font-size: 3em; }
 
 .splash-article-previous a, .splash-article-next a {
   position: absolute;

@@ -8,12 +8,15 @@
 <?php if ( in_category('Postcards')) { ?>
 <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'large', true); ?>
 <div class="single-postcard-bg" style="background: url(<?php echo $image_url[0]; ?>) no-repeat center center / cover">
+  <div class="postcard-close">
+    <a href="<?php echo site_url(); ?>/postcards/" data-url-animation="fadeout">&times;</a>
+  </div>
   <div class="postcard-item--popout is-open" id="id-<?php the_ID(); ?>-popout">
     <div class="postcard-item--content">
-      <div class="postcard-item--content--message">
-      <div class="postcard-close">
-        <a href="<?php echo site_url(); ?>/postcards/" data-url-animation="fadeout">X</a>
+      <div class="postcard-toggle">
+        <span class="toggle-icon">&gt;</span><span class="toggle-text">hide</span>
       </div>
+      <div class="postcard-item--content--message">
        <h1><?php the_title(); ?></h1>      
       <div class="postcard-item--image">
         <img src="<?php echo $image_url[0]; ?>" alt="<?php the_title(); ?>" />
