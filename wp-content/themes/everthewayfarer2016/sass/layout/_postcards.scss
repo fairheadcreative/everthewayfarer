@@ -1,44 +1,6 @@
 
 // Postcards
 
-/*.postcard-item--preview {
-  @include transition(all 0.25s ease-in-out);
-  background: white;
-  border: $base-border;
-  box-shadow: 0 2px 2px rgba(0,0,0,.1);
-  padding: .25em;
-  cursor: pointer;
-  position: relative;
-  top: 0;
-
-  h2 {
-    display: inline-block;
-    padding-left: .252em;
-    
-    @include media($x-large-screen) {
-      max-width: 50%;
-    }
-   }
-
-  .meta {
-    @include media($x-large-screen) {
-      float: right;
-      padding: 0 .5em 0 0;
-    }
-
-    margin: 0;
-    padding-left: .5em; 
-    font-style: normal;
-    font-size: 1em;
-  }
-
-  &:hover {
-    @include transform(scale(1.025));
-    box-shadow: 0 7px 6px rgba(0,0,0,.05);
-    top: -7px;
-  }
-}*/
-
 .category-postcard .articles { margin-right: 0; }
 
 .category-postcard #main {
@@ -1006,7 +968,8 @@
   }
   
   &.is-collapsed {
-    bottom: calc(-100% + 7.5em);
+    bottom: -360px;
+    opacity: .8;
   }
 
   .single &.is-open {
@@ -1031,23 +994,34 @@
     .postcard-toggle {
       font-family: $helvetica-franklin;
       cursor: pointer;
+      transition: all .3s;
+      text-transform: uppercase;
+      position: absolute;
+      left: 1.5em;
+      padding: .25em .5em;
+      font-size: .7em;
+      color: $gray;
+      display: none;
       
       .toggle-icon {
         display: inline-block;
-        transform: rotate(90deg);
-        transition: all .3s;
+        -webkit-transform: rotate(90deg) scale(1, 2);
+        transform: rotate(90deg) scale(1, 2);
+        margin: 0 .5em;
         
         &.rotate {
-          transform: rotate(270deg);
+          -webkit-transform: rotate(270deg) scale(1, 2);
+          transform: rotate(270deg) scale(1, 2);
         }
       }
       
-      .toggle-text {
-        
-      }
-      
       &:hover {
-        background: $light-gray;
+        background: darken($menu-gray, 5);
+        color: $dark-gray;
+      }
+    
+      @include media($medium-screen) {
+        display: block;
       }
     }
     
@@ -1181,8 +1155,6 @@
   position: absolute;
   font-family: sans-serif;
   font-size: .9em;
-  -webkit-transform: scaleX(1.2);
-  transform: scaleX(1.2);
   top: .75em;
   display: none;
   z-index: 110;
@@ -1196,7 +1168,8 @@
 
   a { 
     color: $white;
-    font-size: 3em;
+    font-size: 4em;
+    line-height: 1.35;
   }
 }
 

@@ -74,14 +74,17 @@ jQuery(function($) {
     
     //collapse/expand postcards
     $('.postcard-toggle').on('click', function(){
-      if( $('.postcard-item--popout').hasClass('is-collapsed') ) {
-        $('.postcard-item--popout').removeClass('is-collapsed');
-        $('.toggle-text').text('Hide');
-        $('.toggle-icon').removeClass('rotate');
+      var postcardBlock = $('.postcard-item--popout'),
+          toggleText = $('.toggle-text'),
+          toggleIcon = $('.toggle-icon');
+      if( postcardBlock.hasClass('is-collapsed') ) {
+        postcardBlock.removeClass('is-collapsed');
+        toggleText.text('Hide');
+        toggleIcon.removeClass('rotate');
       } else {
-        $('.postcard-item--popout').addClass('is-collapsed');
-        $('.toggle-text').text('Show');
-        $('.toggle-icon').addClass('rotate');
+        postcardBlock.addClass('is-collapsed');
+        toggleText.text('Show');
+        toggleIcon.addClass('rotate');
       }
     });
     
