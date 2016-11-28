@@ -9,7 +9,7 @@
 <?php $image_id = get_post_thumbnail_id(); $image_url = wp_get_attachment_image_src($image_id,'large', true); ?>
 <div class="single-postcard-bg" style="background: url(<?php echo $image_url[0]; ?>) no-repeat center center / cover">
   <div class="postcard-close">
-    <a href="<?php echo site_url(); ?>/postcards/" data-url-animation="fadeout">&times;</a>
+    <a href="<?php echo site_url(); ?>/postcards/" data-url-animation="fadeout">&nbsp;</a>
   </div>
   <div class="postcard-item--popout is-open" id="id-<?php the_ID(); ?>-popout">
     <div class="postcard-item--content">

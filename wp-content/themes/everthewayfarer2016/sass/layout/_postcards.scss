@@ -932,15 +932,7 @@
   background: white;
   opacity: 0;
   margin: 0 auto;
-  
-/*
-  @include media($small-screen) {
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);  
-    max-height: 100%;
-    overflow: hidden;
-  }*/
+  border-radius: $base-border-radius;
 
   @include media($medium-screen) {
     max-width: calc(100% - 120px); 
@@ -990,6 +982,7 @@
     @include fill-parent();
     overflow: hidden;
     height: 100%;
+    border-radius: $base-border-radius $base-border-radius 0 0;
     
     .postcard-toggle {
       font-family: $helvetica-franklin;
@@ -998,10 +991,11 @@
       text-transform: uppercase;
       position: absolute;
       left: 1.5em;
-      padding: .25em .5em;
+      padding: .25em .75em .25em .5em;
       font-size: .7em;
       color: $gray;
       display: none;
+      border-radius: $base-border-radius;
       
       .toggle-icon {
         display: inline-block;
@@ -1161,15 +1155,53 @@
 
   @include media($medium-screen) {
     display: block;
-    top: 0;
+    top: 1.5em;
     left: auto;
     right: 1.5em;
   }
 
   a { 
-    color: $white;
-    font-size: 4em;
-    line-height: 1.35;
+    border-radius: 5px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    transition: background .3s;
+    
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: $white;
+      opacity: 1;
+      transition: all .3s;
+    }
+    
+    &:before {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 18px;
+      left: 5px;
+    }
+    
+    &:after {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      top: 18px;
+      left: 5px;
+    }
+    
+    &:hover {
+      background: rgba(0,0,0,.5);
+      
+      &:before,
+      &:after {
+        opacity: .8;
+      }
+    }
   }
 }
 

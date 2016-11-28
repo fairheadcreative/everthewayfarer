@@ -2559,14 +2559,7 @@ body {
   background: white;
   opacity: 0;
   margin: 0 auto;
-  /*
-    @include media($small-screen) {
-      top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);  
-      max-height: 100%;
-      overflow: hidden;
-    }*/ }
+  border-radius: 3px; }
   .postcard-item--popout:after {
     content: "";
     display: table;
@@ -2602,7 +2595,8 @@ body {
     background: white;
     width: 100%;
     overflow: hidden;
-    height: 100%; }
+    height: 100%;
+    border-radius: 3px 3px 0 0; }
     .postcard-item--popout .postcard-item--content .postcard-toggle {
       font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
       cursor: pointer;
@@ -2610,10 +2604,11 @@ body {
       text-transform: uppercase;
       position: absolute;
       left: 1.5em;
-      padding: .25em .5em;
+      padding: .25em .75em .25em .5em;
       font-size: .7em;
       color: #999;
-      display: none; }
+      display: none;
+      border-radius: 3px; }
       .postcard-item--popout .postcard-item--content .postcard-toggle .toggle-icon {
         display: inline-block;
         -webkit-transform: rotate(90deg) scale(1, 2);
@@ -2739,13 +2734,39 @@ body {
   @media screen and (min-width: 40em) {
     .postcard-close {
       display: block;
-      top: 0;
+      top: 1.5em;
       left: auto;
       right: 1.5em; } }
   .postcard-close a {
-    color: #fff;
-    font-size: 4em;
-    line-height: 1.35; }
+    border-radius: 5px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    transition: background .3s; }
+    .postcard-close a:before, .postcard-close a:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: #fff;
+      opacity: 1;
+      transition: all .3s; }
+    .postcard-close a:before {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 18px;
+      left: 5px; }
+    .postcard-close a:after {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      top: 18px;
+      left: 5px; }
+    .postcard-close a:hover {
+      background: rgba(0, 0, 0, 0.5); }
+      .postcard-close a:hover:before, .postcard-close a:hover:after {
+        opacity: .8; }
 
 .splash-article-previous a, .splash-article-next a {
   position: absolute;
