@@ -658,6 +658,12 @@ input[type="submit"] {
 .push-bottom-1 {
   margin-bottom: 1.5em; }
 
+.visible {
+  opacity: .6 !important; }
+
+.visible-soft {
+  opacity: 1; }
+
 /* Neat 1.7.0
  * http://neat.bourbon.io
  * Copyright 2012-2014 thoughtbot, inc.
@@ -2617,6 +2623,10 @@ body {
         .postcard-item--popout .postcard-item--content .postcard-toggle .toggle-icon.rotate {
           -webkit-transform: rotate(270deg) scale(1, 2);
           transform: rotate(270deg) scale(1, 2); }
+      .postcard-item--popout .postcard-item--content .postcard-toggle .toggle-text {
+        display: inline-block; }
+        .postcard-item--popout .postcard-item--content .postcard-toggle .toggle-text.text-hidden {
+          margin-left: .25em; }
       .postcard-item--popout .postcard-item--content .postcard-toggle:hover {
         background: #e7e7e7;
         color: #252424; }
@@ -2652,6 +2662,12 @@ body {
     color: #999;
     margin: .5em 0 1em;
     padding: 0 1em; }
+    @media screen and (min-width: 23.75em) {
+      .postcard-item--popout .postcard-item--content--message h1, .postcard-item--popout .postcard-item--content--message .the-content .h1, .the-content .postcard-item--popout .postcard-item--content--message .h1, .postcard-item--popout .postcard-item--content--message .h1-sub {
+        margin: 1em 0; } }
+    @media screen and (min-width: 30em) {
+      .postcard-item--popout .postcard-item--content--message h1, .postcard-item--popout .postcard-item--content--message .the-content .h1, .the-content .postcard-item--popout .postcard-item--content--message .h1, .postcard-item--popout .postcard-item--content--message .h1-sub {
+        margin: .5em 0 1em; } }
     @media screen and (min-width: 40em) {
       .postcard-item--popout .postcard-item--content--message h1, .postcard-item--popout .postcard-item--content--message .the-content .h1, .the-content .postcard-item--popout .postcard-item--content--message .h1, .postcard-item--popout .postcard-item--content--message .h1-sub {
         margin: 1em 0; } }
@@ -2772,7 +2788,7 @@ body {
   position: absolute;
   display: block;
   top: 3.5em;
-  opacity: .6;
+  opacity: 0;
   transition: opacity .3s;
   width: 50%;
   height: 60px;
@@ -2781,7 +2797,8 @@ body {
     .splash-article-previous a, .splash-article-next a {
       bottom: 0;
       top: 0;
-      height: 100%; } }
+      height: 100%;
+      opacity: .6; } }
   .splash-article-previous a:hover, .splash-article-next a:hover {
     opacity: 1; }
   .splash-article-previous a > span, .splash-article-next a > span {

@@ -1009,6 +1009,14 @@
         }
       }
       
+      .toggle-text {
+        display: inline-block;
+        
+        &.text-hidden {
+          margin-left: .25em;
+        }
+      }
+      
       &:hover {
         background: darken($menu-gray, 5);
         color: $dark-gray;
@@ -1050,6 +1058,14 @@
       color: $medium-gray;
       margin: .5em 0 1em;
       padding: 0 1em;
+      
+      @include media(em(380)){
+        margin: 1em 0;
+      }
+      
+      @include media(em(480)){
+        margin: .5em 0 1em;
+      }
       
       @include media($medium-screen){
         margin: 1em 0;
@@ -1210,7 +1226,7 @@
   position: absolute;
   display: block;
   top: 3.5em;
-  opacity: .6;
+  opacity: 0;
   transition: opacity .3s;
   width: 50%;
   height: 60px;
@@ -1220,6 +1236,7 @@
     bottom: 0;
     top: 0;
     height: 100%;
+    opacity: .6;
   }
   
   &:hover { opacity: 1; }

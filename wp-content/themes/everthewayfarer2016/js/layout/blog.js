@@ -79,11 +79,11 @@ jQuery(function($) {
           toggleIcon = $('.toggle-icon');
       if( postcardBlock.hasClass('is-collapsed') ) {
         postcardBlock.removeClass('is-collapsed');
-        toggleText.text('Hide');
+        toggleText.text('Hide').removeClass('text-hidden');
         toggleIcon.removeClass('rotate');
       } else {
         postcardBlock.addClass('is-collapsed');
-        toggleText.text('Show');
+        toggleText.text('Show').addClass('text-hidden');
         toggleIcon.addClass('rotate');
       }
     });
@@ -141,14 +141,20 @@ jQuery(function($) {
     
     if(winWidth < 640 && winWidth > 479){
       
-      navPos = titleHeightMobile+navHeight-48;
-      singleButtons.css({'top': navPos});
+      navPos = titleHeightMobile+navHeight-60;
+      singleButtons.css({'top': navPos}).addClass('visible');
       postcardText.css({'height': 'auto'});
       
-    }else if(winWidth < 480){
+    }else if(winWidth < 480 && winWidth > 379){
       
-      navPos = titleHeightMobile+navHeight-32;
-      singleButtons.css({'top': navPos});
+      navPos = titleHeightMobile+navHeight-40;
+      singleButtons.css({'top': navPos}).addClass('visible');
+      postcardText.css({'height': 'auto'});
+      
+    }else if(winWidth < 380){
+      
+      navPos = titleHeightMobile+navHeight-44;
+      singleButtons.css({'top': navPos}).addClass('visible');
       postcardText.css({'height': 'auto'});
       
     }else{

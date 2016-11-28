@@ -6,3 +6,11 @@
 .push-bottom-1 {
   margin-bottom: $base-spacing;
 }
+
+.visible {
+  opacity: .6 !important;
+}
+
+.visible-soft {
+  opacity: 1;
+}
