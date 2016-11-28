@@ -139,7 +139,13 @@ jQuery(function($) {
         postcardText = $('.postcard-item--content--text'),
         textHeight = postcardHeight - titleHeightDesktop - faceBtn - 125;
     
-    if(winWidth < 640 && winWidth > 479){
+    if(winWidth < 800 && winWidth > 639){
+      
+      navPos = titleHeightMobile+navHeight-46;
+      singleButtons.css({'top': navPos}).addClass('visible');
+      postcardText.css({'height': 'auto'});
+      
+    }else if(winWidth < 640 && winWidth > 479){
       
       navPos = titleHeightMobile+navHeight-60;
       singleButtons.css({'top': navPos}).addClass('visible');
@@ -157,8 +163,7 @@ jQuery(function($) {
       singleButtons.css({'top': navPos}).addClass('visible');
       postcardText.css({'height': 'auto'});
       
-    }else{
-      
+    }else{      
       postcardText.height(textHeight);
       singleButtons.css({'top': 0});
     }

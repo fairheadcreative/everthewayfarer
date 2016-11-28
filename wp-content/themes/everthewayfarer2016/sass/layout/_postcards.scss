@@ -868,19 +868,20 @@
 }
 
 .single-postcard-bg {
-  position: absolute;
-  top: 45px;
+  position: relative;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   overflow: hidden;
     
-  @include media(max-width em(640)){
+  @include media(max-width em(799)){
     background: white !important;
   }
-
-  @include media($small-screen){
-    top: 64px;
+  
+  @include media($postcard-screen){
+    position: absolute;
+    top: 45px;
   }
 
   .more {
@@ -934,7 +935,7 @@
   margin: 0 auto;
   border-radius: $base-border-radius;
 
-  @include media($medium-screen) {
+  @include media($postcard-screen) {
     max-width: calc(100% - 120px); 
     left: 50%;
     position: absolute;
@@ -970,7 +971,7 @@
   // The postcard's image
   .postcard-item--image {
     
-    @include media($medium-screen) {
+    @include media($postcard-screen) {
       display: none;
     }
   }
@@ -1022,12 +1023,12 @@
         color: $dark-gray;
       }
     
-      @include media($medium-screen) {
+      @include media($postcard-screen) {
         display: block;
       }
     }
     
-    @include media($medium-screen) {
+    @include media($postcard-screen) {
       padding: 1em;
       float: right;
     }
@@ -1038,7 +1039,7 @@
   }
 
   .postcard-item--content--message {
-    @include media($medium-screen) {
+    @include media($postcard-screen) {
       padding-left: 1em;
       padding-right: 1em;
       margin: 0 -1em;
@@ -1067,7 +1068,7 @@
         margin: .5em 0 1em;
       }
       
-      @include media($medium-screen){
+      @include media($postcard-screen){
         margin: 1em 0;
       }
     }
@@ -1079,7 +1080,7 @@
       & + .facebook {
         position: relative;
       
-        @include media($medium-screen) {
+        @include media($postcard-screen) {
           &:after {
             content: "";
             position: absolute;
@@ -1110,7 +1111,7 @@
     right: 1em;
     display: none;
     
-    @include media($medium-screen){
+    @include media($postcard-screen){
       display: block;
       width: 21vw;
     }
@@ -1142,7 +1143,7 @@
 
   // Stamp
   &:before {
-    @include media($medium-screen) {
+    @include media($postcard-screen) {
       z-index: 0;
       content: '';    
       background: url('../images/postcard-stamp.jpg') top right no-repeat;
@@ -1169,7 +1170,7 @@
   display: none;
   z-index: 110;
 
-  @include media($medium-screen) {
+  @include media($postcard-screen) {
     display: block;
     top: 1.5em;
     left: auto;
@@ -1232,7 +1233,7 @@
   height: 60px;
   z-index: 10;
   
-  @include media($medium-screen) {
+  @include media($postcard-screen) {
     bottom: 0;
     top: 0;
     height: 100%;
@@ -1252,7 +1253,7 @@
       background: black;
       position: absolute;
       
-      @include media($medium-screen){
+      @include media($postcard-screen){
         background: white;
       }
       
@@ -1278,7 +1279,7 @@
     transform: translate(0, -50%);
   }
   
-  @include media($medium-screen) {
+  @include media($postcard-screen) {
     @include background-image(linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 100%));
   }
 }
@@ -1292,7 +1293,7 @@
     transform: rotate(180deg) translateY(24px);
   }
   
-  @include media($medium-screen) {
+  @include media($postcard-screen) {
     @include background-image(linear-gradient(to left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 100%));
   }
 }
