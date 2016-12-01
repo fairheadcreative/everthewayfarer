@@ -56,14 +56,24 @@ function the_category_unlinked($separator = ' ') {
 }
 
 //add featured images to rss feed
-function wcs_post_thumbnails_in_feeds( $content ) {
-    global $post;
-    if( has_post_thumbnail( $post->ID ) ) {
-        $content = '<p>' . get_the_post_thumbnail( $post->ID ) . '</p>' . $content;
-    }
-    return $content;
+add_action('rss2_item', 'add_my_rss_node');
+
+function add_my_rss_node() {
+  global $post;
+  if(has_post_thumbnail($post->ID)):
+    $thumbnail = get_attachment_link(get_post_thumbnail_id($post->ID));
+    echo("<image>{$thumbnail}</image>");
+  endif;
 }
-add_filter( 'the_excerpt_rss', 'wcs_post_thumbnails_in_feeds' );
-add_filter( 'the_content_feed', 'wcs_post_thumbnails_in_feeds' );
+
+function add_thumb_to_RSS($content) {
+   global $post;
+   if ( has_post_thumbnail( $post->ID ) ){
+      $content = '' . get_the_post_thumbnail( $post->ID, 'thumbnail' ) . '' . $content;
+   }
+   return $content;
+}
+add_filter('the_excerpt_rss', 'add_thumb_to_RSS');
+add_filter('the_content_feed', 'add_thumb_to_RSS')
 
 ?>
