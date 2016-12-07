@@ -102,8 +102,6 @@
 #main .hero-home {
   background: #030303 url(../images/homewho.jpg) no-repeat right top;
   background-size: 510px;
-  //height: 26.75vw;
-  //max-height: em(360);
   color: $white;
   font-family: $helvetica-franklin;
   width: 100%;
@@ -119,7 +117,7 @@
     padding: 3.5em 1.5em 6.25em;
     
     @include media(em(428)){
-      padding: 3.5em 2.55em 8.25em;
+      padding: 3.5em 2.55em 6.25em;
     }
     
     @include media(em(700)){
@@ -134,7 +132,36 @@
   p {
     margin: 0 0 0.55em;
     font-size: 1.05em;
-    letter-spacing: 1px;
+    text-align: center;
+    
+    @include media($medium-screen){
+      text-align: left;
+    }
+  }
+  
+  .inblock-desktop {
+    display: none;
+    
+    @include media($medium-screen){
+      display: inline-block;
+    }
+  }
+  
+  .inblock-mobile {
+    display: inline-block;
+    
+    @include media($medium-screen){
+      display: none;
+    }
+    
+    &.button {
+      clear: both;
+      width: 100%;
+      text-align: center;
+      margin-top: 1em;
+      font-size: 1.25em;
+      letter-spacing: 1px;
+    }
   }
   
   a {

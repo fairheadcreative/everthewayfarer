@@ -21,10 +21,8 @@
         <ul id="primary-links">
           <li class="nav-primary">
            <span class="page-active">&nbsp;</span><span class="rotate-90">&gt;</span>
-           <span class="menu-toggler">
-             <span class="hamby">&nbsp;</span>
-             <span class="hamby">&nbsp;</span>
-             <span class="hamby">&nbsp;</span>
+           <span class="menu-toggler">             
+             <span class="logo logo-mobile"><?php get_template_part( 'includes/logotype' ); ?></span>
            </span>
             <ul>
               <li class="nav-primary-1 <?php if (strpos($_SERVER['REQUEST_URI'], "postcards") !== false && !is_home() || has_category( 'postcards') && !is_category( nationalparks ) && !is_home()){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/postcards/">Latest Postcards</a></li>
@@ -42,7 +40,7 @@
               <!-- END UNCATHEGORIZED ITEMS -->
               <li class="nav-primary-1"><a href="http://www.suntrailimages.com" target="_blank">Photography</a></li>
               <li class="nav-primary-1 <?php if (!is_home() && is_page('subscribe')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li>
-              <li class="nav-primary-1 uncathegorized <?php if (is_home()){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>">Everything</a></li>
+              <li class="nav-primary-1 mobile-home uncathegorized <?php if (is_home()){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>">Everything</a></li>
               <li class="nav-icons">
                 <a class="nav-primary-twitter" href="https://twitter.com/WayfaringSiv" target="_blank">
                   <span class="icon-block">

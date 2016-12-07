@@ -4,10 +4,10 @@
 }
 
 body {
-  padding-top: 44px;
+  padding-top: 52px;
 
   @include media($small-screen) {
-    padding-top: 66px;
+    padding-top: 57px;
   } 
   
   &.admin-bar {

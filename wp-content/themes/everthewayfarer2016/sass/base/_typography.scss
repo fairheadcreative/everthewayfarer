@@ -58,10 +58,25 @@ h2 {
   
   .hero-home & {
     font-family: $helvetica-franklin;
-    font-size: 3em;
+    font-size: 1.75em;
     font-weight: bold;
     margin-bottom: .375em;
-    letter-spacing: 0;
+    text-align: center;
+    
+    @include media($tiny-screen) {
+      font-size: 2em;
+      letter-spacing: -0.025em;
+    }
+    
+    @include media($small-screen) {
+      font-size: 2.25em;
+    }
+    
+    @include media($medium-screen) {
+      text-align: left;
+      letter-spacing: 0;
+      font-size: 3em;
+    }
   }
 }
 

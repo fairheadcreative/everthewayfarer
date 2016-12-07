@@ -67,7 +67,7 @@
 // Page header links
 #primary-links {
   @include outer-container();
-  padding: .75em 0;
+  padding: .25em 0;
   font-family: $helvetica-franklin;
   font-weight: 600;
   font-size: .8em;
@@ -80,8 +80,9 @@
     font-size: 1.1em;
   }
     
-  @include media($medium-screen){
+  @include media($large-screen){
     padding: .5em 0;
+    margin-top: 0;
   }
   
   @include media(em(1280)) { max-width: 100%; padding: .5em; }
@@ -139,13 +140,26 @@
   .nav-primary {
     position: relative;
     float: left;
-    background: $menu-gray;
+    background: transparent;
     border-radius: 3px;
     cursor: pointer;
     min-height: 36px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
     
     @include media(em(380)){
-      min-height: 40px;
+      //min-height: 40px;
+    }  
+    
+    @include media($medium-screen){
+      left: 0;
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    } 
+    
+    @include media($large-screen){
+      background: $menu-gray;
     }  
     
     a { 
@@ -165,15 +179,13 @@
       }
     }
       
-     &.nav-opened .menu-toggler { top: 3px; }
+     //&.nav-opened .menu-toggler { top: 3px; }
     
     .menu-toggler {
       display: block;
       position: relative;
-      height: 22px;
-      width: 22px;
-      top: 1px;
-      transition: top .3s;
+      z-index: 100;
+      padding: 0 1em;
       
       @include media($large-screen) {
         display: none;
@@ -251,7 +263,7 @@
       position: absolute;
       z-index: 10000;
       left: -1px;
-      top: 34px;
+      top: 46px;
       text-align: left;
       border-radius: 0 0 3px 3px;
       min-width: 180px;
@@ -260,7 +272,7 @@
       
       @include media($small-screen) {
         font-size: 1em;
-        top: 38px;
+        top: 48px;
       }
       
       @include media($large-screen) {
@@ -278,7 +290,17 @@
         transition: background .3s;
         min-width: 208px;
         
-        &.uncathegorized { display: none; }
+        &.uncathegorized:not(.mobile-home) { 
+          display: none;
+        
+          &.mobile-home {
+            display: block;
+            
+            @include media($large-screen) {
+              display: none;
+            }
+          }
+        }
         
         &:last-child {
           border-bottom: none;
@@ -376,28 +398,38 @@
     }
 
     &.nav-opened {
-      ul { display: block; }
+      background: $menu-gray;
+      
+      ul { 
+        display: block;
+        z-index: 90;
+        border-top: 1px solid #e6e6e6;
+      }
       
       @include media(em(860)){
         ul { display: none; }
       }
+      
+      .logo-mobile:after {
+        transform: rotate(270deg) scale(.7, 1.25);
+        right: -10px;
+      }
     }
 
     @include media(max-width em(859)) {
-      background: $menu-gray;
+      //background: $menu-gray;
       display: block !important;
       margin: 0 -1em;
-      padding: .5em 1em;
+      padding: .25em 1.5em;
       clear: both;
-      border-top: $base-border !important;
-      border-bottom: $base-border;
+      //border-top: $base-border !important;
 
       a {
         margin-right: .75em;
       }
     }
     
-    @include media(max-width em(860)){ margin: .25em -1em 0 0; }
+    @include media(max-width em(860)){ margin: 0 -1em 0 0; }
 
     @include media(max-width $medium-screen) {
       white-space: nowrap;
@@ -408,8 +440,12 @@
   .nav-primary-3 {
     width: auto;
     height: auto;
-    display: inline-block;
-  }
+    display: none;
+    
+    @include media($medium-screen){
+      display: inline-block;
+    } 
+  } 
 
   .nav-primary-3 {
     float: right;
@@ -423,27 +459,42 @@
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     top: 13px;
-    left: 140px;
+    left: 50%;
+    display: none;
     
-    @include media($tiny-screen) {
-      left: 140px;
-    }
-    
-    @include media(em(380)) {
-      left: 150px;
-    }
-    
-    @include media($small-screen) {
-      left: 200px;
+    &.logo-mobile {
+      display: block;
+      width: 160px;
+      height: 39px;
+      position: relative;
+      top: 0;
+
+      svg path {
+        fill: $pink; 
+      }
+      
+      &:after {
+        content: "\003e";
+        position: absolute;
+        top: 7px;
+        transform: rotate(90deg) scale(.7, 1.25);
+        right: -14px;
+        color: gray;
+        font-weight: 100;
+        transition: all .15s;
+      }
     }
     
     @include media($medium-screen) {
-      top: 10px;
     }
     
     @include media($large-screen) {
       top: 5px;
-      left: 50%;
+      display: block;
+    
+      &.logo-mobile {
+        display: none;
+      }
     }
     
       a {
