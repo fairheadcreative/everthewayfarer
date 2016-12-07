@@ -1424,6 +1424,9 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       position: relative;
       z-index: 100;
       padding: 0 1em; }
+      @media screen and (min-width: 40em) {
+        #primary-links .nav-primary .menu-toggler {
+          margin-left: -1em; } }
       @media screen and (min-width: 53.75em) {
         #primary-links .nav-primary .menu-toggler {
           display: none; } }
@@ -1576,8 +1579,7 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
         #primary-links .nav-primary.nav-opened ul {
           display: none; } }
       #primary-links .nav-primary.nav-opened .logo-mobile:after {
-        transform: rotate(270deg) scale(0.7, 1.25);
-        right: -10px; }
+        transform: rotate(270deg) scale(0.7, 1.25); }
     @media screen and (max-width: 53.6875em) {
       #primary-links .nav-primary {
         display: block !important;
