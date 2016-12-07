@@ -1681,7 +1681,7 @@ body {
     padding-top: 42px; }
     @media screen and (min-width: 30em) {
       body.admin-bar {
-        padding-top: 66px; } }
+        padding-top: 58px; } }
 
 .hide {
   display: none; }
