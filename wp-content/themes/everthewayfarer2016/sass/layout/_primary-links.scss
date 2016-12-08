@@ -429,7 +429,7 @@
       
       .logo-mobile {
         .toggler-arrow {
-          transform: rotate(180deg);
+          transform: rotate(0deg);
         }        
       }
     }
@@ -495,9 +495,10 @@
         transition: all .15s;
         position: absolute;
         top: 18px;
+        transform: rotate(180deg);
         transform-origin: center;
         height: 3px;
-        width: 23px;          
+        width: 22px;          
         
         &:after,
         &:before {
@@ -511,7 +512,7 @@
         
         &:before {
           transform: rotate(45deg);
-          left: 11px;
+          left: 10px;
         }
         
         &:after {

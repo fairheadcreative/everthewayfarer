@@ -1606,7 +1606,7 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       #primary-links .nav-primary.nav-opened ul {
         display: none; } }
     #primary-links .nav-primary.nav-opened .logo-mobile .toggler-arrow {
-      transform: rotate(180deg); }
+      transform: rotate(0deg); }
     @media screen and (max-width: 53.6875em) {
       #primary-links .nav-primary {
         display: block !important;
@@ -1652,9 +1652,10 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
         transition: all .15s;
         position: absolute;
         top: 18px;
+        transform: rotate(180deg);
         transform-origin: center;
         height: 3px;
-        width: 23px; }
+        width: 22px; }
         #primary-links .logo.logo-mobile .toggler-arrow:after, #primary-links .logo.logo-mobile .toggler-arrow:before {
           content: "";
           position: absolute;
@@ -1664,7 +1665,7 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
           display: block; }
         #primary-links .logo.logo-mobile .toggler-arrow:before {
           transform: rotate(45deg);
-          left: 11px; }
+          left: 10px; }
         #primary-links .logo.logo-mobile .toggler-arrow:after {
           transform: rotate(-45deg);
           left: 5px; }
