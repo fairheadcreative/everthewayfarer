@@ -92,9 +92,8 @@ h3 {
   font-size: $h3-font-size;
 
   .the-content > & {
-    font-size: .9em;
+    font-size: $h2-font-size;
     margin-bottom: $base-padding / 6;
-    font-family: $helvetica-franklin;
   }
 }
 
@@ -128,6 +127,16 @@ h6 {
 
 p {
   margin: 0 0 ($base-spacing / 2);
+
+  .the-content > & {
+    .instructions-inline {
+      font-family: $helvetica-franklin;  
+      text-transform: uppercase;
+      font-weight: bold;
+      display: block;
+      margin-bottom: -.4em;
+    }
+  }
 }
 
 a {
