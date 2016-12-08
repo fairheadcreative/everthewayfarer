@@ -501,6 +501,8 @@ p {
     font-weight: bold;
     display: block;
     margin-bottom: -.4em; }
+  .the-content > p strong {
+    font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; }
 
 a {
   -webkit-transition: all 0.2s linear;
