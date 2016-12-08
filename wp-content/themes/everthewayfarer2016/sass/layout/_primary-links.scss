@@ -168,10 +168,6 @@
       text-align: left;
       white-space: nowrap;
       transition: background .2s;
-
-      &:hover {
-        background: darken($menu-gray, 5);
-      }
             
       @include media($large-screen) {
         min-width: 210px;
@@ -274,9 +270,19 @@
       font-size: 1.25em;
       box-shadow: 0px 5px 5px -2px rgba(0,0,0,.2);
       
-      @include media($small-screen) {
+      @include media(em(380)) {
         font-size: 1em;
         top: 48px;
+      }
+      
+      @include media($small-screen) {
+        font-size: 1em;
+        top: 50px;
+      }
+      
+      @include media($medium-screen) {
+        font-size: 1em;
+        top: 52px;
       }
       
       @include media($large-screen) {
@@ -289,10 +295,15 @@
         float: left;
         display: block;
         width: 100%;
-        background: $menu-gray;
-        border-bottom: 1px solid darken($light-gray, 8);
+        background: $white;
+        border-bottom: 1px solid darken($light-gray, 4);
         transition: background .3s;
         min-width: 208px;
+      
+        @include media($large-screen) {
+          background: $menu-gray;
+          border-bottom: 1px solid darken($light-gray, 8);
+        }
         
         &.uncathegorized:not(.mobile-home) { 
           display: none;
@@ -311,8 +322,10 @@
           border-radius: 0 0 3px 3px;
         }
       
-        &:hover {
-          background: darken($menu-gray, 5);
+        &:hover {      
+          @include media($large-screen) {
+            background: darken($menu-gray, 5);
+          }
         }
       }
 
@@ -402,7 +415,7 @@
     }
 
     &.nav-opened {
-      background: $menu-gray;
+      //background: $menu-gray;
       
       ul { 
         display: block;
@@ -414,8 +427,10 @@
         ul { display: none; }
       }
       
-      .logo-mobile:after {
-        transform: rotate(270deg) scale(.7, 1.25);
+      .logo-mobile {
+        .toggler-arrow {
+          transform: rotate(180deg);
+        }        
       }
     }
 
@@ -468,7 +483,7 @@
     &.logo-mobile {
       display: block;
       width: 160px;
-      height: 39px;
+      height: 36px;
       position: relative;
       top: 0;
 
@@ -476,15 +491,33 @@
         fill: $pink; 
       }
       
-      &:after {
-        content: "\003e";
-        position: absolute;
-        top: 7px;
-        transform: rotate(90deg) scale(.7, 1.25);
-        right: -14px;
-        color: gray;
-        font-weight: 100;
+      .toggler-arrow {
         transition: all .15s;
+        position: absolute;
+        top: 18px;
+        transform-origin: center;
+        height: 3px;
+        width: 23px;          
+        
+        &:after,
+        &:before {
+          content: "";
+          position: absolute;
+          width: 7px;
+          height: 1px;
+          background: $gray;
+          display: block;
+        }
+        
+        &:before {
+          transform: rotate(45deg);
+          left: 11px;
+        }
+        
+        &:after {
+          transform: rotate(-45deg);
+          left: 5px;
+        }     
       }
     }
     

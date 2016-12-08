@@ -54,6 +54,9 @@ h2 {
     font-size: $h1-font-size;
     border-bottom: $base-border;
     padding-top: $base-padding / 2;
+    text-transform: uppercase;
+    font-family: $franklin-gothic;
+    font-weight: bold;
   }
   
   .hero-home & {
@@ -89,8 +92,9 @@ h3 {
   font-size: $h3-font-size;
 
   .the-content > & {
-    font-size: $h2-font-size;
+    font-size: .9em;
     margin-bottom: $base-padding / 6;
+    font-family: $helvetica-franklin;
   }
 }
 
@@ -108,6 +112,13 @@ h4 {
 h5 {
   font-size: $h5-font-size;
   color: $medium-gray;
+}
+
+.articles h5 {
+  font-size: .9em;
+  line-height: 1.6em;
+  font-family: "Merriweather", serif;
+  margin-bottom: 1.5em;
 }
 
 h6 {

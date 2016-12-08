@@ -7,6 +7,7 @@
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
   <script src="//use.typekit.net/zif1rom.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
@@ -22,7 +23,7 @@
           <li class="nav-primary">
            <span class="page-active">&nbsp;</span><span class="rotate-90">&gt;</span>
            <span class="menu-toggler">             
-             <span class="logo logo-mobile"><?php get_template_part( 'includes/logotype' ); ?></span>
+             <span class="logo logo-mobile"><?php get_template_part( 'includes/logotype' ); ?><span class="toggler-arrow"></span></span>
            </span>
             <ul>
               <li class="nav-primary-1 <?php if (strpos($_SERVER['REQUEST_URI'], "postcards") !== false && !is_home() || has_category( 'postcards') && !is_category( nationalparks ) && !is_home()){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/postcards/">Latest Postcards</a></li>

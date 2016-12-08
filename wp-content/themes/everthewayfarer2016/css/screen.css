@@ -437,7 +437,10 @@ h2 {
   .the-content > h2 {
     font-size: 1.85em;
     border-bottom: 1px solid #f4f4f4;
-    padding-top: 1em; }
+    padding-top: 1em;
+    text-transform: uppercase;
+    font-family: "franklin-gothic-urw-comp", sans-serif;
+    font-weight: bold; }
   .hero-home h2 {
     font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
     font-size: 1.75em;
@@ -465,8 +468,9 @@ h3 {
   margin-bottom: 1em;
   font-size: 1.25em; }
   .the-content > h3 {
-    font-size: 1.55em;
-    margin-bottom: 0.33333em; }
+    font-size: .9em;
+    margin-bottom: 0.33333em;
+    font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; }
 
 h4 {
   font-size: 1.5em;
@@ -479,6 +483,12 @@ h4 {
 h5 {
   font-size: 1.2em;
   color: #999; }
+
+.articles h5 {
+  font-size: .9em;
+  line-height: 1.6em;
+  font-family: "Merriweather", serif;
+  margin-bottom: 1.5em; }
 
 h6 {
   font-size: 1.2em;
@@ -923,7 +933,10 @@ body {
       width: 100%; }
   .articles p,
   .articles li {
-    font-size: 1.35em; }
+    font-size: .9em;
+    line-height: 1.6em;
+    font-family: "Merriweather", serif;
+    margin-bottom: 1.5em; }
   .articles a h2,
   .articles a p {
     color: #252424; }
@@ -1413,8 +1426,6 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       text-align: left;
       white-space: nowrap;
       transition: background .2s; }
-      #primary-links .nav-primary a:hover {
-        background: #e7e7e7; }
       @media screen and (min-width: 53.75em) {
         #primary-links .nav-primary a {
           min-width: 210px;
@@ -1488,10 +1499,18 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       min-width: 180px;
       font-size: 1.25em;
       box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.2); }
-      @media screen and (min-width: 30em) {
+      @media screen and (min-width: 23.75em) {
         #primary-links .nav-primary ul {
           font-size: 1em;
           top: 48px; } }
+      @media screen and (min-width: 30em) {
+        #primary-links .nav-primary ul {
+          font-size: 1em;
+          top: 50px; } }
+      @media screen and (min-width: 40em) {
+        #primary-links .nav-primary ul {
+          font-size: 1em;
+          top: 52px; } }
       @media screen and (min-width: 53.75em) {
         #primary-links .nav-primary ul {
           min-width: auto;
@@ -1501,10 +1520,14 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
         float: left;
         display: block;
         width: 100%;
-        background: #f4f4f4;
-        border-bottom: 1px solid #e6e6e6;
+        background: #fff;
+        border-bottom: 1px solid #f0f0f0;
         transition: background .3s;
         min-width: 208px; }
+        @media screen and (min-width: 53.75em) {
+          #primary-links .nav-primary ul li {
+            background: #f4f4f4;
+            border-bottom: 1px solid #e6e6e6; } }
         #primary-links .nav-primary ul li.uncathegorized:not(.mobile-home) {
           display: none; }
           #primary-links .nav-primary ul li.uncathegorized:not(.mobile-home).mobile-home {
@@ -1515,8 +1538,9 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
         #primary-links .nav-primary ul li:last-child {
           border-bottom: none;
           border-radius: 0 0 3px 3px; }
-        #primary-links .nav-primary ul li:hover {
-          background: #e7e7e7; }
+        @media screen and (min-width: 53.75em) {
+          #primary-links .nav-primary ul li:hover {
+            background: #e7e7e7; } }
       #primary-links .nav-primary ul li.nav-icons {
         background: #f4f4f4;
         padding: 0; }
@@ -1569,17 +1593,15 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       #primary-links .nav-primary:hover ul {
         display: block !important;
         margin-left: 1px; } }
-    #primary-links .nav-primary.nav-opened {
-      background: #f4f4f4; }
+    #primary-links .nav-primary.nav-opened ul {
+      display: block;
+      z-index: 90;
+      border-top: 1px solid #e6e6e6; }
+    @media screen and (min-width: 53.75em) {
       #primary-links .nav-primary.nav-opened ul {
-        display: block;
-        z-index: 90;
-        border-top: 1px solid #e6e6e6; }
-      @media screen and (min-width: 53.75em) {
-        #primary-links .nav-primary.nav-opened ul {
-          display: none; } }
-      #primary-links .nav-primary.nav-opened .logo-mobile:after {
-        transform: rotate(270deg) scale(0.7, 1.25); }
+        display: none; } }
+    #primary-links .nav-primary.nav-opened .logo-mobile .toggler-arrow {
+      transform: rotate(180deg); }
     @media screen and (max-width: 53.6875em) {
       #primary-links .nav-primary {
         display: block !important;
@@ -1616,20 +1638,31 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     #primary-links .logo.logo-mobile {
       display: block;
       width: 160px;
-      height: 39px;
+      height: 36px;
       position: relative;
       top: 0; }
       #primary-links .logo.logo-mobile svg path {
         fill: #d58097; }
-      #primary-links .logo.logo-mobile:after {
-        content: "\003e";
+      #primary-links .logo.logo-mobile .toggler-arrow {
+        transition: all .15s;
         position: absolute;
-        top: 7px;
-        transform: rotate(90deg) scale(0.7, 1.25);
-        right: -14px;
-        color: gray;
-        font-weight: 100;
-        transition: all .15s; }
+        top: 18px;
+        transform-origin: center;
+        height: 3px;
+        width: 23px; }
+        #primary-links .logo.logo-mobile .toggler-arrow:after, #primary-links .logo.logo-mobile .toggler-arrow:before {
+          content: "";
+          position: absolute;
+          width: 7px;
+          height: 1px;
+          background: #999;
+          display: block; }
+        #primary-links .logo.logo-mobile .toggler-arrow:before {
+          transform: rotate(45deg);
+          left: 11px; }
+        #primary-links .logo.logo-mobile .toggler-arrow:after {
+          transform: rotate(-45deg);
+          left: 5px; }
     @media screen and (min-width: 53.75em) {
       #primary-links .logo {
         top: 5px;
@@ -1673,10 +1706,10 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   position: fixed !important; }
 
 body {
-  padding-top: 52px; }
+  padding-top: 49px; }
   @media screen and (min-width: 30em) {
     body {
-      padding-top: 57px; } }
+      padding-top: 54px; } }
   body.admin-bar {
     padding-top: 42px; }
     @media screen and (min-width: 30em) {
