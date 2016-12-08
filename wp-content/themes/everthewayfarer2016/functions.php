@@ -1,6 +1,6 @@
 <?php
 
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' );
 add_image_size( 'feature-preview', 300, 300, true );
 add_image_size( 'feature-full', 3000, 1000, true );
 add_image_size( 'feature-thin', 800, 800, true );
@@ -46,34 +46,52 @@ add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 //add category-specific class to a page heder
 function the_category_unlinked($separator = ' ') {
     $categories = (array) get_the_category();
-    
+
     $thelist = '';
     foreach($categories as $category) {    // concate
         $thelist .= $separator . $category->category_nicename;
     }
-    
+
     echo $thelist;
 }
 
 //add featured images to rss feed
-add_action('rss2_item', 'add_my_rss_node');
+add_action('rss2_item', 'add_thumb_to_RSS');
 
-function add_my_rss_node() {
-  global $post;
-  if(has_post_thumbnail($post->ID)):
-    $thumbnail = get_attachment_link(get_post_thumbnail_id($post->ID));
-    echo("<image>{$thumbnail}</image>");
-  endif;
-}
+// function add_my_rss_node() {
+//   global $post;
+//   if(has_post_thumbnail($post->ID)):
+//     $thumbnail = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+//     echo("<image><url>{$thumbnail}</url></image>");
+//   endif;
+// }
 
 function add_thumb_to_RSS($content) {
    global $post;
    if ( has_post_thumbnail( $post->ID ) ){
-      $content = '' . get_the_post_thumbnail( $post->ID, 'thumbnail' ) . '' . $content;
+      $content = '<image><url>' . get_the_post_thumbnail( $post->ID, 'thumbnail' ) . '</url></image>' . $content;
    }
    return $content;
 }
 add_filter('the_excerpt_rss', 'add_thumb_to_RSS');
-add_filter('the_content_feed', 'add_thumb_to_RSS')
+add_filter('the_content_feed', 'add_thumb_to_RSS');
+
+add_filter( 'wp_get_attachment_image_attributes', function( $attr )
+{
+    if( isset( $attr['sizes'] ) )
+        unset( $attr['sizes'] );
+
+    if( isset( $attr['srcset'] ) )
+        unset( $attr['srcset'] );
+
+    return $attr;
+
+ }, PHP_INT_MAX );
+
+add_filter( 'wp_calculate_image_sizes', '__return_false',  PHP_INT_MAX );
+
+add_filter( 'wp_calculate_image_srcset', '__return_false', PHP_INT_MAX );
+
+remove_filter( 'the_content', 'wp_make_content_images_responsive' );
 
 ?>
