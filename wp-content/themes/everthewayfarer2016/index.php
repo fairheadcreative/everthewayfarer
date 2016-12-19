@@ -76,8 +76,7 @@ if ( is_home() ) { ?>
     <?php if (strpos($_SERVER['REQUEST_URI'], "nationalparks") !== false){ ?>
       <div class="heading-section">
         <h1>National Park Crawl</h1>
-        <p>Description goes here, about why I went on this crawl, and what<br class="break-tablet">
-        it represents for the world of ethical travel.</p>
+        <p><?php echo category_description( $category_id ); ?></p>
         <div class="fb-share-button" data-href="http://www.everthewayfarer.com/nationalparks/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.everthewayfarer.com%2Fnationalparks%2F&amp;src=sdkpreparse">Share</a></div>
         <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large">Tweet</a>
       </div>
