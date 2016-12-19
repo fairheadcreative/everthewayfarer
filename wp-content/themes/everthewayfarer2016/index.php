@@ -66,7 +66,7 @@ if ( is_home() ) { ?>
 <section id="main">
    
   <!--start as seen in box -->
-  <?php if ( is_home() ) { ?>
+  <?php if ( is_home() && !is_paged() ) { ?>
     <?php get_template_part( 'includes/hero-home' ); ?>
   <?php }; ?>
   <!--start as seen in box -->
