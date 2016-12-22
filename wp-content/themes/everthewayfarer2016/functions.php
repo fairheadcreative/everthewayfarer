@@ -54,27 +54,27 @@ add_filter('mce_buttons_2', 'wpb_mce_buttons_2');
 * Callback function to filter the MCE settings
 */
 
-function my_mce_before_init_insert_formats( $init_array ) {  
+function my_mce_before_init_insert_formats( $init_array ) {
 
 // Define the style_formats array
 
-	$style_formats = array(  
-		array(  
-			'title' => 'Inline instruction',  
-			'block' => 'span',  
+	$style_formats = array(
+		array(
+			'title' => 'Inline instruction',
+			'block' => 'span',
 			'classes' => 'instructions-inline',
 			'wrapper' => true,
-			
+
 		),
-	);  
+	);
 	// Insert the array, JSON ENCODED, into 'style_formats'
-	$init_array['style_formats'] = json_encode( $style_formats );  
-	
-	return $init_array;  
-  
-} 
-// Attach callback to 'tiny_mce_before_init' 
-add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' ); 
+	$init_array['style_formats'] = json_encode( $style_formats );
+
+	return $init_array;
+
+}
+// Attach callback to 'tiny_mce_before_init'
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
 
 //add category-specific class to a page heder
 function the_category_unlinked($separator = ' ') {
@@ -88,16 +88,32 @@ function the_category_unlinked($separator = ' ') {
     echo $thelist;
 }
 
+
+add_action( 'after_setup_theme', 'my_rss_template' );
+/**
+ * Register custom RSS template.
+ */
+function my_rss_template() {
+  add_feed( 'short', 'my_custom_rss_render' );
+}
+/**
+ * Custom RSS template callback.
+ */
+function my_custom_rss_render() {
+  get_template_part( 'feed', 'short' );
+}
+
+
 //add featured images to rss feed
 add_action('rss2_item', 'add_thumb_to_RSS');
 
-// function add_my_rss_node() {
-//   global $post;
-//   if(has_post_thumbnail($post->ID)):
-//     $thumbnail = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-//     echo("<image><url>{$thumbnail}</url></image>");
-//   endif;
-// }
+function add_my_rss_node() {
+  global $post;
+  if(has_post_thumbnail($post->ID)):
+    $thumbnail = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+    echo("<image><url>{$thumbnail}</url></image>");
+  endif;
+}
 
 function add_thumb_to_RSS($content) {
    global $post;
@@ -106,6 +122,7 @@ function add_thumb_to_RSS($content) {
    }
    return $content;
 }
+
 add_filter('the_excerpt_rss', 'add_thumb_to_RSS');
 add_filter('the_content_feed', 'add_thumb_to_RSS');
 
