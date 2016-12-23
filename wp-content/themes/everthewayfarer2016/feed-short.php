@@ -15,7 +15,9 @@
 function my_rss_related() {
 	global $post; 
   if(has_post_thumbnail($post->ID)):
-    $thumbnail = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+    // $thumbnail = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+    $image_arr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'feature-postcard');
+    $thumbnail = $image_arr[0]; // $image_url is your URL.
     echo("<img src=\"{$thumbnail}\">");
   endif;
 
