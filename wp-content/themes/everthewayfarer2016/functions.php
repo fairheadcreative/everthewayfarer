@@ -144,4 +144,16 @@ add_filter( 'wp_calculate_image_srcset', '__return_false', PHP_INT_MAX );
 
 remove_filter( 'the_content', 'wp_make_content_images_responsive' );
 
+//woocommerce - redirect to custom Thank you page after purchase
+add_action( 'template_redirect', 'wc_custom_redirect_after_purchase' ); 
+function wc_custom_redirect_after_purchase() {
+  global $wp;
+
+  if ( is_checkout() && ! empty( $wp->query_vars['order-received'] ) ) {
+    //this has to be changed once we deploy to production
+    wp_redirect( 'https://everthewayfare.staging.wpengine.com/thank-you/' );
+    exit;
+  }
+}
+
 ?>
