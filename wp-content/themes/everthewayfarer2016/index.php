@@ -99,6 +99,24 @@ if ( is_home() ) { ?>
 
       <?php if (have_posts()) : ?>
       <div>
+        <?php # If it's a product
+          $args = array( 'post_type' => 'product' );
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post(); 
+          global $product; ?>
+
+          <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" >
+            <?php echo woocommerce_get_product_thumbnail( 'shop_catalog', 300, 335 ); ?>
+            <h2><?php the_title(); ?></h2>
+            <h3><?php echo $product->get_price_html(); ?></h3>
+            <p><?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ) ?></p>
+          </a>
+
+        <?php 
+          endwhile; 
+          wp_reset_query(); 
+        ?>
+
       <?php while (have_posts()) : the_post(); ?>
 
         <?php # If it's the postcard category:
