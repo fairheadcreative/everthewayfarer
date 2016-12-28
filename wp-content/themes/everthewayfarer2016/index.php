@@ -106,7 +106,8 @@ if ( is_home() ) { ?>
           global $product; ?>
 
           <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" >
-            <?php echo woocommerce_get_product_thumbnail( 'shop_catalog', 300, 335 ); ?>
+            <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } elseif ( !has_post_thumbnail() ) {?>
+            <?php  echo '<img src="' . post_image() . '" alt="" />'; }?>
             <h2><?php the_title(); ?></h2>
             <h3><?php echo $product->get_price_html(); ?></h3>
             <p><?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ) ?></p>
@@ -291,19 +292,5 @@ if ( is_home() ) { ?>
 <?php endif; ?>
 <?php }; */?>
 
-<div class="test">
-  <?php global $query_string;
-  query_posts( $query_string . '&posts_per_page=6' );
-  if ( have_posts() ) : while ( have_posts() ) : the_post();
-    if(get_field('location')) {
-      $title = get_the_title();
-      $location = get_field('location');
-      $permalink = get_permalink();
-      array_push($GLOBALS[locationArray], array($title, $location, $permalink));
-    }
-  endwhile; endif;
-  wp_reset_query();
-  ?>
-</div>
 
 <?php get_footer(); ?>

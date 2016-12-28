@@ -156,6 +156,16 @@ function wc_custom_redirect_after_purchase() {
   }
 }
 
+function post_image() {
+  global $post, $posts;
+  $first_img = '';
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+  $first_img = $matches [1] [0];
+  return $first_img;
+}
+
 // remove sidebar and breadcrumbs from woocommerce pages
 remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0);
 remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
