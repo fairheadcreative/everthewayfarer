@@ -91,6 +91,7 @@ jQuery(function($) {
     mapsize();
     setTimeout(setPostcard, 100);
     setNav();
+    shopItem.setLayout();
   });
   
   $(window).on('resize', function(){
@@ -99,7 +100,27 @@ jQuery(function($) {
     mapsize();
     setNav();
     setPostcard();
+    shopItem.setLayout();
   });
+  
+//rearrange shop item for mobile layouts
+  
+  var shopItem = {
+    setLayout: function(){
+      var productImageHeight = $('.product-image .images a img').height() + 64;
+      var productTopHeight = $('.product_title').height() + 166;
+      if(winWidth < 860){
+        $('.product-description-short').css({
+          'margin-top': productImageHeight
+        });
+        $('.product-image').css({
+          'top': productTopHeight
+        });
+      } else {
+        $('.product-description-short, .product-image').removeAttr('style');
+      }
+    }
+  }
 
   //calculate side map size   
   function mapsize(){

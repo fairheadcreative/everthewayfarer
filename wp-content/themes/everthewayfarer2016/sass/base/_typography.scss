@@ -47,6 +47,11 @@ h1 {
 
 .single-product h1 {
   margin: 0 0 .25em;
+  text-align: center;
+  
+  @include media($large-screen){
+    text-align: left;
+  }
 }
 
 h2 {
