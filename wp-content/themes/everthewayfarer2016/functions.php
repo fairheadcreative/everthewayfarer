@@ -156,4 +156,13 @@ function wc_custom_redirect_after_purchase() {
   }
 }
 
+// remove sidebar and breadcrumbs from woocommerce pages
+remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0);
+remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
+// remove default woocommerce stylesheets
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+// reorder product summary elements
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 15 );
+
 ?>
