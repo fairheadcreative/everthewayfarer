@@ -1,5 +1,7 @@
-<div class="keep-reading group">
-<h2 class="h1-sub">Keep reading</h2>
+<div class="container group">
+<h2 class="h1">Keep reading</h2>
+<div class="articles articles-mixed">
+
 
 <?php
   if ( in_category( 'News' ) ) { $custom_query = new WP_Query('cat=3'); }
@@ -9,7 +11,7 @@
   while($custom_query->have_posts()) : $custom_query->the_post();
 ?>
 
-<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+<!-- <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
   <article>
     <?php if ( has_post_thumbnail() ) {
       the_post_thumbnail('feature-preview');
@@ -21,7 +23,17 @@
 
     <p class="meta">An article on <?php echo get_the_date(); ?></p>
   </article>
-</a>
+</a> -->
+
+          <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <?php get_template_part( 'includes/path-crawl' ); ?>
+            <article class="postcard-item type-a" id="id-<?php the_ID(); ?>">
+              <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
+              <h2><span><?php the_title(); ?></span></h2>
+              <div class="border"></div>
+            </article>
+          </a>
+
 
 <?php endwhile; ?>
 
@@ -32,4 +44,5 @@
 ?>
 
 <?php wp_reset_postdata(); // reset the query ?>
+</div>
 </div>
