@@ -168,7 +168,6 @@ function post_image() {
 
 // remove sidebar and breadcrumbs from woocommerce pages
 remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0);
-remove_action( 'storefront_sidebar', 'storefront_get_sidebar', 10 );
 // remove default woocommerce stylesheets
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 // reorder product summary elements
@@ -178,7 +177,7 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_r
 add_action( 'wp', 'bbloomer_remove_sidebar_product_pages' );
  
 function bbloomer_remove_sidebar_product_pages() {
-  if (is_product()) {
+  if (is_woocommerce()) {
     remove_action('woocommerce_sidebar','woocommerce_get_sidebar',10);
   }
 }

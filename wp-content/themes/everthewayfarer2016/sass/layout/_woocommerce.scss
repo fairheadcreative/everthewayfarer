@@ -338,7 +338,7 @@ p.stars {
   }
 }
 
-.woocommerce-Tabs-panel {
+.woocommerce-page {
   
   h2 {
     font-family: $franklin-gothic;
@@ -350,7 +350,10 @@ p.stars {
     &.woocommerce-Reviews-title {
       margin-bottom: 1em;
     }
-  }
+  }  
+}
+
+.woocommerce-Tabs-panel {
   
   tr {
     border-bottom: $base-border;
@@ -409,6 +412,8 @@ p.stars {
   text-align: center;
   z-index: 100;
   position: fixed;
+  left: 0;
+  top: 65px;
   width: 100%;
   color: white;
   font-size: 1.1em;
@@ -471,13 +476,103 @@ p.stars {
 }
 
 .woocommerce-error {
-  background: $dark-gray;
+  background: $red;
   
   .button {
-    color: $dark-gray;
+    color: $red;
   }
   
   .close-button {
-    color: $dark-gray;
+    color: $red;
+  }
+}
+
+//cart
+
+body.woocommerce-cart {
+  text-align: center;
+  font-family: $helvetica-franklin;
+  background: $light-gray;
+  
+  table {
+    background: $white;
+    border-radius: 3px;
+    border: 1px solid $border-gray;
+    border-collapse: initial;
+    text-align: left;
+    
+    &.cart {
+      margin-bottom: 2em;
+    }
+    
+    td,
+    th {
+      padding: .5em;
+    }
+    
+    .product-remove {
+      width: 5%;
+    }
+    
+    .product-thumbnail {
+      width: 16%;
+    }
+    
+    .product-price {
+      width: 10%;
+    }
+    
+    .product-quantity {
+      width: 15%;
+      
+      .quantity input {
+        width: 4.25em;
+        font-size: 1em;
+        margin: 0;
+      }
+    }
+    
+    .product-subtotal {
+      width: 15%;
+    }
+    
+    .button {
+      background: #EBE9EC;
+      color: $dark-gray;
+      
+      &:hover {
+        background: darken(#EBE9EC, 10);
+      }
+    }
+  }
+  
+  .coupon {
+    float: left;
+    
+    input#coupon_code {
+      float: left;
+      max-width: 7em;
+      margin: 0 .5em 0 0;
+    }
+  }
+  
+  .button-update {
+    float: right;
+  }
+}
+
+.cart-collaterals {
+  width: 50%;
+  margin: 0 auto;
+  
+  h2 {
+    margin-bottom: .5em;
+  }
+  
+  .button {
+    width: 100%;
+    font-family: $helvetica-franklin;
+    text-transform: none;
+    font-weight: bold;
   }
 }

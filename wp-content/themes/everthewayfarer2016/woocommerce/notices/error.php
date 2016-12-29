@@ -25,11 +25,11 @@ if ( ! $messages ){
 }
 
 ?>
-<div class="woocommerce-error">
+<div class="woocommerce-error" data-fadeout-target="error">
   <ul>
     <?php foreach ( $messages as $message ) : ?>
       <li><?php echo wp_kses_post( $message ); ?></li>
     <?php endforeach; ?>
   </ul>
-  <span class="close-button" data-fadeout="parent">&times;</span>
+  <span class="close-button" data-fadeout="error">&times;</span>
 </div>

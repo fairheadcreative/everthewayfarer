@@ -88,19 +88,11 @@ jQuery(function($) {
       }
     });
     
-    //fade-out parent on close button click
-    $('[data-fadeout="parent"]').on('click', function () {
-      var $this = $(this);
-      $this.parent().addClass('is-faded').delay(300).queue(function (next) {
-        $this.parent().remove();
-        next();
-      })
-    });
-    
     mapsize();
     setTimeout(setPostcard, 100);
     setNav();
     shopItem.setLayout();
+    shopItem.setMessage();
   });
   
   $(window).on('resize', function(){
@@ -110,6 +102,11 @@ jQuery(function($) {
     setNav();
     setPostcard();
     shopItem.setLayout();
+    
+  });
+  
+  $(document).bind('DOMSubtreeModified', function () {
+    shopItem.setMessage();
   });
   
 //rearrange shop item for mobile layouts
@@ -136,6 +133,18 @@ jQuery(function($) {
       } else {
         $('.product-image .images').width(imageWidth);
       }
+    },
+    setMessage: function(){    
+      //fade-out parent on close button click
+      $('[data-fadeout]').on('click', function (e) {
+        e.preventDefault();
+        var targetAttr = $(this).attr('data-fadeout'),
+          targetEl = $('[data-fadeout-target="' + targetAttr + '"]'); 
+        targetEl.addClass('is-faded').delay(300).queue(function (next) {
+          targetEl.remove();
+          next();
+        })
+      });
     }
   }
 
