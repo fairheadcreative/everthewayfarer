@@ -103,11 +103,14 @@ if ( is_home() ) { ?>
           $args = array( 'post_type' => 'product' );
           $loop = new WP_Query( $args );
           while ( $loop->have_posts() ) : $loop->the_post(); 
-          global $product; ?>
+	  global $product; 
+	  $image_id = get_field('custom_product_image');
+	  $image_size =  'feature-postcard';
+	  $image_url = $image_id['sizes'][$image_size];
+	?>
 
           <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" >
-            <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } elseif ( !has_post_thumbnail() ) {?>
-            <?php  echo '<img src="' . post_image() . '" alt="" />'; }?>
+	    <img src="<?php echo $image_url; ?>" alt="">
             <h2><?php the_title(); ?></h2>
             <h3><?php echo $product->get_price_html(); ?></h3>
             <p><?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ) ?></p>
