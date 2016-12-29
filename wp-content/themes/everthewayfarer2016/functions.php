@@ -175,4 +175,12 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 15 );
 
+add_action( 'wp', 'bbloomer_remove_sidebar_product_pages' );
+ 
+function bbloomer_remove_sidebar_product_pages() {
+  if (is_product()) {
+    remove_action('woocommerce_sidebar','woocommerce_get_sidebar',10);
+  }
+}
+
 ?>
