@@ -182,4 +182,27 @@ function bbloomer_remove_sidebar_product_pages() {
   }
 }
 
+function change_posts_on_homepage( $query ) {
+
+    //First, number of posts on home page
+    $posts_on_first = 5;
+
+    if ( $query->is_home() && !is_paged() && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', $posts_on_first );
+    }
+
+    if ( $query->is_home() && is_paged() && $query->is_main_query() ) {
+    
+    //Next, this is default number of posts per page
+   $ppp = get_option('posts_per_page');
+
+   $page_offset = $ppp*($query->query_vars['paged']-2) + $posts_on_first;
+
+    //Apply adjust page offset
+    $query->set('offset', $page_offset );
+} 
+
+}
+add_action( 'pre_get_posts', 'change_posts_on_homepage' );
+
 ?>

@@ -100,17 +100,17 @@ if ( is_home() ) { ?>
       <?php if (have_posts()) : ?>
       <div>
         <?php # If it's a product
+          if ( is_home() && !is_paged() ) {
           $args = array( 'post_type' => 'product' );
           $loop = new WP_Query( $args );
           while ( $loop->have_posts() ) : $loop->the_post(); 
-	  global $product; 
-	  $image_id = get_field('custom_product_image');
-	  $image_size =  'feature-postcard';
-	  $image_url = $image_id['sizes'][$image_size];
-	?>
-
+      	  global $product; 
+      	  $image_id = get_field('custom_product_image');
+      	  $image_size =  'feature-postcard';
+      	  $image_url = $image_id['sizes'][$image_size]; ?>
+      	
           <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" >
-	    <img src="<?php echo $image_url; ?>" alt="">
+	          <img src="<?php echo $image_url; ?>" alt="">
             <h2><?php the_title(); ?></h2>
             <h3><?php echo $product->get_price_html(); ?></h3>
             <p><?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ) ?></p>
@@ -118,9 +118,8 @@ if ( is_home() ) { ?>
 
         <?php 
           endwhile; 
-          wp_reset_query(); 
-        ?>
-
+          wp_reset_query(); } ?>
+        
       <?php while (have_posts()) : the_post(); ?>
 
         <?php # If it's the postcard category:
@@ -295,5 +294,19 @@ if ( is_home() ) { ?>
 <?php endif; ?>
 <?php }; */?>
 
+<div class="test">
+  <?php global $query_string;
+  query_posts( $query_string . '&posts_per_page=6' );
+  if ( have_posts() ) : while ( have_posts() ) : the_post();
+    if(get_field('location')) {
+      $title = get_the_title();
+      $location = get_field('location');
+      $permalink = get_permalink();
+      array_push($GLOBALS[locationArray], array($title, $location, $permalink));
+    }
+  endwhile; endif;
+  wp_reset_query();
+  ?>
+</div>
 
 <?php get_footer(); ?>

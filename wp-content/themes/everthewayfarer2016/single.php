@@ -113,9 +113,7 @@
           <h3 class="h1-sub">Need a writer, photographer or speaker?</h3>
           <a class="button" href="/photography-freelance-writing-speaking/">Get in touch with me</a>
         </div>
-
-        <?php get_template_part( 'includes/keep-reading' ); ?>
-      </div>
+        <?php get_template_part( 'includes/keep-reading' ); ?> </div>
 
       <?php /*get_template_part( 'includes/sidebar' ); */?>
     </div>
