@@ -88,6 +88,15 @@ jQuery(function($) {
       }
     });
     
+    //fade-out parent on close button click
+    $('[data-fadeout="parent"]').on('click', function () {
+      var $this = $(this);
+      $this.parent().addClass('is-faded').delay(300).queue(function (next) {
+        $this.parent().remove();
+        next();
+      })
+    });
+    
     mapsize();
     setTimeout(setPostcard, 100);
     setNav();
@@ -107,8 +116,10 @@ jQuery(function($) {
   
   var shopItem = {
     setLayout: function(){
-      var productImageHeight = $('.product-image .images a img').height() + 64;
-      var productTopHeight = $('.product_title').height() + 166;
+      var productImageHeight = $('.product-image .images a img').height() + 64,
+        productTopHeight = $('.product_title').height() + 166,
+        imageWidth = $('.product-image').width(),
+        imageBigWidth = imageWidth - 32;
       if(winWidth < 860){
         $('.product-description-short').css({
           'margin-top': productImageHeight
@@ -118,6 +129,12 @@ jQuery(function($) {
         });
       } else {
         $('.product-description-short, .product-image').removeAttr('style');
+      }
+      
+      if(winWidth > 1099){
+        $('.product-image .images').width(imageBigWidth);
+      } else {
+        $('.product-image .images').width(imageWidth);
       }
     }
   }
