@@ -503,6 +503,45 @@ body.woocommerce-cart {
     
     &.cart {
       margin-bottom: 2em;
+      
+      @include media(max-width em(599)) {
+        
+        thead {
+          display: none;
+        }
+        
+        tr.cart_item {
+          display: block;
+          border-bottom: 2px solid $border-gray;
+        }
+        
+        td {
+          display: block;
+          width: 100%;
+          position: relative;
+          
+          &:not(.product-thumbnail):not(.actions) {
+            padding-left: 7em;
+          }
+          
+          .quantity,
+          &.actions {
+            overflow: auto;
+          }
+          
+          &.product-quantity:before {
+            top: .8em;
+          }
+          
+          &:before {
+            content: attr(data-title);
+            float: left;
+            font-weight: bold;
+            position: absolute;
+            left: .5em;
+          }
+        }
+      }
     }
     
     td,
@@ -512,6 +551,12 @@ body.woocommerce-cart {
     
     .product-remove {
       width: 5%;
+      
+      .remove {
+        font-size: 2em;
+        line-height: .75;
+        color: $red;
+      }
     }
     
     .product-thumbnail {
@@ -549,6 +594,11 @@ body.woocommerce-cart {
   .coupon {
     float: left;
     
+    @include media(max-width em(599)) {
+      float: none;
+      margin-bottom: .5em;
+    }
+    
     input#coupon_code {
       float: left;
       max-width: 7em;
@@ -558,12 +608,20 @@ body.woocommerce-cart {
   
   .button-update {
     float: right;
+    
+    @include media(max-width em(599)) {
+      width: 100%;
+    }    
   }
 }
 
 .cart-collaterals {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
+  
+  @include media($small-screen){
+    width: 50%;
+  }
   
   h2 {
     margin-bottom: .5em;

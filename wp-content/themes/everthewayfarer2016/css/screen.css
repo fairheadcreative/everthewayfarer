@@ -3689,11 +3689,37 @@ body.woocommerce-cart {
     text-align: left; }
     body.woocommerce-cart table.cart {
       margin-bottom: 2em; }
+      @media screen and (max-width: 37.4375em) {
+        body.woocommerce-cart table.cart thead {
+          display: none; }
+        body.woocommerce-cart table.cart tr.cart_item {
+          display: block;
+          border-bottom: 2px solid #ECECEC; }
+        body.woocommerce-cart table.cart td {
+          display: block;
+          width: 100%;
+          position: relative; }
+          body.woocommerce-cart table.cart td:not(.product-thumbnail):not(.actions) {
+            padding-left: 7em; }
+          body.woocommerce-cart table.cart td .quantity, body.woocommerce-cart table.cart td.actions {
+            overflow: auto; }
+          body.woocommerce-cart table.cart td.product-quantity:before {
+            top: .8em; }
+          body.woocommerce-cart table.cart td:before {
+            content: attr(data-title);
+            float: left;
+            font-weight: bold;
+            position: absolute;
+            left: .5em; } }
     body.woocommerce-cart table td,
     body.woocommerce-cart table th {
       padding: .5em; }
     body.woocommerce-cart table .product-remove {
       width: 5%; }
+      body.woocommerce-cart table .product-remove .remove {
+        font-size: 2em;
+        line-height: .75;
+        color: #FE0201; }
     body.woocommerce-cart table .product-thumbnail {
       width: 16%; }
     body.woocommerce-cart table .product-price {
@@ -3713,16 +3739,26 @@ body.woocommerce-cart {
         background: #d2ced4; }
   body.woocommerce-cart .coupon {
     float: left; }
+    @media screen and (max-width: 37.4375em) {
+      body.woocommerce-cart .coupon {
+        float: none;
+        margin-bottom: .5em; } }
     body.woocommerce-cart .coupon input#coupon_code {
       float: left;
       max-width: 7em;
       margin: 0 .5em 0 0; }
   body.woocommerce-cart .button-update {
     float: right; }
+    @media screen and (max-width: 37.4375em) {
+      body.woocommerce-cart .button-update {
+        width: 100%; } }
 
 .cart-collaterals {
-  width: 50%;
+  width: 100%;
   margin: 0 auto; }
+  @media screen and (min-width: 30em) {
+    .cart-collaterals {
+      width: 50%; } }
   .cart-collaterals h2 {
     margin-bottom: .5em; }
   .cart-collaterals .button, .cart-collaterals form.wpcf7-form input[type="submit"], form.wpcf7-form .cart-collaterals input[type="submit"] {

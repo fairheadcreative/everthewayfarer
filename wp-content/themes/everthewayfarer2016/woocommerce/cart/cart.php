@@ -52,7 +52,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 				?>
 				<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-					<td class="product-remove">
+					<td class="product-remove" data-title="Remove:">
 						<?php
 							echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 								'<a href="%s" class="remove" title="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
