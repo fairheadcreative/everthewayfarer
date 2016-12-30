@@ -106,8 +106,7 @@ if ( is_home() ) { ?>
           while ( $loop->have_posts() ) : $loop->the_post(); 
       	  global $product; 
       	  $image_id = get_field('custom_product_image');
-      	  $image_size =  'feature-postcard';
-      	  $image_url = $image_id['sizes'][$image_size]; ?>
+      	  $image_url = $image_id['url']; ?>
       	
           <a class="span-6 postcard-item-container item-product" href="<?php the_permalink() ?>" >
             <span class="price-tag-container">
