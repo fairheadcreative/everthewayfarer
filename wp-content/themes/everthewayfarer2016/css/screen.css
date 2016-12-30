@@ -3780,12 +3780,10 @@ body.woocommerce-cart {
     margin: 0 0 2em;
     position: relative;
     display: inline-block; }
-    .item-product .product-banner.postcard-item {
-      box-shadow: none; }
-      .item-product .product-banner.postcard-item::after {
-        display: none !important; }
+    .item-product .product-banner.postcard-item::after {
+      display: none !important; }
     .item-product .product-banner .product-custom-image {
-      box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.1); }
+      border: none; }
 
 .price-tag-container {
   position: absolute;

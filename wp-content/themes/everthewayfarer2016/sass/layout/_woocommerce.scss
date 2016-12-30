@@ -655,7 +655,6 @@ body.woocommerce-cart {
     display: inline-block;
     
     &.postcard-item {
-      box-shadow: none;
       
       &::after {
         display: none !important;
@@ -663,7 +662,7 @@ body.woocommerce-cart {
     }
     
     .product-custom-image {
-      box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.1);
+      border: none;
     }
   }
 }
