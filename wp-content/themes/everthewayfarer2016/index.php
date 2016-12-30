@@ -110,9 +110,11 @@ if ( is_home() ) { ?>
       	  $image_url = $image_id['sizes'][$image_size]; ?>
       	
           <a class="span-6 postcard-item-container item-product" href="<?php the_permalink() ?>" >
-            <figure class="product-banner" style="background:url(<?php echo $image_url; ?>) no-repeat center center; background-size: contain;">
-              <!--<img class="product-custom-image" src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>">-->
+            <span class="price-tag-container">
               <span class="product-price-tag"><?php echo $product->get_price_html(); ?></span>
+            </span>
+            <figure class="product-banner postcard-item">
+              <img class="product-custom-image" src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>">
             </figure>              
           </a>
 

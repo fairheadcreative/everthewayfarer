@@ -96,7 +96,6 @@ jQuery(function($) {
     setNav();
     shopItem.setLayout();
     shopItem.setMessage();
-    shopItem.setBanner();
   });
   
   $(window).on('resize', function(){
@@ -106,7 +105,6 @@ jQuery(function($) {
     setNav();
     setPostcard();
     shopItem.setLayout();
-    shopItem.setBanner();
     
   });
   
@@ -150,15 +148,6 @@ jQuery(function($) {
           next();
         })
       });
-    },
-    setBanner: function () {
-      var productBanner = $('.product-banner').parent();
-      productBanner.each(function () {
-        var getHeight = $(this).next().find('.postcard-item').innerHeight(),
-          getWidth = $(this).next().find('.postcard-item').innerWidth(),
-          getChild = $(this).find('.product-banner');
-        getChild.height(getHeight).width(getWidth);
-      });      
     }
   }
 
