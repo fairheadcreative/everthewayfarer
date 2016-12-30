@@ -3778,6 +3778,7 @@ body.woocommerce-cart {
     -webkit-transform: rotate(1deg) !important;
     transform: rotate(-1deg) !important;
     margin: 0 0 2em;
+    min-height: auto;
     position: relative;
     display: inline-block; }
     .item-product .product-banner.postcard-item::after {
