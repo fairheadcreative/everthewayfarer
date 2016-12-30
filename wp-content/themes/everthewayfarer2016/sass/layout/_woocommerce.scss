@@ -654,8 +654,18 @@ body.woocommerce-cart {
     min-height: auto;
     position: relative;
     display: inline-block;
+    box-shadow: none;
+    background: transparent;
+    overflow: visible;
     
     &.postcard-item {
+  
+      &:before {
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.1) 76%, rgba(0,0,0,0) 100%) !important;
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 40%,rgba(0,0,0,0.1) 76%,rgba(0,0,0,0) 100%) !important;
+        background: linear-gradient(to bottom,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 40%,rgba(0,0,0,0.1) 76%,rgba(0,0,0,0) 100%) !important;
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d000000', endColorstr='#00000000',GradientType=0 ) !important;
+      }
       
       &::after {
         display: none !important;
@@ -664,6 +674,7 @@ body.woocommerce-cart {
     
     .product-custom-image {
       border: none;
+      box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.1);
     }
   }
 }
