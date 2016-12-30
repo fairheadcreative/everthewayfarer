@@ -309,3 +309,8 @@
 .margin-b-0 {
   margin-bottom: 0 !important;
 }
+
+.transparent {
+  opacity: 0;
+  transition: opacity .3s;
+}

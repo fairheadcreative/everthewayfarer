@@ -49,6 +49,9 @@ jQuery(function($) {
       $('.splash-overlay').remove();
     }
     
+    //fade-in content
+    $('.transparent').removeClass('transparent');
+    
     //fade in the subscribe page
     $('.subscribe-page [data-fadein="true"]').addClass('fade-in').removeClass('is-under');
     
@@ -93,6 +96,7 @@ jQuery(function($) {
     setNav();
     shopItem.setLayout();
     shopItem.setMessage();
+    shopItem.setBanner();
   });
   
   $(window).on('resize', function(){
@@ -102,6 +106,7 @@ jQuery(function($) {
     setNav();
     setPostcard();
     shopItem.setLayout();
+    shopItem.setBanner();
     
   });
   
@@ -112,7 +117,7 @@ jQuery(function($) {
 //rearrange shop item for mobile layouts
   
   var shopItem = {
-    setLayout: function(){
+    setLayout: function () {
       var productImageHeight = $('.product-image .images a img').height() + 64,
         productTopHeight = $('.product_title').height() + 166,
         imageWidth = $('.product-image').width(),
@@ -134,7 +139,7 @@ jQuery(function($) {
         $('.product-image .images').width(imageWidth);
       }
     },
-    setMessage: function(){    
+    setMessage: function () {    
       //fade-out parent on close button click
       $('[data-fadeout]').on('click', function (e) {
         e.preventDefault();
@@ -145,6 +150,15 @@ jQuery(function($) {
           next();
         })
       });
+    },
+    setBanner: function () {
+      var productBanner = $('.product-banner').parent();
+      productBanner.each(function () {
+        var getHeight = $(this).next().find('.postcard-item').innerHeight(),
+          getWidth = $(this).next().find('.postcard-item').innerWidth(),
+          getChild = $(this).find('.product-banner');
+        getChild.height(getHeight).width(getWidth);
+      });      
     }
   }
 

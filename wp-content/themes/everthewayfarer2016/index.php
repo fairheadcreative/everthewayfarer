@@ -63,7 +63,7 @@ if ( is_home() ) { ?>
 
 <?php $GLOBALS[locationArray] = array(); ?>
 
-<section id="main">
+<section id="main" class="transparent">
    
   <!--start as seen in box -->
   <?php if ( is_home() && !is_paged() ) { ?>
@@ -109,11 +109,11 @@ if ( is_home() ) { ?>
       	  $image_size =  'feature-postcard';
       	  $image_url = $image_id['sizes'][$image_size]; ?>
       	
-          <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" >
-	          <img src="<?php echo $image_url; ?>" alt="">
-            <h2><?php the_title(); ?></h2>
-            <h3><?php echo $product->get_price_html(); ?></h3>
-            <p><?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ) ?></p>
+          <a class="span-6 postcard-item-container item-product" href="<?php the_permalink() ?>" >
+            <figure class="product-banner" style="background:url(<?php echo $image_url; ?>) no-repeat center center; background-size: contain;">
+              <!--<img class="product-custom-image" src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>">-->
+              <span class="product-price-tag"><?php echo $product->get_price_html(); ?></span>
+            </figure>              
           </a>
 
         <?php 

@@ -9,6 +9,8 @@
 	font-style: normal;
 }
 
+//single product page
+
 .single-product {
   background: $light-gray;
   background: rgb(250,250,250);
@@ -113,6 +115,8 @@
   }
 }
 
+//stars rating
+
 .woocommerce-product-rating {
   @include clearfix();
   line-height: 2;
@@ -187,34 +191,6 @@
   }
 }
 
-#review_form {
-  #respond {
-    @include clearfix();
-    position: static;
-    margin: 0;
-    width: auto;
-    padding: 0 0 0;
-    background: transparent none;
-    border: 0;
-
-    p {
-      margin: 0 0 10px;
-    }
-
-    .form-submit {
-      input {
-        left: auto;
-        float: none;
-      }
-    }
-
-    textarea {
-      box-sizing: border-box;
-      width: 100%;
-    }
-  }
-}
-
 p.stars {
   a {
     position: relative;
@@ -267,6 +243,34 @@ p.stars {
       &:before {
         content: "\e020";
       }
+    }
+  }
+}
+
+#review_form {
+  #respond {
+    @include clearfix();
+    position: static;
+    margin: 0;
+    width: auto;
+    padding: 0 0 0;
+    background: transparent none;
+    border: 0;
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    .form-submit {
+      input {
+        left: auto;
+        float: none;
+      }
+    }
+
+    textarea {
+      box-sizing: border-box;
+      width: 100%;
     }
   }
 }
@@ -405,6 +409,8 @@ p.stars {
   }
 }
 
+//errors and info messages
+
 .woocommerce-message,
 .woocommerce-info,
 .woocommerce-error {
@@ -431,6 +437,7 @@ p.stars {
     position: absolute;
     bottom: 2em;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     background: $white;
     font-family: $helvetica-franklin;
@@ -632,5 +639,58 @@ body.woocommerce-cart {
     font-family: $helvetica-franklin;
     text-transform: none;
     font-weight: bold;
+  }
+}
+
+//homepage postcard-style shop item
+
+.item-product {
+  text-align: center;
+  
+  .product-banner {
+    -webkit-transform: rotate(1deg);
+    transform: rotate(-1deg);
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    
+    .product-custom-image {
+      box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      width: auto;
+      transition: all .3s;
+    }
+
+    .product-price-tag {
+      position: absolute;
+      display: block;
+      top: -10px;
+      left: 5px;
+      font-family: $helvetica-franklin;
+      color: $white;
+      background: $blue;
+      font-size: 1.5em;
+      height: 3em;
+      width: 3em;
+      border-radius: 50%;
+      box-shadow: 1px 1px 2px rgba(0,0,0,.35);
+
+      .woocommerce-Price-amount.amount {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        text-indent: -.25em;
+      }
+
+      .woocommerce-Price-currencySymbol {
+        vertical-align: super;
+        font-size: .65em;
+        position: relative;
+        top: .25em;
+      }
+    }
   }
 }
