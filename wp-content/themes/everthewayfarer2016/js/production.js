@@ -96,7 +96,6 @@ jQuery(function($) {
     setNav();
     shopItem.setLayout();
     shopItem.setMessage();
-    shopItem.setBanner();
   });
   
   $(window).on('resize', function(){
@@ -105,9 +104,7 @@ jQuery(function($) {
     mapsize();
     setNav();
     setPostcard();
-    shopItem.setLayout();
-    shopItem.setBanner();
-    
+    shopItem.setLayout();   
   });
   
   $(document).bind('DOMSubtreeModified', function () {
@@ -150,13 +147,6 @@ jQuery(function($) {
           next();
         })
       });
-    },
-    setBanner: function () {
-      var productBanner = $('.product-banner');
-      productBanner.each(function () {
-        var getHeight = $(this).find('.product-custom-image').height();
-        $(this).height(getHeight);
-      });      
     }
   }
 
