@@ -793,12 +793,27 @@ body.woocommerce-cart,
         float: right;
         font-family: $merriweather;
         
+        &#createaccount {
+          width: auto;
+          position: absolute;
+          left: 170px;
+          margin-top: 5px;
+          
+          @include media($medium-screen) {
+            left: 27.23913%;
+          }
+        }
+        
         @include media($medium-screen){
           @include span-columns(9);
           float: right;
           @include omega();
         }
-      }      
+      }  
+      
+      .select2-container .select2-choice {
+        border: $base-border;
+      }
     }
   }
 }
@@ -812,8 +827,6 @@ body.woocommerce-cart,
 
 .woocommerce-checkout-payment {
   padding: .5em;
-  background: white;
-  border: 1px solid $border-gray;
   border-radius: 3px;
   margin-bottom: 1.5em;
   overflow: auto;

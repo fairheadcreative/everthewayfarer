@@ -3984,6 +3984,20 @@ body.woocommerce-cart,
       width: 100%;
       float: right;
       font-family: "Merriweather", serif; }
+      .woocommerce-checkout .woocommerce-billing-fields .form-row input#createaccount,
+      .woocommerce-checkout .woocommerce-billing-fields .form-row textarea#createaccount,
+      .woocommerce-checkout .woocommerce-shipping-fields .form-row input#createaccount,
+      .woocommerce-checkout .woocommerce-shipping-fields .form-row textarea#createaccount {
+        width: auto;
+        position: absolute;
+        left: 170px;
+        margin-top: 5px; }
+        @media screen and (min-width: 40em) {
+          .woocommerce-checkout .woocommerce-billing-fields .form-row input#createaccount,
+          .woocommerce-checkout .woocommerce-billing-fields .form-row textarea#createaccount,
+          .woocommerce-checkout .woocommerce-shipping-fields .form-row input#createaccount,
+          .woocommerce-checkout .woocommerce-shipping-fields .form-row textarea#createaccount {
+            left: 27.23913%; } }
       @media screen and (min-width: 40em) {
         .woocommerce-checkout .woocommerce-billing-fields .form-row input,
         .woocommerce-checkout .woocommerce-billing-fields .form-row textarea,
@@ -4000,14 +4014,15 @@ body.woocommerce-cart,
           .woocommerce-checkout .woocommerce-shipping-fields .form-row input:last-child,
           .woocommerce-checkout .woocommerce-shipping-fields .form-row textarea:last-child {
             margin-right: 0; } }
+    .woocommerce-checkout .woocommerce-billing-fields .form-row .select2-container .select2-choice,
+    .woocommerce-checkout .woocommerce-shipping-fields .form-row .select2-container .select2-choice {
+      border: 1px solid #f4f4f4; }
 
 .woocommerce-checkout-review-order-table .product-name {
   width: 70%; }
 
 .woocommerce-checkout-payment {
   padding: .5em;
-  background: white;
-  border: 1px solid #ECECEC;
   border-radius: 3px;
   margin-bottom: 1.5em;
   overflow: auto; }
