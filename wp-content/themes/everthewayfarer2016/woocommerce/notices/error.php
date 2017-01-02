@@ -31,5 +31,5 @@ if ( ! $messages ){
       <li><?php echo wp_kses_post( $message ); ?></li>
     <?php endforeach; ?>
   </ul>
-  <span class="close-button" data-fadeout="error">&times;</span>
+  <span class="close-button" data-fadeout="error"><span class="close-icon">&times;</span></span>
 </div>

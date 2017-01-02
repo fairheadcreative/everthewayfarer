@@ -27,5 +27,5 @@ if ( ! $messages ){
 ?>
 
 <?php foreach ( $messages as $message ) : ?>
-	<div class="woocommerce-message" data-fadeout-target="message"><?php echo wp_kses_post( $message ); ?><span class="close-button" data-fadeout="message">&times;</span></div>
+	<div class="woocommerce-message" data-fadeout-target="message"><?php echo wp_kses_post( $message ); ?><span class="close-button" data-fadeout="message"><span class="close-icon">&times;</span></span></div>
 <?php endforeach; ?>

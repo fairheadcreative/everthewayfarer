@@ -9,15 +9,30 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'WooCommerce';
+	src: url('../fonts/WooCommerce.eot');
+	src: url('../fonts/WooCommerce.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/WooCommerce.woff') format('woff'),
+		url('../fonts/WooCommerce.ttf') format('truetype'),
+		url('../fonts/WooCommerce.svg#WooCommerce') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 //single product page
 
 .single-product {
-  background: $light-gray;
-  background: rgb(250,250,250);
-  background: -moz-linear-gradient(left, rgba(255,255,255,1) 39.13043%, rgba(250,250,250,1) 39.13043%);
-  background: -webkit-linear-gradient(left, rgba(255,255,255,1) 39.13043%,rgba(250,250,250,1) 39.13043%);
-  background: linear-gradient(to right,  rgba(255,255,255,1) 39.13043%,rgba(250,250,250,1) 39.13043%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fafafa',GradientType=1 );
+  
+  @include media($large-screen){
+    background: $light-gray;
+    background: rgb(250,250,250);
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 39.13043%, rgba(250,250,250,1) 39.13043%);
+    background: -webkit-linear-gradient(left, rgba(255,255,255,1) 39.13043%,rgba(250,250,250,1) 39.13043%);
+    background: linear-gradient(to right,  rgba(255,255,255,1) 39.13043%,rgba(250,250,250,1) 39.13043%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fafafa',GradientType=1 );    
+  }
+
   
   section {
     @include outer-container();
@@ -31,7 +46,12 @@
 }
 
 .product-summary {
-  background: $white;
+  background: rgb(250,250,250);
+  background: -moz-linear-gradient(top,  rgba(250,250,250,1) 249px, rgba(255,255,255,1) 250px);
+  background: -webkit-linear-gradient(top,  rgba(250,250,250,1) 249px,rgba(255,255,255,1) 250px);
+  background: linear-gradient(to bottom,  rgba(250,250,250,1) 249px,rgba(255,255,255,1) 250px);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#ffffff',GradientType=0 );
+
   width: 100%;
   box-sizing: border-box;
   padding: 2em;
@@ -42,6 +62,7 @@
     padding: 7.25em 2em 0 2em;
     min-height: calc(100vh - 65px);
     text-align: left;
+    background: $white;
   }
   
   @include media($x-large-screen){
@@ -53,8 +74,8 @@
     text-align: left;
 
     p {
-      font-size: 1.1em;
-      line-height: 1.35;
+      @extend .article-text;
+      margin-bottom: 1em;
     }
   }
 }
@@ -64,13 +85,18 @@
   position: absolute;
   box-sizing: border-box;
   padding: 0 2em;
+  background: -moz-linear-gradient(top,  rgba(250,250,250,0) 1%, rgba(250,250,250,0) 9%, rgba(250,250,250,1) 10%, rgba(250,250,250,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(250,250,250,0) 1%,rgba(250,250,250,0) 9%,rgba(250,250,250,1) 10%,rgba(250,250,250,1) 100%);
+  background: linear-gradient(to bottom,  rgba(250,250,250,0) 1%,rgba(250,250,250,0) 9%,rgba(250,250,250,1) 10%,rgba(250,250,250,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fafafa', endColorstr='#fafafa',GradientType=0 );
   
   @include media($large-screen){
     @include span-columns(5);
     @include omega();
     position: relative;
-    left: -4.34783%;
+    left: -2.17393%;
     padding: 0;
+    background: transparent;
   
     .images {
       position: fixed;
@@ -88,6 +114,8 @@
     
     a {
       display: block;
+      pointer-events: none;
+      line-height: 0;
       
       img {
         width: 100%;
@@ -105,9 +133,14 @@
   }
   
   .price {
-    font-size: 1.75em;
+    font-size: 1.5em;
     margin-bottom: 0;
     margin-right: .25em;
+    line-height: 1.2;
+
+    @include media($medium-screen){
+      font-size: 1.75em;
+    }  
 
     @include media($large-screen){
       margin-right: 0;
@@ -125,15 +158,11 @@
   @include media($large-screen){
     display: block;
   }
-
-  .star-rating {
-    margin: .5em 4px 0 0;
-    float: left;
-  }
   
   .star-rating {
     overflow: hidden;
     position: relative;
+    bottom: -6px;
     line-height: 1;
     font-size: 1em;
     width: 5.75em;
@@ -142,11 +171,18 @@
     height: 24px;
     line-height: 1.25;
     display: inline-block;
+    margin: .2em 4px 0 0;
+    float: left;
+    
+    @include media($medium-screen){
+      margin: .5em 4px 0 0;
+    } 
 
     @include media($large-screen){
       height: 1em;
       line-height: 1;
       display: block;
+      bottom: -0;
     }
 
     &:before {
@@ -278,7 +314,11 @@ p.stars {
 .single-product .cart {
   display: block;
   overflow: auto;
-  margin-bottom: 3.75em;
+  margin-bottom: 0;
+  
+  @include media($large-screen){
+    margin-bottom: 3.75em;
+  }
 }
 
 .quantity {  
@@ -329,6 +369,11 @@ p.stars {
   @include clearfix();
   border-bottom: 2px solid #dfdfdf;
   margin-bottom: 1.75em;
+  font-size: .9em;
+  
+  @include media($small-screen){
+    font-size: 1em;
+  }  
   
   li {
     float: left;
@@ -356,8 +401,10 @@ p.stars {
     }
   } 
   
-  h1 {
-    text-align: center;
+  &.woocommerce-checkout {
+      h1 {
+      text-align: center;
+    }
   }
   
   form {
@@ -424,7 +471,7 @@ p.stars {
 .woocommerce-message,
 .woocommerce-info,
 .woocommerce-error {
-  padding: 2.5em;
+  padding: 2em 3.5em;
   text-align: center;
   z-index: 100;
   position: fixed;
@@ -438,13 +485,17 @@ p.stars {
   opacity: .95;
   transition: opacity .3s;
   
+  .admin-bar & {
+    top: 95px;
+  }
+  
   &.is-faded {    
     opacity: 0;
     transition: opacity .3s;
   }
   
   &.has-action {
-    padding: 2.5em 2.5em 5em;
+    padding: 2em 3.5em 5em;
   }
   
   a:not(.button) {
@@ -479,9 +530,9 @@ p.stars {
     top: 1em;
     background: white;
     display: block;
+    line-height: 1;
     height: 1.5em;
     width: 1.5em;
-    line-height: 1.5;
     font-size: 1em;
     border-radius: 50%;
     cursor: pointer;
@@ -490,6 +541,15 @@ p.stars {
     
     &:hover {
       opacity: .7;
+    }
+    
+    .close-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      line-height: 1;
     }
   }
 }
@@ -546,9 +606,9 @@ p.stars {
   }
 }
 
-//cart
-
-body.woocommerce-cart {
+//cart & checkout
+body.woocommerce-cart,
+.woocommerce-checkout {
   text-align: center;
   font-family: $helvetica-franklin;
   background: $light-gray;
@@ -560,8 +620,16 @@ body.woocommerce-cart {
     border-collapse: initial;
     text-align: left;
     
+    th {
+      border-bottom: $base-border;
+    }
+    
     &.cart {
       margin-bottom: 2em;
+      
+      th {
+        border-bottom: 2px solid $border-gray;
+      }
       
       @include media(max-width em(599)) {
         
@@ -671,6 +739,74 @@ body.woocommerce-cart {
     @include media(max-width em(599)) {
       width: 100%;
     }    
+  }
+}
+
+//checkout
+.woocommerce-checkout {
+  text-align: left;
+  
+  .select2-results li,
+  .select2-chosen {
+    font-family: $merriweather;
+  }
+  
+  .woocommerce-billing-fields,
+  .woocommerce-shipping-fields {
+    padding: .5em;
+    background: white;
+    border: 1px solid $border-gray;
+    border-radius: 3px;
+    margin-bottom: 1.5em;
+    overflow: auto;
+    
+    .form-row {
+      @include clearfix();
+      
+      label {
+        @include fill-parent();
+        
+        @include media($medium-screen){
+          @include span-columns(3);
+        }
+      }
+
+      input,
+      textarea {
+        @include fill-parent();
+        float: right;
+        font-family: $merriweather;
+        
+        @include media($medium-screen){
+          @include span-columns(9);
+          float: right;
+          @include omega();
+        }
+      }      
+    }
+  }
+}
+
+.woocommerce-checkout-review-order-table {
+  
+  .product-name {
+    width: 70%;
+  }  
+}
+
+.woocommerce-checkout-payment {
+  padding: .5em;
+  background: white;
+  border: 1px solid $border-gray;
+  border-radius: 3px;
+  margin-bottom: 1.5em;
+  overflow: auto;
+  
+  li {
+    list-style: none !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
   }
 }
 

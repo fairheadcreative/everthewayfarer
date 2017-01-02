@@ -22,10 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<!--WORDPRESS 
-<div style="position: absolute; top:0; left: 50%;transform: translatex(-50%);bottom:0;opacity:.2;pointer-events:none;width:100%;text-align:center;z-index:10;"><img src="<?php bloginfo('template_directory'); ?>/images/test.jpg" alt=""></div>
-<!--/tester-->
-
 <?php
 	/**
 	 * woocommerce_before_single_product hook.

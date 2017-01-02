@@ -498,23 +498,23 @@
     .icon-cart {
       position: absolute;
       width: 60%;
-      left: 50%;
-      top: 4px;
+      left: 46%;
+      top: 2px;
       -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
     }
 
     .cart-quantity {
       position: absolute;
-      left: 55%;
-      top: 52%;
+      left: 52%;
+      top: 48%;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       z-index: 10;
       font-size: .8em;
     
       @include media($small-screen){
-        top: 48%;
+        top: 45%;
       }
     }
   }

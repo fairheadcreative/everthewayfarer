@@ -48,6 +48,11 @@ h1 {
 .single-product h1 {
   margin: 0 0 .25em;
   text-align: center;
+  font-size: 1.65em;
+  
+  @include media($medium-screen){
+    font-size: $h1-font-size;
+  }
   
   @include media($large-screen){
     text-align: left;

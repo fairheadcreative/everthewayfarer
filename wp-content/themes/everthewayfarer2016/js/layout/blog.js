@@ -117,8 +117,8 @@ jQuery(function($) {
   
   var shopItem = {
     setLayout: function () {
-      var productImageHeight = $('.product-image .images a img').height() + 64,
-        productTopHeight = $('.product_title').height() + 166,
+      var productImageHeight = $('.product-image .images a img').height() + 10,
+        productTopHeight = $('.product_title').height() + 126,
         imageWidth = $('.product-image').width(),
         imageBigWidth = imageWidth - 32;
       if(winWidth < 860){
