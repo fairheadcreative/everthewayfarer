@@ -863,6 +863,15 @@ body.woocommerce-cart,
 
 .item-product {
   text-align: center;
+  margin-bottom: 1em;
+  
+  @include media($small-screen){
+    margin-bottom: 2em;
+  }
+  
+  @include media($medium-screen){
+    margin-bottom: 0;
+  }
   
   .product-banner {
     -webkit-transform: rotate(1deg) !important;
