@@ -58,15 +58,22 @@
               </li>
             </ul>  
           </li>
+          <li class="logo"><a href="<?php echo site_url(); ?>"><?php get_template_part( 'includes/logotype' ); ?></a></li>
+          <?php if (!is_page('subscribe')) {?><li class="nav-primary-3"><a class="button" href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li><?php } ?>
           <?php
             global $woocommerce;
             if ( !WC()->cart->is_empty() ) { ?>
-              <li>
-                <a class="cart-contents button" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'Cart Items' ); ?>"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></a>
+              <li class="nav-cart">
+                <a class="cart-contents button" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'Cart Items' ); ?>">
+                  <span class="icon-cart">
+                    <?php get_template_part( 'includes/svg/cart' ); ?>
+                  </span>
+                  <span class="cart-quantity">
+                    <?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>
+                  </span>
+                </a>
               </li>
           <?php }; ?>
-          <li class="logo"><a href="<?php echo site_url(); ?>"><?php get_template_part( 'includes/logotype' ); ?></a></li>
-          <?php if (!is_page('subscribe')) {?><li class="nav-primary-3"><a class="button" href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li><?php } ?>
         </ul>
       </div>
     </nav>

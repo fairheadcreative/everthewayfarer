@@ -1648,6 +1648,40 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
         display: inline-block; } }
   #primary-links .nav-primary-3 {
     float: right; }
+  #primary-links .nav-cart {
+    right: 0;
+    position: absolute; }
+    @media screen and (min-width: 40em) {
+      #primary-links .nav-cart {
+        float: right;
+        margin-right: .5em;
+        position: relative; } }
+    #primary-links .nav-cart .cart-contents {
+      height: 2.7em;
+      width: 4em;
+      float: right;
+      background: transparent; }
+      @media screen and (min-width: 40em) {
+        #primary-links .nav-cart .cart-contents {
+          background: #f4f4f4;
+          transition: background .3s; }
+          #primary-links .nav-cart .cart-contents:hover {
+            background: #ECECEC; } }
+    #primary-links .nav-cart .icon-cart {
+      position: absolute;
+      width: 60%;
+      left: 50%;
+      top: 4px;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%); }
+    #primary-links .nav-cart .cart-quantity {
+      position: absolute;
+      left: 55%;
+      top: 48%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      font-size: .8em; }
   #primary-links .logo {
     float: none;
     position: absolute;
