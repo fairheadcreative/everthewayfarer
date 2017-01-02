@@ -3697,7 +3697,7 @@ p.stars.selected a:not(.active):before {
   z-index: 100;
   position: fixed;
   left: 0;
-  top: 65px;
+  top: 50px;
   width: 100%;
   color: white;
   font-size: 1.1em;
@@ -3708,7 +3708,17 @@ p.stars.selected a:not(.active):before {
   .admin-bar .woocommerce-message, .admin-bar
   .woocommerce-info, .admin-bar
   .woocommerce-error {
-    top: 95px; }
+    top: 96px; }
+    @media screen and (min-width: 48.9375em) {
+      .admin-bar .woocommerce-message, .admin-bar
+      .woocommerce-info, .admin-bar
+      .woocommerce-error {
+        top: 88px; } }
+  @media screen and (min-width: 53.75em) {
+    .woocommerce-message,
+    .woocommerce-info,
+    .woocommerce-error {
+      top: 65px; } }
   .woocommerce-message.is-faded,
   .woocommerce-info.is-faded,
   .woocommerce-error.is-faded {
@@ -3756,7 +3766,7 @@ p.stars.selected a:not(.active):before {
   .woocommerce-info .close-button,
   .woocommerce-error .close-button {
     position: absolute;
-    right: 2em;
+    right: 1em;
     top: 1em;
     background: white;
     display: block;
