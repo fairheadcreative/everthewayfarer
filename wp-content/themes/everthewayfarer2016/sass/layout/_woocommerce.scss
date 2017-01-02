@@ -476,7 +476,7 @@ p.stars {
   z-index: 100;
   position: fixed;
   left: 0;
-  top: 50px;
+  top: 48px;
   width: 100%;
   color: white;
   font-size: 1.1em;
@@ -486,11 +486,19 @@ p.stars {
   transition: opacity .3s;
   
   .admin-bar & {
-    top: 96px;
+    top: 92px;
+    
+    @include media($medium-screen){
+      top: 100px;
+    }
     
     @include media(em(783)){
       top: 88px;
     }
+  }
+  
+  @include media(em(380)){
+    top: 50px; 
   }
   
   @include media($large-screen){

@@ -3697,7 +3697,7 @@ p.stars.selected a:not(.active):before {
   z-index: 100;
   position: fixed;
   left: 0;
-  top: 50px;
+  top: 48px;
   width: 100%;
   color: white;
   font-size: 1.1em;
@@ -3708,12 +3708,22 @@ p.stars.selected a:not(.active):before {
   .admin-bar .woocommerce-message, .admin-bar
   .woocommerce-info, .admin-bar
   .woocommerce-error {
-    top: 96px; }
+    top: 92px; }
+    @media screen and (min-width: 40em) {
+      .admin-bar .woocommerce-message, .admin-bar
+      .woocommerce-info, .admin-bar
+      .woocommerce-error {
+        top: 100px; } }
     @media screen and (min-width: 48.9375em) {
       .admin-bar .woocommerce-message, .admin-bar
       .woocommerce-info, .admin-bar
       .woocommerce-error {
         top: 88px; } }
+  @media screen and (min-width: 23.75em) {
+    .woocommerce-message,
+    .woocommerce-info,
+    .woocommerce-error {
+      top: 50px; } }
   @media screen and (min-width: 53.75em) {
     .woocommerce-message,
     .woocommerce-info,
