@@ -173,6 +173,8 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 // reorder product summary elements
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 15 );
+// Remove "Returning customer? Click here to login" From Checkout Page
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
 
 add_action( 'wp', 'bbloomer_remove_sidebar_product_pages' );
  

@@ -761,6 +761,7 @@ body.woocommerce-cart,
 //checkout
 .woocommerce-checkout {
   text-align: left;
+  background: $light-gray !important;
   
   .select2-results li,
   .select2-chosen {
@@ -769,7 +770,7 @@ body.woocommerce-cart,
   
   .woocommerce-billing-fields,
   .woocommerce-shipping-fields {
-    padding: .5em;
+    padding: 1em;
     background: white;
     border: 1px solid $border-gray;
     border-radius: 3px;

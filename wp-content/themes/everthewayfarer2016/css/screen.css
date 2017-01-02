@@ -3947,13 +3947,14 @@ body.woocommerce-cart,
         width: 100%; } }
 
 .woocommerce-checkout {
-  text-align: left; }
+  text-align: left;
+  background: #fafafa !important; }
   .woocommerce-checkout .select2-results li,
   .woocommerce-checkout .select2-chosen {
     font-family: "Merriweather", serif; }
   .woocommerce-checkout .woocommerce-billing-fields,
   .woocommerce-checkout .woocommerce-shipping-fields {
-    padding: .5em;
+    padding: 1em;
     background: white;
     border: 1px solid #ECECEC;
     border-radius: 3px;
