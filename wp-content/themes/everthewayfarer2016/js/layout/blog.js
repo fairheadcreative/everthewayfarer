@@ -96,6 +96,7 @@ jQuery(function($) {
     setNav();
     shopItem.setLayout();
     shopItem.setMessage();
+    shopItem.layoutMessage();
   });
   
   $(window).on('resize', function(){
@@ -104,7 +105,8 @@ jQuery(function($) {
     mapsize();
     setNav();
     setPostcard();
-    shopItem.setLayout();   
+    shopItem.setLayout(); 
+    shopItem.layoutMessage();  
   });
   
   $(document).bind('DOMSubtreeModified', function () {
@@ -146,6 +148,16 @@ jQuery(function($) {
           targetEl.remove();
           next();
         })
+      });
+    },
+    layoutMessage: function () {
+      var messageInstance = $('.woocommerce-message, .woocommerce-info, .woocommerce-error');
+      messageInstance.each(function () {
+        var $this = $(this),
+          hasButton = $this.find('.button');
+        if(hasButton.length > 0) {
+          $this.addClass('has-action');
+        }
       });
     }
   }

@@ -1,7 +1,6 @@
 .button {
   @extend %button;
-  font-family: $franklin-gothic;
-  text-transform: uppercase;
+  font-family: $helvetica-franklin;
 
   &.secondary {
     border: 1px solid $base-button-color;
@@ -508,11 +507,15 @@
     .cart-quantity {
       position: absolute;
       left: 55%;
-      top: 48%;
+      top: 52%;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       z-index: 10;
       font-size: .8em;
+    
+      @include media($small-screen){
+        top: 48%;
+      }
     }
   }
 

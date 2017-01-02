@@ -1319,8 +1319,7 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   border-bottom: none; }
 
 .button, form.wpcf7-form input[type="submit"] {
-  font-family: "franklin-gothic-urw-comp", sans-serif;
-  text-transform: uppercase; }
+  font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; }
   .button.secondary, form.wpcf7-form input.secondary[type="submit"] {
     border: 1px solid #4bc2c8;
     color: #4bc2c8;
@@ -1677,11 +1676,14 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
     #primary-links .nav-cart .cart-quantity {
       position: absolute;
       left: 55%;
-      top: 48%;
+      top: 52%;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       z-index: 10;
       font-size: .8em; }
+      @media screen and (min-width: 30em) {
+        #primary-links .nav-cart .cart-quantity {
+          top: 48%; } }
   #primary-links .logo {
     float: none;
     position: absolute;
@@ -3614,6 +3616,10 @@ p.stars.selected a:not(.active):before {
   margin-bottom: .35em; }
   .woocommerce-page h2.woocommerce-Reviews-title {
     margin-bottom: 1em; }
+.woocommerce-page h1, .woocommerce-page .the-content .h1, .the-content .woocommerce-page .h1, .woocommerce-page .h1-sub {
+  text-align: center; }
+.woocommerce-page form p {
+  font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; }
 
 .woocommerce-Tabs-panel tr {
   border-bottom: 1px solid #f4f4f4; }
@@ -3648,7 +3654,7 @@ p.stars.selected a:not(.active):before {
 .woocommerce-message,
 .woocommerce-info,
 .woocommerce-error {
-  padding: 2em 2em 5em;
+  padding: 2.5em;
   text-align: center;
   z-index: 100;
   position: fixed;
@@ -3659,13 +3665,27 @@ p.stars.selected a:not(.active):before {
   font-size: 1.1em;
   box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.2);
   font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
-  opacity: 1;
+  opacity: .95;
   transition: opacity .3s; }
   .woocommerce-message.is-faded,
   .woocommerce-info.is-faded,
   .woocommerce-error.is-faded {
     opacity: 0;
     transition: opacity .3s; }
+  .woocommerce-message.has-action,
+  .woocommerce-info.has-action,
+  .woocommerce-error.has-action {
+    padding: 2.5em 2.5em 5em; }
+  .woocommerce-message a:not(.button),
+  .woocommerce-info a:not(.button),
+  .woocommerce-error a:not(.button) {
+    color: #fff;
+    text-decoration: underline; }
+    .woocommerce-message a:not(.button):hover,
+    .woocommerce-info a:not(.button):hover,
+    .woocommerce-error a:not(.button):hover {
+      color: #fff;
+      text-decoration: none; }
   .woocommerce-message .button, .woocommerce-message form.wpcf7-form input[type="submit"], form.wpcf7-form .woocommerce-message input[type="submit"],
   .woocommerce-info .button,
   .woocommerce-info form.wpcf7-form input[type="submit"],
@@ -3679,7 +3699,17 @@ p.stars.selected a:not(.active):before {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     background: #fff;
-    font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; }
+    font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
+    opacity: 1;
+    transition: opacity .3s; }
+    .woocommerce-message .button:hover, .woocommerce-message form.wpcf7-form input[type="submit"]:hover, form.wpcf7-form .woocommerce-message input[type="submit"]:hover,
+    .woocommerce-info .button:hover,
+    .woocommerce-info form.wpcf7-form input[type="submit"]:hover,
+    form.wpcf7-form .woocommerce-info input[type="submit"]:hover,
+    .woocommerce-error .button:hover,
+    .woocommerce-error form.wpcf7-form input[type="submit"]:hover,
+    form.wpcf7-form .woocommerce-error input[type="submit"]:hover {
+      opacity: .7; }
   .woocommerce-message .close-button,
   .woocommerce-info .close-button,
   .woocommerce-error .close-button {
@@ -3693,7 +3723,13 @@ p.stars.selected a:not(.active):before {
     line-height: 1.5;
     font-size: 1em;
     border-radius: 50%;
-    cursor: pointer; }
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity .3s; }
+    .woocommerce-message .close-button:hover,
+    .woocommerce-info .close-button:hover,
+    .woocommerce-error .close-button:hover {
+      opacity: .7; }
 
 .woocommerce-message {
   background: #6BDBA0; }
@@ -3715,6 +3751,16 @@ p.stars.selected a:not(.active):before {
     color: #FE0201; }
   .woocommerce-error .close-button {
     color: #FE0201; }
+  .woocommerce-error ul {
+    max-width: 53.75em;
+    margin: 0 auto; }
+    .woocommerce-error ul li {
+      list-style: none;
+      text-align: left;
+      font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
+      margin: 0 0 1em; }
+      .woocommerce-error ul li:last-child {
+        margin: 0; }
 
 body.woocommerce-cart {
   text-align: center;
@@ -3819,15 +3865,20 @@ body.woocommerce-cart {
     background: transparent;
     overflow: visible; }
     .item-product .product-banner.postcard-item:before {
-      background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.1) 76%, transparent 100%) !important;
-      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.1) 76%, transparent 100%) !important;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.1) 76%, transparent 100%) !important;
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d000000', endColorstr='#00000000',GradientType=0 ) !important; }
+      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5) 0%, transparent 75%, transparent 100%) !important;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5) 0%, transparent 75%, transparent 100%) !important;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, transparent 75%, transparent 100%) !important;
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ) !important; }
     .item-product .product-banner.postcard-item::after {
       display: none !important; }
     .item-product .product-banner .product-custom-image {
       border: none;
-      box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.1); }
+      box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      width: auto; }
+      @media screen and (min-width: 40em) {
+        .item-product .product-banner .product-custom-image {
+          max-height: 21.875em; } }
 
 .price-tag-container {
   position: absolute;
