@@ -4068,9 +4068,9 @@ body.woocommerce-cart,
     background: transparent;
     overflow: visible; }
     .item-product .product-banner.postcard-item:before {
-      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5) 0%, transparent 75%, transparent 100%) !important;
-      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5) 0%, transparent 75%, transparent 100%) !important;
-      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, transparent 75%, transparent 100%) !important;
+      background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5) 0%, transparent 60%, transparent 100%) !important;
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5) 0%, transparent 60%, transparent 100%) !important;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, transparent 60%, transparent 100%) !important;
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ) !important; }
     .item-product .product-banner.postcard-item::after {
       display: none !important; }
@@ -4099,9 +4099,9 @@ body.woocommerce-cart,
     font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
     color: #fff;
     background: #4bc2c8;
-    font-size: 1.5em;
-    height: 3em;
-    width: 3em;
+    font-size: 1.35em;
+    height: 3.75em;
+    width: 3.75em;
     border-radius: 50%;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
     -webkit-transform: rotate(-1deg);
