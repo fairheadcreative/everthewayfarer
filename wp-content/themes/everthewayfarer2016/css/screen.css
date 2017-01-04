@@ -1324,7 +1324,8 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   border-bottom: none; }
 
 .button, form.wpcf7-form input[type="submit"] {
-  font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; }
+  font-family: "franklin-gothic-urw-comp", sans-serif;
+  text-transform: uppercase; }
   .button.secondary, form.wpcf7-form input.secondary[type="submit"] {
     border: 1px solid #4bc2c8;
     color: #4bc2c8;

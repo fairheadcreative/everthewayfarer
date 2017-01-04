@@ -1,6 +1,7 @@
 .button {
   @extend %button;
-  font-family: $helvetica-franklin;
+  font-family: $franklin-gothic;
+  text-transform: uppercase;
 
   &.secondary {
     border: 1px solid $base-button-color;
