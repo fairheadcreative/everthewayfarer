@@ -186,8 +186,8 @@ function bbloomer_remove_sidebar_product_pages() {
 
 function change_posts_on_homepage( $query ) {
 
-    //First, number of posts on home page
-    $posts_on_first = 5;
+  $count_posts = wp_count_posts( 'product' )->publish;
+  $posts_on_first = 6 - $count_posts;
 
     if ( $query->is_home() && !is_paged() && $query->is_main_query() ) {
         $query->set( 'posts_per_page', $posts_on_first );
