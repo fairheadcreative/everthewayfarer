@@ -9,6 +9,10 @@ body {
   @include media($small-screen) {
     padding-top: 54px;
   } 
+
+  @include media($large-screen) {
+    padding-top: 65px;
+  } 
   
   &.admin-bar {
     padding-top: 42px;

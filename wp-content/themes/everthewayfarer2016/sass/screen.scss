@@ -6,6 +6,7 @@
 
 @import 'mixins/svgpng';
 @import 'mixins/full-height';
+@import 'layout/extends';
 @import 'layout/map';
 @import 'layout/columns';
 @import 'layout/article';
@@ -15,6 +16,7 @@
 @import 'layout/postcards';
 @import 'layout/subscribe';
 @import 'layout/modules';
+@import 'layout/woocommerce';
 
 .resources-open {
   position: absolute;

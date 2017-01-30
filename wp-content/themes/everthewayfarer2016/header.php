@@ -41,7 +41,7 @@
               <!-- END UNCATHEGORIZED ITEMS -->
               <li class="nav-primary-1"><a href="http://www.suntrailimages.com" target="_blank">Photography</a></li>
               <li class="nav-primary-1 <?php if (!is_home() && is_page('subscribe')){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li>
-              <li class="nav-primary-1 mobile-home uncathegorized <?php if (is_home()){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>">Everything</a></li>
+              <li class="nav-primary-1 mobile-home uncathegorized <?php if (is_home() || is_woocommerce() || is_cart() || is_checkout()){ echo 'active'; };?>"><a href="<?php echo site_url(); ?>">Everything</a></li>
               <li class="nav-icons">
                 <a class="nav-primary-twitter" href="https://twitter.com/WayfaringSiv" target="_blank">
                   <span class="icon-block">
@@ -60,6 +60,20 @@
           </li>
           <li class="logo"><a href="<?php echo site_url(); ?>"><?php get_template_part( 'includes/logotype' ); ?></a></li>
           <?php if (!is_page('subscribe')) {?><li class="nav-primary-3"><a class="button" href="<?php echo site_url(); ?>/subscribe/">Subscribe</a></li><?php } ?>
+          <?php
+            global $woocommerce;
+            if ( !WC()->cart->is_empty() ) { ?>
+              <li class="nav-cart">
+                <a class="cart-contents button" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'Cart Items' ); ?>">
+                  <span class="icon-cart">
+                    <?php get_template_part( 'includes/svg/cart' ); ?>
+                  </span>
+                  <span class="cart-quantity">
+                    <?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>
+                  </span>
+                </a>
+              </li>
+          <?php }; ?>
         </ul>
       </div>
     </nav>

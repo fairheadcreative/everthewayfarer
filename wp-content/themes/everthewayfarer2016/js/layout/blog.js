@@ -49,6 +49,9 @@ jQuery(function($) {
       $('.splash-overlay').remove();
     }
     
+    //fade-in content
+    $('.transparent').removeClass('transparent');
+    
     //fade in the subscribe page
     $('.subscribe-page [data-fadein="true"]').addClass('fade-in').removeClass('is-under');
     
@@ -91,6 +94,9 @@ jQuery(function($) {
     mapsize();
     setTimeout(setPostcard, 100);
     setNav();
+    shopItem.setLayout();
+    shopItem.setMessage();
+    shopItem.layoutMessage();
   });
   
   $(window).on('resize', function(){
@@ -99,7 +105,62 @@ jQuery(function($) {
     mapsize();
     setNav();
     setPostcard();
+    shopItem.setLayout(); 
+    shopItem.layoutMessage();  
   });
+  
+  $(document).bind('DOMSubtreeModified', function () {
+    shopItem.setMessage();
+  });
+  
+//rearrange shop item for mobile layouts
+  
+  var shopItem = {
+    setLayout: function () {
+      var productImageHeight = $('.product-image .images a img').height() + 10,
+        productTopHeight = $('.product_title').height() + 126,
+        imageWidth = $('.product-image').width(),
+        imageBigWidth = imageWidth - 32;
+      if(winWidth < 860){
+        $('.product-description-short').css({
+          'margin-top': productImageHeight
+        });
+        $('.product-image').css({
+          'top': productTopHeight
+        });
+      } else {
+        $('.product-description-short, .product-image').removeAttr('style');
+      }
+      
+      if(winWidth > 1099){
+        $('.product-image .images').width(imageBigWidth);
+      } else {
+        $('.product-image .images').width(imageWidth);
+      }
+    },
+    setMessage: function () {    
+      //fade-out parent on close button click
+      $('[data-fadeout]').on('click', function (e) {
+        e.preventDefault();
+        var targetAttr = $(this).attr('data-fadeout'),
+          targetEl = $('[data-fadeout-target="' + targetAttr + '"]'); 
+        targetEl.addClass('is-faded').delay(300).queue(function (next) {
+          targetEl.remove();
+          next();
+        })
+      });
+    },
+    layoutMessage: function () {
+      var messageInstance = $('.woocommerce-message, .woocommerce-info, .woocommerce-error');
+      messageInstance.each(function () {
+        var $this = $(this),
+          hasButton = $this.find('.button');
+        if(hasButton.length > 0) {
+          $this.addClass('has-action');
+        }
+      });
+    }
+  }
 
   //calculate side map size   
   function mapsize(){

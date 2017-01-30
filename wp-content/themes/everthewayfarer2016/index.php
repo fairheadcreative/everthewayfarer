@@ -63,7 +63,7 @@ if ( is_home() ) { ?>
 
 <?php $GLOBALS[locationArray] = array(); ?>
 
-<section id="main">
+<section id="main" class="transparent">
    
   <!--start as seen in box -->
   <?php if ( is_home() && !is_paged() ) { ?>
@@ -99,6 +99,28 @@ if ( is_home() ) { ?>
 
       <?php if (have_posts()) : ?>
       <div>
+        <?php # If it's a product
+          if ( is_home() && !is_paged() ) {
+          $args = array( 'post_type' => 'product' );
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post(); 
+      	  global $product; 
+      	  $image_id = get_field('custom_product_image');
+      	  $image_url = $image_id['url']; ?>
+      	
+          <a class="span-6 postcard-item-container item-product" href="<?php the_permalink() ?>" >
+            <span class="price-tag-container">
+              <span class="product-price-tag"><?php echo $product->get_price_html(); ?></span>
+            </span>
+            <figure class="product-banner postcard-item">
+              <img class="product-custom-image" src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>">
+            </figure>              
+          </a>
+
+        <?php 
+          endwhile; 
+          wp_reset_query(); } ?>
+        
       <?php while (have_posts()) : the_post(); ?>
 
         <?php # If it's the postcard category:

@@ -144,4 +144,67 @@ add_filter( 'wp_calculate_image_srcset', '__return_false', PHP_INT_MAX );
 
 remove_filter( 'the_content', 'wp_make_content_images_responsive' );
 
+//woocommerce - redirect to custom Thank you page after purchase
+add_action( 'template_redirect', 'wc_custom_redirect_after_purchase' ); 
+function wc_custom_redirect_after_purchase() {
+  global $wp;
+
+  if ( is_checkout() && ! empty( $wp->query_vars['order-received'] ) ) {
+    //this has to be changed once we deploy to production
+    wp_redirect( 'https://everthewayfare.staging.wpengine.com/thank-you/' );
+    exit;
+  }
+}
+
+function post_image() {
+  global $post, $posts;
+  $first_img = '';
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+  $first_img = $matches [1] [0];
+  return $first_img;
+}
+
+// remove sidebar and breadcrumbs from woocommerce pages
+remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0);
+// remove default woocommerce stylesheets
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+// reorder product summary elements
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 15 );
+// Remove "Returning customer? Click here to login" From Checkout Page
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
+
+add_action( 'wp', 'bbloomer_remove_sidebar_product_pages' );
+ 
+function bbloomer_remove_sidebar_product_pages() {
+  if (is_woocommerce()) {
+    remove_action('woocommerce_sidebar','woocommerce_get_sidebar',10);
+  }
+}
+
+function change_posts_on_homepage( $query ) {
+
+  $count_posts = wp_count_posts( 'product' )->publish;
+  $posts_on_first = 6 - $count_posts;
+
+    if ( $query->is_home() && !is_paged() && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', $posts_on_first );
+    }
+
+    if ( $query->is_home() && is_paged() && $query->is_main_query() ) {
+    
+    //Next, this is default number of posts per page
+   $ppp = get_option('posts_per_page');
+
+   $page_offset = $ppp*($query->query_vars['paged']-2) + $posts_on_first;
+
+    //Apply adjust page offset
+    $query->set('offset', $page_offset );
+} 
+
+}
+add_action( 'pre_get_posts', 'change_posts_on_homepage' );
+
 ?>

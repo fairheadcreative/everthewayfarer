@@ -8,6 +8,7 @@
   line-height: 1;
   padding: 0.75em 1em;
   text-decoration: none;
+  transition: background .3s;
 
   &:hover {
     background-color: $hover-button-color;

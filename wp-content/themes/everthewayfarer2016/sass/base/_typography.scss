@@ -45,6 +45,20 @@ h1 {
   font-size: 2em;
 }
 
+.single-product h1 {
+  margin: 0 0 .25em;
+  text-align: center;
+  font-size: 1.65em;
+  
+  @include media($medium-screen){
+    font-size: $h1-font-size;
+  }
+  
+  @include media($large-screen){
+    text-align: left;
+  }
+}
+
 h2 {
   font-size: $h2-font-size;
   margin-bottom: .5em;
