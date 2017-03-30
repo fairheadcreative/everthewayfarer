@@ -16,6 +16,9 @@
     </div>
   </header> 
   <?php } ?>
+   <?php if ( is_page(87) ) { ?>
+     <header class="hero-ty"></header>
+   <?php } ?>
 
   <section id="main">
     <div class="container group">
@@ -30,9 +33,9 @@
 
         <?php if ( is_page(87) ) { ?>
          <div class="push-bottom-1">
-           <a class="button secondary" target="_blank" href="https://www.facebook.com/pages/Ever-The-Wayfarer/480037682086654">Facebook</a>
-           <a class="button secondary" target="_blank" href="https://twitter.com/wayfaringsiv">Twitter</a>
-           <a class="button secondary" target="_blank" href="https://www.instagram.com/wayfaringsiv/">Instagram</a>
+           <a class="button share-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>&title=Inspiring Travel Ideas &amp; Stunning Photography - Everthewayfarer.com"><span class="share-icon"></span>Share this</a>
+           <!--<a class="button secondary" target="_blank" href="https://twitter.com/wayfaringsiv">Twitter</a>
+           <a class="button secondary" target="_blank" href="https://www.instagram.com/wayfaringsiv/">Instagram</a>-->
          </div>     
         <?php } ?>
 
@@ -47,15 +50,11 @@
           <?php get_template_part( 'includes/subscribe' ); ?>
         <?php } ?>
 
-        <?php if ( !is_page(293) && !is_cart() && !is_checkout() ) { ?>
+        <?php if ( !is_page(293) && !is_cart() && !is_checkout() && !is_page(87) ) { ?>
         <div class="writer article-writer">
           <h3 class="h1-sub">Need a writer, photographer or speaker?</h3>
           <a class="button" href="/photography-freelance-writing-speaking/">Get in touch with me</a>
         </div>
-        <?php } ?>
-
-        <?php if ( !is_cart() && !is_checkout() ) { ?>
-          <?php get_template_part( 'includes/keep-reading' ); ?>
         <?php } ?>
       </div>
 
@@ -64,6 +63,10 @@
     </div>
   </section>
 </article>
+
+<?php if ( !is_cart() && !is_checkout() ) { ?>
+  <?php get_template_part( 'includes/keep-reading' ); ?>
+<?php } ?>
 
 <?php
   if(get_field('location')) {

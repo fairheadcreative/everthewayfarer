@@ -20,7 +20,7 @@ a article .meta {
 .single {
   
   #main .container {
-    min-height: 500px;
+    //min-height: 500px;
   }
 
   .the-content {
@@ -397,4 +397,60 @@ a article .meta {
 
 .page-id-8 .keep-reading a:last-child article {
   border-bottom: none;
+}
+
+.article-about {
+  border-top: $base-border;
+  padding-top: 3.5em;
+  
+  .span-6 {
+    padding-left: 95px;
+    font-size: .8em;
+    
+    figure {
+      position: absolute;
+      left: 0;
+      margin: 0;
+    }
+    
+    h3, 
+    p {
+      font-family: $helvetica-franklin;
+    }
+    
+    p {
+      color: $gray;
+    }
+  }
+}
+
+.keep-reading {
+  background: #FAFAFA;
+  border-top: $base-border;
+  padding-top: 1.5em;
+}
+
+.text-sans {
+  font-family: $helvetica-franklin;
+  color: $gray;
+  
+  & > span {
+    padding-left: .5em;
+    
+    @include media(max-width 410px){
+      font-size: .8em;
+    }
+  }  
+}
+
+.tablet-hide {
+  @include media(max-width 768px){
+    display: none;
+  }
+}
+
+.mobile-hide {
+  @include media(max-width 360px){
+    display: none;
+  }
 }

@@ -921,6 +921,10 @@ body.woocommerce-cart,
   z-index: 10;
   pointer-events: none;
   
+  .single & {
+    font-size: .85em;
+  }
+  
   .product-price-tag {
     position: absolute;
     display: block;

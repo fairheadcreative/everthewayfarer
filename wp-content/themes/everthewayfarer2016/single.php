@@ -73,9 +73,6 @@
         <?php } ?>
         <?php the_content(); ?>
 
-        <a class="button secondary" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>">Share on Facebook</a>
-        <a class="button secondary" target="_blank" href="https://twitter.com/intent/tweet?original_referer=<?php the_permalink() ?>&source=tweetbutton&text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=wayfaringsiv">Tweet post</a>
-
         <?php
           if ( get_field('resources')) {
             echo '<div class="resources"><h3>Article Resources</h3>';
@@ -83,42 +80,57 @@
           }
         ?>
 
-        <?php get_template_part( 'includes/subscribe' ); ?>
+        <?php/* get_template_part( 'includes/subscribe' ); */?>
 
 
 
-        <?php if( have_rows('stock') ): ?>
-        <div class="stock article-stock">
-          <div class="intro">
-            <h3 class="h1-sub">Buy Photos from this Article</h3>
-            <p>Join your fellow EverTheWayfarer fans who receive exclusive weekly insider travel tips and resources.</p>
-          </div>
-            <?php while( have_rows('stock') ): the_row(); ?>
-            <?php $image = get_sub_field('stock_preview'); ?>
-            <a class="stock-item" href="<?php the_sub_field('stock_link'); ?>" target="_blank">
-              <h5><?php the_sub_field('stock_title'); ?></h5>
-              <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="" />
-            </a>
-            <?php endwhile; ?>
-            <div class="stock-item stock-more" href="#">
-              <h3 class="h1-sub">Want more?</h3>
-              <a class="button" href="#">Discover more photos</a>
-              <img src="<?php echo get_template_directory_uri();?>/images/stock-more.jpg" alt="" />
+          <?php if( have_rows('stock') ): ?>
+          <div class="stock article-stock">
+            <div class="intro">
+              <h3 class="h1-sub">Buy Photos from this Article</h3>
+              <p>Join your fellow EverTheWayfarer fans who receive exclusive weekly insider travel tips and resources.</p>
             </div>
-          </ul>
+              <?php while( have_rows('stock') ): the_row(); ?>
+              <?php $image = get_sub_field('stock_preview'); ?>
+              <a class="stock-item" href="<?php the_sub_field('stock_link'); ?>" target="_blank">
+                <h5><?php the_sub_field('stock_title'); ?></h5>
+                <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="" />
+              </a>
+              <?php endwhile; ?>
+              <div class="stock-item stock-more" href="#">
+                <h3 class="h1-sub">Want more?</h3>
+                <a class="button" href="#">Discover more photos</a>
+                <img src="<?php echo get_template_directory_uri();?>/images/stock-more.jpg" alt="" />
+              </div>
+          </div>
+          <?php endif; ?>
+          
+          <div class="push-bottom-1 text-sans">
+           <a class="button share-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>&title=Inspiring Travel Ideas &amp; Stunning Photography - Everthewayfarer.com"><span class="share-icon"></span>Share this</a> <span><span class="tablet-hide">Enjoyed this note from me? </span>Share <span class="tablet-hide">it </span>with your friends. <span class="mobile-hide">Thanks!</span></span>
+          </div> 
+          
+          <div class="article-about">
+            <div class="span-6">
+              <figure><img src="<?php echo get_template_directory_uri();?>/images/figure-siv.jpg" alt="Sivani Babu"></figure>
+              <h3>Sivani Babu</h3>
+              <p>Federal public defender turned ethical traveler and lifelong lover of all things outdoors.</p>
+              <p><a href="<?php echo site_url(); ?>/about/">See Siv's Story</a></p>
+            </div>
+            <div class="span-6">
+              <figure><img src="<?php echo get_template_directory_uri();?>/images/figure-community.jpg" alt="Ever the Wayfarer community"></figure>
+              <h3>Wayfaring Community</h3>
+              <p>Join fellow wayfarers to receive exclusive travel resources and postcards from Siv.</p>
+              <p><a href="<?php echo site_url(); ?>/subscribe/">Subscribe Now, Free</a></p>
+            </div>
+          </div>
+         
         </div>
-        <?php endif; ?>
 
-        <div class="writer article-writer">
-          <h3 class="h1-sub">Need a writer, photographer or speaker?</h3>
-          <a class="button" href="/photography-freelance-writing-speaking/">Get in touch with me</a>
-        </div>
-        <?php get_template_part( 'includes/keep-reading' ); ?> </div>
-
-      <?php /*get_template_part( 'includes/sidebar' ); */?>
+      
     </div>
   </section>
 </article>
+<?php get_template_part( 'includes/keep-reading' ); ?> 
 
 <?php } ?>
 

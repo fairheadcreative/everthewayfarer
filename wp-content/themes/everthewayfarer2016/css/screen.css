@@ -427,6 +427,11 @@ h1, .the-content .h1, .h1-sub {
   @media screen and (min-width: 40em) {
     h1, .the-content .h1, .h1-sub {
       font-size: 2.405em; } }
+  .page-id-87 .the-content > h1:after, .page-id-87 .the-content > .h1:after, .page-id-87 .the-content > .h1-sub:after {
+    content: url(../images/siv-signature.png);
+    position: relative;
+    top: .35em;
+    left: .5em; }
 
 .h1-sub {
   font-size: 2em; }
@@ -514,6 +519,8 @@ p {
     display: block;
     margin-bottom: -.4em; }
   .the-content > p strong {
+    font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; }
+  .page-id-87 .single .the-content p {
     font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; }
 
 a {
@@ -1024,8 +1031,6 @@ a article .meta {
 h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   margin: .6em 0 0 0; }
 
-.single #main .container {
-  min-height: 500px; }
 .single .the-content p, .single .the-content h2, .single .the-content h3, .single .the-content h4, .single .the-content h5, .single .the-content h6 {
   max-width: 100%; }
   @media screen and (min-width: 53.75em) {
@@ -1323,6 +1328,44 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
 .page-id-8 .keep-reading a:last-child article {
   border-bottom: none; }
 
+.article-about {
+  border-top: 1px solid #f4f4f4;
+  padding-top: 3.5em; }
+  .article-about .span-6 {
+    padding-left: 95px;
+    font-size: .8em; }
+    .article-about .span-6 figure {
+      position: absolute;
+      left: 0;
+      margin: 0; }
+    .article-about .span-6 h3,
+    .article-about .span-6 p {
+      font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif; }
+    .article-about .span-6 p {
+      color: #999; }
+
+.keep-reading {
+  background: #FAFAFA;
+  border-top: 1px solid #f4f4f4;
+  padding-top: 1.5em; }
+
+.text-sans {
+  font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
+  color: #999; }
+  .text-sans > span {
+    padding-left: .5em; }
+    @media screen and (max-width: 410px) {
+      .text-sans > span {
+        font-size: .8em; } }
+
+@media screen and (max-width: 768px) {
+  .tablet-hide {
+    display: none; } }
+
+@media screen and (max-width: 360px) {
+  .mobile-hide {
+    display: none; } }
+
 .button, form.wpcf7-form input[type="submit"] {
   font-family: "franklin-gothic-urw-comp", sans-serif;
   text-transform: uppercase; }
@@ -1355,6 +1398,33 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
       transition: all .3s; }
     .nav-primary-3 .button:hover:after, .nav-primary-3 form.wpcf7-form input[type="submit"]:hover:after, form.wpcf7-form .nav-primary-3 input[type="submit"]:hover:after {
       opacity: .1; }
+  .button .share-icon, form.wpcf7-form input[type="submit"] .share-icon {
+    background: url(../images/icons.svg) no-repeat 0 0;
+    background-size: 66px;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    position: relative;
+    margin-right: .5em;
+    bottom: -3px; }
+  .button.share-facebook, form.wpcf7-form input.share-facebook[type="submit"] {
+    background: #4e69ba;
+    background: -moz-linear-gradient(top, #4e69ba 0%, #32489b 100%);
+    background: -webkit-linear-gradient(top, #4e69ba 0%, #32489b 100%);
+    background: linear-gradient(to bottom, #4e69ba 0%, #32489b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e69ba', endColorstr='#32489b',GradientType=0 );
+    opacity: 1;
+    transition: all .3s;
+    padding: .75em 1.25em 1em; }
+    .button.share-facebook:hover, form.wpcf7-form input.share-facebook[type="submit"]:hover {
+      background: #42599e;
+      background: -moz-linear-gradient(top, #42599e 0%, #2a3c7f 100%);
+      background: -webkit-linear-gradient(top, #42599e 0%, #2a3c7f 100%);
+      background: linear-gradient(to bottom, #42599e 0%, #2a3c7f 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42599e', endColorstr='#2a3c7f',GradientType=0 );
+      opacity: .85; }
+    .button.share-facebook .share-icon, form.wpcf7-form input.share-facebook[type="submit"] .share-icon {
+      background-position: -44px -37px; }
 
 #navigation {
   background: #fff;
@@ -1902,19 +1972,28 @@ body {
     .articles .postcard-item {
       height: auto;
       min-height: 34vw; }
+      .single .articles .postcard-item, .page .articles .postcard-item {
+        min-height: 32vw; }
       .articles .postcard-item:before {
         padding-top: 11vw; } }
   @media screen and (min-width: 53.125em) {
     .articles .postcard-item {
-      min-height: 35vw; } }
+      min-height: 35vw; }
+      .single .articles .postcard-item, .page .articles .postcard-item {
+        min-height: 23vw; } }
   @media screen and (min-width: 61.25em) {
     .articles .postcard-item {
       min-height: 350px; }
+      .single .articles .postcard-item, .page .articles .postcard-item {
+        min-height: 224px; }
       .articles .postcard-item:before {
         padding-top: 115px; } }
   @media screen and (min-width: 80em) {
     .articles .postcard-item {
       min-height: 21vw; }
+      .single .articles .postcard-item, .page .articles .postcard-item {
+        min-height: 235px;
+        max-height: 17vw; }
       .articles .postcard-item:before {
         padding-top: 5.5vw; } }
   @media screen and (min-width: 100em) {
@@ -3334,6 +3413,15 @@ body {
             #main .hero-home .stripe-logotypes li.stripe-image.stripe-baynature {
               left: 517px; } }
 
+.hero-ty {
+  background: url(../images/ty-page-background.jpg) no-repeat left top;
+  height: 33vw;
+  min-height: 250px;
+  max-height: 50vh;
+  background-size: cover; }
+  .hero-ty:after {
+    display: none; }
+
 .margin-b-0 {
   margin-bottom: 0 !important; }
 
@@ -4091,6 +4179,8 @@ body.woocommerce-cart,
   bottom: 0;
   z-index: 10;
   pointer-events: none; }
+  .single .price-tag-container {
+    font-size: .85em; }
   .price-tag-container .product-price-tag {
     position: absolute;
     display: block;

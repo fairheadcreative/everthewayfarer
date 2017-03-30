@@ -304,6 +304,19 @@
   }
 }
 
+//ty hero
+.hero-ty {
+  background: url(../images/ty-page-background.jpg) no-repeat left top;
+  height: 33vw;
+  min-height: 250px;
+  max-height: 50vh;
+  background-size: cover;
+  
+  &:after {
+    display: none;
+  }
+}
+
 //additional helpers
 
 .margin-b-0 {

@@ -34,6 +34,15 @@ h1 {
   @include media($medium-screen) {
     font-size: $h1-font-size * 1.3;
   }
+  
+  .page-id-87 .the-content > & {
+    &:after {
+      content: url(../images/siv-signature.png);
+      position: relative;
+      top: .35em;
+      left: .5em;
+    }
+  }
 }
 
 .the-content .h1 {
@@ -152,8 +161,12 @@ p {
     }
     
     strong {
-      font-family: $helvetica-franklin,
+      font-family: $helvetica-franklin;
     }
+  }
+  
+  .page-id-87 .single .the-content & {
+    font-family: $helvetica-franklin;
   }
 }
 
