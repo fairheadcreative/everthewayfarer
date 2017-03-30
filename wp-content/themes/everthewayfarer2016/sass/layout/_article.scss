@@ -405,7 +405,7 @@ a article .meta {
   
   .span-6 {
     padding-left: 95px;
-    font-size: .8em;
+    font-size: .85em;
     
     figure {
       position: absolute;
@@ -416,10 +416,12 @@ a article .meta {
     h3, 
     p {
       font-family: $helvetica-franklin;
+      text-transform: none;
     }
     
     p {
       color: $gray;
+      letter-spacing: .0125em;
     }
   }
 }
