@@ -2378,19 +2378,16 @@ body {
     padding: 20px;
     text-align: center;
     color: white;
-    font-size: 12vw; }
+    font-size: 10vw; }
     @media screen and (min-width: 40em) {
       .postcard-item.type-f h2 {
-        font-size: 7.8vw; } }
-    @media screen and (min-width: 60em) {
-      .postcard-item.type-f h2 {
-        font-size: 8vw; } }
+        font-size: 5.5vw; } }
     @media screen and (min-width: 64em) {
       .postcard-item.type-f h2 {
-        font-size: 5.2em; } }
+        font-size: 3.5em; } }
     @media screen and (min-width: 80em) {
       .postcard-item.type-f h2 {
-        font-size: 4vw; } }
+        font-size: 3vw; } }
     .postcard-item.type-f h2 span {
       display: table;
       height: 100%;

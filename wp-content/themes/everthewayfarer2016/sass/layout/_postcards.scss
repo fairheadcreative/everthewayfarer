@@ -428,12 +428,11 @@
     text-align: center;
     color: white;
 
-    font-size: 12vw;
+    font-size: 10vw;
     //@include media(em(500)) { font-size: 7.8vw; }
-    @include media(em(640)) { font-size: 7.8vw; }
-    @include media(em(960)) { font-size: 8vw; }
-    @include media(em(1024)) { font-size: 5.2em; }
-    @include media(em(1280)) { font-size: 4vw; }
+    @include media(em(640)) { font-size: 5.5vw; }
+    @include media(em(1024)) { font-size: 3.5em; }
+    @include media(em(1280)) { font-size: 3vw; }
 
     span {
       display: table;
