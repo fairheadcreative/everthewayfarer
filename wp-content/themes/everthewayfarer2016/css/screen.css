@@ -1350,6 +1350,11 @@ h1 .rating, .the-content .h1 .rating, .h1-sub .rating {
   background: #FAFAFA;
   border-top: 1px solid #f4f4f4;
   padding-top: 1.5em; }
+  .keep-reading .container.group {
+    width: 99%; }
+    @media screen and (min-width: 53.75em) {
+      .keep-reading .container.group {
+        max-width: 52em; } }
 
 .text-sans {
   font-family: "Helvetica Neue", Helvetica, "franklin-gothic", sans-serif;
@@ -1975,27 +1980,20 @@ body {
       height: auto;
       min-height: 34vw; }
       .single .articles .postcard-item, .page .articles .postcard-item {
-        min-height: 32vw; }
+        min-height: 30vw;
+        max-height: 180px; }
       .articles .postcard-item:before {
         padding-top: 11vw; } }
-  @media screen and (min-width: 53.125em) {
-    .articles .postcard-item {
-      min-height: 35vw; }
-      .single .articles .postcard-item, .page .articles .postcard-item {
-        min-height: 23vw; } }
   @media screen and (min-width: 61.25em) {
     .articles .postcard-item {
       min-height: 350px; }
       .single .articles .postcard-item, .page .articles .postcard-item {
-        min-height: 224px; }
+        min-height: 284px; }
       .articles .postcard-item:before {
         padding-top: 115px; } }
   @media screen and (min-width: 80em) {
     .articles .postcard-item {
       min-height: 21vw; }
-      .single .articles .postcard-item, .page .articles .postcard-item {
-        min-height: 235px;
-        max-height: 17vw; }
       .articles .postcard-item:before {
         padding-top: 5.5vw; } }
   @media screen and (min-width: 100em) {

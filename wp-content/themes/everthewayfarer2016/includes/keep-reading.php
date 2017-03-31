@@ -6,7 +6,9 @@
       // elseif ( in_category( 'Journey' ) ) { $custom_query = new WP_Query('cat=2'); }
       // elseif ( in_category( 'Gear' ) ) { $custom_query = new WP_Query( array('cat' => 4, 'posts_per_page' => 4) ); }
       // else { $custom_query = new WP_Query( array('posts_per_page' => 6) ); }
-      $custom_query = new WP_Query( array('posts_per_page' => 5) ); ?>
+      $count_products = wp_count_posts( 'product' )->publish;
+      $posts_on_page = 6 - $count_products;
+      $custom_query = new WP_Query( array('posts_per_page' => $posts_on_page) ); ?>
       <?php # If it's a product
               if (!is_home()  ) {
               $args = array( 'post_type' => 'product' );
@@ -30,21 +32,6 @@
               endwhile; 
               wp_reset_query(); } ?>
       <?php while($custom_query->have_posts()) : $custom_query->the_post(); ?>
-
-
-    <!-- <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-      <article>
-        <?php if ( has_post_thumbnail() ) {
-          the_post_thumbnail('feature-preview');
-        } ?>
-        <h2><?php the_title(); ?></h2>
-        <?php get_template_part( 'includes/rating' ); ?>
-
-        <?php the_excerpt(); ?>
-
-        <p class="meta">An article on <?php echo get_the_date(); ?></p>
-      </article>
-    </a> -->
 
     <?php # If it's the postcard category:
               if ( in_category( 'Postcards' ) && is_home() || in_category( 'Postcards' ) ) { ?>

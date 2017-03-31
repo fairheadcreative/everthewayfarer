@@ -40,16 +40,8 @@
   cursor: pointer;
   margin-bottom: 2em;
   
-  .single & {
-    
-  }
-  
   @include media($small-screen) {
-    min-height: 300px;  
-  
-    .single & {
-
-    }
+    min-height: 300px;
     
     &:before { padding-top: 80px; }
   }
@@ -60,19 +52,11 @@
   
     .single &,
     .page & {
-      min-height: 32vw;
+      min-height: 30vw;
+      max-height: 180px;
     }
     
     &:before { padding-top: 11vw; }
-  }
-  
-  @include media(em(850)) {
-    min-height: 35vw;   
-  
-    .single &,
-    .page &  {
-      min-height: 23vw;
-    }
   }
   
   @include media(em(980)) {
@@ -80,7 +64,7 @@
   
     .single &,
     .page &  {
-      min-height: 224px;
+      min-height: 284px;
     }
     
     &:before { padding-top: 115px; }
@@ -88,12 +72,6 @@
   
   @include media(em(1280)) { 
     min-height: 21vw;
-  
-    .single &,
-    .page &  {
-      min-height: 235px;
-      max-height: 17vw;
-    } 
     
     &:before { padding-top: 5.5vw; }
   }

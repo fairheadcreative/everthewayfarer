@@ -430,6 +430,15 @@ a article .meta {
   background: #FAFAFA;
   border-top: $base-border;
   padding-top: 1.5em;
+  
+  .container.group {
+    //compensate for postcards list tilt causing horizontal scrollbar
+    width: 99%;
+    
+    @include media($large-screen) {
+      max-width: 52em;
+    }
+  }
 }
 
 .text-sans {
