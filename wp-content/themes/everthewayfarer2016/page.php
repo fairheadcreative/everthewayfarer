@@ -27,13 +27,13 @@
         <?php the_content(); ?>
 
         <?php if ( !is_page(293) && !is_page(87) && !is_cart() && !is_checkout() ) { ?>
-         <div class="push-bottom-1">
+         <div class="push-bottom-half">
            <a class="button share-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>&title=Inspiring Travel Ideas &amp; Stunning Photography - Everthewayfarer.com"><span class="share-icon"></span>Share this</a>
          </div>     
         <?php } ?>
 
         <?php if ( is_page(87) ) { ?>
-         <div class="push-bottom-1">
+         <div class="push-bottom-half">
            <a class="button share-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>&title=Inspiring Travel Ideas &amp; Stunning Photography - Everthewayfarer.com"><span class="share-icon"></span>Share this</a>
          </div>     
         <?php } ?>
