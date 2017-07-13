@@ -33,14 +33,15 @@ function remove_calendar_widget() {
 
 add_action( 'widgets_init', 'remove_calendar_widget' );
 
-function enqueue_scripts() {
-  wp_enqueue_script(
-    'production',
-    get_stylesheet_directory_uri() . '/js/production.min.js',
-    array( 'jquery' )
-  );
+function my_theme_enqueue_scripts() {
+    $ver = "v" . filemtime( get_stylesheet_directory().'/js/production.min.js' );
+    wp_register_script('jquery-min-js', get_stylesheet_directory_uri() . '/js/jquery.min.js',  array('jquery') ,'1,1' ,  true);
+    wp_enqueue_script('jquery-min-js');
+    wp_register_script('production-min-js', get_stylesheet_directory_uri() . '/js/production.min.js',  array('jquery') , $ver,  false);
+    wp_enqueue_script('production-min-js');
+
 }
-add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
+add_action('wp_enqueue_scripts', 'my_theme_enqueue_scripts');
 
 //add new formatting to wp wyswig editor
 
