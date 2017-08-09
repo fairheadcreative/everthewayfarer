@@ -136,6 +136,7 @@
     
     @include media($medium-screen){
       text-align: left;
+      max-width: 30em;
     }
   }
   

@@ -1,9 +1,8 @@
     <div class="hero-home">
       <div class="container">
-          <h2>Hey, Sivani here.</h2>
-          <p>I want to inspire you to explore</p>
-          <p>To be a conscious, responsible traveler.</p>
-          <p>Here are my postcards to you, sent weekly. <br>Want them in your inbox, too? <a class="hero-subscribe" href="<?php echo site_url(); ?>/subscribe/"><span class="inblock-desktop">Subscribe</span><span class="inblock-mobile button">Yes Please</span></a><span class="inblock-desktop">.</span></p>
+          <h2>Hey! I'm Sivani.<br>Welcome to Ever the Wayfarer.</h2>
+          <p>I used to spend time in prisons (I was a lawyer), but now I chase rainbows, and icebergs, and the occasional tornado for a living.</p>
+          <p><a class="hero-subscribe" href="<?php echo site_url(); ?>/subscribe/"><span class="inblock-desktop">Let's explore the world together.</span></a></p>
           <ul class="stripe-logotypes">
             <li>As Seen In</li>
             <li class="stripe-image stripe-bbc">endorsement bbc</li>

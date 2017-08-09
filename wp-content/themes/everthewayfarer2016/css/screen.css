@@ -470,12 +470,12 @@ h2 {
         letter-spacing: -0.025em; } }
     @media screen and (min-width: 30em) {
       .hero-home h2 {
-        font-size: 2.25em; } }
+        font-size: 1.75em; } }
     @media screen and (min-width: 40em) {
       .hero-home h2 {
         text-align: left;
         letter-spacing: 0;
-        font-size: 3em; } }
+        font-size: 2.1em; } }
 
 h3 {
   font-family: "franklin-gothic-urw-comp", sans-serif;
@@ -3298,7 +3298,8 @@ body {
     text-align: center; }
     @media screen and (min-width: 40em) {
       #main .hero-home p {
-        text-align: left; } }
+        text-align: left;
+        max-width: 30em; } }
   #main .hero-home .inblock-desktop {
     display: none; }
     @media screen and (min-width: 40em) {

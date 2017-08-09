@@ -5,7 +5,7 @@
    </div>
     <div class="container">
       <header>
-        <h1>Get inspiring travel ideas & stunning photography delivered to your inbox each month</h1>
+        <h1>Get inspiring travel ideas & stunning photography delivered to your inbox</h1>
         <p>Plus ethical travel guides & reviews to help you travel responsibly.</p>
       </header> 
 
