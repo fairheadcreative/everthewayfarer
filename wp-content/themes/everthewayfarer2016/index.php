@@ -199,6 +199,18 @@ if ( is_home() ) { ?>
           </a>   
           <?php } ?>
 
+           <?php if (in_category('postcard-v')) { ?>
+          <!-- Postcard Type V -->
+          <a class="span-6 postcard-item-container" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+            <?php get_template_part( 'includes/path-crawl' ); ?>
+            <article class="postcard-item type-v" id="id-<?php the_ID(); ?>">
+              <?php if ( has_post_thumbnail() ) { the_post_thumbnail('feature-postcard'); } ?>
+              <h2><span><em><?php the_title(); ?></em></span></h2>
+              <div class="border"></div>
+            </article>
+          </a>   
+          <?php } ?>
+
           <?php # If it's a journey post on the National Park Crawl page (refactor this)
           } elseif ( is_category( 'nationalparks' ) || is_home() ) { ?>
           <?php if ( !in_category( 'Postcards' ) ) { ?>

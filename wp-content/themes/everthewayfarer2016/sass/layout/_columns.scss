@@ -260,6 +260,10 @@ body {
     color: $base-font-color;
   }
 
+  a h2 {
+    text-align: center;
+  }
+
   a:hover article h2 {
     color: $base-accent-color;
   }
