@@ -161,6 +161,7 @@
   .postcard-item {
     h2 { color: white; }
     
+    &.type-v,
     &.type-journey,
     &.type-postit { 
       h2 { color:  black; }
@@ -171,12 +172,22 @@
 .postcard-item-container:nth-child(4n-3) {
   .postcard-item {
     @include transform(rotate(1deg));
+    &.type-v {
+      @include media(em(640)) { 
+        @include transform(rotate(1deg) scale(0.9));
+      }
+    }
   }
 }
 
 .postcard-item-container:nth-child(4n-2) {
   .postcard-item {
     @include transform(rotate(-1deg));
+    &.type-v {
+      @include media(em(640)) { 
+        @include transform(rotate(-1deg) scale(0.9));
+      }
+    }
   }
 }
 
@@ -444,6 +455,76 @@
       display: table-cell;
       vertical-align: middle;
       font-style: normal;
+    }
+  }
+}
+
+.postcard-item.type-v {
+  padding: em(10)  em(10) 0;
+  margin-top: 0; 
+  width: 87.6%;
+  margin-left: 6.201204219%;
+  margin-bottom: 2em;
+  height: auto;
+  max-height: 580px;
+  
+  @include media(em(640)) { 
+    @include transform(scale(0.9));
+  }
+  @media screen and (min-width: em(640)) and(max-width: em(799)) {
+    margin-top: -30px;
+  }
+  @media screen and (min-width: em(800)) and(max-width: em(1279)) {
+    margin-top: -30px;
+    margin-bottom: em(13);
+    padding: em(20) em(20) 0;
+  }
+  @media screen and (min-width: em(1280)) {
+    margin-top: -22.5px;
+    margin-bottom: em(13);
+    padding: em(20) em(20) 0;
+  }
+
+
+  .border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 8px solid white;
+  }
+  h2 {
+    font-family: "learning-curve";//flood-std
+    font-weight: 400;
+    width: 100%;
+    height: auto;
+    line-height: .8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: $black;
+
+    font-size: 10vw;
+    //@include media(em(500)) { font-size: 7.8vw; }
+    @include media(em(640)) { font-size: 4.8vw; }
+    @include media(em(1024)) { font-size: 3.5em; }
+    @include media(em(1280)) { font-size: 3vw; }
+
+    span {
+      display: table;
+      height: 100%;
+      width: 100%;
+    }
+
+    em {
+      display: table-cell;
+      vertical-align: middle;
+      font-style: normal;
+      padding-bottom: em(16);
+      padding-top: em(8);
+      transform: rotate(-3deg);
     }
   }
 }
