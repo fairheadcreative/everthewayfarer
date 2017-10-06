@@ -2078,12 +2078,13 @@ body {
   -ms-transform: rotate(1deg);
   -o-transform: rotate(1deg);
   transform: rotate(1deg); }
-  .postcard-item-container:nth-child(4n-3) .postcard-item.type-v {
-    -webkit-transform: rotate(1deg) scale(0.9);
-    -moz-transform: rotate(1deg) scale(0.9);
-    -ms-transform: rotate(1deg) scale(0.9);
-    -o-transform: rotate(1deg) scale(0.9);
-    transform: rotate(1deg) scale(0.9); }
+  @media screen and (min-width: 40em) {
+    .postcard-item-container:nth-child(4n-3) .postcard-item.type-v {
+      -webkit-transform: rotate(1deg) scale(0.9);
+      -moz-transform: rotate(1deg) scale(0.9);
+      -ms-transform: rotate(1deg) scale(0.9);
+      -o-transform: rotate(1deg) scale(0.9);
+      transform: rotate(1deg) scale(0.9); } }
 
 .postcard-item-container:nth-child(4n-2) .postcard-item {
   -webkit-transform: rotate(-1deg);
@@ -2091,12 +2092,13 @@ body {
   -ms-transform: rotate(-1deg);
   -o-transform: rotate(-1deg);
   transform: rotate(-1deg); }
-  .postcard-item-container:nth-child(4n-2) .postcard-item.type-v {
-    -webkit-transform: rotate(-1deg) scale(0.9);
-    -moz-transform: rotate(-1deg) scale(0.9);
-    -ms-transform: rotate(-1deg) scale(0.9);
-    -o-transform: rotate(-1deg) scale(0.9);
-    transform: rotate(-1deg) scale(0.9); }
+  @media screen and (min-width: 40em) {
+    .postcard-item-container:nth-child(4n-2) .postcard-item.type-v {
+      -webkit-transform: rotate(-1deg) scale(0.9);
+      -moz-transform: rotate(-1deg) scale(0.9);
+      -ms-transform: rotate(-1deg) scale(0.9);
+      -o-transform: rotate(-1deg) scale(0.9);
+      transform: rotate(-1deg) scale(0.9); } }
 
 .postcard-item.type-a h2 {
   position: absolute;
@@ -2427,12 +2429,14 @@ body {
   margin-left: 6.201204219%;
   margin-bottom: 2em;
   height: auto;
-  max-height: 580px;
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  -o-transform: scale(0.9);
-  transform: scale(0.9); }
+  max-height: 580px; }
+  @media screen and (min-width: 40em) {
+    .postcard-item.type-v {
+      -webkit-transform: scale(0.9);
+      -moz-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      -o-transform: scale(0.9);
+      transform: scale(0.9); } }
   @media screen and (min-width: 40em) and (max-width: 49.9375em) {
     .postcard-item.type-v {
       margin-top: -30px; } }

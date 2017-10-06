@@ -173,7 +173,9 @@
   .postcard-item {
     @include transform(rotate(1deg));
     &.type-v {
-      @include transform(rotate(1deg) scale(0.9));
+      @include media(em(640)) { 
+        @include transform(rotate(1deg) scale(0.9));
+      }
     }
   }
 }
@@ -182,7 +184,9 @@
   .postcard-item {
     @include transform(rotate(-1deg));
     &.type-v {
-      @include transform(rotate(-1deg) scale(0.9));
+      @include media(em(640)) { 
+        @include transform(rotate(-1deg) scale(0.9));
+      }
     }
   }
 }
@@ -463,8 +467,10 @@
   margin-bottom: 2em;
   height: auto;
   max-height: 580px;
-  @include transform(scale(0.9));
   
+  @include media(em(640)) { 
+    @include transform(scale(0.9));
+  }
   @media screen and (min-width: em(640)) and(max-width: em(799)) {
     margin-top: -30px;
   }
